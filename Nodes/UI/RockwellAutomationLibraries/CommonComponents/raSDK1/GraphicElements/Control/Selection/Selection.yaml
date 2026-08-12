@@ -1,0 +1,481 @@
+Name: Selection
+Id: g=0376b39ee8e4f9da063f09c4126c7f16
+Type: FolderType
+Children:
+- Name: raSDK1_BoolSelect
+  Id: g=70fd2057fb3702a9960390289128a3f3
+  Supertype: Panel
+  Description: {"NamespaceIndex":40,"TextId":"Boolean selection \"0\" or \"1\" in a clickable box"}
+  ReferenceType: HasComponent
+  Children:
+  - Name: Ref_Value
+    Id: g=29a2496acda6b28fda9d9a8d3390be42
+    Type: BaseDataVariableType
+    DataType: Boolean
+    Description: {"NamespaceIndex":40,"TextId":"Variable associated with the checkbox."}
+  - Name: Enabled
+    Id: g=2e8091f685d96aac98d6a5dcaed2bdba
+    Type: BaseDataVariableType
+    DataType: Boolean
+    Value: true
+  - Name: Set_Enabled
+    Id: g=35743c02d3dba30f6bc098ef6a36a5e7
+    Type: BaseDataVariableType
+    DataType: Boolean
+    Description: {"NamespaceIndex":40,"TextId":"Enables / disables interaction with the user: False = Disabled, True = Enabled."}
+  - Name: Checkbox
+    Id: g=853f004e38d253b8822adb60efaded4c
+    Type: CheckBox
+    Children:
+    - Name: Checked
+      Id: g=d877639b31304f2f09ae7cff247cbbb0
+      Type: BaseDataVariableType
+      DataType: Boolean
+      Children:
+      - Name: DynamicLink
+        Id: g=91baed8eb010a74dfc3cb254cba5d219
+        Type: DynamicLink
+        DataType: NodePath
+        Value: "../../Ref_Value"
+        Children:
+        - Name: Mode
+          Id: g=c5505d3385d4ea6579e512f8f1e02bf6
+          Type: BaseVariableType
+          DataType: DynamicLinkMode
+          ModellingRule: Optional
+          Value: 2
+    - Name: Text
+      Id: g=563349715b58a1011a32c4de1dfdb8a4
+      Type: BaseDataVariableType
+      DataType: LocalizedText
+      ModellingRule: Optional
+      Value: {"LocaleId":"en-US","Text":""}
+    - Name: HorizontalAlignment
+      Id: g=0c2758bc905786545dc880f90511b91f
+      Type: BaseVariableType
+      DataType: HorizontalAlignment
+      ModellingRule: Optional
+      Value: 2
+    - Name: VerticalAlignment
+      Id: g=f4886e34fb7fcd5bca9a623ce83c95c7
+      Type: BaseVariableType
+      DataType: VerticalAlignment
+      ModellingRule: Optional
+      Value: 2
+    - Name: LeftMargin
+      Id: g=87babc75b3f430727d28b4ca90945c74
+      Type: BaseVariableType
+      DataType: Size
+      ModellingRule: Optional
+    - Name: Opacity
+      Id: g=abd004665963d4821283aff0abfdf7d0
+      Type: BaseVariableType
+      DataType: Float
+      ModellingRule: Optional
+    - Name: Visible
+      Id: g=a8fb11772c594ca9b45c2a8b76c2735e
+      Type: BaseDataVariableType
+      DataType: Boolean
+      Value: true
+    - Name: Enabled
+      Id: g=8c905175047abc31e85abadbfcb73d7a
+      Type: BaseDataVariableType
+      DataType: Boolean
+      Children:
+      - Name: DynamicLink1
+        Id: g=0fa61bc7742adc032b96b5635ce0e003
+        Type: DynamicLink
+        DataType: NodePath
+        Value: "../../Set_Enabled"
+  - Name: Rectangle
+    Id: g=0096c5b5a93eb0836f35518b8629d721
+    Type: Rectangle
+    Children:
+    - Name: HorizontalAlignment
+      Id: g=eb43db7cfefbe1bf3c763cacc5932e45
+      Type: BaseVariableType
+      DataType: HorizontalAlignment
+      ModellingRule: Optional
+      Value: 3
+    - Name: VerticalAlignment
+      Id: g=21fa3a36e90ce768937e0233394310da
+      Type: BaseVariableType
+      DataType: VerticalAlignment
+      ModellingRule: Optional
+      Value: 3
+    - Name: LeftMargin
+      Id: g=631affcc3ea85dfc2d8698528bc67f93
+      Type: BaseVariableType
+      DataType: Size
+      ModellingRule: Optional
+    - Name: RightMargin
+      Id: g=05ffd92d93c889b993349baddef7b61e
+      Type: BaseVariableType
+      DataType: Size
+      ModellingRule: Optional
+    - Name: Style
+      Id: g=bfe7b59348bafe9b65b8c2e58879baba
+      Type: BaseDataVariableType
+      DataType: String
+      ModellingRule: Optional
+      Value: "User Control"
+  - Name: Label
+    Id: g=c91c30d398d853f2ba650cf942ab62e1
+    Type: Label
+    Children:
+    - Name: Text
+      Id: g=9045f841d57bc27dd0b5968ce23cc025
+      Type: BaseDataVariableType
+      DataType: LocalizedText
+      Children:
+      - Name: ExpressionEvaluator1
+        Id: g=a1b043b27d664ff30298c9aed7846d74
+        Type: ExpressionEvaluator
+        Children:
+        - Name: Expression
+          Id: g=c5d347786e727b386ef758373bf7186f
+          Type: BaseDataVariableType
+          DataType: String
+          ReferenceType: HasParameter
+          ModellingRule: Optional
+          Value: "if({0},1,0)"
+        - Name: ns=9;Source0
+          Id: g=8937abafbf917f3c5528196432331b44
+          Type: BaseDataVariableType
+          DataType: BaseDataType
+          ReferenceType: HasSource
+          Children:
+          - Name: DynamicLink
+            Id: g=afdddca5b8dcf20dacecfd80c80d2cb0
+            Type: DynamicLink
+            DataType: NodePath
+            Value: "../../../../Ref_Value"
+    - Name: HorizontalAlignment
+      Id: g=ee9e7ea3f814fda9260c75db03e992b7
+      Type: BaseVariableType
+      DataType: HorizontalAlignment
+      ModellingRule: Optional
+      Value: 2
+    - Name: VerticalAlignment
+      Id: g=286944d2b5293517ece096577f31041f
+      Type: BaseVariableType
+      DataType: VerticalAlignment
+      ModellingRule: Optional
+      Value: 2
+    - Name: LeftMargin
+      Id: g=1c1e967414a4390b7785045ca44157db
+      Type: BaseVariableType
+      DataType: Size
+      ModellingRule: Optional
+    - Name: TopMargin
+      Id: g=2d7ab72b80b06ee5fe8208ed29c9c23d
+      Type: BaseVariableType
+      DataType: Size
+      ModellingRule: Optional
+    - Name: RightMargin
+      Id: g=5eec114c3bb4634bde820e53427ad751
+      Type: BaseVariableType
+      DataType: Size
+      ModellingRule: Optional
+    - Name: BottomMargin
+      Id: g=222f9f4777060082d68c2253487a67de
+      Type: BaseVariableType
+      DataType: Size
+      ModellingRule: Optional
+    - Name: TextColor
+      Id: g=34ce4bcabe4a2444dfc4fb3e3e9e63c7
+      Type: BaseDataVariableType
+      DataType: Color
+      ModellingRule: Optional
+      Value: "#3f3f3f"
+    - Name: Style
+      Id: g=e8817b24aa5dbc6a02db98b1ea1e4ba4
+      Type: BaseDataVariableType
+      DataType: String
+      ModellingRule: Optional
+      Value: "Default"
+    - Name: TextHorizontalAlignment
+      Id: g=31ea6d70cac2c302ca9a080fbe31bc5b
+      Type: BaseVariableType
+      DataType: TextHorizontalAlignment
+      ModellingRule: Optional
+      Value: 1
+    - Name: TextVerticalAlignment
+      Id: g=095b4d7b0becccd82170c843194c5418
+      Type: BaseVariableType
+      DataType: TextVerticalAlignment
+      ModellingRule: Optional
+      Value: 1
+  - Name: ns=25;LibraryReference
+    Id: g=5d2d8291e54a2aa2ebb6a8ab078a3893
+    Type: ObjectLibraryReference
+    DataType: ObjectLibraryReferenceDataType
+    ModellingRule: None
+    Value: 
+     {
+      "TypeId": {
+       "Id": 72,
+       "Namespace": 25
+      },
+      "Body": {
+       "libraryGuid": "50baf4d6588e467cdc65deda81d424c2",
+       "objectGuid": "57e086cc49d53751f2bb5c2a2d2b57c4",
+       "objectVersion": 1,
+       "highestIgnoredVersion": 0
+      }
+     }
+- Name: raSDK1_RB
+  Id: g=b33031e10e9c3bedf974f03ad4d5589c
+  Supertype: RadioButton
+  Description: {"NamespaceIndex":40,"TextId":"Radio (option) button configured to be used for enumerated option selection."}
+  ReferenceType: HasComponent
+  Children:
+  - Name: Checked
+    Id: g=dd87dd909c69da5c3adc9fdf3a55127b
+    Type: BaseDataVariableType
+    DataType: Boolean
+    Children:
+    - Name: ExpressionEvaluator1
+      Id: g=342e752ba1cfd1d980ae4cc85ce7e5ed
+      Type: ExpressionEvaluator
+      Children:
+      - Name: Expression
+        Id: g=af3eff026e2536aac60ab18b108f81c0
+        Type: BaseDataVariableType
+        DataType: String
+        ReferenceType: HasParameter
+        ModellingRule: Optional
+        Value: "{0} == {1}"
+      - Name: ns=9;Source0
+        Id: g=6fa8bec2b2ca79e687392377676fce4f
+        Type: BaseDataVariableType
+        DataType: BaseDataType
+        ReferenceType: HasSource
+        Children:
+        - Name: DynamicLink
+          Id: g=4e990e2ffa9284f91cd0dc03e54d2cb4
+          Type: DynamicLink
+          DataType: NodePath
+          Value: "../../../Cfg_Value"
+      - Name: ns=9;Source1
+        Id: g=57b46be3308df11a7cb5077c28950ad1
+        Type: BaseDataVariableType
+        DataType: BaseDataType
+        ReferenceType: HasSource
+        Children:
+        - Name: DynamicLink
+          Id: g=ab38348a8af6420babbc26fd2b27823b
+          Type: DynamicLink
+          DataType: NodePath
+          Value: "../../../Ref_Variable"
+  - Name: Text
+    Id: g=6b4248f9d3173c16a0c6e1c19ee90dc9
+    Type: BaseDataVariableType
+    DataType: LocalizedText
+    ModellingRule: Optional
+    Value: {"LocaleId":"en-US","Text":"OptionButton"}
+  - Name: LeftMargin
+    Id: g=e4465af90f95bef9747b7b5284f753a9
+    Type: BaseVariableType
+    DataType: Size
+    ModellingRule: Optional
+  - Name: CheckedTransitioned
+    Id: g=568124a49fbf29d229f630c7e40c9388
+    Type: VariableTransitionEventDispatcher
+    Children:
+    - Name: Value
+      Id: g=5c5b6808b2b918aa921ec6b5a0a1054e
+      Type: BaseVariableType
+      DataType: Double
+      Value: 1.0
+    - Name: Transition
+      Id: g=5ebb4cbc3df417296ad8fcfde29e5fd2
+      Type: BaseVariableType
+      DataType: VariableTransition
+    - Name: VariableNodePath
+      Id: g=25f277715fa4111d4e8dd95922279713
+      Type: BaseVariableType
+      DataType: NodePath
+      Value: "../Checked"
+    - Name: VariableTransitionEventHandler1
+      Id: g=6ceb3da0583704559e273f440da6a56a
+      Type: EventHandler
+      Children:
+      - Name: ListenEventType
+        Id: g=01e0b04501af439e21aaec8b789cbcd1
+        Type: PropertyType
+        DataType: NodeId
+        Value: "/Types/EventTypes/BaseEventType/VariableConditionEvent/VariableTransitionEvent"
+      - Name: MethodsToCall
+        Id: g=45a197f385479a89e201b22d757a5adb
+        Type: BaseObjectType
+        Children:
+        - Name: MethodContainer1
+          Id: g=e9df3ebfa99ad639a29c74f715de557b
+          Type: BaseObjectType
+          Children:
+          - Name: ns=9;ObjectPointer
+            Id: g=e5afa5c1ea825e07d36e5e19189446fd
+            Type: NodePointer
+            DataType: NodeId
+            Value: "/Objects/Commands/VariableCommands"
+            Children:
+            - Name: Kind
+              Id: g=31494fc2549f403e2dbf3d9fd6714e1c
+              Type: PropertyType
+              DataType: NodeId
+              Value: "/Types/ObjectTypes/BaseObjectType"
+          - Name: ns=9;Method
+            Id: g=889e8b5233081bcf92a021167c97c53f
+            Type: BaseDataVariableType
+            DataType: String
+            Value: "Set"
+          - Name: InputArguments
+            Id: g=62c4c31882db2478f58773ef13305c74
+            Type: BaseObjectType
+            Children:
+            - Name: VariableToModify
+              Id: g=4a8d9909e7656cb9be10910fc4bc754b
+              Type: BaseDataVariableType
+              DataType: VariablePointer
+              Description: {"NamespaceIndex":9,"TextId":"SetVariableToModifyDescription"}
+              Children:
+              - Name: DynamicLink
+                Id: g=f597078f1eee605f3c9953f4ebe5a882
+                Type: DynamicLink
+                DataType: NodePath
+                Value: "../../../../../../Ref_Variable@NodeId"
+                Children:
+                - Name: Mode
+                  Id: g=0a01a4da491d6bd3ef2ddcf70c7cc8b7
+                  Type: BaseVariableType
+                  DataType: DynamicLinkMode
+                  ModellingRule: Optional
+                  Value: 2
+            - Name: Value
+              Id: g=f3a148e5f9c84d0c8d2c6b884af5baf5
+              Type: BaseDataVariableType
+              DataType: Int32
+              Description: {"NamespaceIndex":9,"TextId":"SetValueDescription"}
+              Children:
+              - Name: DynamicLink
+                Id: g=d3623a238d8feffec663842239d78b90
+                Type: DynamicLink
+                DataType: NodePath
+                Value: "../../../../../../Cfg_Value"
+                Children:
+                - Name: Mode
+                  Id: g=30066d1769219a480825527863a48023
+                  Type: BaseVariableType
+                  DataType: DynamicLinkMode
+                  ModellingRule: Optional
+                  Value: 2
+            - Name: ArrayIndex
+              Id: g=6ac3e31f89055877f1c146393bfbec9c
+              Type: BaseDataVariableType
+              DataType: UInt32
+              Description: {"NamespaceIndex":9,"TextId":"SetArrayIndexDescription"}
+              ValueRank: ScalarOrOneDimension
+      - Name: EventArguments
+        Id: g=e737528ceb83a418c38c3b7094e8f737
+        Type: VariableTransitionEvent
+        Children:
+        - Name: VariableNodeId
+          Id: g=692f35425957336c77d5783fc7442671
+          Type: BaseVariableType
+          DataType: NodeId
+        - Name: NewValue
+          Id: g=538fd44167df214e95e1a19123cb2429
+          Type: BaseVariableType
+          DataType: BaseDataType
+        - Name: OldValue
+          Id: g=20ad8545d44fda6284b57734fe66a0cd
+          Type: BaseVariableType
+          DataType: BaseDataType
+        - Name: EventId
+          Id: g=1bf30407cfaf9a8e2533bae0bf7dcac8
+          Type: PropertyType
+          DataType: ByteString
+        - Name: EventType
+          Id: g=893fc2a4fa4e81974803f4b5e4457cc9
+          Type: PropertyType
+          DataType: NodeId
+        - Name: SourceNode
+          Id: g=ad06ad38131236b9f6046c36a128ebbc
+          Type: PropertyType
+          DataType: NodeId
+        - Name: SourceName
+          Id: g=58a91cb0e5c92d67a667664fbd56f63c
+          Type: PropertyType
+          DataType: String
+        - Name: Time
+          Id: g=c37168e26a70258330b17aab574b5fcf
+          Type: PropertyType
+          DataType: UtcTime
+        - Name: ReceiveTime
+          Id: g=48649d3cece856037ab5f561dd2edb5a
+          Type: PropertyType
+          DataType: UtcTime
+        - Name: Message
+          Id: g=34805cfccca9d466164379aed9491665
+          Type: PropertyType
+          DataType: LocalizedText
+        - Name: Severity
+          Id: g=ef7559a68b4ea3f499d4707bb56129a1
+          Type: PropertyType
+          DataType: UInt16
+  - Name: IndicatorPosition
+    Id: g=24fa0c721e265941fd0dc30c74e78582
+    Type: BaseDataVariableType
+    DataType: HorizontalPositionEnum
+    ModellingRule: Optional
+  - Name: Enabled
+    Id: g=9045569dc16090bf30f1bc63eb284b38
+    Type: BaseDataVariableType
+    DataType: Boolean
+    ModellingRule: Optional
+    Value: true
+  - Name: TopMargin
+    Id: g=20a8e987fd3446259fb1caee98ea649c
+    Type: BaseVariableType
+    DataType: Size
+    ModellingRule: Optional
+  - Name: Cfg_Value
+    Id: g=57ab977e965aabacaaf0f7ba5a973f14
+    Type: BaseDataVariableType
+    DataType: Int32
+    Description: {"NamespaceIndex":40,"TextId":"Value written to Ref_Variable when selected.  When the value associated with Ref_Variable is equal to Cfg_Value, the checked indicator will be displayed."}
+  - Name: Ref_Variable
+    Id: g=0b6562d850a0fe545022ca1697900879
+    Type: BaseDataVariableType
+    DataType: Int32
+    Description: {"NamespaceIndex":40,"TextId":"Variable associated with the radio (option) button."}
+  - Name: HorizontalAlignment
+    Id: g=b4a9e67577dcd763f368610042f3c6b4
+    Type: BaseVariableType
+    DataType: HorizontalAlignment
+    ModellingRule: Optional
+  - Name: Style
+    Id: g=599f046c7eb0c518c174563c9f4c9a92
+    Type: BaseDataVariableType
+    DataType: String
+    ModellingRule: Optional
+    Value: "Default"
+  - Name: ns=25;LibraryReference
+    Id: g=f99958443ec19795474747a16d335292
+    Type: ObjectLibraryReference
+    DataType: ObjectLibraryReferenceDataType
+    ModellingRule: None
+    Value: 
+     {
+      "TypeId": {
+       "Id": 72,
+       "Namespace": 25
+      },
+      "Body": {
+       "libraryGuid": "fdcdf28fb1d75623841900955debf246",
+       "objectGuid": "93ecf5e38a9609ac83f4c86184d24bf1",
+       "objectVersion": 3,
+       "highestIgnoredVersion": 0
+      }
+     }

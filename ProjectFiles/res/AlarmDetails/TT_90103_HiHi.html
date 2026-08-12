@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Alarm Response Plan - TT-90103 HiHi</title>
+<style>
+  body { font-family: "Segoe UI", Arial, sans-serif; margin: 24px; color: #222; background: #f7f7f9; }
+  header { background: #1f3a5f; color: #fff; padding: 16px 20px; border-radius: 6px 6px 0 0; }
+  header h1 { margin: 0; font-size: 22px; }
+  header .subtitle { font-size: 14px; opacity: 0.9; margin-top: 4px; }
+  .container { background: #fff; padding: 20px; border: 1px solid #d9d9e0; border-top: none; border-radius: 0 0 6px 6px; }
+  h2 { color: #1f3a5f; border-bottom: 2px solid #d9d9e0; padding-bottom: 4px; margin-top: 28px; }
+  h3 { color: #1f3a5f; }
+  table { width: 100%; border-collapse: collapse; margin-top: 8px; }
+  th, td { border: 1px solid #cfd3dc; padding: 8px 10px; text-align: left; vertical-align: top; font-size: 14px; }
+  th { background: #e9edf3; color: #1f3a5f; }
+  .meta-table td:first-child { background: #f2f4f8; font-weight: 600; width: 220px; }
+  .priority { display: inline-block; padding: 3px 10px; background: #c62828; color: #fff; border-radius: 3px; font-weight: 600; font-size: 13px; }
+  ol, ul { margin-top: 6px; }
+  li { margin: 4px 0; }
+  .note { background: #fff8e1; border-left: 4px solid #f9a825; padding: 10px 14px; margin: 12px 0; font-size: 14px; }
+  .danger { background: #ffebee; border-left: 4px solid #c62828; padding: 10px 14px; margin: 12px 0; font-size: 14px; }
+  footer { margin-top: 24px; font-size: 12px; color: #666; text-align: center; }
+</style>
+</head>
+<body>
+
+<header>
+  <h1>Alarm Response Plan</h1>
+  <div class="subtitle">Tag: TT-90103 &mdash; Compressor Oil Temperature HiHi</div>
+</header>
+
+<div class="container">
+
+  <h2>1. Alarm Summary</h2>
+  <table class="meta-table">
+    <tr><td>Alarm Tag</td><td>TT-90103.HiHi</td></tr>
+    <tr><td>Measurement</td><td>Compressor lube oil temperature</td></tr>
+    <tr><td>Alarm Description</td><td>Oil temperature has exceeded the HiHi trip setpoint &mdash; motor trip via interlock</td></tr>
+    <tr><td>Trip Setpoint (Example)</td><td>&gt; 85 &deg;C</td></tr>
+    <tr><td>Priority</td><td><span class="priority">CRITICAL</span></td></tr>
+    <tr><td>Alarm Class</td><td>Safety / Equipment Protection</td></tr>
+    <tr><td>Response Time</td><td>Immediate (&lt; 2 minutes)</td></tr>
+    <tr><td>Consequence of Inaction</td><td>Bearing damage, oil degradation, seizure of rotating equipment</td></tr>
+  </table>
+
+  <h2>2. Possible Causes</h2>
+  <ul>
+    <li>Loss or reduction of cooling water flow to the oil cooler.</li>
+    <li>High cooling water supply temperature.</li>
+    <li>Fouled oil cooler (tube-side or shell-side).</li>
+    <li>Low lube oil flow (pump problem, filter plugging, low reservoir level).</li>
+    <li>Degraded oil (viscosity loss, contamination).</li>
+    <li>Bearing distress generating additional heat.</li>
+    <li>PID (TIC-90103) not controlling cooling water valve correctly.</li>
+  </ul>
+
+  <div class="danger">
+    <strong>Safety Notice:</strong> This alarm should have already tripped MT-90100 via the interlock.
+    Verify the motor has stopped. If it has not, treat as a loss-of-safety event and initiate a manual trip.
+  </div>
+
+  <h2>3. Operator Response Actions</h2>
+  <ol>
+    <li>Acknowledge the alarm and confirm MT-90100 has tripped (raP_Opr_Seq Seq state = Stopped).</li>
+    <li>Verify auxiliary lube oil pump has auto-started (if configured) to continue oil circulation for post-lube.</li>
+    <li>Isolate downstream users or transfer to spare unit.</li>
+    <li>Notify Shift Supervisor and Maintenance.</li>
+    <li>Do not attempt restart until oil temperature is &lt; 60 &deg;C AND root cause is confirmed.</li>
+  </ol>
+
+  <h2>4. Troubleshooting Guidance</h2>
+  <ol>
+    <li>Check cooling water supply pressure, temperature, and valve position (TCV-90103).</li>
+    <li>Inspect oil cooler for fouling &mdash; compare inlet/outlet temperatures for approach.</li>
+    <li>Check oil pump discharge pressure and reservoir level.</li>
+    <li>Sample oil for particulate, water content, and viscosity.</li>
+    <li>Review TIC-90103 controller behavior &mdash; see TIC_90103_HiDev plan.</li>
+    <li>Compare TT-90103 with adjacent RTDs / bearing temps for sensor sanity.</li>
+  </ol>
+
+  <h2>5. Reset and Restart Criteria</h2>
+  <ul>
+    <li>Oil temperature stable &lt; 60 &deg;C with cooling loop restored.</li>
+    <li>Root cause corrected and documented.</li>
+    <li>Oil sample results acceptable if oil condition was suspected.</li>
+    <li>Shift Supervisor approval.</li>
+    <li>Reset HiHi interlock at MT-90100 faceplate, then follow standard startup.</li>
+  </ul>
+
+  <h2>6. Escalation</h2>
+  <table>
+    <tr><th>Time Since Alarm</th><th>Action</th><th>Notify</th></tr>
+    <tr><td>0 - 5 min</td><td>Confirm trip, secure equipment</td><td>Shift Supervisor</td></tr>
+    <tr><td>5 - 30 min</td><td>Diagnose cooling / oil system</td><td>Maintenance Duty Tech</td></tr>
+    <tr><td>&gt; 30 min or repeat</td><td>Full inspection</td><td>Rotating Equipment / Reliability Engineer</td></tr>
+  </table>
+
+  <h2>7. References</h2>
+  <ul>
+    <li>P&amp;ID: PID-90-100 &ndash; Compressor Train MT-90100</li>
+    <li>Lube Oil System Drawing: PID-90-103</li>
+    <li>Vendor O&amp;M Manual, Section 6 &ndash; Protective Interlocks</li>
+  </ul>
+
+</div>
+
+<footer>
+  Document: TT_90103_HiHi.html &nbsp;|&nbsp; Rev. 0 (Draft) &nbsp;|&nbsp; For training / illustrative use only
+</footer>
+
+</body>
+</html>

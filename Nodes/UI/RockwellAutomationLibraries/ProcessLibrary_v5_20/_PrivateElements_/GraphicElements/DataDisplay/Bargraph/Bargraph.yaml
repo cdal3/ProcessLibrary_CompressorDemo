@@ -1,0 +1,339 @@
+Name: Bargraph
+Id: g=ddbefa05159381ad03b624a0df6582a0
+Type: FolderType
+Children:
+- Name: raP_5_20_ProgressBar
+  Id: g=e8301ad4db359dfd413ddb035c997427
+  Supertype: Rectangle
+  ReferenceType: HasComponent
+  Children:
+  - Name: Width
+    Id: g=28faff4001f1b111fd879220fb7e85c1
+    Type: BaseVariableType
+    DataType: Size
+    Value: 125.0
+  - Name: Height
+    Id: g=07326572a1e7c9a0ee9e7538c14eb0a0
+    Type: BaseVariableType
+    DataType: Size
+    ModellingRule: Optional
+    Value: 2.0
+  - Name: ProgressBarActive
+    Id: g=aba2a658454e97f28f90a2cec889f7d0
+    Type: Rectangle
+    Children:
+    - Name: Width
+      Id: g=24ccdcb2b021e2f6666a8e21ad847ad2
+      Type: BaseVariableType
+      DataType: Size
+      Value: 50.0
+      Children:
+      - Name: ExpressionEvaluator1
+        Id: g=7b80e3f970de3541854d3587b5b30ceb
+        Type: ExpressionEvaluator
+        Children:
+        - Name: Expression
+          Id: g=0cae9ad23044892dfba58ddad14a9ef5
+          Type: BaseDataVariableType
+          DataType: String
+          ReferenceType: HasParameter
+          ModellingRule: Optional
+          Value: "({0}/100)*{1}"
+        - Name: ns=9;Source0
+          Id: g=4ba5697897489073bdb71a74c3244f3f
+          Type: BaseDataVariableType
+          DataType: BaseDataType
+          ReferenceType: HasSource
+          Children:
+          - Name: DynamicLink
+            Id: g=ec435ac688970fe9ae096c4da98c869f
+            Type: DynamicLink
+            DataType: NodePath
+            Value: "../../../../Inp_PercentComplete"
+        - Name: ns=9;Source1
+          Id: g=d0c2b9520a0113c6deab649ae0503ea8
+          Type: BaseDataVariableType
+          DataType: BaseDataType
+          ReferenceType: HasSource
+          Children:
+          - Name: DynamicLink
+            Id: g=8087686022fcb21e81e0314540bf8908
+            Type: DynamicLink
+            DataType: NodePath
+            Value: "../../../../Width"
+    - Name: Height
+      Id: g=23a5566d97e94a4044b6f21546a1b8e0
+      Type: BaseVariableType
+      DataType: Size
+      ModellingRule: Optional
+      Value: 2.0
+    - Name: Style
+      Id: g=f0d47ee4d2b4b099a605ef80e41e03a7
+      Type: BaseDataVariableType
+      DataType: String
+      ModellingRule: Optional
+      Value: "Live Data"
+    - Name: CornerRadius
+      Id: g=439fa4c45d1af56a0fcf79aa41895e59
+      Type: BaseDataVariableType
+      DataType: Size
+      ModellingRule: Optional
+  - Name: Visible
+    Id: g=388741f29cd53a9f21f1dd4b64476e64
+    Type: BaseDataVariableType
+    DataType: Boolean
+    Value: true
+  - Name: HorizontalAlignment
+    Id: g=de6444effaf2c980cbb96fbe9323a222
+    Type: BaseVariableType
+    DataType: HorizontalAlignment
+    ModellingRule: Optional
+    Value: 2
+  - Name: Style
+    Id: g=84ed341961bc337e735cce6fa092f3f6
+    Type: BaseDataVariableType
+    DataType: String
+    ModellingRule: Optional
+    Value: "Accent - Regular"
+  - Name: Inp_PercentComplete
+    Id: g=227571accaaa664407afcf6ef1abba10
+    Type: BaseDataVariableType
+    DataType: Float
+    Description: {"NamespaceIndex":40,"TextId":"Percent Complete (0 - 100)"}
+  - Name: Cfg_ObjectVersion
+    Id: g=0fd029119c1d6b42ad193ba6b967634b
+    Type: BaseDataVariableType
+    DataType: String
+    Description: {"NamespaceIndex":40,"TextId":"Object version"}
+    Value: "5.20.04 Release"
+- Name: raP_5_20_BG_ThresholdWithAlarms
+  Id: g=f2d5b3ead55d71b81f0601eae3c6ee5e
+  Supertype: Rectangle
+  Description: {"NamespaceIndex":40,"TextId":"Used to show threshold positions on bargraphs.  It will change colors based on Inp_eNotify"}
+  ReferenceType: HasComponent
+  Children:
+  - Name: Width
+    Id: g=ff25676c637cb8b553335582b470c244
+    Type: BaseVariableType
+    DataType: Size
+    ModellingRule: Optional
+    Value: 14.0
+  - Name: Height
+    Id: g=08038680c2436af49e023f1571489e66
+    Type: BaseVariableType
+    DataType: Size
+    ModellingRule: Optional
+    Value: 14.0
+  - Name: Inp_eNotify
+    Id: g=1581762f6559d6cb4853ea9c5877d7c0
+    Type: BaseDataVariableType
+    DataType: Int32
+  - Name: Cfg_DefaultStyle
+    Id: g=09cacad68e65937fb73b43a6c53d05ba
+    Type: BaseDataVariableType
+    DataType: String
+    Value: "Accent - Emphasis 1"
+  - Name: CornerRadius
+    Id: g=6b8bf9e3fe622e29110a24d396c17672
+    Type: BaseDataVariableType
+    DataType: Size
+    ModellingRule: Optional
+  - Name: BorderThickness
+    Id: g=245152d6ce3e7fe77bfc1d6c1523cca2
+    Type: BaseDataVariableType
+    DataType: Size
+    ModellingRule: Optional
+  - Name: Style
+    Id: g=48a14eb21857d63e1de7730c6b5fda6b
+    Type: BaseDataVariableType
+    DataType: String
+    Value: "Default"
+    Children:
+    - Name: KeyValueConverter1
+      Id: g=286354fb2f8edb43def519612186f121
+      Type: ValueMapConverter
+      Children:
+      - Name: Source
+        Id: g=bb4676762ae7335fa1723cd844741e47
+        Type: BaseDataVariableType
+        DataType: BaseDataType
+        ReferenceType: HasSource
+        Children:
+        - Name: DynamicLink
+          Id: g=447fbac79deba9f17f68a3d129d94dc1
+          Type: DynamicLink
+          DataType: NodePath
+          Value: "../../../Inp_eNotify"
+      - Name: ns=9;Pairs
+        Id: g=2863914ff54d9970aaf1729fdf0ccb70
+        Type: BaseObjectType
+        Children:
+        - Name: Pair
+          Id: g=bc0198dea7909857068f917355be33ad
+          Type: ValueMapPair
+          Children:
+          - Name: Key
+            Id: g=f28abcda963f7fe72fc4ac4bb304cce9
+            Type: BaseDataVariableType
+            DataType: Int32
+          - Name: Value
+            Id: g=1507184ab41ed623e1b3c1e7308de103
+            Type: BaseDataVariableType
+            DataType: String
+            Children:
+            - Name: DynamicLink
+              Id: g=8652a11cb1b5cb11b6502bdf035a31b8
+              Type: DynamicLink
+              DataType: NodePath
+              Value: "../../../../../Cfg_DefaultStyle"
+              Children:
+              - Name: Mode
+                Id: g=15d72a7235e087bf3d815ad328a049d3
+                Type: BaseVariableType
+                DataType: DynamicLinkMode
+                ModellingRule: Optional
+                Value: 2
+        - Name: Pair1
+          Id: g=ca7e0c65bf53fcda9cf14fa1934d2145
+          Type: ValueMapPair
+          Children:
+          - Name: Key
+            Id: g=ccae329b020fa0072c4b4b95a7070f57
+            Type: BaseDataVariableType
+            DataType: Int32
+            Value: 1
+          - Name: Value
+            Id: g=bdcdd052468dab422f9f9a2260a1a903
+            Type: BaseDataVariableType
+            DataType: String
+            Children:
+            - Name: DynamicLink
+              Id: g=0c9bf8fce1b73b482acfeef4e3b03826
+              Type: DynamicLink
+              DataType: NodePath
+              Value: "../../../../../Cfg_DefaultStyle"
+              Children:
+              - Name: Mode
+                Id: g=6516dbfaf083ccd5a73c03920ced1f97
+                Type: BaseVariableType
+                DataType: DynamicLinkMode
+                ModellingRule: Optional
+                Value: 2
+        - Name: Pair2
+          Id: g=2a0810e03c176939b1521e7d77b2dcfa
+          Type: ValueMapPair
+          Children:
+          - Name: Key
+            Id: g=fee02eb10ca90f6887360f8ba437ff96
+            Type: BaseDataVariableType
+            DataType: Int32
+            Value: 2
+          - Name: Value
+            Id: g=a0256d2fd7f0d614d441549a2c6bcfb9
+            Type: BaseDataVariableType
+            DataType: String
+            Value: "Alarm Low"
+        - Name: Pair3
+          Id: g=c67b2059584fa3170666a5bcc5deaefe
+          Type: ValueMapPair
+          Children:
+          - Name: Key
+            Id: g=bb65d452b1850158b722b8348c581933
+            Type: BaseDataVariableType
+            DataType: Int32
+            Value: 3
+          - Name: Value
+            Id: g=790759cf177f8ca1aef934d1f24a19d1
+            Type: BaseDataVariableType
+            DataType: String
+            Value: "Alarm Low"
+        - Name: Pair4
+          Id: g=b7b05680918a72d2e455d20528a28df6
+          Type: ValueMapPair
+          Children:
+          - Name: Key
+            Id: g=cd81f75c0eb0af23c2f34f06a9a1abce
+            Type: BaseDataVariableType
+            DataType: Int32
+            Value: 4
+          - Name: Value
+            Id: g=939abc44e2617f0dec3e867e24b7660a
+            Type: BaseDataVariableType
+            DataType: String
+            Value: "Alarm Medium"
+        - Name: Pair5
+          Id: g=e0fedaeaf9b538de766c329926793054
+          Type: ValueMapPair
+          Children:
+          - Name: Key
+            Id: g=667bab90e3c4605601d2fb2e8c402940
+            Type: BaseDataVariableType
+            DataType: Int32
+            Value: 5
+          - Name: Value
+            Id: g=5d5858a36b6e923522e85ff7a36d32af
+            Type: BaseDataVariableType
+            DataType: String
+            Value: "Alarm Medium"
+        - Name: Pair6
+          Id: g=b2cf94e32218f94ecdc8ff5a2e82b404
+          Type: ValueMapPair
+          Children:
+          - Name: Key
+            Id: g=2b34366e342e54558ecd1147a170b539
+            Type: BaseDataVariableType
+            DataType: Int32
+            Value: 6
+          - Name: Value
+            Id: g=7db9d499e1908b9d95588044499f5013
+            Type: BaseDataVariableType
+            DataType: String
+            Value: "Alarm High"
+        - Name: Pair7
+          Id: g=28871f0a2a131751449ca57855416beb
+          Type: ValueMapPair
+          Children:
+          - Name: Key
+            Id: g=3f97baf33a4a8fbb41a4357cedc2ecd1
+            Type: BaseDataVariableType
+            DataType: Int32
+            Value: 7
+          - Name: Value
+            Id: g=27ea3ec6844214933e53ca66c621a629
+            Type: BaseDataVariableType
+            DataType: String
+            Value: "Alarm High"
+        - Name: Pair8
+          Id: g=9155a0028f2559bef80e5916e7996687
+          Type: ValueMapPair
+          Children:
+          - Name: Key
+            Id: g=2d35da49380a86d3ffe874008ffc78d9
+            Type: BaseDataVariableType
+            DataType: Int32
+            Value: 8
+          - Name: Value
+            Id: g=b6391ca76e000ce00c1ecd4e1ac9b4ac
+            Type: BaseDataVariableType
+            DataType: String
+            Value: "Alarm Urgent"
+        - Name: Pair9
+          Id: g=a54c10711735294d1871794c97d712ee
+          Type: ValueMapPair
+          Children:
+          - Name: Key
+            Id: g=72094c526408a7caa959f603a831d38b
+            Type: BaseDataVariableType
+            DataType: Int32
+            Value: 9
+          - Name: Value
+            Id: g=ccbe0a974d0092509f9a740e7fe49a8c
+            Type: BaseDataVariableType
+            DataType: String
+            Value: "Alarm Urgent"
+  - Name: Cfg_ObjectVersion
+    Id: g=1840d66e4a5dd4419eaa054aaeb74141
+    Type: BaseDataVariableType
+    DataType: String
+    Description: {"NamespaceIndex":40,"TextId":"Object version"}
+    Value: "5.20.04 Release"

@@ -1,0 +1,254 @@
+Name: Boolean
+Id: g=6b8ac0d81d4084faf91e6aad8e93dd4f
+Type: FolderType
+Children:
+- Name: raSDK1_BSD_Ind
+  Id: g=8e7cb8731f683f3959fb23e0a5105186
+  Supertype: Rectangle
+  Description: {"NamespaceIndex":40,"TextId":"Binary state display."}
+  ReferenceType: HasComponent
+  Children:
+  - Name: Width
+    Id: g=fc040556bf62bd664859dd25cfb749ab
+    Type: BaseVariableType
+    DataType: Size
+    ModellingRule: Optional
+    Value: 16.0
+  - Name: Height
+    Id: g=6714fe29697c0faeec1a85d86f9e506a
+    Type: BaseVariableType
+    DataType: Size
+    ModellingRule: Optional
+    Value: 12.0
+  - Name: Inp_Active
+    Id: g=3c51bcb2d4d3020ec76308410271b0eb
+    Type: BaseDataVariableType
+    DataType: Boolean
+    Description: {"NamespaceIndex":40,"TextId":"Indicator state. (0 = Inactive, 1 = Active)"}
+  - Name: Rotation
+    Id: g=04695d51ccbc9356d4daf2065f51f9a5
+    Type: BaseVariableType
+    DataType: Size
+  - Name: ns=25;LibraryReference
+    Id: g=24888f64d81414ae6aa4c88c4ea41d5b
+    Type: ObjectLibraryReference
+    DataType: ObjectLibraryReferenceDataType
+    ModellingRule: None
+    Value: 
+     {
+      "TypeId": {
+       "Id": 72,
+       "Namespace": 25
+      },
+      "Body": {
+       "libraryGuid": "fdcdf28fb1d75623841900955debf246",
+       "objectGuid": "73b91388b50f54a58024a1b36fab0475",
+       "objectVersion": 2,
+       "highestIgnoredVersion": 0
+      }
+     }
+  - Name: Cfg_ActiveStyle
+    Id: g=905a2c7d334368bc53ac7c89b5c99d1e
+    Type: BaseDataVariableType
+    DataType: String
+    Description: {"NamespaceIndex":40,"TextId":"Style to use when Inp_Active = True"}
+    Value: "Live Data"
+  - Name: Style
+    Id: g=2fdb333102bb9ad7e5a98eeb97f7d88b
+    Type: BaseDataVariableType
+    DataType: String
+    Value: "Default"
+    Children:
+    - Name: ExpressionEvaluator1
+      Id: g=a6f68e8e068fa5d3b177e2b670a2c36b
+      Type: ExpressionEvaluator
+      Children:
+      - Name: Expression
+        Id: g=1a0df8312c3d38e966d1c72e515fbba6
+        Type: BaseDataVariableType
+        DataType: String
+        ReferenceType: HasParameter
+        ModellingRule: Optional
+        Value: "if({0},{1},\"Default\")"
+      - Name: ns=9;Source0
+        Id: g=9b6635c64300d77878b92323c2bcac5e
+        Type: BaseDataVariableType
+        DataType: BaseDataType
+        ReferenceType: HasSource
+        Children:
+        - Name: DynamicLink
+          Id: g=7cf06ea821010f08f3ea9048501172e4
+          Type: DynamicLink
+          DataType: NodePath
+          Value: "../../../Inp_Active"
+      - Name: ns=9;Source1
+        Id: g=9774905efe9ee510dfdf6395f392a4fe
+        Type: BaseDataVariableType
+        DataType: BaseDataType
+        ReferenceType: HasSource
+        Children:
+        - Name: DynamicLink
+          Id: g=eb698d20a56b49965d921095bd5f49d4
+          Type: DynamicLink
+          DataType: NodePath
+          Value: "../../../Cfg_ActiveStyle"
+- Name: raSDK1_BSD_IndLbl
+  Id: g=3cb70bc059c716ac023d838295b174c2
+  Supertype: RowLayout
+  Description: {"NamespaceIndex":40,"TextId":"Binary state display with label (right)."}
+  ReferenceType: HasComponent
+  Children:
+  - Name: BSD_Ind
+    Id: g=03bd952afafe863600738dc87c101176
+    Type: raSDK1_BSD_Ind
+    Children:
+    - Name: Inp_Active
+      Id: g=d9a3fdf4e4ef12864f4d1d13841ce170
+      Type: BaseDataVariableType
+      DataType: Boolean
+      Children:
+      - Name: DynamicLink
+        Id: g=8871b59b32ee1e48f52c5718254962a6
+        Type: DynamicLink
+        DataType: NodePath
+        Value: "../../Inp_Active"
+        Children:
+        - Name: Mode
+          Id: g=a772b463a1f19a2f7e6fa11b485b9941
+          Type: BaseVariableType
+          DataType: DynamicLinkMode
+          ModellingRule: Optional
+          Value: 2
+    - Name: Rotation
+      Id: g=80167cb57f0203cbc55add537b5182f4
+      Type: BaseVariableType
+      DataType: Size
+    - Name: Cfg_ActiveStyle
+      Id: g=5a9070665a89e873786b22fff27fc1b7
+      Type: BaseDataVariableType
+      DataType: String
+      Value: "Live Data"
+      Children:
+      - Name: DynamicLink
+        Id: g=e8a06470e65556409850351e1ac80ca1
+        Type: DynamicLink
+        DataType: NodePath
+        Value: "../../Cfg_ActiveStyle"
+        Children:
+        - Name: Mode
+          Id: g=7b8406bd643064b49d51f4eb6bcf0bf3
+          Type: BaseVariableType
+          DataType: DynamicLinkMode
+          ModellingRule: Optional
+          Value: 2
+    - Name: Style
+      Id: g=ac41ab1fa1214422a7916127730ca816
+      Type: BaseDataVariableType
+      DataType: String
+      Value: "Default"
+      Children:
+      - Name: ExpressionEvaluator1
+        Id: g=4d7a4a8982ca4b3cd5efc97db47c11fc
+        Type: ExpressionEvaluator
+        Children:
+        - Name: Source0
+          Id: g=2d302d56a1b35c2557a2436bf9e0f5a2
+          Type: BaseDataVariableType
+          DataType: BaseDataType
+          ReferenceType: HasSource
+          Children:
+          - Name: DynamicLink
+            Id: g=a0bf776bb69136bb965bf7ab26113ae7
+            Type: DynamicLink
+            DataType: NodePath
+            Value: "../../../Inp_Active"
+        - Name: Source1
+          Id: g=886b6885dd7b18c0c91c2bb58400d892
+          Type: BaseDataVariableType
+          DataType: BaseDataType
+          ReferenceType: HasSource
+          Children:
+          - Name: DynamicLink
+            Id: g=dfe06ce990e0121f101fb4fe3bee0c0d
+            Type: DynamicLink
+            DataType: NodePath
+            Value: "../../../Cfg_ActiveStyle"
+    - Name: VerticalAlignment
+      Id: g=b1e521539782f2d673b6eefc92cb5db3
+      Type: BaseVariableType
+      DataType: VerticalAlignment
+      ModellingRule: Optional
+      Value: 2
+  - Name: Label
+    Id: g=38e9e41ae2e11fedaa5d60e7a48adcfd
+    Type: Label
+    Children:
+    - Name: Text
+      Id: g=778a86c76df4bd059efda59ea03d67d3
+      Type: BaseDataVariableType
+      DataType: LocalizedText
+      Children:
+      - Name: DynamicLink
+        Id: g=b248adc7b3d73c9a4adec314116ed1ef
+        Type: DynamicLink
+        DataType: NodePath
+        Value: "../../Cfg_Label"
+    - Name: LeftMargin
+      Id: g=1c671a6fba19676348e7f027c9316683
+      Type: BaseVariableType
+      DataType: Size
+      ModellingRule: Optional
+      Value: 4.0
+    - Name: VerticalAlignment
+      Id: g=56d1eba9c2872ccb72aa07f98290ea29
+      Type: BaseVariableType
+      DataType: VerticalAlignment
+      ModellingRule: Optional
+      Value: 2
+    - Name: Style
+      Id: g=ba57a61e32afeb1f5bac43520e739bd5
+      Type: BaseDataVariableType
+      DataType: String
+      ModellingRule: Optional
+      Value: "Default"
+  - Name: Cfg_Label
+    Id: g=b099b3904e638078cf0d60f4d1b67c1b
+    Type: BaseDataVariableType
+    DataType: LocalizedText
+    Description: {"NamespaceIndex":40,"TextId":"Text description of indicator."}
+    Value: {"LocaleId":"en-US","Text":"Label"}
+  - Name: Inp_Active
+    Id: g=4784cc5595e8883756ee3b20df62eac7
+    Type: BaseDataVariableType
+    DataType: Boolean
+    Description: {"NamespaceIndex":40,"TextId":"Indicator state. (0 = Inactive, 1 = Active)"}
+  - Name: Enabled
+    Id: g=c29a7a0abdb8ab970b6f4eaa7ba9580b
+    Type: BaseDataVariableType
+    DataType: Boolean
+    ModellingRule: Optional
+    Value: true
+  - Name: ns=25;LibraryReference
+    Id: g=cb25603d9dce1c2ff257d15153c9dce4
+    Type: ObjectLibraryReference
+    DataType: ObjectLibraryReferenceDataType
+    ModellingRule: None
+    Value: 
+     {
+      "TypeId": {
+       "Id": 72,
+       "Namespace": 25
+      },
+      "Body": {
+       "libraryGuid": "fdcdf28fb1d75623841900955debf246",
+       "objectGuid": "e2270e0880ed459b247d549a2aa95500",
+       "objectVersion": 3,
+       "highestIgnoredVersion": 0
+      }
+     }
+  - Name: Cfg_ActiveStyle
+    Id: g=eda29256a3db258cd3b42fb6f18ed127
+    Type: BaseDataVariableType
+    DataType: String
+    Description: {"NamespaceIndex":40,"TextId":"Style to use when Inp_Active = True"}
+    Value: "Live Data"

@@ -1,0 +1,296 @@
+Name: GraphicSymbols
+Id: g=5e4c30197096a3931899f8aa5de1846b
+Type: FolderType
+Children:
+- Name: raSDK1_GraphicSymbolBase
+  Id: g=6855543bb88ebc2d12ff9680aea055e5
+  Supertype: Panel
+  Description: {"LocaleId":"en-US","Text":"Graphic Symbol base element"}
+  ReferenceType: HasComponent
+  Children:
+  - Name: Width
+    Id: g=f5f3eae7b6828cbb6bf56962804b5c2c
+    Type: BaseVariableType
+    DataType: Size
+    ModellingRule: Optional
+    Value: -1.0
+  - Name: Height
+    Id: g=5945760392cba06915b02d419b3b59b5
+    Type: BaseVariableType
+    DataType: Size
+    ModellingRule: Optional
+    Value: -1.0
+  - Name: Nav_UsingTag
+    Id: g=9749a440481d62ddb94bc75d1e9ef807
+    Type: raSDK1_NavUsingTag
+    Children:
+    - Name: Cfg_CloseCurrentDisplay
+      Id: g=10cce55a6d389264cffa3c124d8d22b5
+      Type: BaseDataVariableType
+      DataType: Boolean
+    - Name: Cfg_DisplayType
+      Id: g=7c5986e953f1563494a364cf6a1fbcc2
+      Type: BaseDataVariableType
+      DataType: String
+      Value: "Faceplate"
+    - Name: Ref_Tag
+      Id: g=94eeb4dbe4425e8bbc83feea9c55c46d
+      Type: BaseDataVariableType
+      DataType: NodeId
+      Children:
+      - Name: DynamicLink
+        Id: g=50ecb32f4392bea6b9bd9dd7d3e61bbe
+        Type: DynamicLink
+        DataType: NodePath
+        Value: "{Tag}@Pointer"
+        Children:
+        - Name: Mode
+          Id: g=8be64b291f77972c3f8f2497dd4b3fa4
+          Type: BaseVariableType
+          DataType: DynamicLinkMode
+          ModellingRule: Optional
+          Value: 2
+    - Name: raSDK1_NL_NavUsingTag
+      Id: g=486cbaed2c3ac059f34f700b4b43f1cf
+      Type: NetLogic
+      Children:
+      - Class: Reference
+        Target: g=6e0263b05a933c9fc26daf0e50fd482e
+        Direction: Forward
+    - Name: MouseClickEventHandler1
+      Id: g=5bb6546116108e46a86077a6f163bfb5
+      Type: EventHandler
+      Children:
+      - Name: ListenEventType
+        Id: g=ed32a660d006b25ffe1a10cf0ddcc2de
+        Type: PropertyType
+        DataType: NodeId
+        Value: "/Types/EventTypes/BaseEventType/MouseEvent/MouseClickEvent"
+      - Name: MethodsToCall
+        Id: g=973baacf5c708126193c8c142b525064
+        Type: BaseObjectType
+        Children:
+        - Name: MethodContainer1
+          Id: g=0fbcfb6ffadff55c79c9761f7c893904
+          Type: BaseObjectType
+          Children:
+          - Name: ObjectPointer
+            Id: g=19f7b2327c71a0c9b9c805ab1636fab2
+            Type: NodePointer
+            DataType: NodeId
+            Children:
+            - Name: Kind
+              Id: g=02b5c038e92cddbb9951f28583b67316
+              Type: PropertyType
+              DataType: NodeId
+              Value: "/Types/ObjectTypes/BaseObjectType"
+            - Name: DynamicLink
+              Id: g=d8650462d3df40ac9c93237b38babf09
+              Type: DynamicLink
+              DataType: NodePath
+              Value: "../../../../raSDK1_NL_NavUsingTag@NodeId"
+          - Name: Method
+            Id: g=67e6debfcb2f70860afad3827a6b5684
+            Type: BaseDataVariableType
+            DataType: String
+            Value: "NavTag"
+      - Name: EventArguments
+        Id: g=92edb898c5e3be46b8fb2a3440e6724c
+        Type: MouseClickEvent
+        Children:
+        - Name: EventId
+          Id: g=498ab22a2950722a327638e3fc92a10d
+          Type: PropertyType
+          DataType: ByteString
+        - Name: EventType
+          Id: g=27ce3a85fc041cda1ebbe0c7deb243e6
+          Type: PropertyType
+          DataType: NodeId
+        - Name: SourceNode
+          Id: g=88e17d623646d4f0f2fb09e934bbfc25
+          Type: PropertyType
+          DataType: NodeId
+        - Name: SourceName
+          Id: g=b91594bc9371935003c8d2ec47ffaae5
+          Type: PropertyType
+          DataType: String
+        - Name: Time
+          Id: g=ae8a3ae62350ab963be4dc55f7f74401
+          Type: PropertyType
+          DataType: UtcTime
+        - Name: ReceiveTime
+          Id: g=73b498f7c622b5c4927f9acba7754dfe
+          Type: PropertyType
+          DataType: UtcTime
+        - Name: Message
+          Id: g=95010981235e5ff2683f2f82c6c03865
+          Type: PropertyType
+          DataType: LocalizedText
+        - Name: Severity
+          Id: g=e7a81cad738665be8e2115cb2395b558
+          Type: PropertyType
+          DataType: UInt16
+    - Name: Style
+      Id: g=f75a245c613f73195cbf9314f45f2713
+      Type: BaseDataVariableType
+      DataType: String
+      Value: "Transparent"
+      Children:
+      - Name: KeyValueConverter1
+        Id: g=ad1375c57d4ebcd5faa12e7bf122e886
+        Type: ValueMapConverter
+        Children:
+        - Name: Source
+          Id: g=6c0d8847b4783fcb15c264b2d69d41db
+          Type: BaseDataVariableType
+          DataType: BaseDataType
+          ReferenceType: HasSource
+          Children:
+          - Name: DynamicLink
+            Id: g=87ef08fee920e1aedfd090e3e9b9593b
+            Type: DynamicLink
+            DataType: NodePath
+            Value: "../../../../Cfg_ShowNavigationBorder"
+        - Name: ns=9;Pairs
+          Id: g=3d9c27df790b0e72aff85cdf8797748e
+          Type: BaseObjectType
+          Children:
+          - Name: Pair
+            Id: g=d1467cc1cea0f89aa4a6dc487a47acc3
+            Type: ValueMapPair
+            Children:
+            - Name: Key
+              Id: g=eef6001094702d2822dbfc7dddc68c6d
+              Type: BaseDataVariableType
+              DataType: Boolean
+            - Name: Value
+              Id: g=4498b331d4133505274146d95d5ca353
+              Type: BaseDataVariableType
+              DataType: String
+              Value: "Transparent"
+          - Name: Pair1
+            Id: g=116c0618790cb8e70862b2d779610d5b
+            Type: ValueMapPair
+            Children:
+            - Name: Key
+              Id: g=77b1cff62773746839f7a7e9a3fa1681
+              Type: BaseDataVariableType
+              DataType: Boolean
+              Value: true
+            - Name: Value
+              Id: g=0d661f34c80fcf820416faced1c5387d
+              Type: BaseDataVariableType
+              DataType: String
+              Value: "Navigation"
+    - Name: Visible
+      Id: g=ae29f5c860738fc6777e44e1b17e9dc6
+      Type: BaseDataVariableType
+      DataType: Boolean
+      Value: true
+      Children:
+      - Name: DynamicLink
+        Id: g=fd93f090974101996194cad2e1366ca5
+        Type: DynamicLink
+        DataType: NodePath
+        Value: "../../Inp_EnableNavigation"
+    - Name: Text
+      Id: g=8e41d1e24ea670c1f308c45ba2e86cc0
+      Type: BaseDataVariableType
+      DataType: LocalizedText
+  - Name: Tag
+    Id: g=1e943d95998121cd7362c76018eaaffc
+    Type: Alias
+    DataType: NodeId
+    Description: {"NamespaceIndex":40,"TextId":"Instruction backing tag"}
+    Children:
+    - Name: Kind
+      Id: g=fe238fc04e41b1ef7a7c09d07d72574a
+      Type: PropertyType
+      DataType: NodeId
+  - Name: Inp_EnableNavigation
+    Id: g=13f6704ee3937009c414a80dcc03f6f9
+    Type: BaseDataVariableType
+    DataType: Boolean
+    Description: {"NamespaceIndex":40,"TextId":"Set to false to turn off navigation"}
+    Value: true
+  - Name: Cfg_ShowNavigationBorder
+    Id: g=800a0307e618015b71f0246daa71e026
+    Type: BaseDataVariableType
+    DataType: Boolean
+  - Name: Cfg_ShowNavigationChevron
+    Id: g=eb42c31c9431039af8c8553c4901e9b5
+    Type: BaseDataVariableType
+    DataType: Boolean
+  - Name: img_Chevron
+    Id: g=311edbd6b1d9559ef487418006cca663
+    Type: Image
+    Children:
+    - Name: Path
+      Id: g=bc27d4992ce9e08a19d97d46eb2c7d63
+      Type: BaseDataVariableType
+      DataType: ResourceUri
+      Value: "ns=40;%PROJECTDIR%/res/Chevron2.svg"
+    - Name: Width
+      Id: g=a81e2e505a0405044d33949f7a0127de
+      Type: BaseVariableType
+      DataType: Size
+      ModellingRule: Optional
+      Value: 12.0
+    - Name: Height
+      Id: g=45ff082f938d8cc5d25ea98019cbe910
+      Type: BaseVariableType
+      DataType: Size
+      ModellingRule: Optional
+      Value: 16.0
+    - Name: VerticalAlignment
+      Id: g=23cc5fda4a404d1a006451e0615f9eb0
+      Type: BaseVariableType
+      DataType: VerticalAlignment
+      ModellingRule: Optional
+      Value: 2
+    - Name: HorizontalAlignment
+      Id: g=fb772a1c21321806523e0d4ce1d22294
+      Type: BaseVariableType
+      DataType: HorizontalAlignment
+      ModellingRule: Optional
+      Value: 1
+    - Name: RightMargin
+      Id: g=97a6285180830ecae6a6223aed1d5d1a
+      Type: BaseVariableType
+      DataType: Size
+      ModellingRule: Optional
+      Value: 4.0
+    - Name: DynamicColor
+      Id: g=f74ebbd223817fda51db63dda3b494be
+      Type: BaseDataVariableType
+      DataType: Color
+      Value: "#6a6a6a"
+    - Name: Visible
+      Id: g=eabae7fc861451a047b0928da5a5354f
+      Type: BaseDataVariableType
+      DataType: Boolean
+      Value: true
+      Children:
+      - Name: DynamicLink
+        Id: g=36071892e3732d66cb34d19b834f2536
+        Type: DynamicLink
+        DataType: NodePath
+        Value: "../../Cfg_ShowNavigationChevron"
+  - Name: ns=25;LibraryReference
+    Id: g=1aee02b0dfdebaa3521e90791eec4491
+    Type: ObjectLibraryReference
+    DataType: ObjectLibraryReferenceDataType
+    ModellingRule: None
+    Value: 
+     {
+      "TypeId": {
+       "Id": 72,
+       "Namespace": 25
+      },
+      "Body": {
+       "libraryGuid": "daa1802df0fca742317d7dafb83a218f",
+       "objectGuid": "6e16e62f0bfec5d96ca3feb392c669f0",
+       "objectVersion": 1,
+       "highestIgnoredVersion": 0
+      }
+     }

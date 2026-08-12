@@ -1,0 +1,389 @@
+Name: AuditLogging
+Id: g=1ed069e0d95053eb81446224d81d0c5e
+Type: FolderType
+Children:
+- Name: AuditLoggingDB
+  Id: g=e7499b5bd25e47982a25b8d515d9cc1a
+  Type: SQLiteStore
+  Children:
+  - Name: Tables
+    Id: g=2a2162585f87b7bd6a263090a4bdc03a
+    Type: BaseObjectType
+    Children:
+    - Name: AuditLogger
+      Id: g=ae2b6c6e9944387ca4f06bfb5a8b01ec
+      Type: SQLiteStoreTable
+      Children:
+      - Class: Reference
+        Target: ns=17;i=12
+        Direction: Forward
+      - Class: Reference
+        Target: ns=17;i=15
+        Direction: Forward
+      - Class: Reference
+        Target: ns=17;i=21
+        Direction: Forward
+      - Class: Reference
+        Target: ns=17;i=20
+        Direction: Forward
+      - Name: Columns
+        Id: g=88c9d126bcffc8e7bf3e599fbae732d3
+        Type: BaseObjectType
+        Children:
+        - Name: EventType
+          Id: g=77c2865d1117e1b4d2faeda6537a68b4
+          Type: StoreColumn
+          DataType: String
+        - Name: LocalTime
+          Id: g=513b25a7ba09ab7194de6fb1bf0ce27a
+          Type: StoreColumn
+          DataType: ns=0;DateTime
+        - Name: ClientUserId
+          Id: g=6256700a2bb625f3902f1261f6827b88
+          Type: StoreColumn
+          DataType: String
+        - Name: OldValue
+          Id: g=dba9252f2571e257c784677500634556
+          Type: StoreColumn
+          DataType: String
+        - Name: NewValue
+          Id: g=1862b8e4ffd8eabe98aa7fcc7d5a379a
+          Type: StoreColumn
+          DataType: String
+        - Name: SourceNode
+          Id: g=7778483abedd0a04cf2062017b66b959
+          Type: StoreColumn
+          DataType: String
+  - Class: Reference
+    Target: ns=31;i=30
+    Direction: Forward
+  - Class: Reference
+    Target: ns=31;i=33
+    Direction: Forward
+  - Name: MaxColumnNameLength
+    Id: g=b796d76af9f06bc2f497aed3a816ae43
+    Type: BaseDataVariableType
+    DataType: UInt32
+    AccessLevel: Read
+  - Name: MaxColumnCount
+    Id: g=a123bee02d035fc701177559bbe102ed
+    Type: BaseDataVariableType
+    DataType: UInt32
+    AccessLevel: Read
+  - Name: DataTypeCompatibilityMap
+    Id: g=4207b11a9a314ddf9aea85e41eae0bb3
+    Type: BaseDataVariableType
+    DataType: NodeId
+    AccessLevel: Read
+    ValueRank: OneOrMoreDimensions
+    ArrayDimensions: [0,0]
+  - Name: Status
+    Id: g=fae0ee715587ad377f67d77300dbc86c
+    Type: PropertyType
+    DataType: StoreStatus
+    AccessLevel: Read
+    Value: 2
+  - Class: Reference
+    Target: ns=17;i=22
+    Direction: Forward
+  - Class: Reference
+    Target: ns=17;i=6
+    Direction: Forward
+  - Class: Reference
+    Target: ns=17;i=8
+    Direction: Forward
+  - Class: Reference
+    Target: ns=17;i=25
+    Direction: Forward
+  - Class: Reference
+    Target: ns=17;i=38
+    Direction: Forward
+  - Class: Reference
+    Target: ns=17;i=41
+    Direction: Forward
+  - Class: Reference
+    Target: ns=17;i=44
+    Direction: Forward
+  - Class: Reference
+    Target: ns=17;i=53
+    Direction: Forward
+  - Class: Reference
+    Target: ns=17;i=55
+    Direction: Forward
+  - Class: Reference
+    Target: ns=17;i=57
+    Direction: Forward
+  - Class: Reference
+    Target: ns=17;i=59
+    Direction: Forward
+  - Class: Reference
+    Target: ns=17;i=67
+    Direction: Forward
+- Name: AuditLogger
+  Id: g=b3d68fb69bd64daf77cde713c7617a6a
+  Type: EventLogger
+  Children:
+  - Name: Enabled
+    Id: g=e1e48527f583513b1b694089b3cf2904
+    Type: PropertyType
+    DataType: Boolean
+    Value: true
+  - Name: Store
+    Id: g=7476e9d034039f7d8d0dacadb59c9d70
+    Type: NodePointer
+    DataType: NodeId
+    Value: "/Objects/ProcessLibrary_CompressorDemo/Audit/AuditLogging/AuditLoggingDB"
+    Children:
+    - Name: Kind
+      Id: g=c0c8849c15e5599d51cc80d045c57f9c
+      Type: PropertyType
+      DataType: NodeId
+      Value: "/Types/ObjectTypes/BaseObjectType/Store"
+  - Name: EventConfigurations
+    Id: g=c9c8fc66c7c622edd0290d7d0a8cb1bf
+    Type: BaseObjectType
+    Children:
+    - Name: EventConfiguration1
+      Id: g=74ac32dd54c0d4f132e08efe4e2cd32c
+      Type: EventConfiguration
+      Children:
+      - Name: EventType
+        Id: g=182b35011d6d62d071b43a6d38d635d4
+        Type: NodePointer
+        DataType: NodeId
+        ReferenceType: HasProperty
+        Value: "/Types/EventTypes/BaseEventType/AuditEventType/AuditUpdateEventType"
+        Children:
+        - Name: Kind
+          Id: g=cc4ed5ea697431feb7941d6ef2b779ce
+          Type: PropertyType
+          DataType: NodeId
+          Value: "/Types/EventTypes/BaseEventType"
+      - Name: ExcludeNonInteractiveSessions
+        Id: g=a8ddac02c00f95c059382f958243bb35
+        Type: PropertyType
+        DataType: Boolean
+        Value: true
+      - Name: EventSource
+        Id: g=a96cf58c0662511e3e9e4c2e5f393a70
+        Type: NodePointer
+        DataType: NodeId
+        ReferenceType: HasProperty
+        Children:
+        - Name: Kind
+          Id: g=dd786f0d7b0f89e00e5e979a2f25ee62
+          Type: PropertyType
+          DataType: NodeId
+          Value: "/Types/ObjectTypes/BaseObjectType"
+        - Name: DynamicLink
+          Id: g=82e3e704019b284b992989ed3d1c7e97
+          Type: DynamicLink
+          DataType: NodePath
+          Value: "../../../../../../CommDrivers"
+          Children:
+          - Name: Mode
+            Id: g=e8498259762292f192fee3e3b2d9cf29
+            Type: BaseVariableType
+            DataType: DynamicLinkMode
+            Value: 2
+  - Name: EventFieldPaths
+    Id: g=c53c6e0f832b41df1ca5c93714dcf5c8
+    Type: BaseObjectType
+    Children:
+    - Name: EventType
+      Id: g=3ca67599a046a10ba25f8e0d52b60f4e
+      Type: EventFieldPath
+      DataType: NodePath
+      Value: "/0:EventType"
+    - Name: SourceName
+      Id: g=87d74060cea3e43c0d2bca26b5453b08
+      Type: EventFieldPath
+      DataType: NodePath
+      Value: "/0:SourceName"
+    - Name: ActionTimeStamp
+      Id: g=63848cea5d96b63802a2242bea3dbd58
+      Type: EventFieldPath
+      DataType: NodePath
+      Value: "/0:ActionTimeStamp"
+    - Name: ClientUserId
+      Id: g=3111ff2b763ac937d72b99780849b134
+      Type: EventFieldPath
+      DataType: NodePath
+      Value: "/0:ClientUserId"
+    - Name: NewValue
+      Id: g=7cf30b9eebf4ae6b6d35db8b73e58ab6
+      Type: EventFieldPath
+      DataType: NodePath
+      Value: "/0:NewValue"
+    - Name: OldValue
+      Id: g=066bd621982173dddb55e8a87204a47a
+      Type: EventFieldPath
+      DataType: NodePath
+      Value: "/0:OldValue"
+    - Name: SourceNode
+      Id: g=d5c56e1158a1e59b3ac406d8370f38cd
+      Type: EventFieldPath
+      DataType: NodePath
+      Value: "/0:SourceNode"
+    - Name: LocalTime
+      Id: g=94bb5ccabcc7a664d877ddd00dab9a4c
+      Type: EventFieldPath
+      DataType: NodePath
+      Value: "/0:LocalTime"
+    - Name: Time
+      Id: g=2cf34aa0c0b5992f77cf1411e039ce09
+      Type: EventFieldPath
+      DataType: NodePath
+      Value: "/0:Time"
+  - Name: EventArguments
+    Id: g=21b1da774e7d58c4e406dec6e10212e7
+    Type: BaseObjectType
+    Children:
+    - Name: EventTypeId
+      Id: g=a140e228f0d44e0e36ba38cea3eff09b
+      Type: BaseDataVariableType
+      DataType: NodeId
+    - Name: EventType
+      Id: g=8c11cdf81c75b24f42477d9df397820e
+      Type: BaseDataVariableType
+      DataType: NodeId
+    - Name: SourceName
+      Id: g=bf24401f3aa2ea35fab0823e64be4505
+      Type: BaseDataVariableType
+      DataType: String
+    - Name: ActionTimeStamp
+      Id: g=0f5d3af91ccdda5dae490e552c66e533
+      Type: BaseDataVariableType
+      DataType: UtcTime
+    - Name: ClientUserId
+      Id: g=1b2f321d5c976cf37613c1222f304ee6
+      Type: BaseDataVariableType
+      DataType: String
+    - Name: NewValue
+      Id: g=c448fabe90825de0c07376b04da16c0a
+      Type: BaseDataVariableType
+      DataType: BaseDataType
+    - Name: OldValue
+      Id: g=f4c4a05bb54b7f03d5fe2226aba93fb1
+      Type: BaseDataVariableType
+      DataType: BaseDataType
+    - Name: SourceNode
+      Id: g=499855f21ca635efb60cfb6ed0dd29da
+      Type: BaseDataVariableType
+      DataType: NodeId
+    - Name: LocalTime
+      Id: g=62d1776577ade99a9e748e4eca0ba9c2
+      Type: BaseDataVariableType
+      DataType: TimeZoneDataType
+    - Name: Time
+      Id: g=feed5e41d668905e4e5015b932db98f0
+      Type: BaseDataVariableType
+      DataType: UtcTime
+  - Name: EventFieldsToLog
+    Id: g=2e56b3defeaddde0fee0829ec4e905db
+    Type: BaseObjectType
+    Children:
+    - Name: EventType
+      Id: g=2de5445a31c7a90424df931f93368efe
+      Type: EventFieldToLog
+      DataType: String
+      Children:
+      - Name: DynamicLink
+        Id: g=0bccbaad18798fe2d118de1047a76da7
+        Type: DynamicLink
+        DataType: NodePath
+        Value: "../../EventArguments/EventType@BrowseName"
+    - Name: LocalTime
+      Id: g=aabf32e51b2c743f6b836bf127231d94
+      Type: EventFieldToLog
+      DataType: ns=0;DateTime
+      Children:
+      - Name: ExpressionEvaluator1
+        Id: g=7130b01c43db56b7924baa6626bb9c7d
+        Type: ExpressionEvaluator
+        Children:
+        - Name: Expression
+          Id: g=86187edcc0cf4f8e0279738b59271399
+          Type: BaseDataVariableType
+          DataType: String
+          ReferenceType: HasParameter
+          Value: "{0}+{1}"
+        - Name: ns=9;Source0
+          Id: g=f5da4e652bd0594c5c3ff2595450a8cb
+          Type: BaseDataVariableType
+          DataType: BaseDataType
+          ReferenceType: HasSource
+          Children:
+          - Name: DynamicLink
+            Id: g=5ae87742aa563817d4dde8b62e6c62f7
+            Type: DynamicLink
+            DataType: NodePath
+            Value: "../../../../EventArguments/Time"
+        - Name: ns=9;Source1
+          Id: g=dd8e817e8f95db0fb3938abdc55e0039
+          Type: BaseDataVariableType
+          DataType: BaseDataType
+          ReferenceType: HasSource
+          Children:
+          - Name: DynamicLink
+            Id: g=3f8197e18f503a4a0e2b78a1be2fdaf4
+            Type: DynamicLink
+            DataType: NodePath
+            Value: "../../../../EventArguments/LocalTime"
+    - Name: ClientUserId
+      Id: g=e71bd0f2cd27d3b5720a3524cbc38948
+      Type: EventFieldToLog
+      DataType: String
+      Children:
+      - Name: DynamicLink
+        Id: g=2e6406df5c0081e53b855109d017d940
+        Type: DynamicLink
+        DataType: NodePath
+        Value: "../../EventArguments/ClientUserId"
+    - Name: OldValue
+      Id: g=1347d63a68cccf5345e5b066d31c186a
+      Type: EventFieldToLog
+      DataType: String
+      Children:
+      - Name: DynamicLink
+        Id: g=c087ec40fbadf576c39c410b7e8d9511
+        Type: DynamicLink
+        DataType: NodePath
+        Value: "../../EventArguments/OldValue"
+    - Name: NewValue
+      Id: g=d0d3a6b6a206be0642345ef5581e493c
+      Type: EventFieldToLog
+      DataType: String
+      Children:
+      - Name: DynamicLink
+        Id: g=cc3c0aec8cd0a5c3887b87327b9add58
+        Type: DynamicLink
+        DataType: NodePath
+        Value: "../../EventArguments/NewValue"
+    - Name: SourceNode
+      Id: g=3d559086eebb8e3f16cfaed91d2b6b03
+      Type: EventFieldToLog
+      DataType: String
+      Children:
+      - Name: DynamicLink
+        Id: g=0cf27c18db1a9c2ae799d77e9c982ced
+        Type: DynamicLink
+        DataType: NodePath
+        Value: "../../EventArguments/SourceNode@BrowsePath"
+- Name: ns=25;LibraryReference
+  Id: g=d39c643eec99c4459aa28798a6040162
+  Type: ObjectLibraryReference
+  DataType: ObjectLibraryReferenceDataType
+  Value: 
+   {
+    "TypeId": {
+     "Id": 72,
+     "Namespace": 25
+    },
+    "Body": {
+     "libraryGuid": "ce5b4ad362a354a902b4b4507613e5f8",
+     "objectGuid": "665c16a68b37d66e94aa6595b2607b59",
+     "objectVersion": 1,
+     "highestIgnoredVersion": 0
+    }
+   }

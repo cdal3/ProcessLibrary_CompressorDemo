@@ -1,0 +1,1385 @@
+Name: GraphicSymbols
+Id: g=1839ef7b86a30471161a36a1786719bb
+Type: FolderType
+Children:
+- Name: raP_5_20_PDBC_GS_BaseObj
+  Id: g=d24a23969c940d423c06da26bffa647a
+  Supertype: raP_5_20_GraphicSymbolWithAlarmQuickBase
+  ReferenceType: HasComponent
+  Children:
+  - Name: Nav_UsingTag
+    Id: g=0a10f4da762e247b2a3107f6eb71cdf5
+    Type: raSDK1_NavUsingTag
+    Children:
+    - Name: Cfg_CloseCurrentDisplay
+      Id: g=371d6a8a29f8233fad66cfd952294d0c
+      Type: BaseDataVariableType
+      DataType: Boolean
+    - Name: Cfg_DisplayType
+      Id: g=e2fc7601d84a34a97615e234f49c612f
+      Type: BaseDataVariableType
+      DataType: String
+      Value: "Faceplate"
+      Children:
+      - Name: ExpressionEvaluator1
+        Id: g=235a72c5ec554768d32a2c9eb274e5a1
+        Type: ExpressionEvaluator
+        Children:
+        - Name: Source0
+          Id: g=17b7656aa52afe73ad16efdff096a1d2
+          Type: BaseDataVariableType
+          DataType: BaseDataType
+          ReferenceType: HasSource
+          Children:
+          - Name: DynamicLink
+            Id: g=269b7f127b2d920de21d9278109ef74b
+            Type: DynamicLink
+            DataType: NodePath
+            Value: "../../../../Cfg_ShowFaceplate"
+    - Name: Ref_Tag
+      Id: g=f48c84ed6df52b6272ea0789b11b5702
+      Type: BaseDataVariableType
+      DataType: NodeId
+      Children:
+      - Name: DynamicLink
+        Id: g=d1b19b74faa6234f17722bc0b1e3557a
+        Type: DynamicLink
+        DataType: NodePath
+        Value: "{Tag}@Pointer"
+    - Name: raSDK1_NL_NavUsingTag
+      Id: g=f14ce9f7573587c1c5b0d73c8bd0d55a
+      Type: NetLogic
+      Children:
+      - Class: Reference
+        Target: g=6e0263b05a933c9fc26daf0e50fd482e
+        Direction: Forward
+    - Name: MouseClickEventHandler1
+      Id: g=84f28ba7fe4b98806b2963d260f51b79
+      Type: EventHandler
+      Children:
+      - Name: ListenEventType
+        Id: g=0ce5a57093e66e616f9b79bda0f3055c
+        Type: PropertyType
+        DataType: NodeId
+        Value: "/Types/EventTypes/BaseEventType/MouseEvent/MouseClickEvent"
+      - Name: MethodsToCall
+        Id: g=5e160b4e53904afbd2bc0f2e9cef5b8c
+        Type: BaseObjectType
+        Children:
+        - Name: MethodContainer1
+          Id: g=70c5c13dfec15424d515480104da32fa
+          Type: BaseObjectType
+          Children:
+          - Name: ObjectPointer
+            Id: g=2df0aec39dc5b268853728cb197ccda8
+            Type: NodePointer
+            DataType: NodeId
+            Children:
+            - Name: Kind
+              Id: g=93c8104ce94d2573eff31e87936ba059
+              Type: PropertyType
+              DataType: NodeId
+              Value: "/Types/ObjectTypes/BaseObjectType"
+            - Name: DynamicLink
+              Id: g=36d3816032e5aa88114ddd3b8a1c50e8
+              Type: DynamicLink
+              DataType: NodePath
+              Value: "../../../../raSDK1_NL_NavUsingTag@NodeId"
+          - Name: Method
+            Id: g=314be60ca531aa629a2e3eb731a1a394
+            Type: BaseDataVariableType
+            DataType: String
+            Value: "NavTag"
+      - Name: EventArguments
+        Id: g=19bc65894f4f2e87cc245069919e289a
+        Type: MouseClickEvent
+        Children:
+        - Name: EventId
+          Id: g=433fabef5d850a98511a1a47f038d7b6
+          Type: PropertyType
+          DataType: ByteString
+        - Name: EventType
+          Id: g=66dcee71ea084d09445645de2887f936
+          Type: PropertyType
+          DataType: NodeId
+        - Name: SourceNode
+          Id: g=ccd3f8ae77d44b42b011018dbc8db181
+          Type: PropertyType
+          DataType: NodeId
+        - Name: SourceName
+          Id: g=dfd999cfae682fff0238e90daa656b5a
+          Type: PropertyType
+          DataType: String
+        - Name: Time
+          Id: g=da5bd68360f06f459856d406f2ee2bc9
+          Type: PropertyType
+          DataType: UtcTime
+        - Name: ReceiveTime
+          Id: g=3ffb83652a99d001a1f208711a8dd53c
+          Type: PropertyType
+          DataType: UtcTime
+        - Name: Message
+          Id: g=65c9ce71b411ef60c4fcbc2154b02c51
+          Type: PropertyType
+          DataType: LocalizedText
+        - Name: Severity
+          Id: g=cae1a8e5231083f4ebd6ea8270b864ae
+          Type: PropertyType
+          DataType: UInt16
+    - Name: Visible
+      Id: g=bacd87016f7b8a77e2c84d447f5023fb
+      Type: BaseDataVariableType
+      DataType: Boolean
+      Value: true
+      Children:
+      - Name: DynamicLink
+        Id: g=fb45ff839a2bb0d2948a9497315c639b
+        Type: DynamicLink
+        DataType: NodePath
+        Value: "../../Inp_EnableNavigation"
+    - Name: Style
+      Id: g=a197b08ab63dfc2e8c49c5b76c9c340c
+      Type: BaseDataVariableType
+      DataType: String
+      Value: "Transparent"
+      Children:
+      - Name: KeyValueConverter1
+        Id: g=10a3e66deca42fda9c2cab8d399d215d
+        Type: ValueMapConverter
+        Children:
+        - Name: Source
+          Id: g=19d1a8cdeedb2d89d930b9e49d0d3a85
+          Type: BaseDataVariableType
+          DataType: BaseDataType
+          ReferenceType: HasSource
+          Children:
+          - Name: DynamicLink
+            Id: g=aab57d1973815d5805d56b0298eb2728
+            Type: DynamicLink
+            DataType: NodePath
+            Value: "../../../../Cfg_ShowNavigationBorder"
+        - Name: Pairs
+          Id: g=8b6e7bbddedd1b7cc57867c28410b914
+          Type: BaseObjectType
+          Children:
+          - Name: Pair
+            Id: g=7ebe2224a4407c8a3ecc2b360248091d
+            Type: ValueMapPair
+            Children:
+            - Name: Key
+              Id: g=726ff710214ed2469f1f817da1f75d64
+              Type: BaseDataVariableType
+              DataType: Boolean
+            - Name: Value
+              Id: g=173653e618d841ff20ac5253e2aa3661
+              Type: BaseDataVariableType
+              DataType: String
+              Value: "Transparent"
+          - Name: Pair1
+            Id: g=e545c045306bed3cf573dd314aa23016
+            Type: ValueMapPair
+            Children:
+            - Name: Key
+              Id: g=7cfb7bcbaf4c8aed04afb6024d0c2c59
+              Type: BaseDataVariableType
+              DataType: Boolean
+              Value: true
+            - Name: Value
+              Id: g=2de7a69268ddd1c94590b51d38056c75
+              Type: BaseDataVariableType
+              DataType: String
+              Value: "Navigation"
+    - Name: Text
+      Id: g=38599891dd3fc7adbf7888f72f9834df
+      Type: BaseDataVariableType
+      DataType: LocalizedText
+  - Name: Tag
+    Id: g=d0784527852e42bd5ca23a6f0b651305
+    Type: Alias
+    DataType: NodeId
+    Children:
+    - Name: Kind
+      Id: g=3fe5e64c15a634f3578288d46d9ed0fe
+      Type: PropertyType
+      DataType: NodeId
+  - Name: GraphicSymbolContents
+    Id: g=01f0fb14404415157ac5d4d8f168fe3e
+    Type: Panel
+    Children:
+    - Name: VerticalLayout
+      Id: g=1782f257e211cd4487013d9f0d355ebb
+      Type: ColumnLayout
+      Children:
+      - Name: Width
+        Id: g=cf8a282f61ac66ddd2ef998fbb13ce73
+        Type: BaseVariableType
+        DataType: Size
+        ModellingRule: Optional
+        Value: 144.0
+      - Name: Height
+        Id: g=229a5cff5b2208373f4d93c6360dd026
+        Type: BaseVariableType
+        DataType: Size
+        ModellingRule: Optional
+        Value: -1.0
+      - Name: Label
+        Id: g=cc6f048e2ba09e6e64e8561d1807c300
+        Type: Label
+        Children:
+        - Name: Text
+          Id: g=00fab29b2af0cf70982eb01eb8e6590d
+          Type: BaseDataVariableType
+          DataType: LocalizedText
+          Children:
+          - Name: DynamicLink
+            Id: g=ffc0a131229c52515530aeefe489435d
+            Type: DynamicLink
+            DataType: NodePath
+            Value: "{Tag}/Label"
+            Children:
+            - Name: Mode
+              Id: g=73d2d4af8d3dbc8e2767bde0e5c5dd6d
+              Type: BaseVariableType
+              DataType: DynamicLinkMode
+              ModellingRule: Optional
+              Value: 2
+        - Name: HorizontalAlignment
+          Id: g=a4a3191282e68d381413934192741fcb
+          Type: BaseVariableType
+          DataType: HorizontalAlignment
+          ModellingRule: Optional
+          Value: 3
+        - Name: VerticalAlignment
+          Id: g=890d4caa5ab738df2dba2b06d719adff
+          Type: BaseVariableType
+          DataType: VerticalAlignment
+          ModellingRule: Optional
+          Value: 2
+        - Name: Style
+          Id: g=eaed4b2582c20422a551d1ac819ba9aa
+          Type: BaseDataVariableType
+          DataType: String
+          ModellingRule: Optional
+          Value: "Data Label"
+        - Name: TextHorizontalAlignment
+          Id: g=c6c38f49f721d70a8542e4c1a0f65229
+          Type: BaseVariableType
+          DataType: TextHorizontalAlignment
+          ModellingRule: Optional
+          Value: 1
+        - Name: TextVerticalAlignment
+          Id: g=195b9a70457b2522baafae10aa7c5803
+          Type: BaseVariableType
+          DataType: TextVerticalAlignment
+          ModellingRule: Optional
+          Value: 1
+        - Name: WordWrap
+          Id: g=2b20f15700bb9c4273c9bdeab2142bdc
+          Type: BaseDataVariableType
+          DataType: Boolean
+          ModellingRule: Optional
+          Value: true
+        - Name: LeftMargin
+          Id: g=77df610e0206bab37bb25fe458929daa
+          Type: BaseVariableType
+          DataType: Size
+          ModellingRule: Optional
+          Value: 20.0
+        - Name: RightMargin
+          Id: g=48d489dbf939f8a9b67a7ae373555de8
+          Type: BaseVariableType
+          DataType: Size
+          ModellingRule: Optional
+          Value: 20.0
+      - Name: ND_ValUnit
+        Id: g=764940f04a56b7585d227c5602274aff
+        Type: raSDK1_ND_ValUnit
+        Children:
+        - Name: Cfg_Units
+          Id: g=f8cceb4ec27bc262e3b27c95183ed7f7
+          Type: BaseDataVariableType
+          DataType: LocalizedText
+          Value: {"LocaleId":"en-US","Text":"Units"}
+          Children:
+          - Name: DynamicLink
+            Id: g=693aadd9b21a338598b2383547c6ac2e
+            Type: DynamicLink
+            DataType: NodePath
+            Value: "{Tag}/Val_PV/EngineeringUnits/DisplayName"
+            Children:
+            - Name: Mode
+              Id: g=b6368a22894c0e579f66fdc36827c24e
+              Type: BaseVariableType
+              DataType: DynamicLinkMode
+              ModellingRule: Optional
+              Value: 2
+        - Name: Inp_Value
+          Id: g=52a7e77473c29bebb687861756aa1db9
+          Type: BaseDataVariableType
+          DataType: Float
+          Children:
+          - Name: DynamicLink
+            Id: g=de30e1870ea4d11e440851bc2381de44
+            Type: DynamicLink
+            DataType: NodePath
+            Value: "{Tag}/Val_PV"
+            Children:
+            - Name: Mode
+              Id: g=a07aa75bd22572f6888e586bdb3c07e0
+              Type: BaseVariableType
+              DataType: DynamicLinkMode
+              ModellingRule: Optional
+              Value: 2
+        - Name: Set_DecimalPlaces
+          Id: g=ad907d936d1e6514dbb10ee5b66556dc
+          Type: BaseDataVariableType
+          DataType: Int32
+          Children:
+          - Name: DynamicLink
+            Id: g=70f1a3fb40e73d106091e6d58726c1e8
+            Type: DynamicLink
+            DataType: NodePath
+            Value: "{Tag}/Cfg_PVDecPlcs"
+            Children:
+            - Name: Mode
+              Id: g=1b35ef5a8daf34d89b5e53802080efd6
+              Type: BaseVariableType
+              DataType: DynamicLinkMode
+              ModellingRule: Optional
+              Value: 2
+        - Name: Cfg_DisplayAsPrimary
+          Id: g=ba4d6a284c7aeb7aa5f4a54b556ce8dd
+          Type: BaseDataVariableType
+          DataType: Boolean
+          Value: true
+        - Name: Value
+          Id: g=1a9c56c5301552e11b699b6eea58299c
+          Type: Label
+          Children:
+          - Name: Text
+            Id: g=cf44995975f76bce1b19d5e80a707662
+            Type: BaseDataVariableType
+            DataType: LocalizedText
+            Children:
+            - Name: StringFormatter1
+              Id: g=af8fab978ad67e798adb042a45a14300
+              Type: StringFormatter
+              Children:
+              - Name: Source0
+                Id: g=8d04e55108e9387e59dfd303cf867107
+                Type: BaseDataVariableType
+                DataType: BaseDataType
+                ReferenceType: HasSource
+                Children:
+                - Name: DynamicLink
+                  Id: g=9ffa7079858fb8f0d2fd0acaacaa0201
+                  Type: DynamicLink
+                  DataType: NodePath
+                  Value: "../../../../Inp_Value"
+              - Name: Source1
+                Id: g=ef7cf0da877b0b453c0116d637a83e69
+                Type: BaseDataVariableType
+                DataType: BaseDataType
+                ReferenceType: HasSource
+                Children:
+                - Name: DynamicLink
+                  Id: g=6dae0c02869bad25e52707a17424d1db
+                  Type: DynamicLink
+                  DataType: NodePath
+                  Value: "../../../../Set_DecimalPlaces"
+          - Name: Style
+            Id: g=de909b9e4d5b22684477e639a8a5dc69
+            Type: BaseDataVariableType
+            DataType: String
+            Value: "Live Data"
+            Children:
+            - Name: ExpressionEvaluator1
+              Id: g=b12a99c72b3e82ae564ad15c946bd2c0
+              Type: ExpressionEvaluator
+              Children:
+              - Name: Source0
+                Id: g=f2cce2854f1add47c148167c25029830
+                Type: BaseDataVariableType
+                DataType: BaseDataType
+                ReferenceType: HasSource
+                Children:
+                - Name: DynamicLink
+                  Id: g=d642dffad943c6d2e49e16969a4b5a38
+                  Type: DynamicLink
+                  DataType: NodePath
+                  Value: "../../../../Cfg_DisplayAsPrimary"
+        - Name: Units
+          Id: g=50b9d1a20f2e5f19c78e4128e635cf56
+          Type: Label
+          Children:
+          - Name: Text
+            Id: g=13a3cdb0d6831cdaa07b2f92de2167f8
+            Type: BaseDataVariableType
+            DataType: LocalizedText
+            Children:
+            - Name: DynamicLink
+              Id: g=cfc448dd2e61bdebf48fe37135dc502a
+              Type: DynamicLink
+              DataType: NodePath
+              Value: "../../Cfg_Units"
+          - Name: FontSize
+            Id: g=edbf7cf576af984efc97811b1ed0c8d4
+            Type: BaseDataVariableType
+            DataType: Size
+            Value: -1.0
+        - Name: LeftMargin
+          Id: g=0ed55eb10dbf85d65a36ef05930078ed
+          Type: BaseVariableType
+          DataType: Size
+          ModellingRule: Optional
+        - Name: HorizontalAlignment
+          Id: g=82601f8274d524aa14e48ae988a7133c
+          Type: BaseVariableType
+          DataType: HorizontalAlignment
+          ModellingRule: Optional
+          Value: 2
+        - Name: VerticalAlignment
+          Id: g=5ccacc380a14d0a167ce0883c5283bb3
+          Type: BaseVariableType
+          DataType: VerticalAlignment
+          ModellingRule: Optional
+          Value: 2
+      - Name: HorizontalAlignment
+        Id: g=25332c80935205fdbf55dcb9e1a061f8
+        Type: BaseVariableType
+        DataType: HorizontalAlignment
+        ModellingRule: Optional
+        Value: 2
+      - Name: VerticalAlignment
+        Id: g=69e19475ba4780791d4b84b37a971021
+        Type: BaseVariableType
+        DataType: VerticalAlignment
+        ModellingRule: Optional
+        Value: 2
+      - Name: LeftMargin
+        Id: g=a44ece97060633ad4f79562fbd13f0f8
+        Type: BaseVariableType
+        DataType: Size
+        ModellingRule: Optional
+      - Name: RightMargin
+        Id: g=4c5d99988cfdf4694afbcee4d0efea58
+        Type: BaseVariableType
+        DataType: Size
+        ModellingRule: Optional
+      - Name: VerticalGap
+        Id: g=cb360a650700dd564a31770003e7e4e2
+        Type: BaseDataVariableType
+        DataType: Size
+        ModellingRule: Optional
+    - Name: msd_Exceptions
+      Id: g=bdc7aebed536fae26303dc706a76bd71
+      Type: raP_5_20_msd_ExceptionIcons
+      Children:
+      - Name: msd_SrcQExceptionIcons
+        Id: g=2edd2a99452c9b0bf865a6725bf79c71
+        Type: raP_5_20_msd_SrcQExceptionIcons
+        Children:
+        - Name: StateValue
+          Id: g=fa476fd1f3a6c4aef700a8474dfcef9a
+          Type: BaseDataVariableType
+          DataType: Int32
+          Children:
+          - Name: ExpressionEvaluator1
+            Id: g=55f717a73bed1e4f95e1437f8b65be3b
+            Type: ExpressionEvaluator
+            Children:
+            - Name: Source0
+              Id: g=a4edb329f8e92971179c25bec522ddf0
+              Type: BaseDataVariableType
+              DataType: BaseDataType
+              ReferenceType: HasSource
+              Children:
+              - Name: DynamicLink
+                Id: g=fbfbf6678a9b5633f95d992a4185d999
+                Type: DynamicLink
+                DataType: NodePath
+                Value: "../../../Inp_SrcQ"
+        - Name: States
+          Id: g=d4a801068af2518959fb03cb7a3b3054
+          Type: BaseObjectType
+          Children:
+          - Name: No Problems
+            Id: g=086ee49acf6fac134ac35be798d07736
+            Type: MultiStateImageState
+            Children:
+            - Name: Value
+              Id: g=09559fd713c12c80242577d4055a8c12
+              Type: BaseDataVariableType
+              DataType: Int32
+            - Name: Path
+              Id: g=3cee5b6da28413a19a8b1f1f35836c9e
+              Type: BaseDataVariableType
+              DataType: ResourceUri
+          - Name: Virtual
+            Id: g=ee0eb3623e145d9ee8e9fe59ea90844a
+            Type: MultiStateImageState
+            Children:
+            - Name: Value
+              Id: g=d733046f780f0c5fa9200ed96e77887c
+              Type: BaseDataVariableType
+              DataType: Int32
+              Value: 1
+            - Name: Path
+              Id: g=40a42e7edcc05b9ddd667d4cedb3dd27
+              Type: BaseDataVariableType
+              DataType: ResourceUri
+              Value: "ns=40;%PROJECTDIR%/res/Sts_Simulated.svg"
+          - Name: Comm Uncertain
+            Id: g=68247b4e74121001c7bf4ba36c2574b7
+            Type: MultiStateImageState
+            Children:
+            - Name: Value
+              Id: g=a82328f574dfb1762f4e26559958a736
+              Type: BaseDataVariableType
+              DataType: Int32
+              Value: 2
+            - Name: Path
+              Id: g=bc2b0b90814adf9d7e5cf2752765bb83
+              Type: BaseDataVariableType
+              DataType: ResourceUri
+              Value: "ns=40;%PROJECTDIR%/res/Sts_CommUncertain.svg"
+          - Name: Comm Bad
+            Id: g=024b90ed57a26059ee4e9d0ff91e62f4
+            Type: MultiStateImageState
+            Children:
+            - Name: Value
+              Id: g=a05809dcc53e7f95e4f05b532589540e
+              Type: BaseDataVariableType
+              DataType: Int32
+              Value: 3
+            - Name: Path
+              Id: g=7a6b28d8ef6e909dc18367b14ced62fb
+              Type: BaseDataVariableType
+              DataType: ResourceUri
+              Value: "ns=40;%PROJECTDIR%/res/Sts_CommBad.svg"
+          - Name: Bad Configuration
+            Id: g=a4f4b3c37857494a476efaf43bfff9ef
+            Type: MultiStateImageState
+            Children:
+            - Name: Value
+              Id: g=b86fa4d206979a974a69cd85737b5af5
+              Type: BaseDataVariableType
+              DataType: Int32
+              Value: 4
+            - Name: Path
+              Id: g=3af411320ed847f0950f3505a366f78c
+              Type: BaseDataVariableType
+              DataType: ResourceUri
+              Value: "ns=40;%PROJECTDIR%/res/Sts_BC_BadCfg.svg"
+        - Name: Path
+          Id: g=43648ea5613b9a1149729ca5067b38a5
+          Type: BaseDataVariableType
+          DataType: ResourceUri
+        - Name: Visible
+          Id: g=02cc3623858cf7c8d8abf11280b41be0
+          Type: BaseDataVariableType
+          DataType: Boolean
+          Value: true
+          Children:
+          - Name: ExpressionEvaluator1
+            Id: g=7064d55206310bceb14eca0b1545ead9
+            Type: ExpressionEvaluator
+            Children:
+            - Name: Source0
+              Id: g=6cb90f00d9e3f98e225766e9dc92ac75
+              Type: BaseDataVariableType
+              DataType: BaseDataType
+              ReferenceType: HasSource
+              Children:
+              - Name: DynamicLink
+                Id: g=a4247cd5e51cc12c64583bf6932af755
+                Type: DynamicLink
+                DataType: NodePath
+                Value: "../../../StateValue"
+        - Name: Inp_SrcQ
+          Id: g=f3788bc2a9233000f33f7766e5766e6d
+          Type: BaseDataVariableType
+          DataType: Int16
+          Children:
+          - Name: ExpressionEvaluator1
+            Id: g=007732a6771b95d8bdb262739b38688a
+            Type: ExpressionEvaluator
+            Children:
+            - Name: Source0
+              Id: g=8c1a754edea946231d58c91137a0a1ac
+              Type: BaseDataVariableType
+              DataType: BaseDataType
+              ReferenceType: HasSource
+              Children:
+              - Name: DynamicLink
+                Id: g=ee8b9bc842451ef7e41ca4bd0e53ac96
+                Type: DynamicLink
+                DataType: NodePath
+                Value: "../../../../Inp_Err"
+            - Name: Source1
+              Id: g=a38334a5e73390b0b4c9c03a523a9466
+              Type: BaseDataVariableType
+              DataType: BaseDataType
+              ReferenceType: HasSource
+              Children:
+              - Name: DynamicLink
+                Id: g=07b6464f61bebc08914438cdfc32b41f
+                Type: DynamicLink
+                DataType: NodePath
+                Value: "../../../../Inp_SrcQ"
+      - Name: Inp_SrcQ
+        Id: g=e296ee16bdc3bcb6283bf0b52b80c3fa
+        Type: BaseDataVariableType
+        DataType: Int16
+        Children:
+        - Name: DynamicLink
+          Id: g=1a9f46929269f8c431776e1ee20980b9
+          Type: DynamicLink
+          DataType: NodePath
+          Value: "{Tag}/SrcQ_IO"
+          Children:
+          - Name: Mode
+            Id: g=a61ad4d94acc419a05cf25dd7791ab0b
+            Type: BaseVariableType
+            DataType: DynamicLinkMode
+            ModellingRule: Optional
+            Value: 2
+      - Name: Inp_Err
+        Id: g=ad1304cf59956e1ee40ff53b516656b6
+        Type: BaseDataVariableType
+        DataType: Boolean
+        Children:
+        - Name: DynamicLink
+          Id: g=e2d41eac7002dcdc7ff425af484152b3
+          Type: DynamicLink
+          DataType: NodePath
+          Value: "{Tag}/Sts_Err"
+          Children:
+          - Name: Mode
+            Id: g=9634a18496745c7edee9159339d9515d
+            Type: BaseVariableType
+            DataType: DynamicLinkMode
+            ModellingRule: Optional
+            Value: 2
+      - Name: Width
+        Id: g=f850206e35814c35eed064054600e861
+        Type: BaseVariableType
+        DataType: Size
+        ModellingRule: Optional
+        Value: 18.0
+      - Name: Height
+        Id: g=b01c7371200eb2846869e5b68b660444
+        Type: BaseVariableType
+        DataType: Size
+        ModellingRule: Optional
+        Value: 18.0
+      - Name: VerticalAlignment
+        Id: g=61967a185c74a1142197911d97770532
+        Type: BaseVariableType
+        DataType: VerticalAlignment
+        ModellingRule: Optional
+        Value: 1
+    - Name: msd_CmdSrcExceptions
+      Id: g=0b4d36abd04e960d85d2a4e2220fffd4
+      Type: raP_5_20_msd_CmdSrcExceptions
+      Children:
+      - Name: StateValue
+        Id: g=76647dcd21009021c9711c16dcf1a6e6
+        Type: BaseDataVariableType
+        DataType: Int32
+        Children:
+        - Name: ExpressionEvaluator1
+          Id: g=7537dfe4d6842986de3152821cbe5d54
+          Type: ExpressionEvaluator
+          Children:
+          - Name: Source0
+            Id: g=4bf58e4d3d5b63e792d92f4f14b114fd
+            Type: BaseDataVariableType
+            DataType: BaseDataType
+            ReferenceType: HasSource
+            Children:
+            - Name: DynamicLink
+              Id: g=9bfc4779b91a50ed43330f62d07248d4
+              Type: DynamicLink
+              DataType: NodePath
+              Value: "{Tag}/Sts_OoS"
+          - Name: Source1
+            Id: g=d8fbf024f0219cd5d0e506dc232048d0
+            Type: BaseDataVariableType
+            DataType: BaseDataType
+            ReferenceType: HasSource
+            Children:
+            - Name: DynamicLink
+              Id: g=9132d53f686bbaf16e29539976586780
+              Type: DynamicLink
+              DataType: NodePath
+              Value: "{Tag}/Sts_Normal"
+      - Name: States
+        Id: g=b356227e46c6b5c3d09987db1e507ca1
+        Type: BaseObjectType
+        Children:
+        - Name: State1
+          Id: g=23f7a11df06c56f96a73f02adef3e3e1
+          Type: MultiStateImageState
+          Children:
+          - Name: Value
+            Id: g=9852129a2f754fa8846b00a80d6571ba
+            Type: BaseDataVariableType
+            DataType: Int32
+          - Name: Path
+            Id: g=2407b588a65f7be1c91c92043b777f8e
+            Type: BaseDataVariableType
+            DataType: ResourceUri
+        - Name: CmdSrcNotNormal
+          Id: g=1d030290a3d54e027192a259b1a181ac
+          Type: MultiStateImageState
+          Children:
+          - Name: Value
+            Id: g=f4a65d52653d270dfe456af995f32f6c
+            Type: BaseDataVariableType
+            DataType: Int32
+            Value: 1
+          - Name: Path
+            Id: g=eafb14c150cc675e131a43c534b1a887
+            Type: BaseDataVariableType
+            DataType: ResourceUri
+            Value: "ns=40;%PROJECTDIR%/res/Sts_BC_CmdSrcNotNorm.svg"
+        - Name: CmdSrcOoS
+          Id: g=92d9c492fdab0384e9c20bedc937209b
+          Type: MultiStateImageState
+          Children:
+          - Name: Value
+            Id: g=738f44c8833260692017752e60158eea
+            Type: BaseDataVariableType
+            DataType: Int32
+            Value: 2
+          - Name: Path
+            Id: g=56fae387dd9dbd7466d498d648c1eef7
+            Type: BaseDataVariableType
+            DataType: ResourceUri
+            Value: "ns=40;%PROJECTDIR%/res/Sts_CmdSrcOoS.svg"
+      - Name: Path
+        Id: g=5b479bd2387016fb425d18e1db38b4d7
+        Type: BaseDataVariableType
+        DataType: ResourceUri
+      - Name: Visible
+        Id: g=175f2b5adf0a7fe751a431d310e81e7c
+        Type: BaseDataVariableType
+        DataType: Boolean
+        Value: true
+        Children:
+        - Name: ExpressionEvaluator1
+          Id: g=f9579d38bb87633a406cc10f5b6a576e
+          Type: ExpressionEvaluator
+          Children:
+          - Name: Source0
+            Id: g=d3fbcec6f43b40db064d4b0111795f3d
+            Type: BaseDataVariableType
+            DataType: BaseDataType
+            ReferenceType: HasSource
+            Children:
+            - Name: DynamicLink
+              Id: g=4b8d8ddf5ec874d7ab15abd6adfd6c9a
+              Type: DynamicLink
+              DataType: NodePath
+              Value: "../../../StateValue"
+      - Name: HorizontalAlignment
+        Id: g=e23ba2f38e2cc8e9debae76a1eeecbe7
+        Type: BaseVariableType
+        DataType: HorizontalAlignment
+        ModellingRule: Optional
+        Value: 1
+    - Name: msd_LoopMode
+      Id: g=c19fab7b0c4fa0631ec3f49c1195403d
+      Type: MultiStateImage
+      Children:
+      - Name: StateValue
+        Id: g=5e07943baf757ef9e66807a0b2aa7bac
+        Type: BaseDataVariableType
+        DataType: Int32
+        Children:
+        - Name: DynamicLink
+          Id: g=cd2b6754defc5ec13bf75d55e53bf26a
+          Type: DynamicLink
+          DataType: NodePath
+          Value: "../Inp_SrcQ"
+      - Name: States
+        Id: g=94031352d3e946ac1379279f1ce10909
+        Type: BaseObjectType
+        Children:
+        - Name: State0
+          Id: g=bd44f59140ac964782cffdd0e2fde537
+          Type: MultiStateImageState
+          Children:
+          - Name: Value
+            Id: g=522e17bd7e776b997c8ae5d66f6848ee
+            Type: BaseDataVariableType
+            DataType: Int32
+          - Name: Path
+            Id: g=7ef57ce2599618ef284bab145533e219
+            Type: BaseDataVariableType
+            DataType: ResourceUri
+            Value: "ns=40;%PROJECTDIR%/res/Sts_ModeMan.svg"
+        - Name: State1
+          Id: g=b3a714f055d0fc4fbf37b367629ecb47
+          Type: MultiStateImageState
+          Children:
+          - Name: Value
+            Id: g=2aa8bf7e779b0d999e6941bd6ecaf605
+            Type: BaseDataVariableType
+            DataType: Int32
+            Value: 1
+          - Name: Path
+            Id: g=aea20d65c60fea24e1e3fcd7d9a2fcc9
+            Type: BaseDataVariableType
+            DataType: ResourceUri
+            Value: "ns=40;%PROJECTDIR%/res/Sts_ModeAuto.svg"
+      - Name: Path
+        Id: g=b00f2e0c7bce141f8e5a0766e7d43526
+        Type: BaseDataVariableType
+        DataType: ResourceUri
+      - Name: Width
+        Id: g=aca2e0c185d095ca9d8abaf74798fa86
+        Type: BaseVariableType
+        DataType: Size
+        ModellingRule: Optional
+        Value: 18.0
+      - Name: Height
+        Id: g=d2678ad0f4877cee34ee9771285f3906
+        Type: BaseVariableType
+        DataType: Size
+        ModellingRule: Optional
+        Value: 18.0
+      - Name: HorizontalAlignment
+        Id: g=08008a17af3903bdb2d920631945a861
+        Type: BaseVariableType
+        DataType: HorizontalAlignment
+        ModellingRule: Optional
+        Value: 1
+      - Name: Inp_SrcQ
+        Id: g=ce9194ed3b860088be202a5046a09b8e
+        Type: BaseDataVariableType
+        DataType: Int16
+        Children:
+        - Name: DynamicLink
+          Id: g=7238b4f7b1f96e0c473db05d5fa02bc0
+          Type: DynamicLink
+          DataType: NodePath
+          Value: "../../SrcQ"
+          Children:
+          - Name: Mode
+            Id: g=a0c394922201edd7079bccec16964454
+            Type: BaseVariableType
+            DataType: DynamicLinkMode
+            ModellingRule: Optional
+            Value: 2
+    - Name: msd_Status
+      Id: g=7c86a0c4036ddef01c588a893c837d7f
+      Type: MultiStateImage
+      Children:
+      - Name: StateValue
+        Id: g=dbb2dc454d2bacc41223d594ff31da14
+        Type: BaseDataVariableType
+        DataType: Int32
+        Children:
+        - Name: ExpressionEvaluator1
+          Id: g=722dd3040be581c8f0e19b118f1ea00f
+          Type: ExpressionEvaluator
+          Children:
+          - Name: Expression
+            Id: g=864c7e0dfc91c2185c7b677bc0a73a4e
+            Type: BaseDataVariableType
+            DataType: String
+            ReferenceType: HasParameter
+            ModellingRule: Optional
+            Value: "if({0},2,if({1},1,0))"
+          - Name: ns=9;Source0
+            Id: g=b15c16c3991663873bbd873677b6ea99
+            Type: BaseDataVariableType
+            DataType: BaseDataType
+            ReferenceType: HasSource
+            Children:
+            - Name: DynamicLink
+              Id: g=594b63d53ed613496694e4fd6d354129
+              Type: DynamicLink
+              DataType: NodePath
+              Value: "{Tag}/Sts_Lower"
+          - Name: ns=9;Source1
+            Id: g=cb5d91c0bcd047bfacc47d310d078659
+            Type: BaseDataVariableType
+            DataType: BaseDataType
+            ReferenceType: HasSource
+            Children:
+            - Name: DynamicLink
+              Id: g=497f41c471ba78bb49f8e723b75258ae
+              Type: DynamicLink
+              DataType: NodePath
+              Value: "{Tag}/Sts_Raise"
+      - Name: States
+        Id: g=14bf8bde856ab4dc6bf8f2d18e2e2ce4
+        Type: BaseObjectType
+        Children:
+        - Name: State0
+          Id: g=61080d022271d1e41a2aaccafa9bf7cb
+          Type: MultiStateImageState
+          Children:
+          - Name: Value
+            Id: g=39a3735e65720b93d8b9b31b61e7c021
+            Type: BaseDataVariableType
+            DataType: Int32
+          - Name: Path
+            Id: g=bdb2da0ba0bf1123f3478c679cdaab5a
+            Type: BaseDataVariableType
+            DataType: ResourceUri
+        - Name: State1
+          Id: g=48539b0f3b2be6fe4e5a43803bcb3ef0
+          Type: MultiStateImageState
+          Children:
+          - Name: Value
+            Id: g=1736248f5b2a4361ff84ce97bdae29c7
+            Type: BaseDataVariableType
+            DataType: Int32
+            Value: 1
+          - Name: Path
+            Id: g=cb6586ba819a69f8f2c36cf954fc5d4a
+            Type: BaseDataVariableType
+            DataType: ResourceUri
+            Value: "ns=40;%PROJECTDIR%/res/Sts_Raise.svg"
+        - Name: State2
+          Id: g=fcd866935f4bb384c5b9081da783d51e
+          Type: MultiStateImageState
+          Children:
+          - Name: Value
+            Id: g=40e38739920b9c9fadb3d8a731ef2e4f
+            Type: BaseDataVariableType
+            DataType: Int32
+            Value: 2
+          - Name: Path
+            Id: g=5db6a73e142c4dcc987760b5df2346d6
+            Type: BaseDataVariableType
+            DataType: ResourceUri
+            Value: "ns=40;%PROJECTDIR%/res/Sts_Lower.svg"
+      - Name: Path
+        Id: g=742b7c8a2a10dd5eb658332bb983d738
+        Type: BaseDataVariableType
+        DataType: ResourceUri
+      - Name: Width
+        Id: g=057cb62c143aef24d3ce9f4753e31684
+        Type: BaseVariableType
+        DataType: Size
+        ModellingRule: Optional
+        Value: 18.0
+      - Name: Height
+        Id: g=48dce95755fdb98e28cbf0725e4a38f3
+        Type: BaseVariableType
+        DataType: Size
+        ModellingRule: Optional
+        Value: 18.0
+    - Name: SrcQ
+      Id: g=9c823855a7e44fa66a65ba1d9649fc48
+      Type: BaseDataVariableType
+      DataType: Int16
+      Children:
+      - Name: ExpressionEvaluator1
+        Id: g=b220581c9c888d9207adb0d04949daff
+        Type: ExpressionEvaluator
+        Children:
+        - Name: Expression
+          Id: g=43bd5b869b50139a96c8672211a3b260
+          Type: BaseDataVariableType
+          DataType: String
+          ReferenceType: HasParameter
+          ModellingRule: Optional
+          Value: "if({0},0,1)"
+        - Name: ns=9;Source0
+          Id: g=3956d1423cec76df105c0aae3cca5b8b
+          Type: BaseDataVariableType
+          DataType: BaseDataType
+          ReferenceType: HasSource
+          Children:
+          - Name: DynamicLink
+            Id: g=ed799aaaae8a93dd9b22f702bd389b94
+            Type: DynamicLink
+            DataType: NodePath
+            Value: "{Tag}/Sts_Man"
+  - Name: Inp_EnableNavigation
+    Id: g=c3440f08e6314ba7653a6dda4eae3285
+    Type: BaseDataVariableType
+    DataType: Boolean
+    Value: true
+  - Name: Img_AlmInhibit
+    Id: g=e68c5715924f74ef274943e86a0fc8d1
+    Type: Image
+    Children:
+    - Name: Path
+      Id: g=85894cc56c133b5625947bf98f3c2675
+      Type: BaseDataVariableType
+      DataType: ResourceUri
+      Value: "ns=40;%PROJECTDIR%/res/Alm_Inhibit.svg"
+    - Name: Visible
+      Id: g=930451dd0f59e6dc4dd20ff4bd30a68a
+      Type: BaseDataVariableType
+      DataType: Boolean
+      Value: true
+      Children:
+      - Name: ExpressionEvaluator1
+        Id: g=6a0754d7857aee66eb49dd0eab07d338
+        Type: ExpressionEvaluator
+        Children:
+        - Name: Source0
+          Id: g=6f6e85bcbfc96fc85a5fc9ca08cfb7cd
+          Type: BaseDataVariableType
+          DataType: BaseDataType
+          ReferenceType: HasSource
+          Children:
+          - Name: DynamicLink
+            Id: g=d3994c69f0171720d40d3b3a0035e577
+            Type: DynamicLink
+            DataType: NodePath
+            Value: "{Tag}/Sts_eNotifyAll"
+        - Name: Source1
+          Id: g=8162de4b08928a22a019166a939f8c43
+          Type: BaseDataVariableType
+          DataType: BaseDataType
+          ReferenceType: HasSource
+          Children:
+          - Name: DynamicLink
+            Id: g=b87caa036eca48a170278301baa52455
+            Type: DynamicLink
+            DataType: NodePath
+            Value: "{Tag}/Sts_AlmInh"
+  - Name: AlarmBorderWBlink
+    Id: g=8a377e7343e79b6725cbecbcf06466c2
+    Type: raP_5_20_AlarmBorderWBlink
+    Children:
+    - Name: FillColor
+      Id: g=519b2303e9f31fcad0b6c4e91ad4dbcc
+      Type: BaseDataVariableType
+      DataType: Color
+      Value: "#ffffff00"
+    - Name: Blink
+      Id: g=eea8e6f00bd3347ad102d8188b420a54
+      Type: BaseDataVariableType
+      DataType: Boolean
+      Value: true
+      Children:
+      - Name: DynamicLink
+        Id: g=a9059186399a0761bee4842f29d383ab
+        Type: DynamicLink
+        DataType: NodePath
+        Value: "../Inp_eNotify.0"
+    - Name: Visible
+      Id: g=aca145969757f4d127ac9e5d1152446f
+      Type: BaseDataVariableType
+      DataType: Boolean
+      Value: true
+      Children:
+      - Name: ExpressionEvaluator1
+        Id: g=851b35ec8f9dc974ecc25e533007c9c4
+        Type: ExpressionEvaluator
+        Children:
+        - Name: Source0
+          Id: g=44bb6b567413e255d408fd8a33c4361d
+          Type: BaseDataVariableType
+          DataType: BaseDataType
+          ReferenceType: HasSource
+          Children:
+          - Name: DynamicLink
+            Id: g=ee68456c03bf95127dfb938882d9a138
+            Type: DynamicLink
+            DataType: NodePath
+            Value: "../../../Inp_eNotify"
+    - Name: Rotation
+      Id: g=2189bf253e2e9c9d94505c65d26c8be2
+      Type: BaseVariableType
+      DataType: Size
+    - Name: Inp_eNotify
+      Id: g=0e7cc3e3d3bbbf0f7b22392a1af8eccc
+      Type: BaseDataVariableType
+      DataType: Int32
+      Children:
+      - Name: DynamicLink
+        Id: g=c276d36e7436f3c00c6170cdbef3cb9a
+        Type: DynamicLink
+        DataType: NodePath
+        Value: "{Tag}/Sts_eNotifyAll"
+    - Name: Style
+      Id: g=da84bcb7d4d8c266ed29599fcb3fb558
+      Type: BaseDataVariableType
+      DataType: String
+      Value: "Default"
+      Children:
+      - Name: KeyValueConverter1
+        Id: g=92e9a9421a4209a245813174d8082897
+        Type: ValueMapConverter
+        Children:
+        - Name: Source
+          Id: g=2ee5f192e1c10c468eb1b3e70c0b4b3e
+          Type: BaseDataVariableType
+          DataType: BaseDataType
+          ReferenceType: HasSource
+          Children:
+          - Name: DynamicLink
+            Id: g=459c1bd1005137a77993a83c49ee0121
+            Type: DynamicLink
+            DataType: NodePath
+            Value: "../../../Inp_eNotify"
+  - Name: msd_AlarmIcon
+    Id: g=5f831f2d70ff60a0b70f9e6881558e82
+    Type: raP_5_20_msd_AlarmIcon
+    Children:
+    - Name: Sts_eNotify
+      Id: g=1dc3c56b0aa439293325801dee2079e3
+      Type: BaseDataVariableType
+      DataType: Int16
+      Children:
+      - Name: DynamicLink
+        Id: g=202e25e487fdb08d9a4f8fd8a1d83fd4
+        Type: DynamicLink
+        DataType: NodePath
+        Value: "{Tag}/Sts_eNotifyAll"
+    - Name: msd_Image
+      Id: g=00f085563cff075282fa305515f97e61
+      Type: MultiStateImage
+      Children:
+      - Name: StateValue
+        Id: g=985cad438055928e16ecf52ab21d8e7a
+        Type: BaseDataVariableType
+        DataType: Int32
+        Children:
+        - Name: DynamicLink
+          Id: g=5acbe27d8210a46732b8d48f09f00844
+          Type: DynamicLink
+          DataType: NodePath
+          Value: "../../Sts_eNotify"
+      - Name: States
+        Id: g=5533f68e403837ea9e38b178182a7a67
+        Type: BaseObjectType
+        Children:
+        - Name: OutOfAlarm
+          Id: g=ae2aa56b0fe0ecf6764aac72f17da4d6
+          Type: MultiStateImageState
+          Children:
+          - Name: Value
+            Id: g=07899944cb51b3dfe687b7045c57c042
+            Type: BaseDataVariableType
+            DataType: Int32
+          - Name: Path
+            Id: g=ea04d3a271dab7f9b5b3b9e85a1a52bc
+            Type: BaseDataVariableType
+            DataType: ResourceUri
+        - Name: OutOfAlarmUnacked
+          Id: g=0c073d2a040c3d83e6b3c12a801ed112
+          Type: MultiStateImageState
+          Children:
+          - Name: Value
+            Id: g=6950fb11b5a97dc9e2ddc189dafb708d
+            Type: BaseDataVariableType
+            DataType: Int32
+            Value: 1
+          - Name: Path
+            Id: g=e7f8499a65915cc868b2652d456ac3ce
+            Type: BaseDataVariableType
+            DataType: ResourceUri
+            Value: "ns=40;%PROJECTDIR%/res/Alm_AckReqd.svg"
+        - Name: Low
+          Id: g=efa9457ec7c85d9eaa229585a2a89421
+          Type: MultiStateImageState
+          Children:
+          - Name: Value
+            Id: g=5b629524f0ad2a8efa57ebeca810b3da
+            Type: BaseDataVariableType
+            DataType: Int32
+            Value: 2
+          - Name: Path
+            Id: g=de4d417aa8d68e00d750664c88e07f89
+            Type: BaseDataVariableType
+            DataType: ResourceUri
+            Value: "ns=40;%PROJECTDIR%/res/Alarms_Icons_Low_Priority.svg"
+        - Name: Low_Unacked
+          Id: g=830b0a4bffef4ce89609303f95f7f073
+          Type: MultiStateImageState
+          Children:
+          - Name: Value
+            Id: g=cb4ef422318c440ac609715d07008a10
+            Type: BaseDataVariableType
+            DataType: Int32
+            Value: 3
+          - Name: Path
+            Id: g=6b9e8fbfd69dc3569d1fdd09f3a2a05d
+            Type: BaseDataVariableType
+            DataType: ResourceUri
+            Value: "ns=40;%PROJECTDIR%/res/Alarms_Icons_Low_Priority.svg"
+        - Name: Medium
+          Id: g=0516b71809334100d8e71d46ca83136b
+          Type: MultiStateImageState
+          Children:
+          - Name: Value
+            Id: g=0e8964dd7ec4a4d0848043aabff75602
+            Type: BaseDataVariableType
+            DataType: Int32
+            Value: 4
+          - Name: Path
+            Id: g=ef01c9b141eecb7dd7171ef1d92f6b7f
+            Type: BaseDataVariableType
+            DataType: ResourceUri
+            Value: "ns=40;%PROJECTDIR%/res/Alarms_Icons_Medium_Priority.svg"
+        - Name: Medium_Unacked
+          Id: g=c1038bd3b2018d53d0c7ce50be77ff65
+          Type: MultiStateImageState
+          Children:
+          - Name: Value
+            Id: g=6768289ee9fd4414ca655c3f828b95ef
+            Type: BaseDataVariableType
+            DataType: Int32
+            Value: 5
+          - Name: Path
+            Id: g=9e9e9efb343d2d3dd748d03603cc9bc0
+            Type: BaseDataVariableType
+            DataType: ResourceUri
+            Value: "ns=40;%PROJECTDIR%/res/Alarms_Icons_Medium_Priority.svg"
+        - Name: High
+          Id: g=258066d4a70604b279545d7e04194937
+          Type: MultiStateImageState
+          Children:
+          - Name: Value
+            Id: g=9e5ce5ac07b7b44cec0dc31943c2830c
+            Type: BaseDataVariableType
+            DataType: Int32
+            Value: 6
+          - Name: Path
+            Id: g=20a18fed64a61ac34321b7897fe101db
+            Type: BaseDataVariableType
+            DataType: ResourceUri
+            Value: "ns=40;%PROJECTDIR%/res/Alarms_Icons_High_Priority.svg"
+        - Name: High_Unacked
+          Id: g=ffc8aff76be26f1727f23408f02ddfc1
+          Type: MultiStateImageState
+          Children:
+          - Name: Value
+            Id: g=9c9966e8242f3a51cb3063512ba9afcc
+            Type: BaseDataVariableType
+            DataType: Int32
+            Value: 7
+          - Name: Path
+            Id: g=05727d7b85f489e7052d934a6f6602cf
+            Type: BaseDataVariableType
+            DataType: ResourceUri
+            Value: "ns=40;%PROJECTDIR%/res/Alarms_Icons_High_Priority.svg"
+        - Name: Urgent
+          Id: g=820a6be0cebcfb0df407a1741f25e1cb
+          Type: MultiStateImageState
+          Children:
+          - Name: Value
+            Id: g=d1cd019c8438565ff27cb33815e7a3d8
+            Type: BaseDataVariableType
+            DataType: Int32
+            Value: 8
+          - Name: Path
+            Id: g=877e8ab76c9a87b4d5aca1a2cdc59698
+            Type: BaseDataVariableType
+            DataType: ResourceUri
+            Value: "ns=40;%PROJECTDIR%/res/Alarms_Icons_Urgent_Priority.svg"
+        - Name: Urgent_Unacked
+          Id: g=a6a41b2302f0589e1cdf4225be46ffa2
+          Type: MultiStateImageState
+          Children:
+          - Name: Value
+            Id: g=7a99a148861a4913fc535bb719486c21
+            Type: BaseDataVariableType
+            DataType: Int32
+            Value: 9
+          - Name: Path
+            Id: g=cc816ca5fb9d58022219629463d96334
+            Type: BaseDataVariableType
+            DataType: ResourceUri
+            Value: "ns=40;%PROJECTDIR%/res/Alarms_Icons_Urgent_Priority.svg"
+      - Name: Path
+        Id: g=826fa6fc31fd762575f8c2fad26eb94f
+        Type: BaseDataVariableType
+        DataType: ResourceUri
+      - Name: Visible
+        Id: g=a85ae017708d62985cf1315e84e70f04
+        Type: BaseDataVariableType
+        DataType: Boolean
+        Value: true
+        Children:
+        - Name: ExpressionEvaluator1
+          Id: g=a0fe32493537b7824a0fd213138d6d56
+          Type: ExpressionEvaluator
+          Children:
+          - Name: Source0
+            Id: g=6c4b569aaa204ab54d596dfee3b1db72
+            Type: BaseDataVariableType
+            DataType: BaseDataType
+            ReferenceType: HasSource
+            Children:
+            - Name: DynamicLink
+              Id: g=1f2be06495f0b511925001aa745cea7e
+              Type: DynamicLink
+              DataType: NodePath
+              Value: "../../../StateValue"
+    - Name: Visible
+      Id: g=d1db45e4706ce0a6bb06091c764b3918
+      Type: BaseDataVariableType
+      DataType: Boolean
+      Value: true
+      Children:
+      - Name: ExpressionEvaluator1
+        Id: g=8c3b0cd650ac50e6a23645bcdb6e348e
+        Type: ExpressionEvaluator
+        Children:
+        - Name: Source0
+          Id: g=dc3663bb53b39fd6713f0fab75f4e9ca
+          Type: BaseDataVariableType
+          DataType: BaseDataType
+          ReferenceType: HasSource
+          Children:
+          - Name: DynamicLink
+            Id: g=5e04a8fc55b5efb142fe83266c6aa46e
+            Type: DynamicLink
+            DataType: NodePath
+            Value: "../../../Sts_eNotify"
+  - Name: Cfg_ShowNavigationBorder
+    Id: g=8fa738f3479b9fb99a58c5364e9eebdb
+    Type: BaseDataVariableType
+    DataType: Boolean
+  - Name: Cfg_ShowNavigationChevron
+    Id: g=f9a3fa50a25e728a88d113fda13bba75
+    Type: BaseDataVariableType
+    DataType: Boolean
+  - Name: img_Chevron
+    Id: g=554f805f05af6f587fa7882a320fdf75
+    Type: Image
+    Children:
+    - Name: Path
+      Id: g=3b47811c1b41bf000b4ac48a236ea74e
+      Type: BaseDataVariableType
+      DataType: ResourceUri
+      Value: "ns=40;%PROJECTDIR%/res/Chevron2.svg"
+    - Name: DynamicColor
+      Id: g=b943ff4f95cdaf9108c69f81eb3b6191
+      Type: BaseDataVariableType
+      DataType: Color
+      Value: "#6a6a6a"
+    - Name: Visible
+      Id: g=94ff962c1c9825a2ba6c3149ed539782
+      Type: BaseDataVariableType
+      DataType: Boolean
+      Value: true
+      Children:
+      - Name: DynamicLink
+        Id: g=9e5c00565020475c3c058504ac89e555
+        Type: DynamicLink
+        DataType: NodePath
+        Value: "../../Cfg_ShowNavigationChevron"
+  - Name: Cfg_ShowFaceplate
+    Id: g=c6b283677fefea6ce652aaae4210caf9
+    Type: BaseDataVariableType
+    DataType: Boolean
+    Value: true
+  - Name: Cfg_ObjectVersion
+    Id: g=5d0d60433a86a81c5f432c2ff10dad46
+    Type: BaseDataVariableType
+    DataType: String
+    Value: "5.20.04 Release"

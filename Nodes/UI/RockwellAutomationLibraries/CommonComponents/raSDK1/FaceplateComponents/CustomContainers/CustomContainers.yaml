@@ -1,0 +1,373 @@
+Name: CustomContainers
+Id: g=f5fcb3fd9af2d460204cb927905fbb15
+Type: FolderType
+Children:
+- Name: raSDK1_AccordionWithAutoExpand
+  Id: g=0e035d758e78ab54b0558f10003f2273
+  Supertype: Accordion
+  Description: {"NamespaceIndex":40,"TextId":"This accordion will automatically expand based on an input tag value"}
+  ReferenceType: HasComponent
+  Children:
+  - Name: Header
+    Id: g=3c27af88289018e92779a8441c30f608
+    Type: AccordionHeader
+    Children:
+    - Name: raSDK1_NL_AccordionEnableTriggerDelay
+      Id: g=53e42059006a603b273a2f036ca02062
+      Type: NetLogic
+  - Name: Content
+    Id: g=7bb10ae8fcce4bc328d80c334b0cf413
+    Type: AccordionContent
+  - Name: Expanded
+    Id: g=a46b62fba7f0bca02157f76da0a0b017
+    Type: BaseDataVariableType
+    DataType: Boolean
+  - Name: Width
+    Id: g=bebf4b7489f87ec0bf078d4a954e3a3d
+    Type: BaseVariableType
+    DataType: Size
+    ModellingRule: Optional
+    Value: 200.0
+  - Name: Set_Expand
+    Id: g=0ed34137510f43895209e3969198effd
+    Type: BaseDataVariableType
+    DataType: Boolean
+    Description: {"NamespaceIndex":40,"TextId":"Trigger for accordion expansion"}
+  - Name: Cfg_AlwaysCheck
+    Id: g=cec0968ad97c8825cb196a4d69139c31
+    Type: BaseDataVariableType
+    DataType: Boolean
+    Description: {"NamespaceIndex":40,"TextId":"1=Continuous update; 0=Only check on initialization."}
+  - Name: _EnableAutoExpand
+    Id: g=a458eaf7083c6dc8455e14f08c0d6fee
+    Type: BaseDataVariableType
+    DataType: Boolean
+    Description: {"NamespaceIndex":40,"TextId":"Internal Variable"}
+  - Name: _ExpandTrigger
+    Id: g=f46d41f420983fdc049fd7fe2a35ce5b
+    Type: BaseDataVariableType
+    DataType: Boolean
+    Description: {"NamespaceIndex":40,"TextId":"Internal Variable"}
+    Children:
+    - Name: ExpressionEvaluator1
+      Id: g=7bcc4ef981b51a71bb6e6618058445a3
+      Type: ExpressionEvaluator
+      Children:
+      - Name: Expression
+        Id: g=af8a55f8192412ad7d5940730572fc04
+        Type: BaseDataVariableType
+        DataType: String
+        ReferenceType: HasParameter
+        ModellingRule: Optional
+        Value: "{0} && {1}"
+      - Name: ns=9;Source0
+        Id: g=5755030fc7531a8869e3485a750b5435
+        Type: BaseDataVariableType
+        DataType: BaseDataType
+        ReferenceType: HasSource
+        Children:
+        - Name: DynamicLink
+          Id: g=b43e530df77214c02d11787435afa703
+          Type: DynamicLink
+          DataType: NodePath
+          Value: "../../../Set_Expand"
+      - Name: ns=9;Source1
+        Id: g=0831a5a5bf0130004220498cd101ccd6
+        Type: BaseDataVariableType
+        DataType: BaseDataType
+        ReferenceType: HasSource
+        Children:
+        - Name: DynamicLink
+          Id: g=8f54af3a418d52b84f1b8df7a504211a
+          Type: DynamicLink
+          DataType: NodePath
+          Value: "../../../_EnableAutoExpand"
+  - Name: _ExpandTriggerTransitioned
+    Id: g=b942b04d55852d82ef88f680640a2016
+    Type: VariableTransitionEventDispatcher
+    Children:
+    - Name: Value
+      Id: g=f8a0af079875cacb064ed16d0cca4f89
+      Type: BaseVariableType
+      DataType: Double
+      Value: 1.0
+    - Name: Transition
+      Id: g=e7c6a5a6a5e14aeffadef2a9227d8692
+      Type: BaseVariableType
+      DataType: VariableTransition
+    - Name: VariableNodePath
+      Id: g=b8b205d4e69e56db1f775cc8d570b2a1
+      Type: BaseVariableType
+      DataType: NodePath
+      Value: "../_ExpandTrigger"
+    - Name: VariableTransitionEventHandler1
+      Id: g=5ef55d40b22f0e481ab70adf36541293
+      Type: EventHandler
+      Children:
+      - Name: ListenEventType
+        Id: g=6478686a777e348c8df722e82b1b21b6
+        Type: PropertyType
+        DataType: NodeId
+        Value: "/Types/EventTypes/BaseEventType/VariableConditionEvent/VariableTransitionEvent"
+      - Name: MethodsToCall
+        Id: g=7bc347aa460171fdb07e0c262b39010e
+        Type: BaseObjectType
+        Children:
+        - Name: MethodContainer1
+          Id: g=dc5d36c563f4be83306d679f9cb68d7c
+          Type: BaseObjectType
+          Children:
+          - Name: ns=9;ObjectPointer
+            Id: g=16b06a46ed47ad07222e5efa96cb73b3
+            Type: NodePointer
+            DataType: NodeId
+            Value: "/Objects/Commands/VariableCommands"
+            Children:
+            - Name: Kind
+              Id: g=fc07bddf497e47ca4e67287d533cf527
+              Type: PropertyType
+              DataType: NodeId
+              Value: "/Types/ObjectTypes/BaseObjectType"
+          - Name: ns=9;Method
+            Id: g=a463f2b34178bcf3cf366e9b6408ca25
+            Type: BaseDataVariableType
+            DataType: String
+            Value: "Set"
+          - Name: InputArguments
+            Id: g=872e345564e7106f97ce379837905d7d
+            Type: BaseObjectType
+            Children:
+            - Name: VariableToModify
+              Id: g=269fae099c68fb0206406c5173ee2c1c
+              Type: BaseDataVariableType
+              DataType: VariablePointer
+              Description: {"NamespaceIndex":9,"TextId":"SetVariableToModifyDescription"}
+              Children:
+              - Name: DynamicLink
+                Id: g=5c6cbd0d85025476b30bd9793da01a81
+                Type: DynamicLink
+                DataType: NodePath
+                Value: "../../../../../../Expanded@NodeId"
+            - Name: Value
+              Id: g=a4d48bfcab58f91adaecb6cfd1b49eec
+              Type: BaseDataVariableType
+              DataType: Boolean
+              Description: {"NamespaceIndex":9,"TextId":"SetValueDescription"}
+              Value: true
+            - Name: ArrayIndex
+              Id: g=426de217baa0e10a4ce49f9aa632864b
+              Type: BaseDataVariableType
+              DataType: UInt32
+              Description: {"NamespaceIndex":9,"TextId":"SetArrayIndexDescription"}
+              ValueRank: ScalarOrOneDimension
+        - Name: MethodContainer2
+          Id: g=77482718f711590a16c60636912e0fcd
+          Type: BaseObjectType
+          Children:
+          - Name: ns=9;ObjectPointer
+            Id: g=c3aefe64b0d722a2a12b8dd83064d092
+            Type: NodePointer
+            DataType: NodeId
+            Value: "/Objects/Commands/VariableCommands"
+            Children:
+            - Name: Kind
+              Id: g=b8e96ce7e123c820531bdb01f0045fb1
+              Type: PropertyType
+              DataType: NodeId
+              Value: "/Types/ObjectTypes/BaseObjectType"
+          - Name: ns=9;Method
+            Id: g=05d190a86e9b422db540041ae4473c8b
+            Type: BaseDataVariableType
+            DataType: String
+            Value: "Set"
+          - Name: InputArguments
+            Id: g=459c5bcbd220566beb273270215c7b35
+            Type: BaseObjectType
+            Children:
+            - Name: VariableToModify
+              Id: g=1eae10f410477c0c4d88dbdbdb3e735d
+              Type: BaseDataVariableType
+              DataType: VariablePointer
+              Description: {"NamespaceIndex":9,"TextId":"SetVariableToModifyDescription"}
+              Children:
+              - Name: DynamicLink
+                Id: g=9425e2af33cfcef6336211958b6294da
+                Type: DynamicLink
+                DataType: NodePath
+                Value: "../../../../../../_EnableAutoExpand@NodeId"
+            - Name: Value
+              Id: g=50fae5b9f42fc93807952df3740e226f
+              Type: BaseDataVariableType
+              DataType: Boolean
+              Description: {"NamespaceIndex":9,"TextId":"SetValueDescription"}
+              Children:
+              - Name: DynamicLink
+                Id: g=c5652796169e83642ec4d21735ab1fb5
+                Type: DynamicLink
+                DataType: NodePath
+                Value: "../../../../../../Cfg_AlwaysCheck"
+            - Name: ArrayIndex
+              Id: g=751314f17d3742e9aae02ddc15ab95a6
+              Type: BaseDataVariableType
+              DataType: UInt32
+              Description: {"NamespaceIndex":9,"TextId":"SetArrayIndexDescription"}
+              ValueRank: ScalarOrOneDimension
+      - Name: EventArguments
+        Id: g=6f756ee649ef1550150f4ce6c605a47e
+        Type: VariableTransitionEvent
+        Children:
+        - Name: VariableNodeId
+          Id: g=e957e16965dd558e1376c9f7062dce5d
+          Type: BaseVariableType
+          DataType: NodeId
+        - Name: NewValue
+          Id: g=72f42fe74fe98134dabb6f0955f876e3
+          Type: BaseVariableType
+          DataType: BaseDataType
+        - Name: OldValue
+          Id: g=be5447d8f83697ed8b2a5afbeae50612
+          Type: BaseVariableType
+          DataType: BaseDataType
+        - Name: EventId
+          Id: g=231c9a4292b9cc31d62f66531eb95f21
+          Type: PropertyType
+          DataType: ByteString
+        - Name: EventType
+          Id: g=712f7c0d262bd6728acec4989fbb2618
+          Type: PropertyType
+          DataType: NodeId
+        - Name: SourceNode
+          Id: g=e342267eac8e3c6d1fa41c7d9487a870
+          Type: PropertyType
+          DataType: NodeId
+        - Name: SourceName
+          Id: g=79048be43c95601b17ee337ace2411be
+          Type: PropertyType
+          DataType: String
+        - Name: Time
+          Id: g=8e434ff7e4ae1bda35669df57295b450
+          Type: PropertyType
+          DataType: UtcTime
+        - Name: ReceiveTime
+          Id: g=da3b2b07efd94c963aadcc30bf6e535c
+          Type: PropertyType
+          DataType: UtcTime
+        - Name: Message
+          Id: g=37e4505113bf4af7a56b3d0abec3c440
+          Type: PropertyType
+          DataType: LocalizedText
+        - Name: Severity
+          Id: g=53be1d5d43e559902832032a1972b14b
+          Type: PropertyType
+          DataType: UInt16
+  - Name: ns=25;LibraryReference
+    Id: g=6760e41fd0c37cb125f64a6fe66b6add
+    Type: ObjectLibraryReference
+    DataType: ObjectLibraryReferenceDataType
+    ModellingRule: None
+    Value: 
+     {
+      "TypeId": {
+       "Id": 72,
+       "Namespace": 25
+      },
+      "Body": {
+       "libraryGuid": "daa1802df0fca742317d7dafb83a218f",
+       "objectGuid": "77991787e4b626b783f4a80f81255225",
+       "objectVersion": 4,
+       "highestIgnoredVersion": 0
+      }
+     }
+- Name: raSDK1_AccordionBaseConfig
+  Id: g=b2dc7f687436aaa9e73d424e8f334686
+  Supertype: Accordion
+  Description: {"NamespaceIndex":40,"TextId":"Base accordion to be used for configuration elements"}
+  ReferenceType: HasComponent
+  Children:
+  - Name: Header
+    Id: g=d1db511adccf263a99ddb094940aee29
+    Type: AccordionHeader
+    Children:
+    - Name: Label
+      Id: g=4974a0869b04cbaf09874b71790a6fb0
+      Type: Label
+      Children:
+      - Name: Text
+        Id: g=94f7f432e214449f64155953f4aec243
+        Type: BaseDataVariableType
+        DataType: LocalizedText
+        ModellingRule: Optional
+        Value: {"LocaleId":"en-US","Text":""}
+      - Name: LeftMargin
+        Id: g=61bb8751b980ded765974367b4fcde5c
+        Type: BaseVariableType
+        DataType: Size
+        ModellingRule: Optional
+        Value: 4.0
+      - Name: Style
+        Id: g=fd4bacd6ab7cd9cc46e7d730310acfa2
+        Type: BaseDataVariableType
+        DataType: String
+        ModellingRule: Optional
+        Value: "Heading"
+      - Name: HorizontalAlignment
+        Id: g=28111a1470e085d85cfcfa614ea38bd1
+        Type: BaseVariableType
+        DataType: HorizontalAlignment
+        ModellingRule: Optional
+        Value: 3
+      - Name: VerticalAlignment
+        Id: g=590000eb6ba46c97d391214e4de6ef9d
+        Type: BaseVariableType
+        DataType: VerticalAlignment
+        ModellingRule: Optional
+        Value: 2
+      - Name: TopMargin
+        Id: g=855196a3280ac243f64bdc745cd99a39
+        Type: BaseVariableType
+        DataType: Size
+        ModellingRule: Optional
+        Value: 4.0
+      - Name: RightMargin
+        Id: g=26b8da2c2370a1de5de1792ec5e3af9e
+        Type: BaseVariableType
+        DataType: Size
+        ModellingRule: Optional
+        Value: 28.0
+      - Name: BottomMargin
+        Id: g=b2a5497ed533318c7b467643c00ec446
+        Type: BaseVariableType
+        DataType: Size
+        ModellingRule: Optional
+        Value: 4.0
+      - Name: Elide
+        Id: g=dda9428106e091f210ecfa66c66f2884
+        Type: BaseDataVariableType
+        DataType: ElideEnum
+        ModellingRule: Optional
+        Value: 3
+      - Name: TextVerticalAlignment
+        Id: g=444af67263cfd4ddf242bee42f0d16e4
+        Type: BaseVariableType
+        DataType: TextVerticalAlignment
+        ModellingRule: Optional
+        Value: 1
+  - Name: Content
+    Id: g=0dd98fb27df2dba69cf8146cf936d89e
+    Type: AccordionContent
+  - Name: Expanded
+    Id: g=7c553f2a749aebac631b987fb36584db
+    Type: BaseDataVariableType
+    DataType: Boolean
+  - Name: Width
+    Id: g=9b027f86e8b39f20d9e6cfb3e3b3ebf8
+    Type: BaseVariableType
+    DataType: Size
+    ModellingRule: Optional
+    Value: 200.0
+  - Name: HorizontalAlignment
+    Id: g=6d0e3e91d938934923f90a254526edc8
+    Type: BaseVariableType
+    DataType: HorizontalAlignment
+    ModellingRule: Optional
+    Value: 3

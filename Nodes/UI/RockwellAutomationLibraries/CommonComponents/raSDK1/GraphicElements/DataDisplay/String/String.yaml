@@ -1,0 +1,337 @@
+Name: String
+Id: g=e98ff69e2cf324dcde7a63eb88a0f539
+Type: FolderType
+Children:
+- Name: raSDK1_SD_LblVal
+  Id: g=cf8c13abc20ddc6b89567cf942caecd4
+  Supertype: ColumnLayout
+  Description: {"NamespaceIndex":40,"TextId":"Label above displayed value; left justified."}
+  ReferenceType: HasComponent
+  Children:
+  - Name: Label
+    Id: g=03ccb0f52aa2d755092b97c5aa06f830
+    Type: Label
+    Children:
+    - Name: Text
+      Id: g=2e3c3365d9a8855fde1ca0528094a970
+      Type: BaseDataVariableType
+      DataType: LocalizedText
+      Children:
+      - Name: DynamicLink
+        Id: g=bae7fb2078413a2c5b479dbb1e016496
+        Type: DynamicLink
+        DataType: NodePath
+        Value: "../../Cfg_Label"
+    - Name: VerticalAlignment
+      Id: g=976f20c70ffd0f7f8c969e78502e869e
+      Type: BaseVariableType
+      DataType: VerticalAlignment
+      ModellingRule: Optional
+    - Name: HorizontalAlignment
+      Id: g=bf470213555c45143c91f20e01da0a76
+      Type: BaseVariableType
+      DataType: HorizontalAlignment
+      ModellingRule: Optional
+      Value: 3
+    - Name: TextHorizontalAlignment
+      Id: g=e3825c20e71e72f3d7951cb70b94c885
+      Type: BaseVariableType
+      DataType: TextHorizontalAlignment
+      ModellingRule: Optional
+    - Name: Elide
+      Id: g=ab573fcf0da91802c628b6674df894d4
+      Type: BaseDataVariableType
+      DataType: ElideEnum
+      ModellingRule: Optional
+    - Name: Style
+      Id: g=a76accee956597f895fcacfb7d64ac78
+      Type: BaseDataVariableType
+      DataType: String
+      ModellingRule: Optional
+      Value: "Data Label"
+    - Name: WordWrap
+      Id: g=e924b112580d502f863ef652b319f094
+      Type: BaseDataVariableType
+      DataType: Boolean
+      ModellingRule: Optional
+      Value: true
+  - Name: Value
+    Id: g=0fe026772313e81f126c51e6981f15ff
+    Type: Label
+    Children:
+    - Name: Text
+      Id: g=b4a708061ce7c3592cbb488eee763314
+      Type: BaseDataVariableType
+      DataType: LocalizedText
+      Children:
+      - Name: DynamicLink
+        Id: g=dfab838801c2bf41b9819e498e48f078
+        Type: DynamicLink
+        DataType: NodePath
+        Value: "../../Inp_String"
+    - Name: VerticalAlignment
+      Id: g=a88bf967a2ab807700673e6d3f4bd84a
+      Type: BaseVariableType
+      DataType: VerticalAlignment
+      ModellingRule: Optional
+    - Name: HorizontalAlignment
+      Id: g=6e807394a632df4529985e733eb3b42f
+      Type: BaseVariableType
+      DataType: HorizontalAlignment
+      ModellingRule: Optional
+      Value: 3
+    - Name: TextHorizontalAlignment
+      Id: g=61961270c4835754f97b78257f2836e3
+      Type: BaseVariableType
+      DataType: TextHorizontalAlignment
+      ModellingRule: Optional
+    - Name: Style
+      Id: g=dc1c80934efd59597c84c01022ef3c7a
+      Type: BaseDataVariableType
+      DataType: String
+      Value: "Live Data"
+      Children:
+      - Name: ExpressionEvaluator1
+        Id: g=9d7a3be92fc7ba2451cf1d37e927a487
+        Type: ExpressionEvaluator
+        Children:
+        - Name: Expression
+          Id: g=6ffd0239970a18e79551cb5f68fc9284
+          Type: BaseDataVariableType
+          DataType: String
+          ReferenceType: HasParameter
+          ModellingRule: Optional
+          Value: "if({0},\"Live Data Primary\",\"Live Data\")"
+        - Name: ns=9;Source0
+          Id: g=581528414c29446b74ea5ceba9a031c6
+          Type: BaseDataVariableType
+          DataType: BaseDataType
+          ReferenceType: HasSource
+          Children:
+          - Name: DynamicLink
+            Id: g=49e3fd25e95fbdfda8d8d3b4e0d2163f
+            Type: DynamicLink
+            DataType: NodePath
+            Value: "../../../../Cfg_DisplayAsPrimary"
+    - Name: WordWrap
+      Id: g=4204102198dc7cf246c76502bdcc50f2
+      Type: BaseDataVariableType
+      DataType: Boolean
+      ModellingRule: Optional
+      Value: true
+  - Name: Cfg_Label
+    Id: g=f6a90f419aa6c3403168ec1984841dac
+    Type: BaseDataVariableType
+    DataType: LocalizedText
+    Description: {"NamespaceIndex":40,"TextId":"Text description of displayed value."}
+    Value: {"LocaleId":"en-US","Text":"Label"}
+  - Name: Inp_String
+    Id: g=e16976c8c7c23d83392c9897c49b4d18
+    Type: BaseDataVariableType
+    DataType: String
+    Description: {"NamespaceIndex":40,"TextId":"String value to be displayed."}
+    Value: "String"
+  - Name: Cfg_DisplayAsPrimary
+    Id: g=45a34f1a1337936e40c3392750597580
+    Type: BaseDataVariableType
+    DataType: Boolean
+    Description: {"NamespaceIndex":40,"TextId":"Display the value as 'primary' data:  False = Normal weight with value font size equal to Set_SessionFontSize, True = Bold weight with value font size 20% larger than Set_SessionFontSize."}
+  - Name: HorizontalAlignment
+    Id: g=f393382380b8b57bf7ca7f070bb2e41d
+    Type: BaseVariableType
+    DataType: HorizontalAlignment
+    ModellingRule: Optional
+    Value: 3
+  - Name: ns=25;LibraryReference
+    Id: g=9728a9fa82878683737959f489745a42
+    Type: ObjectLibraryReference
+    DataType: ObjectLibraryReferenceDataType
+    ModellingRule: None
+    Value: 
+     {
+      "TypeId": {
+       "Id": 72,
+       "Namespace": 25
+      },
+      "Body": {
+       "libraryGuid": "daa1802df0fca742317d7dafb83a218f",
+       "objectGuid": "4ef4fe27c8d0b0cf0df6cf3394c304c3",
+       "objectVersion": 6,
+       "highestIgnoredVersion": 0
+      }
+     }
+- Name: raSDK1_SD_LblValHorizontal
+  Id: g=7ab69d5c509d234e6bb293d4387731ea
+  Supertype: RowLayout
+  Description: {"NamespaceIndex":40,"TextId":"Label and value inline; left justified."}
+  ReferenceType: HasComponent
+  Children:
+  - Name: Label
+    Id: g=e0fd95333656ece3ae8a01ff818db2d9
+    Type: Label
+    Children:
+    - Name: Text
+      Id: g=6db05d7671acb7c96e7706d447a3e46a
+      Type: BaseDataVariableType
+      DataType: LocalizedText
+      Children:
+      - Name: DynamicLink
+        Id: g=d6aa6de0e718a400d260d796dba045ca
+        Type: DynamicLink
+        DataType: NodePath
+        Value: "../../Cfg_Label"
+    - Name: VerticalAlignment
+      Id: g=aff0ba7b6df66ed937196b4cfb582eb8
+      Type: BaseVariableType
+      DataType: VerticalAlignment
+      ModellingRule: Optional
+      Value: 1
+    - Name: HorizontalAlignment
+      Id: g=1e8f522832d6a733b275c23a87130c8a
+      Type: BaseVariableType
+      DataType: HorizontalAlignment
+      ModellingRule: Optional
+    - Name: TextHorizontalAlignment
+      Id: g=619097ef2c72fbcef028f51eddfd1529
+      Type: BaseVariableType
+      DataType: TextHorizontalAlignment
+      ModellingRule: Optional
+    - Name: Elide
+      Id: g=4e52dc90ee010c51e589dc4d5331177a
+      Type: BaseDataVariableType
+      DataType: ElideEnum
+      ModellingRule: Optional
+    - Name: Style
+      Id: g=eefdc93490bca1573eea5707c722abf2
+      Type: BaseDataVariableType
+      DataType: String
+      ModellingRule: Optional
+      Value: "Data Label"
+    - Name: TextVerticalAlignment
+      Id: g=6cf034e3e8585ef08de8bf2b58b60fd2
+      Type: BaseVariableType
+      DataType: TextVerticalAlignment
+      ModellingRule: Optional
+      Value: 2
+    - Name: Width
+      Id: g=d247330fbb3894d6bc8e515830488a78
+      Type: BaseVariableType
+      DataType: Size
+      Value: -1.0
+      Children:
+      - Name: DynamicLink
+        Id: g=ade1887b7c3434d2feb64bc4a9490f4c
+        Type: DynamicLink
+        DataType: NodePath
+        Value: "../../Set_LabelWidth"
+  - Name: Value
+    Id: g=ae4ba389d5c7b0d2f83d5db801d4a90e
+    Type: Label
+    Children:
+    - Name: Text
+      Id: g=3e8495dcb3f861fc4a37168ed5b80e41
+      Type: BaseDataVariableType
+      DataType: LocalizedText
+      Children:
+      - Name: DynamicLink
+        Id: g=6be9a06a6f52a81bb72622478cb44f70
+        Type: DynamicLink
+        DataType: NodePath
+        Value: "../../Inp_String"
+    - Name: VerticalAlignment
+      Id: g=d9b292c257a8cbda349df7948081c233
+      Type: BaseVariableType
+      DataType: VerticalAlignment
+      ModellingRule: Optional
+      Value: 1
+    - Name: HorizontalAlignment
+      Id: g=f1e516f514e7ee363cceb38ab1bcaf6d
+      Type: BaseVariableType
+      DataType: HorizontalAlignment
+      ModellingRule: Optional
+    - Name: TextHorizontalAlignment
+      Id: g=5232921ad74cbc64344b270ee51618ef
+      Type: BaseVariableType
+      DataType: TextHorizontalAlignment
+      ModellingRule: Optional
+    - Name: Style
+      Id: g=0ec90c7a03064e5f0a3ad74f1e20b300
+      Type: BaseDataVariableType
+      DataType: String
+      Value: "Live Data"
+      Children:
+      - Name: ExpressionEvaluator1
+        Id: g=e54220ef0755e1402782af8d157d4d3b
+        Type: ExpressionEvaluator
+        Children:
+        - Name: Expression
+          Id: g=2cc698570b677e3b52660dfaed4199be
+          Type: BaseDataVariableType
+          DataType: String
+          ReferenceType: HasParameter
+          ModellingRule: Optional
+          Value: "if({0},\"Live Data Primary\",\"Live Data\")"
+        - Name: ns=9;Source0
+          Id: g=3ab6be0a61b0188903f38c9b22ebae01
+          Type: BaseDataVariableType
+          DataType: BaseDataType
+          ReferenceType: HasSource
+          Children:
+          - Name: DynamicLink
+            Id: g=a30913b6ff6c263c623d39adad1d92cc
+            Type: DynamicLink
+            DataType: NodePath
+            Value: "../../../../Cfg_DisplayAsPrimary"
+    - Name: TextVerticalAlignment
+      Id: g=7bc82bb55647645e30dd71b4990492c4
+      Type: BaseVariableType
+      DataType: TextVerticalAlignment
+      ModellingRule: Optional
+      Value: 2
+  - Name: Cfg_Label
+    Id: g=608a0b3d45366de2559b7a51f82a1fe9
+    Type: BaseDataVariableType
+    DataType: LocalizedText
+    Description: {"NamespaceIndex":40,"TextId":"Text description of displayed value."}
+    Value: {"LocaleId":"en-US","Text":"Label"}
+  - Name: Inp_String
+    Id: g=944e91bd8b71ad8a1bba114be15ff9ab
+    Type: BaseDataVariableType
+    DataType: String
+    Description: {"NamespaceIndex":40,"TextId":"String value to be displayed."}
+    Value: "String"
+  - Name: Cfg_DisplayAsPrimary
+    Id: g=03ca2e5f69234fd69dc783fece87cc63
+    Type: BaseDataVariableType
+    DataType: Boolean
+    Description: {"NamespaceIndex":40,"TextId":"Display the value as 'primary' data:  False = Normal weight with value font size equal to Set_SessionFontSize, True = Bold weight with value font size 20% larger than Set_SessionFontSize."}
+  - Name: HorizontalGap
+    Id: g=f0311ebde008de18db7a2ab405cf560f
+    Type: BaseDataVariableType
+    DataType: Size
+    ModellingRule: Optional
+    Value: 4.0
+  - Name: Set_LabelWidth
+    Id: g=465c7c76d12372c07638bbf15c1cf02b
+    Type: BaseDataVariableType
+    DataType: Int32
+    Description: {"NamespaceIndex":40,"TextId":"Label width defined to easily align values"}
+    Value: 100
+  - Name: ns=25;LibraryReference
+    Id: g=112067770d8a6f803fb0f07805e88a5b
+    Type: ObjectLibraryReference
+    DataType: ObjectLibraryReferenceDataType
+    ModellingRule: None
+    Value: 
+     {
+      "TypeId": {
+       "Id": 72,
+       "Namespace": 25
+      },
+      "Body": {
+       "libraryGuid": "daa1802df0fca742317d7dafb83a218f",
+       "objectGuid": "ff7f2147030dfa0fb80bd71afee6c2e3",
+       "objectVersion": 6,
+       "highestIgnoredVersion": 0
+      }
+     }

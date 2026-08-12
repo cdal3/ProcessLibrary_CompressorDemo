@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Alarm Response Plan - MT-90100 Failed to Start</title>
+<style>
+  body { font-family: "Segoe UI", Arial, sans-serif; margin: 24px; color: #222; background: #f7f7f9; }
+  header { background: #1f3a5f; color: #fff; padding: 16px 20px; border-radius: 6px 6px 0 0; }
+  header h1 { margin: 0; font-size: 22px; }
+  header .subtitle { font-size: 14px; opacity: 0.9; margin-top: 4px; }
+  .container { background: #fff; padding: 20px; border: 1px solid #d9d9e0; border-top: none; border-radius: 0 0 6px 6px; }
+  h2 { color: #1f3a5f; border-bottom: 2px solid #d9d9e0; padding-bottom: 4px; margin-top: 28px; }
+  h3 { color: #1f3a5f; }
+  table { width: 100%; border-collapse: collapse; margin-top: 8px; }
+  th, td { border: 1px solid #cfd3dc; padding: 8px 10px; text-align: left; vertical-align: top; font-size: 14px; }
+  th { background: #e9edf3; color: #1f3a5f; }
+  .meta-table td:first-child { background: #f2f4f8; font-weight: 600; width: 220px; }
+  .priority { display: inline-block; padding: 3px 10px; background: #ef6c00; color: #fff; border-radius: 3px; font-weight: 600; font-size: 13px; }
+  ol, ul { margin-top: 6px; }
+  li { margin: 4px 0; }
+  .note { background: #fff8e1; border-left: 4px solid #f9a825; padding: 10px 14px; margin: 12px 0; font-size: 14px; }
+  .danger { background: #ffebee; border-left: 4px solid #c62828; padding: 10px 14px; margin: 12px 0; font-size: 14px; }
+  footer { margin-top: 24px; font-size: 12px; color: #666; text-align: center; }
+</style>
+</head>
+<body>
+
+<header>
+  <h1>Alarm Response Plan</h1>
+  <div class="subtitle">Tag: MT-90100 &mdash; Compressor Motor Failed to Start</div>
+</header>
+
+<div class="container">
+
+  <h2>1. Alarm Summary</h2>
+  <table class="meta-table">
+    <tr><td>Alarm Tag</td><td>MT-90100.FailToStart</td></tr>
+    <tr><td>Equipment</td><td>Compressor Motor MT-90100</td></tr>
+    <tr><td>Alarm Description</td><td>Motor did not achieve running feedback within the configured start timer after a start command</td></tr>
+    <tr><td>Priority</td><td><span class="priority">HIGH</span></td></tr>
+    <tr><td>Alarm Class</td><td>Equipment Availability</td></tr>
+    <tr><td>Response Time</td><td>Immediate (&lt; 5 minutes)</td></tr>
+    <tr><td>Consequence of Inaction</td><td>Loss of process availability, possible starter damage from repeated start attempts</td></tr>
+  </table>
+
+  <h2>2. Possible Causes</h2>
+  <ul>
+    <li>Permissive not satisfied (lube oil pressure, cooling water, seal gas, standstill).</li>
+    <li>Interlock trip active or not reset (High Oil Temp, High Current, High Vibration).</li>
+    <li>Loss of control voltage to the MCC bucket or drive.</li>
+    <li>Overload relay tripped or MCC breaker open.</li>
+    <li>Bad run feedback signal (motor is actually running but feedback missing).</li>
+    <li>Local / Remote selector in wrong position.</li>
+    <li>Anti-restart timer / minimum-off timer still active.</li>
+  </ul>
+
+  <div class="danger">
+    <strong>Safety Notice:</strong> Do NOT repeatedly cycle the start command. Repeated failed starts can
+    overheat motor windings and damage the starter. Limit to two attempts before troubleshooting.
+  </div>
+
+  <h2>3. Operator Response Actions</h2>
+  <ol>
+    <li>Acknowledge the alarm and record the time.</li>
+    <li>Open MT-90100 faceplate &ndash; review Permissive and Interlock status; identify any that are NOT satisfied.</li>
+    <li>Confirm motor is actually stopped (no run indication, no discharge pressure rise).</li>
+    <li>Reset any latched interlock trips and clear the failure alarm before re-attempting.</li>
+    <li>If all permissives are satisfied, attempt one more start under supervisor approval.</li>
+    <li>If the second attempt fails, do not try again &mdash; dispatch maintenance.</li>
+  </ol>
+
+  <h2>4. Troubleshooting Guidance</h2>
+  <ol>
+    <li>At the MCC, verify control voltage, overload relay state, and breaker position.</li>
+    <li>Check drive/starter for latched fault codes (see MT_90100_DriveFault plan if VFD).</li>
+    <li>Verify Local/Remote selector in Remote and E-Stop reset.</li>
+    <li>Verify all field permissive transmitters are reading correctly.</li>
+    <li>Confirm run feedback wiring &ndash; bump test the aux contact.</li>
+    <li>Review start timer setting &ndash; ensure it is not shorter than motor acceleration time.</li>
+  </ol>
+
+  <div class="note">
+    <strong>Note:</strong> On large compressor motors, verify the motor has fully coasted to a stop and any
+    anti-restart / thermal restart delay has expired before re-attempting a start.
+  </div>
+
+  <h2>5. Reset and Restart Criteria</h2>
+  <ul>
+    <li>Root cause of failure identified.</li>
+    <li>All permissives satisfied and interlocks reset.</li>
+    <li>Motor thermal state acceptable (winding temperature within limits).</li>
+    <li>Shift Supervisor approval to attempt restart.</li>
+    <li>Clear the FailToStart alarm at the faceplate and issue a new start command.</li>
+  </ul>
+
+  <h2>6. Escalation</h2>
+  <table>
+    <tr><th>Time Since Alarm</th><th>Action</th><th>Notify</th></tr>
+    <tr><td>0 - 5 min</td><td>Acknowledge, check permissives</td><td>Shift Supervisor</td></tr>
+    <tr><td>5 - 30 min</td><td>MCC / field troubleshooting</td><td>Electrical Technician</td></tr>
+    <tr><td>&gt; 30 min</td><td>Formal work order, engineering support</td><td>Rotating Equipment / Controls Engineer</td></tr>
+  </table>
+
+  <h2>7. References</h2>
+  <ul>
+    <li>P&amp;ID: PID-90-100 &ndash; Compressor Train MT-90100</li>
+    <li>SOP-COMP-014 &ndash; Compressor Startup and Shutdown</li>
+    <li>Rockwell PlantPAx Process Library &ndash; raP_Opr_Motor Faceplate Guide</li>
+  </ul>
+
+</div>
+
+<footer>
+  Document: MT_90100_FailToStart.html &nbsp;|&nbsp; Rev. 0 (Draft) &nbsp;|&nbsp; For training / illustrative use only
+</footer>
+
+</body>
+</html>

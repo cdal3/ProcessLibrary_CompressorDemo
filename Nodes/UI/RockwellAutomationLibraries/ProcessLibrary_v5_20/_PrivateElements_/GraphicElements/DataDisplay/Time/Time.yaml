@@ -1,0 +1,1245 @@
+Name: Time
+Id: g=510325e0a0a3290d26ca2b5ea83ad3e1
+Type: FolderType
+Children:
+- Name: raP_5_20_TD_HMMSS
+  Id: g=4014e6b46bc236097d554914ed20cf71
+  Supertype: RowLayout
+  ReferenceType: HasComponent
+  Children:
+  - Name: Inp_Hours
+    Id: g=f695177ef2b67a0a2ed16f912a86a470
+    Type: BaseDataVariableType
+    DataType: Int32
+    Description: {"NamespaceIndex":40,"TextId":"Number of hours to display"}
+  - Name: Inp_Minutes
+    Id: g=715171214562a8f9afc7189d86754320
+    Type: BaseDataVariableType
+    DataType: Int32
+    Description: {"NamespaceIndex":40,"TextId":"Number of minutes to display"}
+  - Name: Inp_Seconds
+    Id: g=52f06dcd93f03163f2b558fa70b98b41
+    Type: BaseDataVariableType
+    DataType: Int32
+    Description: {"NamespaceIndex":40,"TextId":"Number of seconds to display"}
+  - Name: td_Hours
+    Id: g=9f63bea4af1646947dc2d9f201a491b9
+    Type: Label
+    Children:
+    - Name: Text
+      Id: g=714e6c28ad61b37dbb5c6058e1d011cd
+      Type: BaseDataVariableType
+      DataType: LocalizedText
+      Children:
+      - Name: StringFormatter1
+        Id: g=8ce2de4349c0f95f83abea1af8907bf9
+        Type: StringFormatter
+        Children:
+        - Name: Format
+          Id: g=42eb7842f37086ca4b635c41bf163694
+          Type: BaseDataVariableType
+          DataType: LocalizedText
+          ReferenceType: HasParameter
+          ModellingRule: Optional
+          Value: {"LocaleId":"en-US","Text":"{0:d}:"}
+        - Name: ns=9;Source0
+          Id: g=a108ed402dec9253cc54decec55e46cd
+          Type: BaseDataVariableType
+          DataType: BaseDataType
+          ReferenceType: HasSource
+          Children:
+          - Name: DynamicLink
+            Id: g=558967d7dabc9ecaac5c85806ffe6b3d
+            Type: DynamicLink
+            DataType: NodePath
+            Value: "../../../../Inp_Hours"
+    - Name: Style
+      Id: g=4c74a7abbb4ac1560f4c8ef88613a232
+      Type: BaseDataVariableType
+      DataType: String
+      ModellingRule: Optional
+      Value: "Live Data"
+  - Name: td_MinutesLeadingZero
+    Id: g=976121bd362f77309daa01b02d818048
+    Type: Label
+    Children:
+    - Name: Text
+      Id: g=2bbfb0a6ab6a4fbd388e31acd100ede6
+      Type: BaseDataVariableType
+      DataType: LocalizedText
+      ModellingRule: Optional
+      Value: {"LocaleId":"en-US","Text":"0"}
+    - Name: Style
+      Id: g=e61c976a6f40b428d35ccbd6af980e02
+      Type: BaseDataVariableType
+      DataType: String
+      ModellingRule: Optional
+      Value: "Live Data"
+    - Name: Visible
+      Id: g=d2ccba2b669008adcd7e521f1638352a
+      Type: BaseDataVariableType
+      DataType: Boolean
+      Value: true
+      Children:
+      - Name: ExpressionEvaluator1
+        Id: g=a23c8131f0ca2b343f1955e39af348b4
+        Type: ExpressionEvaluator
+        Children:
+        - Name: Expression
+          Id: g=9ea2482f9105219c4769fcd4bb11ffc1
+          Type: BaseDataVariableType
+          DataType: String
+          ReferenceType: HasParameter
+          ModellingRule: Optional
+          Value: "{0}<10"
+        - Name: ns=9;Source0
+          Id: g=e60254d34b5b643cb85c005e609b4189
+          Type: BaseDataVariableType
+          DataType: BaseDataType
+          ReferenceType: HasSource
+          Children:
+          - Name: DynamicLink
+            Id: g=873c84bc917929e31220cf668e0471fb
+            Type: DynamicLink
+            DataType: NodePath
+            Value: "../../../../Inp_Minutes"
+  - Name: td_Minutes
+    Id: g=c0137b39b933906fe15ba0714b4a87ad
+    Type: Label
+    Children:
+    - Name: Text
+      Id: g=af0e2519111463480f6f77b99d7a3a47
+      Type: BaseDataVariableType
+      DataType: LocalizedText
+      Children:
+      - Name: StringFormatter1
+        Id: g=946bf0f153345a080935a226d851ea7e
+        Type: StringFormatter
+        Children:
+        - Name: Format
+          Id: g=3713f5e819dd40be0eb23909d54dac10
+          Type: BaseDataVariableType
+          DataType: LocalizedText
+          ReferenceType: HasParameter
+          Value: {"LocaleId":"en-US","Text":"{0:d}:"}
+        - Name: ns=9;Source0
+          Id: g=57f507f8ce3d17380b9421b52084372a
+          Type: BaseDataVariableType
+          DataType: BaseDataType
+          ReferenceType: HasSource
+          Children:
+          - Name: DynamicLink
+            Id: g=2f4fce2283b3307dde2980d45507766e
+            Type: DynamicLink
+            DataType: NodePath
+            Value: "../../../../Inp_Minutes"
+    - Name: Style
+      Id: g=f252be1653e5775f700f8fedf9162635
+      Type: BaseDataVariableType
+      DataType: String
+      ModellingRule: Optional
+      Value: "Live Data"
+  - Name: td_SecondsLeadingZero
+    Id: g=c51b926f27fcff86e6dbf1cfdb60f3ca
+    Type: Label
+    Children:
+    - Name: Text
+      Id: g=7b01ae93d50f852ffd9f22e3f84e6e7c
+      Type: BaseDataVariableType
+      DataType: LocalizedText
+      ModellingRule: Optional
+      Value: {"LocaleId":"en-US","Text":"0"}
+    - Name: Style
+      Id: g=a9d345ab47107b4da4bed5c1c922f5b4
+      Type: BaseDataVariableType
+      DataType: String
+      ModellingRule: Optional
+      Value: "Live Data"
+    - Name: Visible
+      Id: g=8e3c2bc966d4b38ff20113240a6288bc
+      Type: BaseDataVariableType
+      DataType: Boolean
+      Value: true
+      Children:
+      - Name: ExpressionEvaluator1
+        Id: g=3a1392fb4e7345cd30fd7362bf399456
+        Type: ExpressionEvaluator
+        Children:
+        - Name: Expression
+          Id: g=0cd40df296e924b5d4ce021b7df9e1bc
+          Type: BaseDataVariableType
+          DataType: String
+          ReferenceType: HasParameter
+          ModellingRule: Optional
+          Value: "{0}<10"
+        - Name: ns=9;Source0
+          Id: g=6b5783e6e4a87c37f9334dbddd7012d7
+          Type: BaseDataVariableType
+          DataType: BaseDataType
+          ReferenceType: HasSource
+          Children:
+          - Name: DynamicLink
+            Id: g=9b5d02613bc849f49c0da3ef78f4df6b
+            Type: DynamicLink
+            DataType: NodePath
+            Value: "../../../../Inp_Seconds"
+  - Name: td_Seconds
+    Id: g=56056cf324ab0b65abd3447e2f4d6d35
+    Type: Label
+    Children:
+    - Name: Text
+      Id: g=2e3229e50a8440445110e6907e9b606a
+      Type: BaseDataVariableType
+      DataType: LocalizedText
+      Children:
+      - Name: StringFormatter1
+        Id: g=4d1719fc16392ac593dfbcabb3740d80
+        Type: StringFormatter
+        Children:
+        - Name: Format
+          Id: g=34f58110d6de6685cf071bd808132aba
+          Type: BaseDataVariableType
+          DataType: LocalizedText
+          ReferenceType: HasParameter
+          Value: {"LocaleId":"en-US","Text":"{0:d}"}
+        - Name: ns=9;Source0
+          Id: g=9d483f57c7704989e008136db8a39c0b
+          Type: BaseDataVariableType
+          DataType: BaseDataType
+          ReferenceType: HasSource
+          Children:
+          - Name: DynamicLink
+            Id: g=d91617b91f1fb413cbab3f3da9529b9c
+            Type: DynamicLink
+            DataType: NodePath
+            Value: "../../../../Inp_Seconds"
+    - Name: Style
+      Id: g=bc6a99badddf33c6092b2c2ba1bfdfdc
+      Type: BaseDataVariableType
+      DataType: String
+      ModellingRule: Optional
+      Value: "Live Data"
+  - Name: Cfg_ObjectVersion
+    Id: g=c3d717584cc61ae398387424162d912e
+    Type: BaseDataVariableType
+    DataType: String
+    Value: "5.20.04 Release"
+- Name: raP_5_20_TD_Duration
+  Id: g=9a88160eb96e4052502961f88cd5b8ea
+  Supertype: raP_5_20_TD_HMMSS
+  ReferenceType: HasComponent
+  Children:
+  - Name: Inp_Hours
+    Id: g=b4f7f0c4e25af6710502b644408649ef
+    Type: BaseDataVariableType
+    DataType: Int32
+    Description: {"NamespaceIndex":40,"TextId":"Number of hours to display"}
+  - Name: Inp_Minutes
+    Id: g=475e96fb0dd25103dca0647083c36e36
+    Type: BaseDataVariableType
+    DataType: Int32
+    Description: {"NamespaceIndex":40,"TextId":"Number of minutes to display"}
+  - Name: Inp_Seconds
+    Id: g=e4c869461ce8820327fd37f1e0e62968
+    Type: BaseDataVariableType
+    DataType: Int32
+    Description: {"NamespaceIndex":40,"TextId":"Number of seconds to display"}
+  - Name: td_1Day
+    Id: g=595fb275fd4193469564f480967f42da
+    Type: Label
+    Children:
+    - Name: Text
+      Id: g=5e1193db2046d503569a2f548373234a
+      Type: BaseDataVariableType
+      DataType: LocalizedText
+      Value: {"NamespaceIndex":40,"TextId":"1 day "}
+    - Name: Style
+      Id: g=4ed1e180f1163f71d80bf36527c9e990
+      Type: BaseDataVariableType
+      DataType: String
+      ModellingRule: Optional
+      Value: "Live Data"
+    - Name: Visible
+      Id: g=a678d1eda7e922da39ae8fa619c64491
+      Type: BaseDataVariableType
+      DataType: Boolean
+      Value: true
+      Children:
+      - Name: ExpressionEvaluator1
+        Id: g=9c158d663c2e44c3fefa0ea201c68225
+        Type: ExpressionEvaluator
+        Children:
+        - Name: Expression
+          Id: g=bd0f9500d4221ecc087a22de80e4ea45
+          Type: BaseDataVariableType
+          DataType: String
+          ReferenceType: HasParameter
+          ModellingRule: Optional
+          Value: "{0} == 1"
+        - Name: ns=9;Source0
+          Id: g=c20c63b40e055ac7f5c95b62c571f28e
+          Type: BaseDataVariableType
+          DataType: BaseDataType
+          ReferenceType: HasSource
+          Children:
+          - Name: DynamicLink
+            Id: g=4bb13e717fa3c83697a4c3e0575c4b3f
+            Type: DynamicLink
+            DataType: NodePath
+            Value: "../../../../Inp_Days"
+  - Name: td_Days
+    Id: g=e28a5152b7c1fc8011c204ff52db4c88
+    Type: Label
+    Children:
+    - Name: Text
+      Id: g=311ac785c7c4d8502236b2be26bab794
+      Type: BaseDataVariableType
+      DataType: LocalizedText
+      Children:
+      - Name: StringFormatter1
+        Id: g=0c30c0e6a106dcb6726f51b3419eecc6
+        Type: StringFormatter
+        Children:
+        - Name: Format
+          Id: g=521c099f5d9549d4ce275791457c0e87
+          Type: BaseDataVariableType
+          DataType: LocalizedText
+          ReferenceType: HasParameter
+          ModellingRule: Optional
+          Value: {"NamespaceIndex":40,"TextId":"{0:n} Days "}
+        - Name: ns=9;Source0
+          Id: g=f835f635e82509e1f88e3db05d301a5c
+          Type: BaseDataVariableType
+          DataType: BaseDataType
+          ReferenceType: HasSource
+          Children:
+          - Name: DynamicLink
+            Id: g=56bd44b947c048bd24305cdcc3fc1a2a
+            Type: DynamicLink
+            DataType: NodePath
+            Value: "../../../../Inp_Days"
+    - Name: Style
+      Id: g=2beed9a47ea3ed1489e52842aef4eb18
+      Type: BaseDataVariableType
+      DataType: String
+      ModellingRule: Optional
+      Value: "Live Data"
+    - Name: Visible
+      Id: g=ba75ca12b40ef72de860822fd42adb75
+      Type: BaseDataVariableType
+      DataType: Boolean
+      Value: true
+      Children:
+      - Name: ExpressionEvaluator1
+        Id: g=5e90c2a318163f782971b74cdd5b9129
+        Type: ExpressionEvaluator
+        Children:
+        - Name: Expression
+          Id: g=fbaeaaf6369d41591d7a1ac3aa224769
+          Type: BaseDataVariableType
+          DataType: String
+          ReferenceType: HasParameter
+          ModellingRule: Optional
+          Value: "{0} > 1"
+        - Name: ns=9;Source0
+          Id: g=69597a9e9975da6029e061887a89264f
+          Type: BaseDataVariableType
+          DataType: BaseDataType
+          ReferenceType: HasSource
+          Children:
+          - Name: DynamicLink
+            Id: g=d3137ed7ed83c700e22480a47806c491
+            Type: DynamicLink
+            DataType: NodePath
+            Value: "../../../../Inp_Days"
+  - Name: td_Hours
+    Id: g=eea688cecca8cbf6100b9a1045b5e7fb
+    Type: Label
+    Children:
+    - Name: Text
+      Id: g=0a7731f57950fd61dba06187bf1544c6
+      Type: BaseDataVariableType
+      DataType: LocalizedText
+      Children:
+      - Name: StringFormatter1
+        Id: g=e93a2eca318a6c5069f72ac4a75fae72
+        Type: StringFormatter
+        Children:
+        - Name: Source0
+          Id: g=920017645eff3b58208abaa41c3ef96d
+          Type: BaseDataVariableType
+          DataType: BaseDataType
+          ReferenceType: HasSource
+          Children:
+          - Name: DynamicLink
+            Id: g=b5bbd767eab9c429fb27862965e66511
+            Type: DynamicLink
+            DataType: NodePath
+            Value: "../../../../Inp_Hours"
+  - Name: td_MinutesLeadingZero
+    Id: g=0892fda90f5e9175b49993949869b1ce
+    Type: Label
+    Children:
+    - Name: Visible
+      Id: g=d6bc5256b376dffcabfa93ff1a6835df
+      Type: BaseDataVariableType
+      DataType: Boolean
+      Value: true
+      Children:
+      - Name: ExpressionEvaluator1
+        Id: g=775f6f6c71c2860281302014ee22a7b8
+        Type: ExpressionEvaluator
+        Children:
+        - Name: Source0
+          Id: g=c3dbeed4a56d39f21ea0879a1eb371dc
+          Type: BaseDataVariableType
+          DataType: BaseDataType
+          ReferenceType: HasSource
+          Children:
+          - Name: DynamicLink
+            Id: g=f4d4503a7643ff659cdd2736ff45cc90
+            Type: DynamicLink
+            DataType: NodePath
+            Value: "../../../../Inp_Minutes"
+  - Name: td_Minutes
+    Id: g=d6a7706c4d8be93b92313debd89df712
+    Type: Label
+    Children:
+    - Name: Text
+      Id: g=9cc255382ea85cff679bb287607a9731
+      Type: BaseDataVariableType
+      DataType: LocalizedText
+      Children:
+      - Name: StringFormatter1
+        Id: g=9b7a797645bd7f80532c89d224b3757a
+        Type: StringFormatter
+        Children:
+        - Name: Format
+          Id: g=b5453be9c39db93a6f9a06806f3cfdf6
+          Type: BaseDataVariableType
+          DataType: LocalizedText
+          ReferenceType: HasParameter
+          Value: {"LocaleId":"en-US","Text":"{0:d}:"}
+        - Name: Source0
+          Id: g=b39dcbdbcfb085845756677082182fa8
+          Type: BaseDataVariableType
+          DataType: BaseDataType
+          ReferenceType: HasSource
+          Children:
+          - Name: DynamicLink
+            Id: g=00cf541873a92b292c4ed25961e06326
+            Type: DynamicLink
+            DataType: NodePath
+            Value: "../../../../Inp_Minutes"
+  - Name: td_SecondsLeadingZero
+    Id: g=a6523f221d1ac89152dcf0cca42c8098
+    Type: Label
+    Children:
+    - Name: Visible
+      Id: g=feff98b98a4a25b408c6edc030e45206
+      Type: BaseDataVariableType
+      DataType: Boolean
+      Value: true
+      Children:
+      - Name: ExpressionEvaluator1
+        Id: g=4cccf63482c94b33c90002c60201acc5
+        Type: ExpressionEvaluator
+        Children:
+        - Name: Source0
+          Id: g=cb12e8f76101b0d926de0915a3ec99cc
+          Type: BaseDataVariableType
+          DataType: BaseDataType
+          ReferenceType: HasSource
+          Children:
+          - Name: DynamicLink
+            Id: g=a4d66ce8dcb0b02760a546263bb94833
+            Type: DynamicLink
+            DataType: NodePath
+            Value: "../../../../Inp_Seconds"
+  - Name: td_Seconds
+    Id: g=6eddb289ae50f6e4789cf25ff0befac3
+    Type: Label
+    Children:
+    - Name: Text
+      Id: g=e85e34a96315420d1519dca20ace07ab
+      Type: BaseDataVariableType
+      DataType: LocalizedText
+      Children:
+      - Name: StringFormatter1
+        Id: g=3ba052c534d6e361e82852c5668eacb9
+        Type: StringFormatter
+        Children:
+        - Name: Format
+          Id: g=e6e98daf757dbcb40d8b95f3e63d0bfd
+          Type: BaseDataVariableType
+          DataType: LocalizedText
+          ReferenceType: HasParameter
+          Value: {"LocaleId":"en-US","Text":"{0:d}"}
+        - Name: Source0
+          Id: g=c99d41acd350b53312635df913991739
+          Type: BaseDataVariableType
+          DataType: BaseDataType
+          ReferenceType: HasSource
+          Children:
+          - Name: DynamicLink
+            Id: g=ebe04d2244320aec984d03384b205876
+            Type: DynamicLink
+            DataType: NodePath
+            Value: "../../../../Inp_Seconds"
+  - Name: Inp_Days
+    Id: g=8443791aeb6a629cd8be0501316643e9
+    Type: BaseDataVariableType
+    DataType: Int32
+    Description: {"NamespaceIndex":40,"TextId":"Number of Days to Display"}
+  - Name: Cfg_ObjectVersion
+    Id: g=375a703006cf7b3be72a559e71e73227
+    Type: BaseDataVariableType
+    DataType: String
+    Value: "5.20.04 Release"
+- Name: raP_5_20_TD_LblDuration
+  Id: g=9509aa4e1a3a7ca3b803c8c0cecd0ff0
+  Supertype: ColumnLayout
+  ReferenceType: HasComponent
+  Children:
+  - Name: Label
+    Id: g=63eba8260f328fa6f45fa5a6107e5dd1
+    Type: Label
+    Children:
+    - Name: Style
+      Id: g=5127a2858624cf6f2262553281915825
+      Type: BaseDataVariableType
+      DataType: String
+      ModellingRule: Optional
+      Value: "Data Label"
+    - Name: Text
+      Id: g=d7e761796a2560c52a0f660b0b143937
+      Type: BaseDataVariableType
+      DataType: LocalizedText
+      Children:
+      - Name: DynamicLink
+        Id: g=92f3cff58e297ba96943ba1ef7d51229
+        Type: DynamicLink
+        DataType: NodePath
+        Value: "../../Cfg_Label"
+  - Name: Cfg_Label
+    Id: g=18bec87931ebe368d061ff69376fd05b
+    Type: BaseDataVariableType
+    DataType: LocalizedText
+    Value: {"LocaleId":"en-US","Text":"0"}
+  - Name: Inp_Days
+    Id: g=d29fe302427c6d739efe5f5f49cd7fa8
+    Type: BaseDataVariableType
+    DataType: Int32
+    Description: {"NamespaceIndex":40,"TextId":"Number of Days to Display"}
+  - Name: Inp_Hours
+    Id: g=985dc0dad5ee094122e5e3cc5769bc4b
+    Type: BaseDataVariableType
+    DataType: Int32
+    Description: {"NamespaceIndex":40,"TextId":"Number of hours to display"}
+  - Name: Inp_Minutes
+    Id: g=cbc42c2e26b28c3845f9d6afcfa03f8d
+    Type: BaseDataVariableType
+    DataType: Int32
+    Description: {"NamespaceIndex":40,"TextId":"Number of minutes to display"}
+  - Name: Inp_Seconds
+    Id: g=4eb1d9d853733fd692fea816c7917593
+    Type: BaseDataVariableType
+    DataType: Int32
+    Description: {"NamespaceIndex":40,"TextId":"Number of seconds to display"}
+  - Name: TD_Duration
+    Id: g=4fa19b038b5ae2037ec3e0569de5f5ae
+    Type: raP_5_20_TD_Duration
+    Children:
+    - Name: Inp_Hours
+      Id: g=a07f370f7b75b6f7de4d687167d7a9cb
+      Type: BaseDataVariableType
+      DataType: Int32
+      Children:
+      - Name: DynamicLink
+        Id: g=7a399ba3cf423125019405ac6e044f44
+        Type: DynamicLink
+        DataType: NodePath
+        Value: "../../Inp_Hours"
+        Children:
+        - Name: Mode
+          Id: g=a15d008a77a558d85b39766ddb26c6ac
+          Type: BaseVariableType
+          DataType: DynamicLinkMode
+          ModellingRule: Optional
+          Value: 2
+    - Name: Inp_Minutes
+      Id: g=01bd33a3df7cd12d5e8b65f63e2c3345
+      Type: BaseDataVariableType
+      DataType: Int32
+      Children:
+      - Name: DynamicLink
+        Id: g=ff37f795350bf6ce30e8057f82ce4fb8
+        Type: DynamicLink
+        DataType: NodePath
+        Value: "../../Inp_Minutes"
+        Children:
+        - Name: Mode
+          Id: g=e8a3729df5684fbde7f261d94ffe38a0
+          Type: BaseVariableType
+          DataType: DynamicLinkMode
+          ModellingRule: Optional
+          Value: 2
+    - Name: Inp_Seconds
+      Id: g=faa7dce3eae5c7e863c6bb5d89ef193d
+      Type: BaseDataVariableType
+      DataType: Int32
+      Children:
+      - Name: DynamicLink
+        Id: g=a2856d40271ddbfda656d6357bd830e6
+        Type: DynamicLink
+        DataType: NodePath
+        Value: "../../Inp_Seconds"
+        Children:
+        - Name: Mode
+          Id: g=c1fe36848d25f914f30f9f371ec0d422
+          Type: BaseVariableType
+          DataType: DynamicLinkMode
+          ModellingRule: Optional
+          Value: 2
+    - Name: td_1Day
+      Id: g=2c000a9c9e92ac8e7dcf04aa7662bd54
+      Type: Label
+      Children:
+      - Name: Text
+        Id: g=82b833cdc25282779190a27cee9017c9
+        Type: BaseDataVariableType
+        DataType: LocalizedText
+        Value: {"NamespaceIndex":40,"TextId":"1 day "}
+      - Name: Visible
+        Id: g=207a5e350c5794d5cd5f5a5c56711a59
+        Type: BaseDataVariableType
+        DataType: Boolean
+        Value: true
+        Children:
+        - Name: ExpressionEvaluator1
+          Id: g=dc53af9cf34b9a7afd88238b244d9c8b
+          Type: ExpressionEvaluator
+          Children:
+          - Name: Source0
+            Id: g=7871c2ff6ad057a3b0720f2415ea580a
+            Type: BaseDataVariableType
+            DataType: BaseDataType
+            ReferenceType: HasSource
+            Children:
+            - Name: DynamicLink
+              Id: g=22b1197bddeb79a04167ba60e73e4df6
+              Type: DynamicLink
+              DataType: NodePath
+              Value: "../../../../Inp_Days"
+    - Name: td_Days
+      Id: g=ec32303b44c8893156a90b44e54c0890
+      Type: Label
+      Children:
+      - Name: Text
+        Id: g=c7987ac71bb9c31d411b9bfd47adfe88
+        Type: BaseDataVariableType
+        DataType: LocalizedText
+        Children:
+        - Name: StringFormatter1
+          Id: g=69009faa461f58b50dd5587cf79440c7
+          Type: StringFormatter
+          Children:
+          - Name: Source0
+            Id: g=12ac455cb742794f045dd657845cbc6b
+            Type: BaseDataVariableType
+            DataType: BaseDataType
+            ReferenceType: HasSource
+            Children:
+            - Name: DynamicLink
+              Id: g=90c8d366cdd1b2a8541b6b81b961f3c8
+              Type: DynamicLink
+              DataType: NodePath
+              Value: "../../../../Inp_Days"
+      - Name: Visible
+        Id: g=11e0426352b81da88fb4a55ba95fec27
+        Type: BaseDataVariableType
+        DataType: Boolean
+        Value: true
+        Children:
+        - Name: ExpressionEvaluator1
+          Id: g=cd370960e32a2e46d5befd454cabd99e
+          Type: ExpressionEvaluator
+          Children:
+          - Name: Source0
+            Id: g=7d0ee99ed28f8895e9ae51f82676e475
+            Type: BaseDataVariableType
+            DataType: BaseDataType
+            ReferenceType: HasSource
+            Children:
+            - Name: DynamicLink
+              Id: g=3cf3fda0e119c2b481dba292347f2b04
+              Type: DynamicLink
+              DataType: NodePath
+              Value: "../../../../Inp_Days"
+    - Name: td_Hours
+      Id: g=0fe882da3bbea6da1d27da498da7c5c0
+      Type: Label
+      Children:
+      - Name: Text
+        Id: g=be39dbc328f02917c71ca41a2126521b
+        Type: BaseDataVariableType
+        DataType: LocalizedText
+        Children:
+        - Name: StringFormatter1
+          Id: g=0edc74daa6ae4c60a2723a98409017a2
+          Type: StringFormatter
+          Children:
+          - Name: Source0
+            Id: g=3d7116db883759e65d3d934a47fc8880
+            Type: BaseDataVariableType
+            DataType: BaseDataType
+            ReferenceType: HasSource
+            Children:
+            - Name: DynamicLink
+              Id: g=9cfc6dda44767124bca6f01269ea8191
+              Type: DynamicLink
+              DataType: NodePath
+              Value: "../../../../Inp_Hours"
+    - Name: td_MinutesLeadingZero
+      Id: g=ba9c8410369fe63487dae33e34baae76
+      Type: Label
+      Children:
+      - Name: Visible
+        Id: g=380e77980f0573fe18e625e702e9899a
+        Type: BaseDataVariableType
+        DataType: Boolean
+        Value: true
+        Children:
+        - Name: ExpressionEvaluator1
+          Id: g=b68f92d12f60e5cae4d74b9280debc64
+          Type: ExpressionEvaluator
+          Children:
+          - Name: Source0
+            Id: g=d9ffd7d189102939120716ba8d35bc12
+            Type: BaseDataVariableType
+            DataType: BaseDataType
+            ReferenceType: HasSource
+            Children:
+            - Name: DynamicLink
+              Id: g=d59b6f57be3d9b1c025a12fbe8802a5e
+              Type: DynamicLink
+              DataType: NodePath
+              Value: "../../../../Inp_Minutes"
+    - Name: td_Minutes
+      Id: g=26e44f8180525ae4292e14c438de201e
+      Type: Label
+      Children:
+      - Name: Text
+        Id: g=d23bec18f1df8cb3a206e892b9b0253a
+        Type: BaseDataVariableType
+        DataType: LocalizedText
+        Children:
+        - Name: StringFormatter1
+          Id: g=259af2b8a08f314f1ba672e4c47ed644
+          Type: StringFormatter
+          Children:
+          - Name: Format
+            Id: g=b08253255cd1337fddbeef991c6bfca5
+            Type: BaseDataVariableType
+            DataType: LocalizedText
+            ReferenceType: HasParameter
+            Value: {"LocaleId":"en-US","Text":"{0:d}:"}
+          - Name: Source0
+            Id: g=842d7274d83b8cc734a4859bfd5d4a45
+            Type: BaseDataVariableType
+            DataType: BaseDataType
+            ReferenceType: HasSource
+            Children:
+            - Name: DynamicLink
+              Id: g=0bac9b2e93acb6b4328da78ff6a417b1
+              Type: DynamicLink
+              DataType: NodePath
+              Value: "../../../../Inp_Minutes"
+    - Name: td_SecondsLeadingZero
+      Id: g=039d9b69a1a996865f187bfe25129830
+      Type: Label
+      Children:
+      - Name: Visible
+        Id: g=b2006e1cf911f748ba156c2250e3b7ca
+        Type: BaseDataVariableType
+        DataType: Boolean
+        Value: true
+        Children:
+        - Name: ExpressionEvaluator1
+          Id: g=7897cf12ce7d97ecd148409233e5d9e9
+          Type: ExpressionEvaluator
+          Children:
+          - Name: Source0
+            Id: g=d8178381831caa4a441f52bca58100a9
+            Type: BaseDataVariableType
+            DataType: BaseDataType
+            ReferenceType: HasSource
+            Children:
+            - Name: DynamicLink
+              Id: g=c7c929f166d18e03c76525f9060577ce
+              Type: DynamicLink
+              DataType: NodePath
+              Value: "../../../../Inp_Seconds"
+    - Name: td_Seconds
+      Id: g=d9d092f467d38291af6f7a80ef20926f
+      Type: Label
+      Children:
+      - Name: Text
+        Id: g=c5f5e1d3cf22f7bad66b634cee22977a
+        Type: BaseDataVariableType
+        DataType: LocalizedText
+        Children:
+        - Name: StringFormatter1
+          Id: g=10cae0d70c3e4461b9001e51091240d5
+          Type: StringFormatter
+          Children:
+          - Name: Format
+            Id: g=36855eb9b52d461313c702dc39f1cbc7
+            Type: BaseDataVariableType
+            DataType: LocalizedText
+            ReferenceType: HasParameter
+            Value: {"LocaleId":"en-US","Text":"{0:d}"}
+          - Name: Source0
+            Id: g=92f9d699d8118f2ef04b3041c25123ce
+            Type: BaseDataVariableType
+            DataType: BaseDataType
+            ReferenceType: HasSource
+            Children:
+            - Name: DynamicLink
+              Id: g=190bc8d2b9bb2001b6af0ce5059daa4e
+              Type: DynamicLink
+              DataType: NodePath
+              Value: "../../../../Inp_Seconds"
+    - Name: Inp_Days
+      Id: g=6aa084ad1d667ff93952fcfc1467b86b
+      Type: BaseDataVariableType
+      DataType: Int32
+      Children:
+      - Name: DynamicLink
+        Id: g=0d1d17828e652d596779d3f67c4d2071
+        Type: DynamicLink
+        DataType: NodePath
+        Value: "../../Inp_Days"
+        Children:
+        - Name: Mode
+          Id: g=9b6fe4dc5c405113f7994f931f897076
+          Type: BaseVariableType
+          DataType: DynamicLinkMode
+          ModellingRule: Optional
+          Value: 2
+    - Name: Cfg_ObjectVersion
+      Id: g=b0dedc490fcb3451bb2f0f77608cf7bb
+      Type: BaseDataVariableType
+      DataType: String
+      Value: "5.20.04 Release"
+  - Name: Cfg_ObjectVersion
+    Id: g=b40bae2148343587b4fbe6256c1b6511
+    Type: BaseDataVariableType
+    DataType: String
+    Value: "5.20.04 Release"
+- Name: raP_5_20_TD_LblDurationProgress
+  Id: g=ea5d45c85e95a55034d29f427e662c25
+  Supertype: raP_5_20_TD_LblDuration
+  ReferenceType: HasComponent
+  Children:
+  - Name: Label
+    Id: g=e17ebb8b2a34601ef5a912f0fc8af20a
+    Type: Label
+    Children:
+    - Name: Text
+      Id: g=34a0871ab13bc143197560543fe94bf0
+      Type: BaseDataVariableType
+      DataType: LocalizedText
+      Children:
+      - Name: DynamicLink
+        Id: g=163cbeffb94c9621693a961a1f04cba8
+        Type: DynamicLink
+        DataType: NodePath
+        Value: "../../Cfg_Label"
+  - Name: Cfg_Label
+    Id: g=7d6bdc8b9ada277df51b60975b7a0857
+    Type: BaseDataVariableType
+    DataType: LocalizedText
+    Value: {"LocaleId":"en-US","Text":"0"}
+  - Name: Inp_Days
+    Id: g=a2ad1806427164adf7964e9bde3fe540
+    Type: BaseDataVariableType
+    DataType: Int32
+  - Name: Inp_Hours
+    Id: g=3624cd14e73486f1699cf343529eb263
+    Type: BaseDataVariableType
+    DataType: Int32
+  - Name: Inp_Minutes
+    Id: g=2d73f4cb50d7645eeb8a537780bbfef0
+    Type: BaseDataVariableType
+    DataType: Int32
+  - Name: Inp_Seconds
+    Id: g=1c66b3811a9205b7c46ce84f60af1bb3
+    Type: BaseDataVariableType
+    DataType: Int32
+  - Name: TD_Duration
+    Id: g=2168d3608d6ffeb9c36d188c6637af6e
+    Type: raP_5_20_TD_Duration
+    Children:
+    - Name: Inp_Hours
+      Id: g=0ef3265d96ca2da5ed53f067448115ef
+      Type: BaseDataVariableType
+      DataType: Int32
+      Children:
+      - Name: DynamicLink
+        Id: g=b2d2c981632d3b425fb321b2dbc9c2e7
+        Type: DynamicLink
+        DataType: NodePath
+        Value: "../../Inp_Hours"
+    - Name: Inp_Minutes
+      Id: g=16ede8e0dd85813886cace600576f4cd
+      Type: BaseDataVariableType
+      DataType: Int32
+      Children:
+      - Name: DynamicLink
+        Id: g=40156e683759d164f5aa979dd42bfe92
+        Type: DynamicLink
+        DataType: NodePath
+        Value: "../../Inp_Minutes"
+    - Name: Inp_Seconds
+      Id: g=7d5d27f62302459cae554d80a01a3f4d
+      Type: BaseDataVariableType
+      DataType: Int32
+      Children:
+      - Name: DynamicLink
+        Id: g=5a88a9ca9f8baa4691cee2ff835370bd
+        Type: DynamicLink
+        DataType: NodePath
+        Value: "../../Inp_Seconds"
+    - Name: td_1Day
+      Id: g=5add32a948a0707dfbc15279c59ced6c
+      Type: Label
+      Children:
+      - Name: Text
+        Id: g=05a552bca004292fada7cddca413b781
+        Type: BaseDataVariableType
+        DataType: LocalizedText
+        Value: {"NamespaceIndex":40,"TextId":"1 day "}
+      - Name: Visible
+        Id: g=b4d6a34023f5a1da84f6cb9f63d5079c
+        Type: BaseDataVariableType
+        DataType: Boolean
+        Value: true
+        Children:
+        - Name: ExpressionEvaluator1
+          Id: g=d9a83aa992db296d38547ecb505debb6
+          Type: ExpressionEvaluator
+          Children:
+          - Name: Source0
+            Id: g=396d4557c63abf68fbf77c444a0dcba6
+            Type: BaseDataVariableType
+            DataType: BaseDataType
+            ReferenceType: HasSource
+            Children:
+            - Name: DynamicLink
+              Id: g=783af7df0dc213489c5bac46c0b96d39
+              Type: DynamicLink
+              DataType: NodePath
+              Value: "../../../../Inp_Days"
+    - Name: td_Days
+      Id: g=3b08e646b22e6876a20381b3b2555157
+      Type: Label
+      Children:
+      - Name: Text
+        Id: g=4077599e011c557cc07e3866ea4af5a2
+        Type: BaseDataVariableType
+        DataType: LocalizedText
+        Children:
+        - Name: StringFormatter1
+          Id: g=6a795cb8b0d7abefaf339bf9f6c2426e
+          Type: StringFormatter
+          Children:
+          - Name: Source0
+            Id: g=c3957304f6757fbe75bf86ad458acfa0
+            Type: BaseDataVariableType
+            DataType: BaseDataType
+            ReferenceType: HasSource
+            Children:
+            - Name: DynamicLink
+              Id: g=14d39c37d362338cc3736f3601bd6067
+              Type: DynamicLink
+              DataType: NodePath
+              Value: "../../../../Inp_Days"
+      - Name: Visible
+        Id: g=8560057a535f50d961702385cf8ac716
+        Type: BaseDataVariableType
+        DataType: Boolean
+        Value: true
+        Children:
+        - Name: ExpressionEvaluator1
+          Id: g=20fafa36af79df206a3938c6b19ee60b
+          Type: ExpressionEvaluator
+          Children:
+          - Name: Source0
+            Id: g=2a2bf717296d2968a6d39e3ede0a4ef1
+            Type: BaseDataVariableType
+            DataType: BaseDataType
+            ReferenceType: HasSource
+            Children:
+            - Name: DynamicLink
+              Id: g=b49050c0ea0759f4e8fd13eb85998a5b
+              Type: DynamicLink
+              DataType: NodePath
+              Value: "../../../../Inp_Days"
+    - Name: td_Hours
+      Id: g=d879bf4f331cbe099386deb6a4689230
+      Type: Label
+      Children:
+      - Name: Text
+        Id: g=17132ff743a7b1f725aa46977f3bc39a
+        Type: BaseDataVariableType
+        DataType: LocalizedText
+        Children:
+        - Name: StringFormatter1
+          Id: g=3f419c51626415e05aa1edc8d3b7186e
+          Type: StringFormatter
+          Children:
+          - Name: Source0
+            Id: g=787aaec29b80fb93275a873a9803e03e
+            Type: BaseDataVariableType
+            DataType: BaseDataType
+            ReferenceType: HasSource
+            Children:
+            - Name: DynamicLink
+              Id: g=305b0571d11842b22d1edfe5ce5422db
+              Type: DynamicLink
+              DataType: NodePath
+              Value: "../../../../Inp_Hours"
+    - Name: td_MinutesLeadingZero
+      Id: g=0db194a448620cd7f1b6e11b113efef3
+      Type: Label
+      Children:
+      - Name: Visible
+        Id: g=f3d04e1eae41fc88fc7ba40c5b2f99cf
+        Type: BaseDataVariableType
+        DataType: Boolean
+        Value: true
+        Children:
+        - Name: ExpressionEvaluator1
+          Id: g=0e976280f3627268f1ccf7764eaf6991
+          Type: ExpressionEvaluator
+          Children:
+          - Name: Source0
+            Id: g=07deb3431caa63e2a62c6503ccd81140
+            Type: BaseDataVariableType
+            DataType: BaseDataType
+            ReferenceType: HasSource
+            Children:
+            - Name: DynamicLink
+              Id: g=714f84bcc86672bda2d029b243a38bd6
+              Type: DynamicLink
+              DataType: NodePath
+              Value: "../../../../Inp_Minutes"
+    - Name: td_Minutes
+      Id: g=8e27d56dd903a52b35c48a795116ded8
+      Type: Label
+      Children:
+      - Name: Text
+        Id: g=a6fc74cad330d230ca337909ef2b15b9
+        Type: BaseDataVariableType
+        DataType: LocalizedText
+        Children:
+        - Name: StringFormatter1
+          Id: g=d41a7a6dd2c759502f42e78f946e9f23
+          Type: StringFormatter
+          Children:
+          - Name: Format
+            Id: g=c76f18939bba902fd065769069e00db8
+            Type: BaseDataVariableType
+            DataType: LocalizedText
+            ReferenceType: HasParameter
+            Value: {"LocaleId":"en-US","Text":"{0:d}:"}
+          - Name: Source0
+            Id: g=cf93c1c37b58691c30c1b454ac93c0ab
+            Type: BaseDataVariableType
+            DataType: BaseDataType
+            ReferenceType: HasSource
+            Children:
+            - Name: DynamicLink
+              Id: g=b2d251bf6fa24653b9f2a29e2f63e128
+              Type: DynamicLink
+              DataType: NodePath
+              Value: "../../../../Inp_Minutes"
+    - Name: td_SecondsLeadingZero
+      Id: g=d1ffcdae1055e40ac4d300a2337ba2d6
+      Type: Label
+      Children:
+      - Name: Visible
+        Id: g=843095efce570ed91f5983e23ca1f42c
+        Type: BaseDataVariableType
+        DataType: Boolean
+        Value: true
+        Children:
+        - Name: ExpressionEvaluator1
+          Id: g=f54ff5539f28e448f931f86d4dd7128f
+          Type: ExpressionEvaluator
+          Children:
+          - Name: Source0
+            Id: g=80ce70caee3bd82f9699bb2d630138cf
+            Type: BaseDataVariableType
+            DataType: BaseDataType
+            ReferenceType: HasSource
+            Children:
+            - Name: DynamicLink
+              Id: g=b6887341529d746a0d1f70a66e0a1e5a
+              Type: DynamicLink
+              DataType: NodePath
+              Value: "../../../../Inp_Seconds"
+    - Name: td_Seconds
+      Id: g=c7ba5462991e5fe24d9907e4e2d7d1d2
+      Type: Label
+      Children:
+      - Name: Text
+        Id: g=480f59f3c5e6d224fc11dc4a7817db91
+        Type: BaseDataVariableType
+        DataType: LocalizedText
+        Children:
+        - Name: StringFormatter1
+          Id: g=fd92d73da4d447a1e499f4e4ca795d66
+          Type: StringFormatter
+          Children:
+          - Name: Format
+            Id: g=0366d34cdb9a4d2d8305ac1344c80309
+            Type: BaseDataVariableType
+            DataType: LocalizedText
+            ReferenceType: HasParameter
+            Value: {"LocaleId":"en-US","Text":"{0:d}"}
+          - Name: Source0
+            Id: g=7a9fbdd770a12e507f5ed7be260538b9
+            Type: BaseDataVariableType
+            DataType: BaseDataType
+            ReferenceType: HasSource
+            Children:
+            - Name: DynamicLink
+              Id: g=4f1b4809ce1b87b9713b4f542f4eefd2
+              Type: DynamicLink
+              DataType: NodePath
+              Value: "../../../../Inp_Seconds"
+    - Name: Inp_Days
+      Id: g=440ca656d65fb158884cf52931f81953
+      Type: BaseDataVariableType
+      DataType: Int32
+      Children:
+      - Name: DynamicLink
+        Id: g=d7ee4ecff162ec8a7056ab02366a39ff
+        Type: DynamicLink
+        DataType: NodePath
+        Value: "../../Inp_Days"
+    - Name: Cfg_ObjectVersion
+      Id: g=456917d39d4fce55bb8657e80cba009a
+      Type: BaseDataVariableType
+      DataType: String
+      Value: "5.20.04 Release"
+  - Name: bg_ProgressBar
+    Id: g=99c5268d45534ddec8ae795a619225d2
+    Type: raP_5_20_ProgressBar
+    Children:
+    - Name: Width
+      Id: g=4f6816a83e874b72033d8e189ea67ad8
+      Type: BaseVariableType
+      DataType: Size
+      Value: 125.0
+      Children:
+      - Name: DynamicLink
+        Id: g=2d64025e490f9cee01812926680ab0d7
+        Type: DynamicLink
+        DataType: NodePath
+        Value: "../../Cfg_ProgressBarWidth"
+    - Name: ProgressBarActive
+      Id: g=66e7e6824a34cde81ec89af2a972b6e7
+      Type: Rectangle
+      Children:
+      - Name: Width
+        Id: g=d71836dd38186ca658e24b661e9767c5
+        Type: BaseVariableType
+        DataType: Size
+        Value: 50.0
+        Children:
+        - Name: ExpressionEvaluator1
+          Id: g=4d1814c35770adb32443d65f5ee58f88
+          Type: ExpressionEvaluator
+          Children:
+          - Name: Source0
+            Id: g=dee46781b27c187977f92eab1b015524
+            Type: BaseDataVariableType
+            DataType: BaseDataType
+            ReferenceType: HasSource
+            Children:
+            - Name: DynamicLink
+              Id: g=c2a37dffb12bc80276ac8e2d316a23a2
+              Type: DynamicLink
+              DataType: NodePath
+              Value: "../../../../Inp_PercentComplete"
+          - Name: Source1
+            Id: g=5ce307a088587245409f88d1e1481b9b
+            Type: BaseDataVariableType
+            DataType: BaseDataType
+            ReferenceType: HasSource
+            Children:
+            - Name: DynamicLink
+              Id: g=be83d6a6b45e822cb7be715d38d83935
+              Type: DynamicLink
+              DataType: NodePath
+              Value: "../../../../Width"
+    - Name: Visible
+      Id: g=ee64edc721da97fdb657c7532bda49ac
+      Type: BaseDataVariableType
+      DataType: Boolean
+      Value: true
+      Children:
+      - Name: DynamicLink
+        Id: g=f10d98906c39ddc48103c13e88aef718
+        Type: DynamicLink
+        DataType: NodePath
+        Value: "../../Set_ProgressBarVisible"
+    - Name: Inp_PercentComplete
+      Id: g=0b319207c4538ef4aaf25de67c4b21aa
+      Type: BaseDataVariableType
+      DataType: Float
+      Children:
+      - Name: DynamicLink
+        Id: g=fd1cac0f352f98fc995e1c15861634a6
+        Type: DynamicLink
+        DataType: NodePath
+        Value: "../../Inp_PercentComplete"
+        Children:
+        - Name: Mode
+          Id: g=aa92e7b2374fdb179c9b227ccb99cb10
+          Type: BaseVariableType
+          DataType: DynamicLinkMode
+          ModellingRule: Optional
+          Value: 2
+    - Name: Cfg_ObjectVersion
+      Id: g=aa863173c302ad2edf7b479177c586c6
+      Type: BaseDataVariableType
+      DataType: String
+      Value: "5.20.04 Release"
+    - Name: HorizontalAlignment
+      Id: g=f019603229432befd52d7de0698a6fbf
+      Type: BaseVariableType
+      DataType: HorizontalAlignment
+      ModellingRule: Optional
+  - Name: Cfg_ObjectVersion
+    Id: g=8638b3fd962408cb4d6c4641131e236c
+    Type: BaseDataVariableType
+    DataType: String
+    Value: "5.20.04 Release"
+  - Name: Inp_PercentComplete
+    Id: g=a1c7fa6e27ca7fb5d85f249c624b693f
+    Type: BaseDataVariableType
+    DataType: Int32
+    Description: {"NamespaceIndex":40,"TextId":"Percent Complete (0 - 100)"}
+  - Name: Cfg_ProgressBarWidth
+    Id: g=9d05a523b71646536daf39f4834c8450
+    Type: BaseDataVariableType
+    DataType: Int32
+    Value: 180
+  - Name: Set_ProgressBarVisible
+    Id: g=20509ab14ed3f77848d06ff3a1718246
+    Type: BaseDataVariableType
+    DataType: Boolean

@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Alarm Response Plan - VT-90101 Hi</title>
+<style>
+  body { font-family: "Segoe UI", Arial, sans-serif; margin: 24px; color: #222; background: #f7f7f9; }
+  header { background: #1f3a5f; color: #fff; padding: 16px 20px; border-radius: 6px 6px 0 0; }
+  header h1 { margin: 0; font-size: 22px; }
+  header .subtitle { font-size: 14px; opacity: 0.9; margin-top: 4px; }
+  .container { background: #fff; padding: 20px; border: 1px solid #d9d9e0; border-top: none; border-radius: 0 0 6px 6px; }
+  h2 { color: #1f3a5f; border-bottom: 2px solid #d9d9e0; padding-bottom: 4px; margin-top: 28px; }
+  h3 { color: #1f3a5f; }
+  table { width: 100%; border-collapse: collapse; margin-top: 8px; }
+  th, td { border: 1px solid #cfd3dc; padding: 8px 10px; text-align: left; vertical-align: top; font-size: 14px; }
+  th { background: #e9edf3; color: #1f3a5f; }
+  .meta-table td:first-child { background: #f2f4f8; font-weight: 600; width: 220px; }
+  .priority { display: inline-block; padding: 3px 10px; background: #f9a825; color: #222; border-radius: 3px; font-weight: 600; font-size: 13px; }
+  ol, ul { margin-top: 6px; }
+  li { margin: 4px 0; }
+  .note { background: #fff8e1; border-left: 4px solid #f9a825; padding: 10px 14px; margin: 12px 0; font-size: 14px; }
+  .danger { background: #ffebee; border-left: 4px solid #c62828; padding: 10px 14px; margin: 12px 0; font-size: 14px; }
+  footer { margin-top: 24px; font-size: 12px; color: #666; text-align: center; }
+</style>
+</head>
+<body>
+
+<header>
+  <h1>Alarm Response Plan</h1>
+  <div class="subtitle">Tag: VT-90101 &mdash; Compressor Motor Vibration Hi (Drive End)</div>
+</header>
+
+<div class="container">
+
+  <h2>1. Alarm Summary</h2>
+  <table class="meta-table">
+    <tr><td>Alarm Tag</td><td>VT-90101.Hi</td></tr>
+    <tr><td>Measurement</td><td>Motor drive end bearing vibration (RMS velocity)</td></tr>
+    <tr><td>Alarm Description</td><td>Vibration exceeded the Hi warning setpoint &mdash; pre-alarm before HiHi trip</td></tr>
+    <tr><td>Hi Setpoint (Example)</td><td>&gt; 4.5 mm/s RMS</td></tr>
+    <tr><td>Priority</td><td><span class="priority">MEDIUM</span></td></tr>
+    <tr><td>Alarm Class</td><td>Process / Early Warning</td></tr>
+    <tr><td>Response Time</td><td>&lt; 30 minutes</td></tr>
+    <tr><td>Consequence of Inaction</td><td>Escalation to Hi-Hi trip, drive-end bearing degradation, coupling damage</td></tr>
+  </table>
+
+  <h2>2. Possible Causes</h2>
+  <ul>
+    <li>Coupling misalignment or wear (drive end is most sensitive to coupling faults).</li>
+    <li>Developing bearing defect at the drive end.</li>
+    <li>Loose motor mounting or soft foot.</li>
+    <li>Rotor imbalance / rub.</li>
+    <li>Process-induced vibration transmitted through the shaft.</li>
+    <li>Sensor / cabling fault (verify with second sensor).</li>
+  </ul>
+
+  <div class="note">
+    <strong>Note:</strong> Drive-end vibration alarms are frequently caused by coupling and alignment
+    issues. Compare with VT-90102 (non-drive end) &mdash; a drive-end-only signature strongly implicates
+    the coupling.
+  </div>
+
+  <h2>3. Operator Response Actions</h2>
+  <ol>
+    <li>Acknowledge the alarm and review VT-90101 trend for last 24 h.</li>
+    <li>Compare VT-90101 with VT-90102 &mdash; is elevation isolated to the drive end?</li>
+    <li>Field walk-down &mdash; inspect coupling guard, listen for rubbing, check for oil/grease throw.</li>
+    <li>Notify Reliability / Vibration Analyst to collect spectra.</li>
+    <li>If vibration is climbing toward HiHi, plan an orderly shutdown before the trip.</li>
+  </ol>
+
+  <h2>4. Troubleshooting Guidance</h2>
+  <ol>
+    <li>Capture time-waveform and FFT at VT-90101 and adjacent bearings.</li>
+    <li>Check bearing temperature trend if instrumented.</li>
+    <li>Inspect coupling for wear, missing bolts, or elastomer damage at next opportunity.</li>
+    <li>Verify alignment records &mdash; consider laser alignment check.</li>
+    <li>Confirm sensor and cable integrity if reading is uncharacteristic.</li>
+  </ol>
+
+  <h2>5. Return to Normal</h2>
+  <ul>
+    <li>Vibration returns below Hi setpoint minus deadband.</li>
+    <li>Analyst review indicates no imminent failure, or a work order is generated for repair.</li>
+    <li>Alarm clears automatically once reading normalizes.</li>
+  </ul>
+
+  <h2>6. Escalation</h2>
+  <table>
+    <tr><th>Time Since Alarm</th><th>Action</th><th>Notify</th></tr>
+    <tr><td>0 - 30 min</td><td>Trend review, field inspection</td><td>Board / Field Operator</td></tr>
+    <tr><td>&gt; 30 min or rising</td><td>Vibration spectra, plan shutdown</td><td>Reliability / Vibration Analyst</td></tr>
+    <tr><td>Approaching HiHi</td><td>Prepare for interlock trip response</td><td>Shift Supervisor, Maintenance</td></tr>
+  </table>
+
+  <h2>7. References</h2>
+  <ul>
+    <li>P&amp;ID: PID-90-100 &ndash; Compressor Train MT-90100</li>
+    <li>Vibration Alarm Setpoint Sheet (ISO 10816)</li>
+    <li>Related plan: VT_90102_Hi.html, MT_90100_IntlkTrip.html</li>
+  </ul>
+
+</div>
+
+<footer>
+  Document: VT_90101_Hi.html &nbsp;|&nbsp; Rev. 0 (Draft) &nbsp;|&nbsp; For training / illustrative use only
+</footer>
+
+</body>
+</html>

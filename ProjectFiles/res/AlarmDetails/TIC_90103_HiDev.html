@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Alarm Response Plan - TIC-90103 Hi Deviation</title>
+<style>
+  body { font-family: "Segoe UI", Arial, sans-serif; margin: 24px; color: #222; background: #f7f7f9; }
+  header { background: #1f3a5f; color: #fff; padding: 16px 20px; border-radius: 6px 6px 0 0; }
+  header h1 { margin: 0; font-size: 22px; }
+  header .subtitle { font-size: 14px; opacity: 0.9; margin-top: 4px; }
+  .container { background: #fff; padding: 20px; border: 1px solid #d9d9e0; border-top: none; border-radius: 0 0 6px 6px; }
+  h2 { color: #1f3a5f; border-bottom: 2px solid #d9d9e0; padding-bottom: 4px; margin-top: 28px; }
+  h3 { color: #1f3a5f; }
+  table { width: 100%; border-collapse: collapse; margin-top: 8px; }
+  th, td { border: 1px solid #cfd3dc; padding: 8px 10px; text-align: left; vertical-align: top; font-size: 14px; }
+  th { background: #e9edf3; color: #1f3a5f; }
+  .meta-table td:first-child { background: #f2f4f8; font-weight: 600; width: 220px; }
+  .priority { display: inline-block; padding: 3px 10px; background: #f9a825; color: #222; border-radius: 3px; font-weight: 600; font-size: 13px; }
+  ol, ul { margin-top: 6px; }
+  li { margin: 4px 0; }
+  .note { background: #fff8e1; border-left: 4px solid #f9a825; padding: 10px 14px; margin: 12px 0; font-size: 14px; }
+  .danger { background: #ffebee; border-left: 4px solid #c62828; padding: 10px 14px; margin: 12px 0; font-size: 14px; }
+  footer { margin-top: 24px; font-size: 12px; color: #666; text-align: center; }
+</style>
+</head>
+<body>
+
+<header>
+  <h1>Alarm Response Plan</h1>
+  <div class="subtitle">Tag: TIC-90103 &mdash; Compressor Oil Temperature PID Hi Deviation from SP</div>
+</header>
+
+<div class="container">
+
+  <h2>1. Alarm Summary</h2>
+  <table class="meta-table">
+    <tr><td>Alarm Tag</td><td>TIC-90103.HiDev</td></tr>
+    <tr><td>Loop</td><td>Compressor oil temperature control loop (PV: TT-90103, MV: TCV-90103)</td></tr>
+    <tr><td>Alarm Description</td><td>Process variable is above setpoint by more than the configured deviation threshold for the required time</td></tr>
+    <tr><td>Deviation Threshold (Example)</td><td>PV &minus; SP &gt; 5 &deg;C for &gt; 60 s</td></tr>
+    <tr><td>Priority</td><td><span class="priority">MEDIUM</span></td></tr>
+    <tr><td>Alarm Class</td><td>Process Control</td></tr>
+    <tr><td>Response Time</td><td>&lt; 15 minutes</td></tr>
+    <tr><td>Consequence of Inaction</td><td>Escalation to TT-90103 Hi and eventually HiHi trip</td></tr>
+  </table>
+
+  <h2>2. Possible Causes</h2>
+  <ul>
+    <li>Loop in Manual with cooling water valve throttled.</li>
+    <li>TCV-90103 stuck or failing to stroke to output demand.</li>
+    <li>PID output saturated at 100% and still not enough cooling.</li>
+    <li>Loss of cooling water supply.</li>
+    <li>Controller de-tuned (integral windup, wrong PID gains).</li>
+    <li>Setpoint changed to a value that exceeds control capability.</li>
+    <li>PV signal problem (see TT_90103_Fail plan).</li>
+  </ul>
+
+  <h2>3. Operator Response Actions</h2>
+  <ol>
+    <li>Acknowledge the alarm.</li>
+    <li>Open the TIC-90103 faceplate &mdash; verify Mode (Auto vs Manual), SP, PV, OUT, and setpoint tracking.</li>
+    <li>If in Manual, return to Auto if safe; otherwise increase cooling water manually.</li>
+    <li>If OUT is at 100% (open), field-verify TCV-90103 is actually open and cooling water is flowing.</li>
+    <li>Check cooling water header conditions.</li>
+    <li>If PV continues to climb, refer to TT_90103_Hi plan and prepare for potential trip response.</li>
+  </ol>
+
+  <h2>4. Troubleshooting Guidance</h2>
+  <ol>
+    <li>Bump-test TCV-90103 in Manual (small step) to confirm valve stroke.</li>
+    <li>Check positioner air supply and I/P feedback.</li>
+    <li>Review controller tuning history and last tuning date.</li>
+    <li>Verify PID direct/reverse action and valve fail action are correct.</li>
+    <li>Compare PV against a bearing RTD to rule out sensor drift.</li>
+  </ol>
+
+  <div class="note">
+    <strong>Note:</strong> A persistent Hi deviation with OUT saturated typically indicates a
+    process/equipment issue (valve, cooling supply), not a controller tuning issue.
+  </div>
+
+  <h2>5. Return to Normal</h2>
+  <ul>
+    <li>PV returns within the deviation deadband of SP.</li>
+    <li>Loop stable in Auto for at least 5 minutes.</li>
+    <li>Root cause corrected and documented.</li>
+  </ul>
+
+  <h2>6. Escalation</h2>
+  <table>
+    <tr><th>Time Since Alarm</th><th>Action</th><th>Notify</th></tr>
+    <tr><td>0 - 15 min</td><td>Verify loop, valve, cooling water</td><td>Board / Field Operator</td></tr>
+    <tr><td>15 - 30 min</td><td>Instrument troubleshooting</td><td>Instrument Technician</td></tr>
+    <tr><td>&gt; 30 min or continuing rise</td><td>Prepare for TT-90103 Hi/HiHi response</td><td>Shift Supervisor, Controls Engineer</td></tr>
+  </table>
+
+  <h2>7. References</h2>
+  <ul>
+    <li>P&amp;ID: PID-90-100 &ndash; Compressor Train MT-90100</li>
+    <li>Loop Sheet: LS-TIC-90103</li>
+    <li>Related plan: TT_90103_Hi.html, TT_90103_HiHi.html, TT_90103_Fail.html</li>
+  </ul>
+
+</div>
+
+<footer>
+  Document: TIC_90103_HiDev.html &nbsp;|&nbsp; Rev. 0 (Draft) &nbsp;|&nbsp; For training / illustrative use only
+</footer>
+
+</body>
+</html>

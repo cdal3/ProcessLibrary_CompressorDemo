@@ -1,0 +1,738 @@
+Name: NavMethods
+Id: g=1158d5b85e8cf9b6a6b84276fbd027dd
+Type: FolderType
+Children:
+- Name: raSDK1_NavExplicit
+  Id: g=7438f7b3d0f8dbdf78ac7f8870ee6b60
+  Supertype: Button
+  Description: {"LocaleId":"en-US","Text":"Navigate to dialog box explicitly. The instruction backing tag is linked to Ref_Tag, and the dialog box is specified by Cfg_DialogBox."}
+  ReferenceType: HasComponent
+  Children:
+  - Name: Cfg_CloseCurrentDisplay
+    Id: g=b0d6c2c8ec3a41d513a550f7a40e74b9
+    Type: BaseDataVariableType
+    DataType: Boolean
+    Description: {"LocaleId":"en-US","Text":"Close current dialog box on open of new dialog box."}
+  - Name: Cfg_DialogBox
+    Id: g=88d00c25a0793a575200c93774922fec
+    Type: BaseDataVariableType
+    DataType: NodeId
+    Description: {"NamespaceIndex":40,"TextId":"Dialog box to be opened."}
+  - Name: Ref_Tag
+    Id: g=8603523ed3e25bcabd3038ad58ae0494
+    Type: BaseDataVariableType
+    DataType: NodeId
+    Description: {"NamespaceIndex":40,"TextId":"Instruction backing tag"}
+  - Name: HorizontalAlignment
+    Id: g=2e9902dc261af6c08a0083b69e032350
+    Type: BaseVariableType
+    DataType: HorizontalAlignment
+    ModellingRule: Optional
+    Value: 3
+  - Name: VerticalAlignment
+    Id: g=8bb29725c40937b56bc7287758ae96aa
+    Type: BaseVariableType
+    DataType: VerticalAlignment
+    ModellingRule: Optional
+    Value: 3
+  - Name: Style
+    Id: g=ab8164b749481ba59ead15de65e6e2ac
+    Type: BaseDataVariableType
+    DataType: String
+    ModellingRule: Optional
+    Value: "Navigation"
+  - Name: MouseClickEventHandler1
+    Id: g=8c549603755eacc27258d2d507ec1a2f
+    Type: EventHandler
+    Children:
+    - Name: ListenEventType
+      Id: g=8d4559bb66c868aed8982b117c31800b
+      Type: PropertyType
+      DataType: NodeId
+      Value: "/Types/EventTypes/BaseEventType/MouseEvent/MouseClickEvent"
+    - Name: MethodsToCall
+      Id: g=e9149e0d42cdf17e5a7153b841d51d20
+      Type: BaseObjectType
+      Children:
+      - Name: MethodContainer1
+        Id: g=8f92791a8c2a19c25d524021163d313d
+        Type: BaseObjectType
+        Children:
+        - Name: ns=9;ObjectPointer
+          Id: g=47057ca42144eef18ca139306dd7b669
+          Type: NodePointer
+          DataType: NodeId
+          Children:
+          - Name: Kind
+            Id: g=3daf02a12bf23a0d39dcae64d2c60cbb
+            Type: PropertyType
+            DataType: NodeId
+            Value: "/Types/ObjectTypes/BaseObjectType"
+          - Name: DynamicLink
+            Id: g=8720ace8c7c38070eb5ac0e5824341ff
+            Type: DynamicLink
+            DataType: NodePath
+            Value: "../../../../raSDK1_NL_NavExplicit@NodeId"
+            Children:
+            - Name: Mode
+              Id: g=0448b33232cf7ba6d5ce45183d34705b
+              Type: BaseVariableType
+              DataType: DynamicLinkMode
+              ModellingRule: Optional
+              Value: 2
+        - Name: ns=9;Method
+          Id: g=b671ce46cb2bfae346ba554a50181231
+          Type: BaseDataVariableType
+          DataType: String
+          Value: "NavExplicit"
+    - Name: EventArguments
+      Id: g=269d015d70690935731b3a84280f7e1b
+      Type: MouseClickEvent
+      Children:
+      - Name: EventId
+        Id: g=d28c05bebe4f5757b5662106084bcfad
+        Type: PropertyType
+        DataType: ByteString
+      - Name: EventType
+        Id: g=7a88be54abc2044886232fd2e1aa5ef0
+        Type: PropertyType
+        DataType: NodeId
+      - Name: SourceNode
+        Id: g=7fd280cb5f0e4107892edaf6a8fef1e6
+        Type: PropertyType
+        DataType: NodeId
+      - Name: SourceName
+        Id: g=e5382a5593d45fb278f174299de54d1c
+        Type: PropertyType
+        DataType: String
+      - Name: Time
+        Id: g=6b88423761f59af06a22faa4a90184a0
+        Type: PropertyType
+        DataType: UtcTime
+      - Name: ReceiveTime
+        Id: g=8d0522559024b21f82e054208a5f9530
+        Type: PropertyType
+        DataType: UtcTime
+      - Name: Message
+        Id: g=78dcc93a202f68dd048e8337117e36d4
+        Type: PropertyType
+        DataType: LocalizedText
+      - Name: Severity
+        Id: g=ce050ab0cbf7577372a966b34a1a2165
+        Type: PropertyType
+        DataType: UInt16
+  - Name: raSDK1_NL_NavExplicit
+    Id: g=6363019169dd63d93c4663a5f7abaf74
+    Type: NetLogic
+    Children:
+    - Class: Method
+      Name: NavExplicit
+      Id: g=c09ad3c1a8fbd2adb31923b288f4fbcf
+  - Name: ns=25;LibraryReference
+    Id: g=78a94271351cf29a24f4b1bd3a322eec
+    Type: ObjectLibraryReference
+    DataType: ObjectLibraryReferenceDataType
+    ModellingRule: None
+    Value: 
+     {
+      "TypeId": {
+       "Id": 72,
+       "Namespace": 25
+      },
+      "Body": {
+       "libraryGuid": "fdcdf28fb1d75623841900955debf246",
+       "objectGuid": "f0d2e5bd2693f224dd06c6cc05f819c7",
+       "objectVersion": 2,
+       "highestIgnoredVersion": 0
+      }
+     }
+- Name: raSDK1_NavExplicitName
+  Id: g=8964833de19c777e3ceb7300257ad294
+  Supertype: Button
+  Description: {"LocaleId":"en-US","Text":"Navigate to dialog box explicitly. The instruction backing tag is linked to Ref_Tag, and the dialog box name is specified by Cfg_DialogBoxName."}
+  ReferenceType: HasComponent
+  Children:
+  - Name: Text
+    Id: g=b58c5ef01073180bf481f1325a22582d
+    Type: BaseDataVariableType
+    DataType: LocalizedText
+    ModellingRule: Optional
+    Value: {"LocaleId":"en-US","Text":""}
+  - Name: Style
+    Id: g=14d4f118a924e610aa43a374455dc476
+    Type: BaseDataVariableType
+    DataType: String
+    ModellingRule: Optional
+    Value: "Navigation"
+  - Name: HorizontalAlignment
+    Id: g=ac82cd3eb0cb107b5209703851101a7b
+    Type: BaseVariableType
+    DataType: HorizontalAlignment
+    ModellingRule: Optional
+    Value: 3
+  - Name: VerticalAlignment
+    Id: g=c4f391b2b192c359d82c3e697f602658
+    Type: BaseVariableType
+    DataType: VerticalAlignment
+    ModellingRule: Optional
+    Value: 3
+  - Name: raSDK1_NL_NavExplicitName
+    Id: g=ab276e72a4d26718237374aa59ed9c8f
+    Type: NetLogic
+    Children:
+    - Class: Method
+      Name: NavByExplicitName
+      Id: g=25fd814adfee479fd9c1083ff3239720
+  - Name: Cfg_CloseCurrentDisplay
+    Id: g=493bb9a2c6a7517312e929db30967a5e
+    Type: BaseDataVariableType
+    DataType: Boolean
+    Description: {"NamespaceIndex":40,"TextId":"Close current dialog box on open of new dialog box."}
+  - Name: Cfg_DialogBoxName
+    Id: g=17a348bb4d11298d66767956b6ccae22
+    Type: BaseDataVariableType
+    DataType: String
+    Description: {"NamespaceIndex":40,"TextId":"Dialog box to be opened."}
+  - Name: Ref_Tag
+    Id: g=eadd768766e0e5684022c0cede7a390f
+    Type: BaseDataVariableType
+    DataType: NodeId
+    Description: {"NamespaceIndex":40,"TextId":"Instruction backing tag"}
+  - Name: MouseClickEventHandler1
+    Id: g=79e341bd3c1f4047f787882b00b81489
+    Type: EventHandler
+    Children:
+    - Name: ListenEventType
+      Id: g=d9f4e253394639637db85e6fe9ef9c40
+      Type: PropertyType
+      DataType: NodeId
+      Value: "/Types/EventTypes/BaseEventType/MouseEvent/MouseClickEvent"
+    - Name: MethodsToCall
+      Id: g=7130639936ab1c1658648251b9578d1b
+      Type: BaseObjectType
+      Children:
+      - Name: MethodContainer1
+        Id: g=f499eab823a1e675f87faba951f42346
+        Type: BaseObjectType
+        Children:
+        - Name: ns=9;ObjectPointer
+          Id: g=5bca5810021ab0b1389552b7aba4d622
+          Type: NodePointer
+          DataType: NodeId
+          Children:
+          - Name: Kind
+            Id: g=0131ce60f3a158ec0fcf64f137ae3e39
+            Type: PropertyType
+            DataType: NodeId
+            Value: "/Types/ObjectTypes/BaseObjectType"
+          - Name: DynamicLink
+            Id: g=2dcdac2504be85454b456a6918775b73
+            Type: DynamicLink
+            DataType: NodePath
+            Value: "../../../../raSDK1_NL_NavExplicitName@NodeId"
+            Children:
+            - Name: Mode
+              Id: g=9aaa2fa86475f0a296e89f457fde244b
+              Type: BaseVariableType
+              DataType: DynamicLinkMode
+              ModellingRule: Optional
+              Value: 2
+        - Name: ns=9;Method
+          Id: g=86154c595b38125c54a549824d0c1e15
+          Type: BaseDataVariableType
+          DataType: String
+          Value: "NavByExplicitName"
+    - Name: EventArguments
+      Id: g=ce1c08da2a6c0ffb472c3c82405337f1
+      Type: MouseClickEvent
+      Children:
+      - Name: EventId
+        Id: g=04bc95079687f736b539d0a30884513f
+        Type: PropertyType
+        DataType: ByteString
+      - Name: EventType
+        Id: g=dad56ef8f121c5c706546bc8652eb2cc
+        Type: PropertyType
+        DataType: NodeId
+      - Name: SourceNode
+        Id: g=b81a025d5af729951dadcd21d09782ef
+        Type: PropertyType
+        DataType: NodeId
+      - Name: SourceName
+        Id: g=248004c3392a36ada1fea3379fa8074a
+        Type: PropertyType
+        DataType: String
+      - Name: Time
+        Id: g=5b2b02cfb158ee8c1d7b12c08837d391
+        Type: PropertyType
+        DataType: UtcTime
+      - Name: ReceiveTime
+        Id: g=5426759695610ed043e2b31982f9154b
+        Type: PropertyType
+        DataType: UtcTime
+      - Name: Message
+        Id: g=420ba4fd0ece864b3c7c1370c8de7e36
+        Type: PropertyType
+        DataType: LocalizedText
+      - Name: Severity
+        Id: g=20117804c9862617bcc6fbfb32c5334d
+        Type: PropertyType
+        DataType: UInt16
+  - Name: ns=25;LibraryReference
+    Id: g=8e3402d139d678cde1f2d7e93a43c5a5
+    Type: ObjectLibraryReference
+    DataType: ObjectLibraryReferenceDataType
+    ModellingRule: None
+    Value: 
+     {
+      "TypeId": {
+       "Id": 72,
+       "Namespace": 25
+      },
+      "Body": {
+       "libraryGuid": "daa1802df0fca742317d7dafb83a218f",
+       "objectGuid": "935413f8a859fb1da259c8348873762a",
+       "objectVersion": 2,
+       "highestIgnoredVersion": 0
+      }
+     }
+- Name: raSDK1_NavUsingString
+  Id: g=19ac0c533fe4ba9ef7b06d8ab90cbff7
+  Supertype: Button
+  Description: {"NamespaceIndex":40,"TextId":"Navigate to faceplate using string.  String variable linked to Ref_Nav contains the full path to an instruction backing tag. The dialog box name is derived from data in the instruction backing tag."}
+  ReferenceType: HasComponent
+  Children:
+  - Name: Cfg_CloseCurrentDisplay
+    Id: g=0dea2543eb4c69bd48d914b5ea73b5eb
+    Type: BaseDataVariableType
+    DataType: Boolean
+    Description: {"NamespaceIndex":40,"TextId":"Close current dialog box on open of new dialog box."}
+  - Name: Cfg_DisplayType
+    Id: g=36f61936ba8f913dac63e4c24f061146
+    Type: BaseDataVariableType
+    DataType: String
+    Description: {"NamespaceIndex":40,"TextId":"Type of display: Faceplate, Quick, Advanced."}
+    Value: "Faceplate"
+  - Name: Ref_Nav
+    Id: g=5763d4cc933a715ccaa927d0006890e1
+    Type: BaseDataVariableType
+    DataType: String
+    Description: {"NamespaceIndex":40,"TextId":"String variable containing the name of the tag whose display will be loaded."}
+  - Name: HorizontalAlignment
+    Id: g=30e57fcf79accd2b1862f0e75c5a5cdc
+    Type: BaseVariableType
+    DataType: HorizontalAlignment
+    ModellingRule: Optional
+    Value: 3
+  - Name: VerticalAlignment
+    Id: g=d734496511e363cadc452ae0fbf74310
+    Type: BaseVariableType
+    DataType: VerticalAlignment
+    ModellingRule: Optional
+    Value: 3
+  - Name: raSDK1_NL_NavUsingString
+    Id: g=25931b4b9231874a42bdee2d2c176f35
+    Type: NetLogic
+    Children:
+    - Class: Method
+      Name: NavString
+      Id: g=5708372cca1962d01227c21898541491
+  - Name: MouseClickEventHandler1
+    Id: g=05d0ea69d44ef7bd08867977bb68ff6a
+    Type: EventHandler
+    Children:
+    - Name: ListenEventType
+      Id: g=18747c4ddd905cd03d6772bcf746f47f
+      Type: PropertyType
+      DataType: NodeId
+      Value: "/Types/EventTypes/BaseEventType/MouseEvent/MouseClickEvent"
+    - Name: MethodsToCall
+      Id: g=b7e6d6b7116db708437802b06786b100
+      Type: BaseObjectType
+      Children:
+      - Name: MethodContainer1
+        Id: g=0adf957c979aa52ddf6d9f121b195b09
+        Type: BaseObjectType
+        Children:
+        - Name: ns=9;ObjectPointer
+          Id: g=a43fd0900498ed8d417056f35c3807c7
+          Type: NodePointer
+          DataType: NodeId
+          Children:
+          - Name: Kind
+            Id: g=b5af4f67f40a9fccad97dd6a7cd4e9ab
+            Type: PropertyType
+            DataType: NodeId
+            Value: "/Types/ObjectTypes/BaseObjectType"
+          - Name: DynamicLink
+            Id: g=52d834023806f1108b930aeb9aa332e7
+            Type: DynamicLink
+            DataType: NodePath
+            Value: "../../../../raSDK1_NL_NavUsingString@NodeId"
+            Children:
+            - Name: Mode
+              Id: g=d50636a5e57b1cc33347bec5669889fb
+              Type: BaseVariableType
+              DataType: DynamicLinkMode
+              ModellingRule: Optional
+              Value: 2
+        - Name: ns=9;Method
+          Id: g=97b2294d866b0770b58885c6026614f2
+          Type: BaseDataVariableType
+          DataType: String
+          Value: "NavString"
+    - Name: EventArguments
+      Id: g=572abf32be82967809fdf32dd01c5a2f
+      Type: MouseClickEvent
+      Children:
+      - Name: EventId
+        Id: g=c1d3edefe2b438c04e4bf19606a975a3
+        Type: PropertyType
+        DataType: ByteString
+      - Name: EventType
+        Id: g=edbd2c6f88924978e260b47336507809
+        Type: PropertyType
+        DataType: NodeId
+      - Name: SourceNode
+        Id: g=43daf0ba22307e789315c4f09fd9abbf
+        Type: PropertyType
+        DataType: NodeId
+      - Name: SourceName
+        Id: g=aeaa027290854b6f5dc94aaa8cafde47
+        Type: PropertyType
+        DataType: String
+      - Name: Time
+        Id: g=2b06e2d13be5b938da99bdb7af4b0fe7
+        Type: PropertyType
+        DataType: UtcTime
+      - Name: ReceiveTime
+        Id: g=1a459f567ae202fa66fce599138e482f
+        Type: PropertyType
+        DataType: UtcTime
+      - Name: Message
+        Id: g=2e2c436e8b603d46d58cd2dc45ab6fc0
+        Type: PropertyType
+        DataType: LocalizedText
+      - Name: Severity
+        Id: g=c042b9433c6352aa240cb76d47cc1487
+        Type: PropertyType
+        DataType: UInt16
+  - Name: Style
+    Id: g=e86d859484cc2250fd7c04eb70edc513
+    Type: BaseDataVariableType
+    DataType: String
+    ModellingRule: Optional
+    Value: "Navigation"
+  - Name: ns=25;LibraryReference
+    Id: g=0ca0e0aa13f8e20e2a471a85364a87ab
+    Type: ObjectLibraryReference
+    DataType: ObjectLibraryReferenceDataType
+    ModellingRule: None
+    Value: 
+     {
+      "TypeId": {
+       "Id": 72,
+       "Namespace": 25
+      },
+      "Body": {
+       "libraryGuid": "50baf4d6588e467cdc65deda81d424c2",
+       "objectGuid": "132a1fb0cfa01f57469cff918bf47034",
+       "objectVersion": 6,
+       "highestIgnoredVersion": 0
+      }
+     }
+- Name: raSDK1_NavUsingSuffix
+  Id: g=9b273868a78c6267b6e33d241bc0dfa9
+  Supertype: Button
+  Description: {"NamespaceIndex":40,"TextId":"Navigate to faceplate using suffix.  Ref_BaseTag is linked to the current instruction backing tag.  The target tagname and path is derived from the base tag and suffix combined.  The dialog box name is derived from data in the target backing tag."}
+  ReferenceType: HasComponent
+  Children:
+  - Name: Cfg_CloseCurrentDisplay
+    Id: g=e7791de7be28f45d7030d3506073feb2
+    Type: BaseDataVariableType
+    DataType: Boolean
+    Description: {"NamespaceIndex":40,"TextId":"Close current dialog box on open of new dialog box."}
+  - Name: Cfg_DisplayType
+    Id: g=d3449060208db40c28c33d4d223039dc
+    Type: BaseDataVariableType
+    DataType: String
+    Description: {"NamespaceIndex":40,"TextId":"Type of display: Faceplate, Quick, Advanced."}
+    Value: "Faceplate"
+  - Name: Cfg_Suffix
+    Id: g=d231f578cf20aa0ffce55da4a49994cb
+    Type: BaseDataVariableType
+    DataType: String
+    Description: {"NamespaceIndex":40,"TextId":"Suffix to add to base tag name for navigation."}
+  - Name: Ref_BaseTag
+    Id: g=b3bcd6851ed6ff76822e779ac4a9b852
+    Type: BaseDataVariableType
+    DataType: NodeId
+    Description: {"NamespaceIndex":40,"TextId":"Base Instruction Backing Tag Before Suffix"}
+  - Name: HorizontalAlignment
+    Id: g=b582aad43a07d2093fef621f33f69bc4
+    Type: BaseVariableType
+    DataType: HorizontalAlignment
+    ModellingRule: Optional
+    Value: 3
+  - Name: VerticalAlignment
+    Id: g=5ec551b030994eee95015f155a0bb0c6
+    Type: BaseVariableType
+    DataType: VerticalAlignment
+    ModellingRule: Optional
+    Value: 3
+  - Name: Style
+    Id: g=dc3db3e80e315da6734dd98f614c5809
+    Type: BaseDataVariableType
+    DataType: String
+    ModellingRule: Optional
+    Value: "Navigation"
+  - Name: raSDK1_NL_NavUsingSuffix
+    Id: g=3263d96f4a1d569f9b23e401badb2796
+    Type: NetLogic
+    Children:
+    - Class: Method
+      Name: NavSuffix
+      Id: g=15820bf01659bd18649faecb2f25fc03
+  - Name: MouseClickEventHandler1
+    Id: g=93e3f46744067d281fa217d9ba798698
+    Type: EventHandler
+    Children:
+    - Name: ListenEventType
+      Id: g=17678725904d8dec85c5268cd0e798a5
+      Type: PropertyType
+      DataType: NodeId
+      Value: "/Types/EventTypes/BaseEventType/MouseEvent/MouseClickEvent"
+    - Name: MethodsToCall
+      Id: g=4f5c5cf01b044112534b4a73c2996aa8
+      Type: BaseObjectType
+      Children:
+      - Name: MethodContainer1
+        Id: g=baa67e8c7cfebdbd64ad74c44c2f5397
+        Type: BaseObjectType
+        Children:
+        - Name: ns=9;ObjectPointer
+          Id: g=0319bb179ee4c6b777b2f639b573b8bf
+          Type: NodePointer
+          DataType: NodeId
+          Children:
+          - Name: Kind
+            Id: g=6a12d34249da3192666cc35141014689
+            Type: PropertyType
+            DataType: NodeId
+            Value: "/Types/ObjectTypes/BaseObjectType"
+          - Name: DynamicLink
+            Id: g=99812f0fc20c0f301499c3d4eff462fd
+            Type: DynamicLink
+            DataType: NodePath
+            Value: "../../../../raSDK1_NL_NavUsingSuffix@NodeId"
+            Children:
+            - Name: Mode
+              Id: g=101fba9b932592719f7e73376f77e3de
+              Type: BaseVariableType
+              DataType: DynamicLinkMode
+              ModellingRule: Optional
+              Value: 2
+        - Name: ns=9;Method
+          Id: g=c1647fd1b4ddde731eca23c9c10ac03d
+          Type: BaseDataVariableType
+          DataType: String
+          Value: "NavSuffix"
+    - Name: EventArguments
+      Id: g=0ed68ed355671948ca7a3b8d91f862d1
+      Type: MouseClickEvent
+      Children:
+      - Name: EventId
+        Id: g=c741d777fd0bf88dfe2649dd986fb947
+        Type: PropertyType
+        DataType: ByteString
+      - Name: EventType
+        Id: g=d316554cf4ae9894305fee56c4e4bc71
+        Type: PropertyType
+        DataType: NodeId
+      - Name: SourceNode
+        Id: g=9beaafda910b3e7ba7f98fd9de94bccc
+        Type: PropertyType
+        DataType: NodeId
+      - Name: SourceName
+        Id: g=f4076aeba454ad92aa0718d7f83995b7
+        Type: PropertyType
+        DataType: String
+      - Name: Time
+        Id: g=2fb1646304f6517e1f765bf4ef6ee0ed
+        Type: PropertyType
+        DataType: UtcTime
+      - Name: ReceiveTime
+        Id: g=9af8876edc8837d2fd5518be44845501
+        Type: PropertyType
+        DataType: UtcTime
+      - Name: Message
+        Id: g=06ae47039bcb5f8caa5a95749430655e
+        Type: PropertyType
+        DataType: LocalizedText
+      - Name: Severity
+        Id: g=1d5c6a6b2c91a00ff2c47982a1825b27
+        Type: PropertyType
+        DataType: UInt16
+  - Name: ns=25;LibraryReference
+    Id: g=8b20a0e9d7556a95e14c1b33391e661b
+    Type: ObjectLibraryReference
+    DataType: ObjectLibraryReferenceDataType
+    ModellingRule: None
+    Value: 
+     {
+      "TypeId": {
+       "Id": 72,
+       "Namespace": 25
+      },
+      "Body": {
+       "libraryGuid": "50baf4d6588e467cdc65deda81d424c2",
+       "objectGuid": "71cefbe69ea040f0242fc480c11e4e4d",
+       "objectVersion": 5,
+       "highestIgnoredVersion": 0
+      }
+     }
+- Name: raSDK1_NavUsingTag
+  Id: g=a9f6967cc3252322d166579476e14bec
+  Supertype: Button
+  Description: {"NamespaceIndex":40,"TextId":"Navigate to faceplate using tag.  The instruction backing tag is linked to Ref_Tag, and the dialog box name is derived from data stored in the instruction backing tag."}
+  ReferenceType: HasComponent
+  Children:
+  - Name: Cfg_CloseCurrentDisplay
+    Id: g=851f782f58b171cb4e20a06a65663a9d
+    Type: BaseDataVariableType
+    DataType: Boolean
+    Description: {"NamespaceIndex":40,"TextId":"Close current dialog box on open of new dialog box."}
+  - Name: Cfg_DisplayType
+    Id: g=4a5004595f2d220cc84e18056fe6eeca
+    Type: BaseDataVariableType
+    DataType: String
+    Description: {"NamespaceIndex":40,"TextId":"Type of display: Faceplate, Quick, Advanced."}
+    Value: "Faceplate"
+  - Name: Ref_Tag
+    Id: g=2a9b5e6b73fc55974b3e10033b25b2a2
+    Type: BaseDataVariableType
+    DataType: NodeId
+    Description: {"NamespaceIndex":40,"TextId":"Instruction backing tag"}
+  - Name: HorizontalAlignment
+    Id: g=92f4094d966392f5b170073547a3fa67
+    Type: BaseVariableType
+    DataType: HorizontalAlignment
+    ModellingRule: Optional
+    Value: 3
+  - Name: VerticalAlignment
+    Id: g=0a830a0a4033c1a0650d24e53b216537
+    Type: BaseVariableType
+    DataType: VerticalAlignment
+    ModellingRule: Optional
+    Value: 3
+  - Name: Style
+    Id: g=19cbe98a7ca8dc75e3f5889930b26f9e
+    Type: BaseDataVariableType
+    DataType: String
+    ModellingRule: Optional
+    Value: "Navigation"
+  - Name: raSDK1_NL_NavUsingTag
+    Id: g=485c0c61c12efe2411cc9e8c18a6c3a5
+    Type: NetLogic
+    Children:
+    - Class: Method
+      Name: NavTag
+      Id: g=6e0263b05a933c9fc26daf0e50fd482e
+  - Name: MouseClickEventHandler1
+    Id: g=1b3695cca8fedfc5f8fb04ce99302fb5
+    Type: EventHandler
+    Children:
+    - Name: ListenEventType
+      Id: g=6d91dd9051e89cb1061c60e83f0d465c
+      Type: PropertyType
+      DataType: NodeId
+      Value: "/Types/EventTypes/BaseEventType/MouseEvent/MouseClickEvent"
+    - Name: MethodsToCall
+      Id: g=f8709674b16746d1db851838cf6622e9
+      Type: BaseObjectType
+      Children:
+      - Name: MethodContainer1
+        Id: g=b5955edaacbbf49f02e2137aff66722e
+        Type: BaseObjectType
+        Children:
+        - Name: ns=9;ObjectPointer
+          Id: g=27cca9c753ace338f618d5f8b0536e49
+          Type: NodePointer
+          DataType: NodeId
+          Children:
+          - Name: Kind
+            Id: g=eecf469df477270661845fd850f7387b
+            Type: PropertyType
+            DataType: NodeId
+            Value: "/Types/ObjectTypes/BaseObjectType"
+          - Name: DynamicLink
+            Id: g=369b831d632d8fe8a1d0c72142c67bc3
+            Type: DynamicLink
+            DataType: NodePath
+            Value: "../../../../raSDK1_NL_NavUsingTag@NodeId"
+            Children:
+            - Name: Mode
+              Id: g=58cb0289c92d573589be542cf6dfdb2e
+              Type: BaseVariableType
+              DataType: DynamicLinkMode
+              ModellingRule: Optional
+              Value: 2
+        - Name: ns=9;Method
+          Id: g=e0900cbedfbdf3aaa7fd37cb8a10bb20
+          Type: BaseDataVariableType
+          DataType: String
+          Value: "NavTag"
+    - Name: EventArguments
+      Id: g=0da30ad963b479ac5df51d712ef9381d
+      Type: MouseClickEvent
+      Children:
+      - Name: EventId
+        Id: g=ef688b8518c0f2d70800a4c762d951e9
+        Type: PropertyType
+        DataType: ByteString
+      - Name: EventType
+        Id: g=265fab34b76927a316e7b4e9fac2a6dc
+        Type: PropertyType
+        DataType: NodeId
+      - Name: SourceNode
+        Id: g=d4a0cc621eb3503656e052d97ead7559
+        Type: PropertyType
+        DataType: NodeId
+      - Name: SourceName
+        Id: g=c98bfdd73b4d74244ff9e85a038af8a0
+        Type: PropertyType
+        DataType: String
+      - Name: Time
+        Id: g=a4b5e1c91bc39f5aa3fcba31643045a6
+        Type: PropertyType
+        DataType: UtcTime
+      - Name: ReceiveTime
+        Id: g=4a0e20b5b3c6b7f8e45b3a96551bbaa1
+        Type: PropertyType
+        DataType: UtcTime
+      - Name: Message
+        Id: g=fa9c97e239105c404ca80af3fbc6773b
+        Type: PropertyType
+        DataType: LocalizedText
+      - Name: Severity
+        Id: g=0986e1ee2fd20471535dce4ff6a2c05d
+        Type: PropertyType
+        DataType: UInt16
+  - Name: ns=25;LibraryReference
+    Id: g=26037d56b3c88aa6335787c4c1d9fa96
+    Type: ObjectLibraryReference
+    DataType: ObjectLibraryReferenceDataType
+    ModellingRule: None
+    Value: 
+     {
+      "TypeId": {
+       "Id": 72,
+       "Namespace": 25
+      },
+      "Body": {
+       "libraryGuid": "50baf4d6588e467cdc65deda81d424c2",
+       "objectGuid": "8d242f54cb3c74cf2c0b6e51d9c8e8c5",
+       "objectVersion": 3,
+       "highestIgnoredVersion": 0
+      }
+     }

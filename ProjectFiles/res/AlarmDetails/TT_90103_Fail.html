@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Alarm Response Plan - TT-90103 Failure</title>
+<style>
+  body { font-family: "Segoe UI", Arial, sans-serif; margin: 24px; color: #222; background: #f7f7f9; }
+  header { background: #1f3a5f; color: #fff; padding: 16px 20px; border-radius: 6px 6px 0 0; }
+  header h1 { margin: 0; font-size: 22px; }
+  header .subtitle { font-size: 14px; opacity: 0.9; margin-top: 4px; }
+  .container { background: #fff; padding: 20px; border: 1px solid #d9d9e0; border-top: none; border-radius: 0 0 6px 6px; }
+  h2 { color: #1f3a5f; border-bottom: 2px solid #d9d9e0; padding-bottom: 4px; margin-top: 28px; }
+  h3 { color: #1f3a5f; }
+  table { width: 100%; border-collapse: collapse; margin-top: 8px; }
+  th, td { border: 1px solid #cfd3dc; padding: 8px 10px; text-align: left; vertical-align: top; font-size: 14px; }
+  th { background: #e9edf3; color: #1f3a5f; }
+  .meta-table td:first-child { background: #f2f4f8; font-weight: 600; width: 220px; }
+  .priority { display: inline-block; padding: 3px 10px; background: #ef6c00; color: #fff; border-radius: 3px; font-weight: 600; font-size: 13px; }
+  ol, ul { margin-top: 6px; }
+  li { margin: 4px 0; }
+  .note { background: #fff8e1; border-left: 4px solid #f9a825; padding: 10px 14px; margin: 12px 0; font-size: 14px; }
+  .danger { background: #ffebee; border-left: 4px solid #c62828; padding: 10px 14px; margin: 12px 0; font-size: 14px; }
+  footer { margin-top: 24px; font-size: 12px; color: #666; text-align: center; }
+</style>
+</head>
+<body>
+
+<header>
+  <h1>Alarm Response Plan</h1>
+  <div class="subtitle">Tag: TT-90103 &mdash; Compressor Oil Temperature Failure</div>
+</header>
+
+<div class="container">
+
+  <h2>1. Alarm Summary</h2>
+  <table class="meta-table">
+    <tr><td>Alarm Tag</td><td>TT-90103.Fail</td></tr>
+    <tr><td>Measurement</td><td>Compressor lube oil temperature (RTD / transmitter)</td></tr>
+    <tr><td>Alarm Description</td><td>Signal outside valid range or bad quality &mdash; measurement is unreliable</td></tr>
+    <tr><td>Priority</td><td><span class="priority">HIGH</span></td></tr>
+    <tr><td>Alarm Class</td><td>Instrument Integrity</td></tr>
+    <tr><td>Response Time</td><td>Immediate (&lt; 5 minutes)</td></tr>
+    <tr><td>Consequence of Inaction</td><td>Loss of oil temperature protection &mdash; possible spurious trip or, worse, no protection against real high oil temperature</td></tr>
+  </table>
+
+  <h2>2. Possible Causes</h2>
+  <ul>
+    <li>Open or shorted RTD / thermocouple element.</li>
+    <li>Broken or loose field wiring.</li>
+    <li>Failed transmitter or power supply.</li>
+    <li>IO module channel fault.</li>
+    <li>Signal below 4 mA or above 20 mA (out of range).</li>
+    <li>Recent maintenance activity left instrument in an incorrect state.</li>
+  </ul>
+
+  <div class="danger">
+    <strong>Safety Notice:</strong> The oil temperature HiHi interlock relies on TT-90103. Follow the site
+    procedure for operating with a failed safety-related instrument &mdash; this may require MOC approval,
+    a temporary compensating measure (increased rounds, manual gauge readings), or a controlled shutdown.
+  </div>
+
+  <h2>3. Operator Response Actions</h2>
+  <ol>
+    <li>Acknowledge the alarm and record the time.</li>
+    <li>Check TT-90103 raw value and status on the faceplate (bad quality, out of range, over/under range).</li>
+    <li>Cross-check with any redundant temperature indication (bearing RTDs, local gauge).</li>
+    <li>Notify Shift Supervisor. Determine whether the interlock is configured to trip on bad quality (fail-safe) or hold last value.</li>
+    <li>If the interlock is bypassed by the failure, place a bypass tag per site MOC and increase surveillance.</li>
+    <li>Dispatch Instrument Technician.</li>
+  </ol>
+
+  <h2>4. Troubleshooting Guidance</h2>
+  <ol>
+    <li>At the field cabinet, measure loop current (should be 4 - 20 mA).</li>
+    <li>Verify transmitter power (24 VDC) and configuration.</li>
+    <li>For RTD input, measure resistance at the module terminals; compare against expected value for current temperature.</li>
+    <li>Check wiring for opens, shorts, or ground faults.</li>
+    <li>Verify IO channel scaling and configuration on the PLC.</li>
+    <li>Replace transmitter or RTD if bench test confirms failure.</li>
+  </ol>
+
+  <div class="note">
+    <strong>Note:</strong> After replacement, perform a two-point calibration and verify the reading in the
+    control system matches a certified test instrument before removing any bypass.
+  </div>
+
+  <h2>5. Return to Normal</h2>
+  <ul>
+    <li>Signal restored to Good quality and reading matches local reference within tolerance.</li>
+    <li>Any bypass on the HiHi interlock removed and MOC closed.</li>
+    <li>Alarm cleared at the faceplate.</li>
+  </ul>
+
+  <h2>6. Escalation</h2>
+  <table>
+    <tr><th>Time Since Alarm</th><th>Action</th><th>Notify</th></tr>
+    <tr><td>0 - 5 min</td><td>Acknowledge, apply bypass per MOC if needed</td><td>Shift Supervisor</td></tr>
+    <tr><td>5 - 30 min</td><td>Field troubleshooting</td><td>Instrument Technician</td></tr>
+    <tr><td>&gt; 30 min</td><td>Assess continued operation vs shutdown</td><td>Operations / Reliability Engineer</td></tr>
+  </table>
+
+  <h2>7. References</h2>
+  <ul>
+    <li>P&amp;ID: PID-90-100 &ndash; Compressor Train MT-90100</li>
+    <li>Loop Sheet: LS-TT-90103</li>
+    <li>Site MOC / Instrument Bypass Procedure</li>
+    <li>Related plan: TT_90103_Hi.html, TT_90103_HiHi.html, TIC_90103_HiDev.html</li>
+  </ul>
+
+</div>
+
+<footer>
+  Document: TT_90103_Fail.html &nbsp;|&nbsp; Rev. 0 (Draft) &nbsp;|&nbsp; For training / illustrative use only
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,620 @@
+Name: CommandButtons
+Id: g=6d89a6852dbd2e5e57dcf1b75baf0016
+Type: FolderType
+Children:
+- Name: raSDK1a_Btn_Momentary_Icon
+  Id: g=fa0199482d4cc48ca870df0e62f262b3
+  Supertype: MomentaryButton
+  Description: {"NamespaceIndex":40,"TextId":"Momentary button with icon: Press value = 1, Release value = 0."}
+  ReferenceType: HasComponent
+  Children:
+  - Name: Text
+    Id: g=31c88c37b94e5189ce9dacdbdae2fd1d
+    Type: BaseDataVariableType
+    DataType: LocalizedText
+  - Name: Width
+    Id: g=27b9f71fe1075c7ac4347c1265af4a86
+    Type: BaseVariableType
+    DataType: Size
+    ModellingRule: Optional
+    Value: 56.0
+  - Name: Ref_Variable
+    Id: g=744831890e5f30a49d2d304ab3e4389a
+    Type: BaseDataVariableType
+    DataType: Boolean
+    Description: {"NamespaceIndex":40,"TextId":"Variable or tag assigned to the button."}
+  - Name: Cfg_Image
+    Id: g=cbc0e46469b815b4c6e26c4e52d6c373
+    Type: BaseDataVariableType
+    DataType: ResourceUri
+    Description: {"NamespaceIndex":40,"TextId":"Image to be used as button icon."}
+  - Name: Cfg_ImageSize
+    Id: g=978dd4f5023202ca03a9ef3fb820fabc
+    Type: BaseDataVariableType
+    DataType: Int32
+    Description: {"NamespaceIndex":40,"TextId":"Image size (width/height) in pixesl."}
+    Value: 40
+  - Name: Active
+    Id: g=2fa09efebab1afb774676b6ff0a2d45d
+    Type: BaseDataVariableType
+    DataType: Boolean
+    AccessLevel: Read
+    Children:
+    - Name: DynamicLink
+      Id: g=efbb9007965a160918f949022e749d11
+      Type: DynamicLink
+      DataType: NodePath
+      Value: "../Ref_Variable"
+      Children:
+      - Name: Mode
+        Id: g=08eb86f1d3339a53b432e682505d56c6
+        Type: BaseVariableType
+        DataType: DynamicLinkMode
+        ModellingRule: Optional
+        Value: 2
+  - Name: Style
+    Id: g=005b7e247cb7389ce45331e73f6f22ad
+    Type: BaseDataVariableType
+    DataType: String
+    ModellingRule: Optional
+    Value: "Command"
+  - Name: Height
+    Id: g=8b3103354d4773280fa5e3d68c8eb400
+    Type: BaseVariableType
+    DataType: Size
+    ModellingRule: Optional
+    Value: 56.0
+  - Name: ns=25;LibraryReference
+    Id: g=73b0cbd26cf2c6dde79acb09eab25d29
+    Type: ObjectLibraryReference
+    DataType: ObjectLibraryReferenceDataType
+    ModellingRule: None
+    Value: 
+     {
+      "TypeId": {
+       "Id": 72,
+       "Namespace": 25
+      },
+      "Body": {
+       "libraryGuid": "50baf4d6588e467cdc65deda81d424c2",
+       "objectGuid": "464390a7185c62c2c44d4451059702c3",
+       "objectVersion": 1,
+       "highestIgnoredVersion": 0
+      }
+     }
+  - Name: ImageHeight
+    Id: g=feeed6613ff65f2d8ad031b79d76950f
+    Type: BaseDataVariableType
+    DataType: Size
+    Value: -1.0
+    Children:
+    - Name: DynamicLink
+      Id: g=d24fc7ec63dcc9b3ab11d1a1f7debe5f
+      Type: DynamicLink
+      DataType: NodePath
+      Value: "../Cfg_ImageSize"
+  - Name: ImageWidth
+    Id: g=d73d0966854fde8681b5df1baa769892
+    Type: BaseDataVariableType
+    DataType: Size
+    Value: -1.0
+    Children:
+    - Name: DynamicLink
+      Id: g=b887ea294ac3eef24420b59d197b327f
+      Type: DynamicLink
+      DataType: NodePath
+      Value: "../Cfg_ImageSize"
+  - Name: ImagePath
+    Id: g=2a3288b5c47f01f1f4a6a7df3f1c63eb
+    Type: BaseDataVariableType
+    DataType: ResourceUri
+    Children:
+    - Name: DynamicLink
+      Id: g=cc67dd0560b5f6d77498dd6c2fd3a523
+      Type: DynamicLink
+      DataType: NodePath
+      Value: "../Cfg_Image"
+- Name: raSDK1a_Btn_Momentary_Lbl
+  Id: g=8926c2d38a846cc71fafd9d5685bfe55
+  Supertype: MomentaryButton
+  Description: {"NamespaceIndex":40,"TextId":"Momentary button with label: Press value = 1, Release value = 0."}
+  ReferenceType: HasComponent
+  Children:
+  - Name: Text
+    Id: g=10658e20fe7031635bb97f01e460adcd
+    Type: BaseDataVariableType
+    DataType: LocalizedText
+  - Name: Width
+    Id: g=57cfae9847ba668000c9077000868632
+    Type: BaseVariableType
+    DataType: Size
+    ModellingRule: Optional
+    Value: 128.0
+  - Name: Ref_Variable
+    Id: g=33d2f51af94adfd740ee40aea482a730
+    Type: BaseDataVariableType
+    DataType: Boolean
+    Description: {"NamespaceIndex":40,"TextId":"Variable or tag assigned to the button."}
+  - Name: Cfg_Label
+    Id: g=77fd913dd1cb54aa3e81ce86baa2f225
+    Type: BaseDataVariableType
+    DataType: LocalizedText
+    Description: {"NamespaceIndex":40,"TextId":"Button text."}
+    Value: {"LocaleId":"en-US","Text":"Label"}
+  - Name: Active
+    Id: g=37bd76df513bf012eb6448675264b0cd
+    Type: BaseDataVariableType
+    DataType: Boolean
+    AccessLevel: Read
+    Children:
+    - Name: DynamicLink
+      Id: g=a1eeeb7a6dca633904de1161443ff12f
+      Type: DynamicLink
+      DataType: NodePath
+      Value: "../Ref_Variable"
+      Children:
+      - Name: Mode
+        Id: g=0ec91df94e69248009107294e41a2ef7
+        Type: BaseVariableType
+        DataType: DynamicLinkMode
+        ModellingRule: Optional
+        Value: 2
+  - Name: Style
+    Id: g=7a77ff1152068baf884cc90d9b5971b3
+    Type: BaseDataVariableType
+    DataType: String
+    ModellingRule: Optional
+    Value: "Command"
+  - Name: Height
+    Id: g=522be0cc35f980fa3247f5664ae5bf8f
+    Type: BaseVariableType
+    DataType: Size
+    ModellingRule: Optional
+    Value: 56.0
+  - Name: ns=25;LibraryReference
+    Id: g=69cfda82903a3d485180a303d829e7c5
+    Type: ObjectLibraryReference
+    DataType: ObjectLibraryReferenceDataType
+    ModellingRule: None
+    Value: 
+     {
+      "TypeId": {
+       "Id": 72,
+       "Namespace": 25
+      },
+      "Body": {
+       "libraryGuid": "e8a408b8152d1dfed8f40f6da4d5ad62",
+       "objectGuid": "690d477b2dc2c2d4c9c3bf89d799da7d",
+       "objectVersion": 3,
+       "highestIgnoredVersion": 0
+      }
+     }
+  - Name: WordWrap
+    Id: g=1fd1f437a93dabeb424fe4695db0bff9
+    Type: BaseDataVariableType
+    DataType: Boolean
+    ModellingRule: Optional
+    Value: true
+- Name: raSDK1_Btn_WriteOnRelease_Icon
+  Id: g=ffe77423bd27a57b704b40297d3656c7
+  Supertype: Button
+  Description: {"NamespaceIndex":40,"TextId":"Write on release button with icon:  Write value = 1."}
+  ReferenceType: HasComponent
+  Children:
+  - Name: Text
+    Id: g=2c15e98c8ebb369ad2b613a28dcb0e32
+    Type: BaseDataVariableType
+    DataType: LocalizedText
+  - Name: Height
+    Id: g=83dc0fd89af81f60a40cdefc95c10a22
+    Type: BaseVariableType
+    DataType: Size
+    ModellingRule: Optional
+    Value: 56.0
+  - Name: MouseUpEventHandler1
+    Id: g=cf6b7e61d5ff7a201aad08771eeebcf2
+    Type: EventHandler
+    Children:
+    - Name: ListenEventType
+      Id: g=1047ab1ccbae73fdefc142fc46e2d13b
+      Type: PropertyType
+      DataType: NodeId
+      Value: "/Types/EventTypes/BaseEventType/MouseEvent/MouseUpEvent"
+    - Name: MethodsToCall
+      Id: g=0f4374d840c048227068d41097273615
+      Type: BaseObjectType
+      Children:
+      - Name: MethodContainer1
+        Id: g=0f724860eb88fd855465e3165d5dc004
+        Type: BaseObjectType
+        Children:
+        - Name: ns=9;ObjectPointer
+          Id: g=1058e4f4aa1896ae210b9f4bdffa4332
+          Type: NodePointer
+          DataType: NodeId
+          Value: "/Objects/Commands/VariableCommands"
+          Children:
+          - Name: Kind
+            Id: g=27e400b45cb042e12d994678d8178047
+            Type: PropertyType
+            DataType: NodeId
+            Value: "/Types/ObjectTypes/BaseObjectType"
+        - Name: ns=9;Method
+          Id: g=c76606a32461c9a1857bbb39d4595853
+          Type: BaseDataVariableType
+          DataType: String
+          Value: "Set"
+        - Name: InputArguments
+          Id: g=a32a262d8a4d6bdf82916d648cc9687d
+          Type: BaseObjectType
+          Children:
+          - Name: VariableToModify
+            Id: g=79c8b3c444f22da51551ec89d6142b36
+            Type: BaseDataVariableType
+            DataType: VariablePointer
+            Description: {"NamespaceIndex":9,"TextId":"SetVariableToModifyDescription"}
+            Children:
+            - Name: DynamicLink
+              Id: g=dc97b78c9af3c9253d864d5c53ce846f
+              Type: DynamicLink
+              DataType: NodePath
+              Value: "../../../../../Ref_Variable@NodeId"
+              Children:
+              - Name: Mode
+                Id: g=f5a2ddb7a0b78a8220322561b42ca875
+                Type: BaseVariableType
+                DataType: DynamicLinkMode
+                ModellingRule: Optional
+                Value: 2
+          - Name: Value
+            Id: g=c3796bd7a67ce56f933c0eec697b6c06
+            Type: BaseDataVariableType
+            DataType: Boolean
+            Description: {"NamespaceIndex":9,"TextId":"SetValueDescription"}
+            Value: true
+          - Name: ArrayIndex
+            Id: g=a2d41097877465dff1d8f3ab8403dadb
+            Type: BaseDataVariableType
+            DataType: UInt32
+            Description: {"NamespaceIndex":9,"TextId":"SetArrayIndexDescription"}
+            ValueRank: ScalarOrOneDimension
+    - Name: EventArguments
+      Id: g=59db62ae00c8741b65ba9b5bbb62185f
+      Type: MouseUpEvent
+      Children:
+      - Name: EventId
+        Id: g=91515ebb4d7650d0db1d835ae0de7d50
+        Type: PropertyType
+        DataType: ByteString
+      - Name: EventType
+        Id: g=956ea71f1e61fb264bf133159ee666d2
+        Type: PropertyType
+        DataType: NodeId
+      - Name: SourceNode
+        Id: g=04041ffcf4ade1f68d9a0877b6bd07f8
+        Type: PropertyType
+        DataType: NodeId
+      - Name: SourceName
+        Id: g=f142d7a56d7ac3f751ffa5389583785e
+        Type: PropertyType
+        DataType: String
+      - Name: Time
+        Id: g=a86d4a019a3260f008ab7bba714a9679
+        Type: PropertyType
+        DataType: UtcTime
+      - Name: ReceiveTime
+        Id: g=ba53cdf83b3c3762e39cd8c0f0e9c7f2
+        Type: PropertyType
+        DataType: UtcTime
+      - Name: Message
+        Id: g=bc716c8858f0b602730f1a73da2b0fd6
+        Type: PropertyType
+        DataType: LocalizedText
+      - Name: Severity
+        Id: g=cbec6846315899848aa5266cd5b1066d
+        Type: PropertyType
+        DataType: UInt16
+  - Name: Ref_Variable
+    Id: g=e1047b07aed5f26e5d76bcec8cddfaed
+    Type: BaseDataVariableType
+    DataType: Boolean
+    Description: {"NamespaceIndex":40,"TextId":"Variable or tag assigned to the button."}
+  - Name: Width
+    Id: g=4e35571f247c5ee421cc1e7acdd08f76
+    Type: BaseVariableType
+    DataType: Size
+    ModellingRule: Optional
+    Value: 56.0
+  - Name: Style
+    Id: g=f6c3b2c1d50ecff8f423d2f1a86ffd79
+    Type: BaseDataVariableType
+    DataType: String
+    Value: "Command"
+    Children:
+    - Name: ExpressionEvaluator1
+      Id: g=f6773bd372c8e52f2baa47e455941b2c
+      Type: ExpressionEvaluator
+      Children:
+      - Name: Expression
+        Id: g=1ac1f6e30caa81ceb9f44ddd8377ec13
+        Type: BaseDataVariableType
+        DataType: String
+        ReferenceType: HasParameter
+        ModellingRule: Optional
+        Value: "if({0},\"CommandFeedbackActive\",\"Command\")"
+      - Name: ns=9;Source0
+        Id: g=ca71a575ba0a9e9a87e38cd2dc9ddb2d
+        Type: BaseDataVariableType
+        DataType: BaseDataType
+        ReferenceType: HasSource
+        Children:
+        - Name: DynamicLink
+          Id: g=3dc60191944230b9603136f557648ea6
+          Type: DynamicLink
+          DataType: NodePath
+          Value: "../../../Set_Active"
+  - Name: Set_Active
+    Id: g=d4d98ed887bb2189fd24255fae08ef8f
+    Type: BaseDataVariableType
+    DataType: Boolean
+    Description: {"NamespaceIndex":40,"TextId":"When true, the button appearance will use the \"CommandFeedbackActive\" style"}
+  - Name: Cfg_Image
+    Id: g=52975fb9c2d47d952c0d929019ef773b
+    Type: BaseDataVariableType
+    DataType: ResourceUri
+    Description: {"NamespaceIndex":40,"TextId":"Image to be used as button icon."}
+  - Name: Cfg_ImageSize
+    Id: g=5ea83f994b1183a2567afc5608690749
+    Type: BaseDataVariableType
+    DataType: Int32
+    Description: {"NamespaceIndex":40,"TextId":"Image size (width/height) in pixesl."}
+    Value: 40
+  - Name: ImagePath
+    Id: g=4414d8f6b541a35c4fbd9c3399200c4c
+    Type: BaseDataVariableType
+    DataType: ResourceUri
+    Children:
+    - Name: DynamicLink
+      Id: g=8638a9f8ea1ecf64bdd83b683393c753
+      Type: DynamicLink
+      DataType: NodePath
+      Value: "../Cfg_Image"
+  - Name: ImageWidth
+    Id: g=0d4ddd529348783cf87bff00d8a825d2
+    Type: BaseDataVariableType
+    DataType: Size
+    Value: -1.0
+    Children:
+    - Name: DynamicLink
+      Id: g=d94c8b958720ef1f93af18e78d1e87cc
+      Type: DynamicLink
+      DataType: NodePath
+      Value: "../Cfg_ImageSize"
+  - Name: ImageHeight
+    Id: g=43d5dd56ac744550479be0b6d7f598a8
+    Type: BaseDataVariableType
+    DataType: Size
+    Value: -1.0
+    Children:
+    - Name: DynamicLink
+      Id: g=e9271194545f28251ca3a97775b6439a
+      Type: DynamicLink
+      DataType: NodePath
+      Value: "../Cfg_ImageSize"
+  - Name: ns=25;LibraryReference
+    Id: g=c9ba1953edda896175c21f7bc336e780
+    Type: ObjectLibraryReference
+    DataType: ObjectLibraryReferenceDataType
+    ModellingRule: None
+    Value: 
+     {
+      "TypeId": {
+       "Id": 72,
+       "Namespace": 25
+      },
+      "Body": {
+       "libraryGuid": "fdcdf28fb1d75623841900955debf246",
+       "objectGuid": "a327dfed23636781d289c56024f0ca1a",
+       "objectVersion": 3,
+       "highestIgnoredVersion": 0
+      }
+     }
+- Name: raSDK1_Btn_WriteOnRelease_Lbl
+  Id: g=756e441a16f3170f320ca8011947c7d3
+  Supertype: Button
+  Description: {"NamespaceIndex":40,"TextId":"Write on release button with label:  Write value = 1."}
+  ReferenceType: HasComponent
+  Children:
+  - Name: Text
+    Id: g=858c4728a616b3906de098d683ffab14
+    Type: BaseDataVariableType
+    DataType: LocalizedText
+    Children:
+    - Name: DynamicLink
+      Id: g=d6685c6570396664950aab539a08a3e6
+      Type: DynamicLink
+      DataType: NodePath
+      Value: "../Cfg_Label"
+  - Name: Height
+    Id: g=8b63073853854bef1823024a2d228c78
+    Type: BaseVariableType
+    DataType: Size
+    ModellingRule: Optional
+    Value: 56.0
+  - Name: MouseUpEventHandler1
+    Id: g=f9e16b899c3758159c072e664aaa8950
+    Type: EventHandler
+    Children:
+    - Name: ListenEventType
+      Id: g=613f78c604b22ae7d487678396e844c7
+      Type: PropertyType
+      DataType: NodeId
+      Value: "/Types/EventTypes/BaseEventType/MouseEvent/MouseUpEvent"
+    - Name: MethodsToCall
+      Id: g=859e0f01373064591b05be32d9bd7f49
+      Type: BaseObjectType
+      Children:
+      - Name: MethodContainer1
+        Id: g=71b50869d2b802447f73f7d478c4c877
+        Type: BaseObjectType
+        Children:
+        - Name: ns=9;ObjectPointer
+          Id: g=91845a12fec1b6524d89e9cf7a19d9fa
+          Type: NodePointer
+          DataType: NodeId
+          Value: "/Objects/Commands/VariableCommands"
+          Children:
+          - Name: Kind
+            Id: g=d47e16d089587ee8a823fd0cffa47cf0
+            Type: PropertyType
+            DataType: NodeId
+            Value: "/Types/ObjectTypes/BaseObjectType"
+        - Name: ns=9;Method
+          Id: g=f436fbfe7c9e2d5e87e26f64307e0b5d
+          Type: BaseDataVariableType
+          DataType: String
+          Value: "Set"
+        - Name: InputArguments
+          Id: g=c04ba7e3c292e73be926202892880953
+          Type: BaseObjectType
+          Children:
+          - Name: VariableToModify
+            Id: g=c304bd585f17fb5aa72816bedf98edb9
+            Type: BaseDataVariableType
+            DataType: VariablePointer
+            Description: {"NamespaceIndex":9,"TextId":"SetVariableToModifyDescription"}
+            Children:
+            - Name: DynamicLink
+              Id: g=413596298a9853aec1275da6426f1d61
+              Type: DynamicLink
+              DataType: NodePath
+              Value: "../../../../../Ref_Variable@NodeId"
+              Children:
+              - Name: Mode
+                Id: g=d9c289a5e222ec03d1ed99b7a304c4d1
+                Type: BaseVariableType
+                DataType: DynamicLinkMode
+                ModellingRule: Optional
+                Value: 2
+          - Name: Value
+            Id: g=c8a23ac778528b9ca31b5ea3db28cb9b
+            Type: BaseDataVariableType
+            DataType: Boolean
+            Description: {"NamespaceIndex":9,"TextId":"SetValueDescription"}
+            Value: true
+          - Name: ArrayIndex
+            Id: g=eca8e943c1eb15f0e7be91768b2e9c48
+            Type: BaseDataVariableType
+            DataType: UInt32
+            Description: {"NamespaceIndex":9,"TextId":"SetArrayIndexDescription"}
+            ValueRank: ScalarOrOneDimension
+    - Name: EventArguments
+      Id: g=075a87a8d44638e5e68ab67ceca8eac2
+      Type: MouseUpEvent
+      Children:
+      - Name: EventId
+        Id: g=3f65c57f130ade57275b6d858205368c
+        Type: PropertyType
+        DataType: ByteString
+      - Name: EventType
+        Id: g=60c5b04ba47d2f3a6bb67f7dea0448ab
+        Type: PropertyType
+        DataType: NodeId
+      - Name: SourceNode
+        Id: g=3c24b07423aa95df2e5f4f337d5e5132
+        Type: PropertyType
+        DataType: NodeId
+      - Name: SourceName
+        Id: g=8e2c3824e33c6f46b4f81c241bcb69db
+        Type: PropertyType
+        DataType: String
+      - Name: Time
+        Id: g=bad8582d755095c5a5f62b59a188278a
+        Type: PropertyType
+        DataType: UtcTime
+      - Name: ReceiveTime
+        Id: g=fd645902d7dd2c7dec20d73957ca7448
+        Type: PropertyType
+        DataType: UtcTime
+      - Name: Message
+        Id: g=cdaec90a691d698d316bf9e79c04508c
+        Type: PropertyType
+        DataType: LocalizedText
+      - Name: Severity
+        Id: g=f82abcb154ac2104e0c71cb634470ecb
+        Type: PropertyType
+        DataType: UInt16
+  - Name: Ref_Variable
+    Id: g=2430e8bd180b1cfe2b980050e4217c3f
+    Type: BaseDataVariableType
+    DataType: Boolean
+    Description: {"NamespaceIndex":40,"TextId":"Variable or tag assigned to the button."}
+  - Name: Cfg_Label
+    Id: g=71cb350b278ccdf25ff75f71ed3b8b6d
+    Type: BaseDataVariableType
+    DataType: LocalizedText
+    Description: {"NamespaceIndex":40,"TextId":"Button text."}
+    Value: {"LocaleId":"en-US","Text":"Label"}
+  - Name: Set_Active
+    Id: g=8407102fb3f385ef87ffacfd818371cc
+    Type: BaseDataVariableType
+    DataType: Boolean
+    Description: {"NamespaceIndex":40,"TextId":"When true, the button appearance will use the \"CommandFeedbackActive\" style"}
+  - Name: Width
+    Id: g=50bd41755663086c13e050f1fa2490e9
+    Type: BaseVariableType
+    DataType: Size
+    ModellingRule: Optional
+    Value: 128.0
+  - Name: Style
+    Id: g=f8b9d3e3901c69d48377427f0c6770b7
+    Type: BaseDataVariableType
+    DataType: String
+    Value: "Command"
+    Children:
+    - Name: ExpressionEvaluator1
+      Id: g=ad754fb15a4fc2e7edee516f01becb28
+      Type: ExpressionEvaluator
+      Children:
+      - Name: Expression
+        Id: g=acb1d4999209eb201256cb571837d730
+        Type: BaseDataVariableType
+        DataType: String
+        ReferenceType: HasParameter
+        ModellingRule: Optional
+        Value: "if({0},\"CommandFeedbackActive\",\"Command\")"
+      - Name: ns=9;Source0
+        Id: g=90c0faf5d52d00c31a0e27cc2bfe3c44
+        Type: BaseDataVariableType
+        DataType: BaseDataType
+        ReferenceType: HasSource
+        Children:
+        - Name: DynamicLink
+          Id: g=6f0e8320a119fecee9d75c244fa1ebe9
+          Type: DynamicLink
+          DataType: NodePath
+          Value: "../../../Set_Active"
+  - Name: ns=25;LibraryReference
+    Id: g=e0a84b231af6b7fbe41ef144a4e6f6d5
+    Type: ObjectLibraryReference
+    DataType: ObjectLibraryReferenceDataType
+    ModellingRule: None
+    Value: 
+     {
+      "TypeId": {
+       "Id": 72,
+       "Namespace": 25
+      },
+      "Body": {
+       "libraryGuid": "e8a408b8152d1dfed8f40f6da4d5ad62",
+       "objectGuid": "b80b7b189b9e92cf9bb58eecdab23059",
+       "objectVersion": 6,
+       "highestIgnoredVersion": 0
+      }
+     }
+  - Name: WordWrap
+    Id: g=b92b0253a97b505498130843009266d1
+    Type: BaseDataVariableType
+    DataType: Boolean
+    ModellingRule: Optional
+    Value: true

@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Alarm Response Plan - MT-90100 Interlock Trip</title>
+<style>
+  body {
+    font-family: "Segoe UI", Arial, sans-serif;
+    margin: 24px;
+    color: #222;
+    background: #f7f7f9;
+  }
+  header {
+    background: #1f3a5f;
+    color: #fff;
+    padding: 16px 20px;
+    border-radius: 6px 6px 0 0;
+  }
+  header h1 {
+    margin: 0;
+    font-size: 22px;
+  }
+  header .subtitle {
+    font-size: 14px;
+    opacity: 0.9;
+    margin-top: 4px;
+  }
+  .container {
+    background: #fff;
+    padding: 20px;
+    border: 1px solid #d9d9e0;
+    border-top: none;
+    border-radius: 0 0 6px 6px;
+  }
+  h2 {
+    color: #1f3a5f;
+    border-bottom: 2px solid #d9d9e0;
+    padding-bottom: 4px;
+    margin-top: 28px;
+  }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 8px;
+  }
+  th, td {
+    border: 1px solid #cfd3dc;
+    padding: 8px 10px;
+    text-align: left;
+    vertical-align: top;
+    font-size: 14px;
+  }
+  th {
+    background: #e9edf3;
+    color: #1f3a5f;
+  }
+  .meta-table td:first-child {
+    background: #f2f4f8;
+    font-weight: 600;
+    width: 220px;
+  }
+  .priority {
+    display: inline-block;
+    padding: 3px 10px;
+    background: #c62828;
+    color: #fff;
+    border-radius: 3px;
+    font-weight: 600;
+    font-size: 13px;
+  }
+  ol, ul {
+    margin-top: 6px;
+  }
+  li {
+    margin: 4px 0;
+  }
+  .note {
+    background: #fff8e1;
+    border-left: 4px solid #f9a825;
+    padding: 10px 14px;
+    margin: 12px 0;
+    font-size: 14px;
+  }
+  .danger {
+    background: #ffebee;
+    border-left: 4px solid #c62828;
+    padding: 10px 14px;
+    margin: 12px 0;
+    font-size: 14px;
+  }
+  footer {
+    margin-top: 24px;
+    font-size: 12px;
+    color: #666;
+    text-align: center;
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <h1>Alarm Response Plan</h1>
+  <div class="subtitle">Tag: MT-90100 &mdash; Compressor Motor Interlock Trip</div>
+</header>
+
+<div class="container">
+
+  <h2>1. Alarm Summary</h2>
+  <table class="meta-table">
+    <tr><td>Alarm Tag</td><td>MT-90100.IntlkTrip</td></tr>
+    <tr><td>Equipment</td><td>Compressor Motor MT-90100</td></tr>
+    <tr><td>Alarm Description</td><td>Motor interlock trip &mdash; motor stopped by protective interlock</td></tr>
+    <tr><td>Priority</td><td><span class="priority">HIGH / CRITICAL</span></td></tr>
+    <tr><td>Alarm Class</td><td>Safety / Equipment Protection</td></tr>
+    <tr><td>Response Time</td><td>Immediate (&lt; 5 minutes)</td></tr>
+    <tr><td>Consequence of Inaction</td><td>Loss of process availability, potential equipment damage, downstream upset</td></tr>
+  </table>
+
+  <h2>2. Possible Causes</h2>
+  <p>MT-90100 will trip on any of the following interlock conditions:</p>
+  <table>
+    <tr>
+      <th>Interlock</th>
+      <th>Trip Setpoint (Example)</th>
+      <th>Typical Cause</th>
+    </tr>
+    <tr>
+      <td>High Oil Temperature</td>
+      <td>&gt; 85 &deg;C</td>
+      <td>Loss of lube oil cooling, low oil flow, fouled cooler, ambient heat load, degraded oil</td>
+    </tr>
+    <tr>
+      <td>High Motor Current</td>
+      <td>&gt; 110% FLA for &gt; 5 s</td>
+      <td>Process overload, discharge blockage, bearing failure, coupling misalignment, single-phasing</td>
+    </tr>
+    <tr>
+      <td>High Vibration</td>
+      <td>&gt; 7.1 mm/s RMS</td>
+      <td>Imbalance, misalignment, bearing wear, loose mounting, surge event</td>
+    </tr>
+  </table>
+
+  <div class="danger">
+    <strong>Safety Notice:</strong> Do NOT attempt to restart MT-90100 until the tripping interlock has been
+    identified, the root cause corrected, and the trip signal reset per site LOTO and startup procedures.
+  </div>
+
+  <h2>3. Operator Response Actions</h2>
+  <ol>
+    <li>Acknowledge the alarm on the operator station and record the time of trip.</li>
+    <li>Confirm the motor has stopped and the discharge check valve has seated. Verify no reverse rotation.</li>
+    <li>Identify which interlock initiated the trip via the MT-90100 faceplate &ndash; First Out indication.</li>
+    <li>Place downstream users of MT-90100 in a safe state (open bypass, load-shed, or switch to spare unit MT-90101 if available).</li>
+    <li>Notify the Shift Supervisor and log the event in the shift log and CMMS.</li>
+    <li>Follow the branch below that matches the First Out interlock.</li>
+  </ol>
+
+  <h2>4. First-Out Specific Actions</h2>
+
+  <h3>4.1 High Oil Temperature Trip</h3>
+  <ol>
+    <li>Check lube oil cooler cooling water supply &ndash; verify flow, temperature, and valve position.</li>
+    <li>Check lube oil pump discharge pressure and reservoir level.</li>
+    <li>Inspect oil cooler for fouling or air-side blockage (if air-cooled).</li>
+    <li>Sample oil for degradation / contamination if temperature history shows a trend.</li>
+    <li>Do not reset until oil temperature is &lt; 60 &deg;C and root cause is confirmed.</li>
+  </ol>
+
+  <h3>4.2 High Motor Current Trip</h3>
+  <ol>
+    <li>Review last 15 minutes of trends: motor current, suction/discharge pressure, flow, and speed.</li>
+    <li>Check for closed or restricted discharge valve, plugged strainer, or process upset upstream.</li>
+    <li>Request electrical technician verify motor windings (megger) and check for single-phase condition.</li>
+    <li>Verify coupling and driven-end bearing condition &ndash; rotate by hand if safe.</li>
+    <li>Do not attempt more than one restart. Repeated overcurrent trips require a mechanical inspection.</li>
+  </ol>
+
+  <h3>4.3 High Vibration Trip</h3>
+  <ol>
+    <li>Review vibration trend and identify which probe/axis exceeded the trip level.</li>
+    <li>Visually inspect motor and driven equipment for loose fasteners, oil leaks, or coupling damage.</li>
+    <li>Check baseplate and grouting for looseness.</li>
+    <li>Request vibration analyst to pull spectra before restart to identify imbalance / misalignment / bearing defect.</li>
+    <li>Do NOT restart if vibration cause is unconfirmed &ndash; risk of catastrophic bearing failure.</li>
+  </ol>
+
+  <div class="note">
+    <strong>Note:</strong> If more than one interlock is active, treat as a compound event. Escalate to
+    Maintenance and Reliability Engineering before any restart attempt.
+  </div>
+
+  <h2>5. Reset and Restart Criteria</h2>
+  <ul>
+    <li>Root cause identified and documented.</li>
+    <li>All interlock inputs healthy and below alarm setpoints.</li>
+    <li>Field walk-down completed &ndash; no leaks, no abnormal sounds, guarding in place.</li>
+    <li>Shift Supervisor approval logged.</li>
+    <li>Reset MT-90100 interlock latch at faceplate, then follow standard start sequence
+      (raP_Opr_Seq step: Pre-Start &rarr; Start &rarr; Running).</li>
+  </ul>
+
+  <h2>6. Escalation</h2>
+  <table>
+    <tr><th>Time Since Trip</th><th>Action</th><th>Notify</th></tr>
+    <tr><td>0 - 5 min</td><td>Acknowledge, stabilize process</td><td>Shift Supervisor</td></tr>
+    <tr><td>5 - 30 min</td><td>Diagnose First Out cause</td><td>Maintenance Duty Tech</td></tr>
+    <tr><td>&gt; 30 min</td><td>Formal troubleshooting / work order</td><td>Rotating Equipment Engineer, Area Manager</td></tr>
+    <tr><td>Repeat trip within 24 h</td><td>Lock out for full inspection</td><td>Reliability Engineering</td></tr>
+  </table>
+
+  <h2>7. References</h2>
+  <ul>
+    <li>P&amp;ID: PID-90-100 &ndash; Compressor Train MT-90100</li>
+    <li>SOP-COMP-014 &ndash; Compressor Startup and Shutdown</li>
+    <li>Vendor O&amp;M Manual, Section 6 &ndash; Protective Interlocks</li>
+    <li>Site Alarm Management Philosophy, Rev. 4</li>
+    <li>Rockwell PlantPAx Process Library &ndash; raP_Opr_Seq Faceplate Guide</li>
+  </ul>
+
+</div>
+
+<footer>
+  Document: MT_90100_IntlkTrip.html &nbsp;|&nbsp; Rev. 0 (Draft) &nbsp;|&nbsp; For training / illustrative use only
+</footer>
+
+</body>
+</html>

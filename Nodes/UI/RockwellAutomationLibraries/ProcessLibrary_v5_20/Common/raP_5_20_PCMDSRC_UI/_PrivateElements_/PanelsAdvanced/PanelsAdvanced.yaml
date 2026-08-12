@@ -1,0 +1,88 @@
+Name: PanelsAdvanced
+Id: g=fca8660bb656a3577c8e7a98858950cc
+Type: FolderType
+Children:
+- Name: raP_5_20_PCMDSRC_AdvancedTabs
+  Id: g=dc8d56991f43d8f0f94968738ca5ff65
+  Supertype: raP_5_20_AdvancedTabs_EH
+  Description: {"NamespaceIndex":40,"TextId":"Advanced Display Navigation with Engineering and HMI tabs (Must Inherit)"}
+  ReferenceType: HasComponent
+  Children:
+  - Name: np_Advanced
+    Id: g=970da8d7c76315815045e6f6be8dd9d1
+    Type: NavigationPanel
+    Children:
+    - Name: Panels
+      Id: g=bc0d09c728e37f517f90172c8d778121
+      Type: BaseObjectType
+      Children:
+      - Name: Engineering
+        Id: g=4579bbccaf7588d101657f6175d9973b
+        Type: NavigationPanelItem
+        Children:
+        - Name: Title
+          Id: g=be59253b634777b6acbb715c94d3b881
+          Type: BaseDataVariableType
+          DataType: LocalizedText
+          Value: {"LocaleId":"en-US","Text":""}
+        - Name: Panel
+          Id: g=261d8cc349b7ebe104bd82a58f4680d8
+          Type: NodePointer
+          DataType: NodeId
+          Value: "/Objects/ProcessLibrary_CompressorDemo/UI/RockwellAutomationLibraries/ProcessLibrary_v5_20/Common/raP_5_20_PCMDSRC_UI/Widgets/raP_5_20_AdvCmdSrcPanelBase"
+          Children:
+          - Name: Kind
+            Id: g=ae76dcceed57fc3c0de7ccccab2e8940
+            Type: PropertyType
+            DataType: NodeId
+            Value: "/Types/ObjectTypes/BaseObjectType/BaseUIObject/Item/Container"
+      - Name: HMI
+        Id: g=c4ccba942e3ef918a3a84be80626eb11
+        Type: NavigationPanelItem
+        Children:
+        - Name: Title
+          Id: g=50f4491f54630db66e7634a737dc5155
+          Type: BaseDataVariableType
+          DataType: LocalizedText
+        - Name: Panel
+          Id: g=80abfe881035113bd75d0323142c1bca
+          Type: NodePointer
+          DataType: NodeId
+          Children:
+          - Name: Kind
+            Id: g=c6436b293be356076f782b36a1c0ce9c
+            Type: PropertyType
+            DataType: NodeId
+            Value: "/Types/ObjectTypes/BaseObjectType/BaseUIObject/Item/Container"
+        - Name: Visible
+          Id: g=227de5de805cda0edc70dc310db6e77e
+          Type: BaseDataVariableType
+          DataType: Boolean
+          ModellingRule: Optional
+    - Name: CurrentPanel
+      Id: g=00eb64e0f832747a9a374917e126ecd6
+      Type: NodePointer
+      DataType: NodeId
+      AccessLevel: Read
+      Children:
+      - Name: Kind
+        Id: g=7113a8f8c1ebd95901cd55a36bd917bb
+        Type: PropertyType
+        DataType: NodeId
+        Value: "/Types/ObjectTypes/BaseObjectType/BaseUIObject/Item"
+    - Name: CurrentTabIndex
+      Id: g=02bf4fce484d9ed8f17d7f0ac9d14568
+      Type: BaseDataVariableType
+      DataType: Int32
+    - Class: Reference
+      Target: ns=11;i=1181
+      Direction: Forward
+    - Class: Reference
+      Target: ns=11;i=1183
+      Direction: Forward
+  - Name: Cfg_ObjectVersion
+    Id: g=084ed75f899441628aa07ebe8a569899
+    Type: BaseDataVariableType
+    DataType: String
+    Description: {"NamespaceIndex":40,"TextId":"Object version"}
+    Value: "5.20.04 Release"

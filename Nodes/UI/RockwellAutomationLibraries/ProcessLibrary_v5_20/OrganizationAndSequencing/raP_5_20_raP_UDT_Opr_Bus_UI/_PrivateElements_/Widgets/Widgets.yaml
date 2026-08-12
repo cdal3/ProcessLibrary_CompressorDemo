@@ -1,0 +1,387 @@
+Name: Widgets
+Id: g=78e3f1372cf13b614ff903090c2f9d32
+Type: FolderType
+Children:
+- Name: raP_5_20_raP_UDT_Opr_Bus_cb_Cfg_StsMask_x
+  Id: g=a43cc9e5196e62c6861c599c590dd390
+  Supertype: CheckBox
+  ReferenceType: HasComponent
+  Children:
+  - Name: Checked
+    Id: g=0b42affad9486db5522b28a70a9495b8
+    Type: BaseDataVariableType
+    DataType: Boolean
+    Children:
+    - Name: ExpressionEvaluator1
+      Id: g=ea0d1570a32f8c75e4e00418867478f7
+      Type: ExpressionEvaluator
+      Children:
+      - Name: Expression
+        Id: g=6ecd67fcc05019a6e3ce3c8f68d6e971
+        Type: BaseDataVariableType
+        DataType: String
+        ReferenceType: HasParameter
+        ModellingRule: Optional
+        Value: "!{0}"
+      - Name: ns=9;Source0
+        Id: g=52230f11af98d71b316e6d44aa14f151
+        Type: BaseDataVariableType
+        DataType: BaseDataType
+        ReferenceType: HasSource
+        Children:
+        - Name: DynamicLink
+          Id: g=ad647a540cf7bbf81b1b40663c39f37e
+          Type: DynamicLink
+          DataType: NodePath
+          Value: "../../../Ref_Value"
+  - Name: Enabled
+    Id: g=a4d33a7855c57f5d0a6af168a03d191f
+    Type: BaseDataVariableType
+    DataType: Boolean
+    Value: true
+    Children:
+    - Name: DynamicLink
+      Id: g=5875477827498801c189bd25d6d8937e
+      Type: DynamicLink
+      DataType: NodePath
+      Value: "../Cfg_Enabled"
+  - Name: Cfg_Enabled
+    Id: g=49e40dcc45f7b1ccd5adced8d71ec19d
+    Type: BaseDataVariableType
+    DataType: Boolean
+    Children:
+    - Name: DynamicLink
+      Id: g=d0b20c329e16e4d2a76a74db59c6d960
+      Type: DynamicLink
+      DataType: NodePath
+      Value: "../../../../Sec_DeviceConfigHMI"
+  - Name: Cfg_StsMaskNum
+    Id: g=e279ab87a8109ba1519a5be9ba199bae
+    Type: BaseDataVariableType
+    DataType: Int32
+  - Name: Cfg_Label
+    Id: g=5f27dbb1bba0223456886aecf2cf2aa6
+    Type: BaseDataVariableType
+    DataType: LocalizedText
+    Value: {"LocaleId":"en-US","Text":""}
+  - Name: Text
+    Id: g=bfbb2db2351544a95cf38159cb51693e
+    Type: BaseDataVariableType
+    DataType: LocalizedText
+    Children:
+    - Name: DynamicLink
+      Id: g=915dd4819fd87144b183828d51899267
+      Type: DynamicLink
+      DataType: NodePath
+      Value: "../Cfg_Label"
+  - Name: WordWrap
+    Id: g=2d3538b6d2aeb17c85a683cc1f119dff
+    Type: BaseDataVariableType
+    DataType: Boolean
+    ModellingRule: Optional
+    Value: true
+  - Name: LeftMargin
+    Id: g=3fe11016f51c7f9c594b5d77ac7b3d78
+    Type: BaseVariableType
+    DataType: Size
+    ModellingRule: Optional
+    Value: 24.0
+  - Name: CheckedTransitioned
+    Id: g=d629c7a4352afad5bba9b57da0a0f7db
+    Type: VariableTransitionEventDispatcher
+    Children:
+    - Name: Value
+      Id: g=86f6f5f545758c974ea531933044a41b
+      Type: BaseVariableType
+      DataType: Double
+    - Name: Transition
+      Id: g=b2baa5f582d98a7629a5290122398af6
+      Type: BaseVariableType
+      DataType: VariableTransition
+    - Name: VariableNodePath
+      Id: g=8aae9c65df9d8c6de9fb8805d011ae2b
+      Type: BaseVariableType
+      DataType: NodePath
+      Value: "../Checked"
+    - Name: VariableTransitionEventHandler1
+      Id: g=921640a7a82650408a086bcb1ab2dd60
+      Type: EventHandler
+      Children:
+      - Name: ListenEventType
+        Id: g=32fbe47627796c6e4c0ec1dfcaaf1386
+        Type: PropertyType
+        DataType: NodeId
+        Value: "/Types/EventTypes/BaseEventType/VariableConditionEvent/VariableTransitionEvent"
+      - Name: MethodsToCall
+        Id: g=1d782f781e34e817ae4419ba88f28052
+        Type: BaseObjectType
+        Children:
+        - Name: MethodContainer1
+          Id: g=e46c51a858069b0f4cb6ab9704b02ba7
+          Type: BaseObjectType
+          Children:
+          - Name: ns=9;ObjectPointer
+            Id: g=e3e55aae0847f7ed457a7b6733e807bc
+            Type: NodePointer
+            DataType: NodeId
+            Value: "/Objects/Commands/VariableCommands"
+            Children:
+            - Name: Kind
+              Id: g=65ffaed2c0f2301f102222fce2756f7f
+              Type: PropertyType
+              DataType: NodeId
+              Value: "/Types/ObjectTypes/BaseObjectType"
+          - Name: ns=9;Method
+            Id: g=0af7053d4415d56dea96d995df33e9c7
+            Type: BaseDataVariableType
+            DataType: String
+            Value: "Set"
+          - Name: InputArguments
+            Id: g=6b2550e478358d68246d0393df3a923f
+            Type: BaseObjectType
+            Children:
+            - Name: VariableToModify
+              Id: g=86e6305cdba8d6d10ca263fb8535db3a
+              Type: BaseDataVariableType
+              DataType: VariablePointer
+              Description: {"NamespaceIndex":9,"TextId":"SetVariableToModifyDescription"}
+              Children:
+              - Name: DynamicLink
+                Id: g=09daf89508a8726089e3be0dd35f03a1
+                Type: DynamicLink
+                DataType: NodePath
+                Value: "../../../../../../Ref_Value@NodeId"
+            - Name: Value
+              Id: g=23ea04086489a593ea7a084f48c35817
+              Type: BaseDataVariableType
+              DataType: Boolean
+              Description: {"NamespaceIndex":9,"TextId":"SetValueDescription"}
+              Value: true
+            - Name: ArrayIndex
+              Id: g=af0189b4142db1ed87ae74d1d0f5f2bb
+              Type: BaseDataVariableType
+              DataType: UInt32
+              Description: {"NamespaceIndex":9,"TextId":"SetArrayIndexDescription"}
+              ValueRank: ScalarOrOneDimension
+      - Name: EventArguments
+        Id: g=8a77a2ec5a0687db98a8884a70aa534e
+        Type: VariableTransitionEvent
+        Children:
+        - Name: VariableNodeId
+          Id: g=8279bd93b8b6b70cb25209fce27c1081
+          Type: BaseVariableType
+          DataType: NodeId
+        - Name: NewValue
+          Id: g=734514653000b785507888112ee0cd26
+          Type: BaseVariableType
+          DataType: BaseDataType
+        - Name: OldValue
+          Id: g=a7b2d87085b959d938158a2c89a0369e
+          Type: BaseVariableType
+          DataType: BaseDataType
+        - Name: EventId
+          Id: g=31974b168dc29598a5e5e7c1d3088fd5
+          Type: PropertyType
+          DataType: ByteString
+        - Name: EventType
+          Id: g=acc6dfc9c0a1e9915e689b3b11e39d50
+          Type: PropertyType
+          DataType: NodeId
+        - Name: SourceNode
+          Id: g=7d87f5e2f0df8257ce8f80800e6d2cde
+          Type: PropertyType
+          DataType: NodeId
+        - Name: SourceName
+          Id: g=bc07927d8aa954919489f13e53394666
+          Type: PropertyType
+          DataType: String
+        - Name: Time
+          Id: g=99354cc8e77135a8d696a768f10c6692
+          Type: PropertyType
+          DataType: UtcTime
+        - Name: ReceiveTime
+          Id: g=b5a6554662bbfae3ba909baa92c2134a
+          Type: PropertyType
+          DataType: UtcTime
+        - Name: Message
+          Id: g=b2b74748fb2c20b3b4924256afaf5297
+          Type: PropertyType
+          DataType: LocalizedText
+        - Name: Severity
+          Id: g=0ce65e0268ddff9d554a5368c753fb1c
+          Type: PropertyType
+          DataType: UInt16
+  - Name: Ref_Value
+    Id: g=cebcb886ff805e62b1f17f78f48292e3
+    Type: BaseDataVariableType
+    DataType: Boolean
+    Children:
+    - Name: DynamicLink
+      Id: g=cad7405882b5ae09bafe11d2b385949b
+      Type: DynamicLink
+      DataType: NodePath
+      Children:
+      - Name: Mode
+        Id: g=f8b68d04fed003384d02d419091f8df8
+        Type: BaseVariableType
+        DataType: DynamicLinkMode
+        ModellingRule: Optional
+        Value: 2
+      - Name: DynamicLinkFormatter
+        Id: g=9ca03e0ff352062713c5d50c0da1f06a
+        Type: StringFormatter
+        Children:
+        - Name: Format
+          Id: g=dabe8e8eabad369bd62aabf691d30989
+          Type: BaseDataVariableType
+          DataType: LocalizedText
+          ReferenceType: HasParameter
+          ModellingRule: Optional
+          Value: {"LocaleId":"","Text":"{Tag_Bus}/Obj/Cfg_StsMask.{1}"}
+        - Name: ns=9;Source1
+          Id: g=c939c8e9e0879c31e981e3180d2e2a78
+          Type: BaseDataVariableType
+          DataType: BaseDataType
+          ReferenceType: HasSource
+          Children:
+          - Name: DynamicLink
+            Id: g=38216cee183cf13d9d97947c8b77249d
+            Type: DynamicLink
+            DataType: NodePath
+            Value: "../../../../Cfg_StsMaskNum"
+  - Name: CheckedTransitioned1
+    Id: g=76537d3eb7ba2c00cefb0e56b316cafc
+    Type: VariableTransitionEventDispatcher
+    Children:
+    - Name: Value
+      Id: g=f49e86d8494522e52fa822c07100ce73
+      Type: BaseVariableType
+      DataType: Double
+      Value: 1.0
+    - Name: Transition
+      Id: g=0b145d7f84f42b5f99c678007de559e7
+      Type: BaseVariableType
+      DataType: VariableTransition
+    - Name: VariableNodePath
+      Id: g=9918d7018e3fce4dc9bc9ae5af625dc4
+      Type: BaseVariableType
+      DataType: NodePath
+      Value: "../Checked"
+    - Name: VariableTransitionEventHandler1
+      Id: g=06d140155a0aa527c865b9b5ddda58a4
+      Type: EventHandler
+      Children:
+      - Name: ListenEventType
+        Id: g=15df0ee46a9c5a463d894dc1a38c74d4
+        Type: PropertyType
+        DataType: NodeId
+        Value: "/Types/EventTypes/BaseEventType/VariableConditionEvent/VariableTransitionEvent"
+      - Name: MethodsToCall
+        Id: g=022438f84bf7ed7cbda9ea750f1a378a
+        Type: BaseObjectType
+        Children:
+        - Name: MethodContainer1
+          Id: g=abf1a9094f19b7cf7ebadc13f815f61d
+          Type: BaseObjectType
+          Children:
+          - Name: ns=9;ObjectPointer
+            Id: g=3dbe14895aa1726ff2638baac37f6e93
+            Type: NodePointer
+            DataType: NodeId
+            Value: "/Objects/Commands/VariableCommands"
+            Children:
+            - Name: Kind
+              Id: g=31f2bb531abd9ddc2636866e40af3c4c
+              Type: PropertyType
+              DataType: NodeId
+              Value: "/Types/ObjectTypes/BaseObjectType"
+          - Name: ns=9;Method
+            Id: g=fb24a5d227bc8111dbb4718e8935d0f4
+            Type: BaseDataVariableType
+            DataType: String
+            Value: "Set"
+          - Name: InputArguments
+            Id: g=0b5b7e15932ea8a0077f95308b64c402
+            Type: BaseObjectType
+            Children:
+            - Name: VariableToModify
+              Id: g=2efe11c9910fe3252b0305123039398c
+              Type: BaseDataVariableType
+              DataType: VariablePointer
+              Description: {"NamespaceIndex":9,"TextId":"SetVariableToModifyDescription"}
+              Children:
+              - Name: DynamicLink
+                Id: g=f4b4b55493195871d875650c737fe0b3
+                Type: DynamicLink
+                DataType: NodePath
+                Value: "../../../../../../Ref_Value@NodeId"
+            - Name: Value
+              Id: g=dcd101925f49eb27ff9516ed77d3bdf5
+              Type: BaseDataVariableType
+              DataType: Boolean
+              Description: {"NamespaceIndex":9,"TextId":"SetValueDescription"}
+            - Name: ArrayIndex
+              Id: g=5ae26acd5bbebd8b8be2624dbc483929
+              Type: BaseDataVariableType
+              DataType: UInt32
+              Description: {"NamespaceIndex":9,"TextId":"SetArrayIndexDescription"}
+              ValueRank: ScalarOrOneDimension
+      - Name: EventArguments
+        Id: g=7434da2af0a860f30687850f95b3d4c1
+        Type: VariableTransitionEvent
+        Children:
+        - Name: VariableNodeId
+          Id: g=1a753d59c5c2b9a8e775f60ca2731dfd
+          Type: BaseVariableType
+          DataType: NodeId
+        - Name: NewValue
+          Id: g=867c34424daeac9dc7e312b6135347c0
+          Type: BaseVariableType
+          DataType: BaseDataType
+        - Name: OldValue
+          Id: g=114bcc909b46348e8218878ed416b271
+          Type: BaseVariableType
+          DataType: BaseDataType
+        - Name: EventId
+          Id: g=f3bf228c2915a47de89eee9a8d276adc
+          Type: PropertyType
+          DataType: ByteString
+        - Name: EventType
+          Id: g=66a9f4f105b718b5e55e5a8f61260674
+          Type: PropertyType
+          DataType: NodeId
+        - Name: SourceNode
+          Id: g=f581f4cbd6227270d39912289f98c0fe
+          Type: PropertyType
+          DataType: NodeId
+        - Name: SourceName
+          Id: g=06674f6727f8a61e932d9a5f92ab1f50
+          Type: PropertyType
+          DataType: String
+        - Name: Time
+          Id: g=e088306e41d93ce0cbf73de1d3495832
+          Type: PropertyType
+          DataType: UtcTime
+        - Name: ReceiveTime
+          Id: g=5e1aa35edc33ca6870ac0489f5b620d4
+          Type: PropertyType
+          DataType: UtcTime
+        - Name: Message
+          Id: g=c5701fc9096d193a9e315eac94be55f6
+          Type: PropertyType
+          DataType: LocalizedText
+        - Name: Severity
+          Id: g=e8f341518d87a40ea8bb51524f2347ee
+          Type: PropertyType
+          DataType: UInt16
+  - Name: HorizontalAlignment
+    Id: g=2971e170dbcd24581bc3958a064a4e2b
+    Type: BaseVariableType
+    DataType: HorizontalAlignment
+    ModellingRule: Optional
+    Value: 3
+  - Name: Cfg_ObjectVersion
+    Id: g=0e388c31e55d35288544136f71fb2e5f
+    Type: BaseDataVariableType
+    DataType: String
+    Value: "5.20.04 Release"

@@ -1,0 +1,63 @@
+Name: Audit_NetLogic_Advanced
+Id: g=b3993b3533a63f361c25fa4e7c7159f1
+Type: FolderType
+Children:
+- Name: GenerateImportFile
+  Id: g=6f9406407e17cfe5d131aec868f3da22
+  Type: NetLogic
+  Children:
+  - Name: BehaviourStartPriority
+    Id: g=365b4d924d9028f686ac457ce1614568
+    Type: BehaviourStartPriorityVariableType
+    DataType: Byte
+    Value: 180
+  - Name: TemplateFilePath
+    Id: g=0e72faf96412dac24e4c590d6eaa0400
+    Type: BaseDataVariableType
+    DataType: AbsoluteResourceUri
+  - Class: Method
+    Name: InitDB
+    Id: g=930b533acb14b846f33727e332dbd486
+- Name: ImportConfigFile
+  Id: g=cca6e0e47369b74d44970a7df810380e
+  Type: NetLogic
+  Description: {"LocaleId":"en-US","Text":""}
+  Children:
+  - Name: BehaviourStartPriority
+    Id: g=6386c1579fbf53148f4ba0edb3ebdc86
+    Type: BehaviourStartPriorityVariableType
+    DataType: Byte
+    Value: 180
+  - Name: ImportFilePath
+    Id: g=4870835f973f019d10efd04ec4bc2ec5
+    Type: BaseDataVariableType
+    DataType: AbsoluteResourceUri
+  - Class: Method
+    Name: CreateAuditSigning
+    Id: g=d825d3c58feeeb0e94b7885582d33b56
+  - Name: CleanALLESigConfig
+    Id: g=8fae023aeb6f4505bac5dbd42b6671ad
+    Type: BaseDataVariableType
+    DataType: Boolean
+    Value: true
+  - Name: LocalizationDictionary
+    Id: g=67a5ec0c82b60d39f8ebf258497f0759
+    Type: NodePointer
+    DataType: NodeId
+    Children:
+    - Name: Kind
+      Id: g=30aaee92eaba01cbad5289031f4ce4e6
+      Type: PropertyType
+      DataType: NodeId
+      Value: "/Types/VariableTypes/BaseVariableType/LocalizationDictionary"
+    - Name: DynamicLink
+      Id: g=de7c0b5872373a4c75ea8f9835757159
+      Type: DynamicLink
+      DataType: NodePath
+      Value: "../../../../../Translations/LocalizationDictionary1@NodeId"
+      Children:
+      - Name: Mode
+        Id: g=5556888065f7c70062a4248b930aedc3
+        Type: BaseVariableType
+        DataType: DynamicLinkMode
+        Value: 2

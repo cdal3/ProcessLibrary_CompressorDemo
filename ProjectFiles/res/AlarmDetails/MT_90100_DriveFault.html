@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Alarm Response Plan - MT-90100 Drive Fault</title>
+<style>
+  body { font-family: "Segoe UI", Arial, sans-serif; margin: 24px; color: #222; background: #f7f7f9; }
+  header { background: #1f3a5f; color: #fff; padding: 16px 20px; border-radius: 6px 6px 0 0; }
+  header h1 { margin: 0; font-size: 22px; }
+  header .subtitle { font-size: 14px; opacity: 0.9; margin-top: 4px; }
+  .container { background: #fff; padding: 20px; border: 1px solid #d9d9e0; border-top: none; border-radius: 0 0 6px 6px; }
+  h2 { color: #1f3a5f; border-bottom: 2px solid #d9d9e0; padding-bottom: 4px; margin-top: 28px; }
+  h3 { color: #1f3a5f; }
+  table { width: 100%; border-collapse: collapse; margin-top: 8px; }
+  th, td { border: 1px solid #cfd3dc; padding: 8px 10px; text-align: left; vertical-align: top; font-size: 14px; }
+  th { background: #e9edf3; color: #1f3a5f; }
+  .meta-table td:first-child { background: #f2f4f8; font-weight: 600; width: 220px; }
+  .priority { display: inline-block; padding: 3px 10px; background: #c62828; color: #fff; border-radius: 3px; font-weight: 600; font-size: 13px; }
+  ol, ul { margin-top: 6px; }
+  li { margin: 4px 0; }
+  .note { background: #fff8e1; border-left: 4px solid #f9a825; padding: 10px 14px; margin: 12px 0; font-size: 14px; }
+  .danger { background: #ffebee; border-left: 4px solid #c62828; padding: 10px 14px; margin: 12px 0; font-size: 14px; }
+  footer { margin-top: 24px; font-size: 12px; color: #666; text-align: center; }
+</style>
+</head>
+<body>
+
+<header>
+  <h1>Alarm Response Plan</h1>
+  <div class="subtitle">Tag: MT-90100 &mdash; Compressor Motor Drive Faulted</div>
+</header>
+
+<div class="container">
+
+  <h2>1. Alarm Summary</h2>
+  <table class="meta-table">
+    <tr><td>Alarm Tag</td><td>MT-90100.DriveFault</td></tr>
+    <tr><td>Equipment</td><td>Compressor Motor MT-90100 VFD / Soft-Starter</td></tr>
+    <tr><td>Alarm Description</td><td>Drive has declared a fault condition and stopped the motor</td></tr>
+    <tr><td>Priority</td><td><span class="priority">HIGH</span></td></tr>
+    <tr><td>Alarm Class</td><td>Equipment Protection</td></tr>
+    <tr><td>Response Time</td><td>Immediate (&lt; 5 minutes)</td></tr>
+    <tr><td>Consequence of Inaction</td><td>Loss of process availability, potential drive damage on repeated reset attempts</td></tr>
+  </table>
+
+  <h2>2. Possible Causes</h2>
+  <table>
+    <tr><th>Drive Fault Category</th><th>Typical Codes (Example)</th><th>Likely Cause</th></tr>
+    <tr><td>Overcurrent / Ground Fault</td><td>F5, F13</td><td>Motor short, cable insulation failure, sudden mechanical load</td></tr>
+    <tr><td>Overvoltage / Undervoltage</td><td>F6, F7</td><td>Utility disturbance, regen from decel, DC bus issue</td></tr>
+    <tr><td>Drive Overtemperature</td><td>F8</td><td>Blocked cooling fan, high ambient, dirty filter</td></tr>
+    <tr><td>Motor Overload (I&sup2;t)</td><td>F9</td><td>Sustained overload, high starts/hour</td></tr>
+    <tr><td>Communication Loss</td><td>F81, F86</td><td>Loss of network path to PLC</td></tr>
+    <tr><td>Encoder / Feedback</td><td>F91</td><td>Encoder failure or wiring problem</td></tr>
+  </table>
+
+  <div class="danger">
+    <strong>Safety Notice:</strong> Do NOT repeatedly reset a drive fault without identifying the cause.
+    Repeated resets on an overcurrent or ground fault can cause severe drive or motor damage.
+  </div>
+
+  <h2>3. Operator Response Actions</h2>
+  <ol>
+    <li>Acknowledge the alarm and note the time.</li>
+    <li>Open the MT-90100 drive faceplate &mdash; record the exact fault code and description.</li>
+    <li>Verify the motor has stopped and secure downstream users.</li>
+    <li>Notify the Shift Supervisor and Electrical Technician.</li>
+    <li>Do not reset the drive until the cause is identified and site policy allows.</li>
+  </ol>
+
+  <h2>4. Troubleshooting Guidance</h2>
+  <ol>
+    <li>Retrieve the drive fault log and event stack (last 5 faults).</li>
+    <li>For overcurrent / ground fault: megger the motor before any reset attempt.</li>
+    <li>For overtemperature: inspect drive cooling fans, air filters, and cabinet A/C.</li>
+    <li>For overvoltage: review deceleration ramp; check for regen conditions and DB resistor if fitted.</li>
+    <li>For comm loss: check EtherNet/IP path, switches, and PLC connectivity.</li>
+    <li>Review drive parameters against last known-good backup.</li>
+  </ol>
+
+  <div class="note">
+    <strong>Note:</strong> Drive fault information from Rockwell PowerFlex and similar drives is exposed via
+    the Add-On Instruction; use the DriveFault sub-tag details on the PlantPAx faceplate for exact code.
+  </div>
+
+  <h2>5. Reset and Restart Criteria</h2>
+  <ul>
+    <li>Fault code cause identified.</li>
+    <li>Any electrical testing (megger, thermography) complete with acceptable results.</li>
+    <li>Drive cabinet cleaned / cooling verified if thermal fault.</li>
+    <li>Shift Supervisor approval logged.</li>
+    <li>Reset the drive fault, clear the MT-90100 alarm, and proceed with normal start sequence.</li>
+  </ul>
+
+  <h2>6. Escalation</h2>
+  <table>
+    <tr><th>Time Since Alarm</th><th>Action</th><th>Notify</th></tr>
+    <tr><td>0 - 5 min</td><td>Acknowledge, record fault code</td><td>Shift Supervisor</td></tr>
+    <tr><td>5 - 30 min</td><td>Electrical diagnostics</td><td>Electrical Technician</td></tr>
+    <tr><td>&gt; 30 min or repeat fault</td><td>Drive vendor / OEM support</td><td>Reliability / Controls Engineer</td></tr>
+  </table>
+
+  <h2>7. References</h2>
+  <ul>
+    <li>P&amp;ID: PID-90-100 &ndash; Compressor Train MT-90100</li>
+    <li>Drive Vendor Manual &ndash; Fault Code Reference</li>
+    <li>Rockwell PlantPAx Process Library &ndash; raP_Opr_Motor / Drive Faceplate Guide</li>
+  </ul>
+
+</div>
+
+<footer>
+  Document: MT_90100_DriveFault.html &nbsp;|&nbsp; Rev. 0 (Draft) &nbsp;|&nbsp; For training / illustrative use only
+</footer>
+
+</body>
+</html>

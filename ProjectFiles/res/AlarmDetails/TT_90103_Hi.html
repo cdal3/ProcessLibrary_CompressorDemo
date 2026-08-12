@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Alarm Response Plan - TT-90103 Hi</title>
+<style>
+  body { font-family: "Segoe UI", Arial, sans-serif; margin: 24px; color: #222; background: #f7f7f9; }
+  header { background: #1f3a5f; color: #fff; padding: 16px 20px; border-radius: 6px 6px 0 0; }
+  header h1 { margin: 0; font-size: 22px; }
+  header .subtitle { font-size: 14px; opacity: 0.9; margin-top: 4px; }
+  .container { background: #fff; padding: 20px; border: 1px solid #d9d9e0; border-top: none; border-radius: 0 0 6px 6px; }
+  h2 { color: #1f3a5f; border-bottom: 2px solid #d9d9e0; padding-bottom: 4px; margin-top: 28px; }
+  h3 { color: #1f3a5f; }
+  table { width: 100%; border-collapse: collapse; margin-top: 8px; }
+  th, td { border: 1px solid #cfd3dc; padding: 8px 10px; text-align: left; vertical-align: top; font-size: 14px; }
+  th { background: #e9edf3; color: #1f3a5f; }
+  .meta-table td:first-child { background: #f2f4f8; font-weight: 600; width: 220px; }
+  .priority { display: inline-block; padding: 3px 10px; background: #f9a825; color: #222; border-radius: 3px; font-weight: 600; font-size: 13px; }
+  ol, ul { margin-top: 6px; }
+  li { margin: 4px 0; }
+  .note { background: #fff8e1; border-left: 4px solid #f9a825; padding: 10px 14px; margin: 12px 0; font-size: 14px; }
+  .danger { background: #ffebee; border-left: 4px solid #c62828; padding: 10px 14px; margin: 12px 0; font-size: 14px; }
+  footer { margin-top: 24px; font-size: 12px; color: #666; text-align: center; }
+</style>
+</head>
+<body>
+
+<header>
+  <h1>Alarm Response Plan</h1>
+  <div class="subtitle">Tag: TT-90103 &mdash; Compressor Oil Temperature Hi</div>
+</header>
+
+<div class="container">
+
+  <h2>1. Alarm Summary</h2>
+  <table class="meta-table">
+    <tr><td>Alarm Tag</td><td>TT-90103.Hi</td></tr>
+    <tr><td>Measurement</td><td>Compressor lube oil temperature</td></tr>
+    <tr><td>Alarm Description</td><td>Oil temperature has exceeded the Hi warning setpoint &mdash; pre-alarm before HiHi trip</td></tr>
+    <tr><td>Hi Setpoint (Example)</td><td>&gt; 75 &deg;C</td></tr>
+    <tr><td>Priority</td><td><span class="priority">MEDIUM</span></td></tr>
+    <tr><td>Alarm Class</td><td>Process / Early Warning</td></tr>
+    <tr><td>Response Time</td><td>&lt; 15 minutes</td></tr>
+    <tr><td>Consequence of Inaction</td><td>Escalation to HiHi trip, motor shutdown, potential bearing damage</td></tr>
+  </table>
+
+  <h2>2. Possible Causes</h2>
+  <ul>
+    <li>Rising cooling water supply temperature (seasonal, cooling tower issue).</li>
+    <li>Partial fouling of oil cooler.</li>
+    <li>Reduced cooling water flow (partially closed valve, plugged strainer).</li>
+    <li>Increased process load raising oil heat rejection.</li>
+    <li>TIC-90103 controller sluggish or de-tuned.</li>
+    <li>Oil degradation lowering heat-transfer performance.</li>
+  </ul>
+
+  <div class="note">
+    <strong>Note:</strong> This is a pre-alarm intended to give the operator time to intervene before the
+    HiHi trip. Prompt corrective action typically avoids a compressor trip.
+  </div>
+
+  <h2>3. Operator Response Actions</h2>
+  <ol>
+    <li>Acknowledge the alarm and review the last 30 minutes of TT-90103 and TIC-90103 trends.</li>
+    <li>Verify TIC-90103 is in AUTO and the cooling water valve is opening as expected.</li>
+    <li>Check cooling water supply temperature, pressure, and strainer differential pressure.</li>
+    <li>If TIC-90103 output is at 100% and temperature is still rising, prepare for a possible manual load reduction on the compressor.</li>
+    <li>If temperature approaches HiHi (within 5 &deg;C), notify Shift Supervisor and consider proactive load reduction or planned shutdown.</li>
+  </ol>
+
+  <h2>4. Troubleshooting Guidance</h2>
+  <ol>
+    <li>Compare cooling water supply/return &Delta;T against baseline.</li>
+    <li>Check for recent changes in ambient conditions or cooling tower performance.</li>
+    <li>Inspect the oil cooler outlet temperature vs. water inlet temperature (approach).</li>
+    <li>Review oil condition history (last sample, hours since change).</li>
+    <li>Verify TT-90103 reading against a redundant bearing RTD if available.</li>
+  </ol>
+
+  <h2>5. Return to Normal</h2>
+  <ul>
+    <li>Oil temperature returns below the Hi setpoint minus deadband.</li>
+    <li>Root cause corrected (cooling restored, strainer cleaned, controller re-tuned, etc.).</li>
+    <li>Alarm clears automatically once temperature normalizes.</li>
+  </ul>
+
+  <h2>6. Escalation</h2>
+  <table>
+    <tr><th>Time Since Alarm</th><th>Action</th><th>Notify</th></tr>
+    <tr><td>0 - 15 min</td><td>Diagnose cooling loop</td><td>Board Operator, Field Operator</td></tr>
+    <tr><td>&gt; 15 min without improvement</td><td>Plan load reduction / shutdown</td><td>Shift Supervisor</td></tr>
+    <tr><td>Approaching HiHi</td><td>Prepare for trip response (see TT_90103_HiHi plan)</td><td>Maintenance Duty</td></tr>
+  </table>
+
+  <h2>7. References</h2>
+  <ul>
+    <li>P&amp;ID: PID-90-100 &ndash; Compressor Train MT-90100</li>
+    <li>Lube Oil System Drawing: PID-90-103</li>
+    <li>Related plan: TT_90103_HiHi.html, TIC_90103_HiDev.html</li>
+  </ul>
+
+</div>
+
+<footer>
+  Document: TT_90103_Hi.html &nbsp;|&nbsp; Rev. 0 (Draft) &nbsp;|&nbsp; For training / illustrative use only
+</footer>
+
+</body>
+</html>

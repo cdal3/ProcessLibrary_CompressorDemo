@@ -1,0 +1,2508 @@
+Name: Time
+Id: g=480707268216c8b250ab33685ef11f2e
+Type: FolderType
+Children:
+- Name: raSDK1_TD_LblDateTime
+  Id: g=1d280e3b777a1a6a8cc368bd21018b41
+  Supertype: ColumnLayout
+  Description: {"NamespaceIndex":40,"TextId":"Label above date and time displayed values; left justified."}
+  ReferenceType: HasComponent
+  Children:
+  - Name: Label
+    Id: g=b293410bee48447638b498de91df2b5d
+    Type: Label
+    Children:
+    - Name: Text
+      Id: g=9044782291770ce31d2e2b8a3d06305c
+      Type: BaseDataVariableType
+      DataType: LocalizedText
+      Children:
+      - Name: DynamicLink
+        Id: g=60bc91748575f737e1f717c8f26f2243
+        Type: DynamicLink
+        DataType: NodePath
+        Value: "../../Cfg_Label"
+    - Name: VerticalAlignment
+      Id: g=b0764f85522d6428685b71e2baf0d60a
+      Type: BaseVariableType
+      DataType: VerticalAlignment
+      ModellingRule: Optional
+    - Name: HorizontalAlignment
+      Id: g=8dd2fbfa5bbfa22d99aa27179f4cca27
+      Type: BaseVariableType
+      DataType: HorizontalAlignment
+      ModellingRule: Optional
+      Value: 3
+    - Name: TextHorizontalAlignment
+      Id: g=71bb228b6570b8dee29a615d169c1b87
+      Type: BaseVariableType
+      DataType: TextHorizontalAlignment
+      ModellingRule: Optional
+    - Name: Style
+      Id: g=742e840fbe9777604dafe10cf33de951
+      Type: BaseDataVariableType
+      DataType: String
+      ModellingRule: Optional
+      Value: "Data Label"
+    - Name: TextVerticalAlignment
+      Id: g=8f75c9041de0c5f6b792d081fdf84134
+      Type: BaseVariableType
+      DataType: TextVerticalAlignment
+      ModellingRule: Optional
+    - Name: WordWrap
+      Id: g=38d773b90fb399c97254c6a9a0dd063a
+      Type: BaseDataVariableType
+      DataType: Boolean
+      ModellingRule: Optional
+      Value: true
+  - Name: DateTime
+    Id: g=39e788d63279e5c686de4c2bcf3758d7
+    Type: RowLayout
+    Children:
+    - Name: YYYY_MM_DD
+      Id: g=b447c5f9a5491f6d0d3b559cf5036458
+      Type: Label
+      Children:
+      - Name: Text
+        Id: g=5823abc5d3fab2842b6bb23cef28f2e7
+        Type: BaseDataVariableType
+        DataType: LocalizedText
+        Children:
+        - Name: StringFormatter1
+          Id: g=30e7c3a68ca5a25a7c42670b5ff811fe
+          Type: StringFormatter
+          Children:
+          - Name: Format
+            Id: g=56377b84e5fb85efb71c4c0c115c4dd6
+            Type: BaseDataVariableType
+            DataType: LocalizedText
+            ReferenceType: HasParameter
+            ModellingRule: Optional
+            Value: {"LocaleId":"en-US","Text":"{0:d}-{1}-{2}"}
+          - Name: ns=9;Source0
+            Id: g=f3eb4de3bf1bf34be8ca2d616daaa9f9
+            Type: BaseDataVariableType
+            DataType: BaseDataType
+            ReferenceType: HasSource
+            Children:
+            - Name: DynamicLink
+              Id: g=8621dcf17c5dd7fe1de5369e3d82ab30
+              Type: DynamicLink
+              DataType: NodePath
+              Value: "../../../../../Inp_Time[0]"
+          - Name: ns=9;Source1
+            Id: g=d80c84319ac940889589aa41289b6cc6
+            Type: BaseDataVariableType
+            DataType: BaseDataType
+            ReferenceType: HasSource
+            Children:
+            - Name: DynamicLink
+              Id: g=e7a530ba89f100a24f9cf19ed66901a8
+              Type: DynamicLink
+              DataType: NodePath
+              Value: "../../../../../Inp_Time[1]"
+          - Name: ns=9;Source2
+            Id: g=b9b1b2aaa947981fa3b5c26d666cf700
+            Type: BaseDataVariableType
+            DataType: BaseDataType
+            ReferenceType: HasSource
+            Children:
+            - Name: DynamicLink
+              Id: g=cbbe206e62cd64c5c84397dda3e37eda
+              Type: DynamicLink
+              DataType: NodePath
+              Value: "../../../../../Inp_Time[2]"
+      - Name: Visible
+        Id: g=c115f7d2cf49f7d3401837349c758068
+        Type: BaseDataVariableType
+        DataType: Boolean
+        Value: true
+        Children:
+        - Name: ConditionalConverter1
+          Id: g=d0ad4fb4f8be695dc239066231ba8edf
+          Type: ConditionalConverter
+          Children:
+          - Name: Condition
+            Id: g=42eab10d91a6310c7d59a8bc09b9cb7a
+            Type: BaseDataVariableType
+            DataType: Boolean
+            ReferenceType: HasSource
+            Children:
+            - Name: ExpressionEvaluator1
+              Id: g=33f315924225f3b6f816a0e75cb3f029
+              Type: ExpressionEvaluator
+              Children:
+              - Name: Expression
+                Id: g=2e5301639d3af4f449ca14693d0887c8
+                Type: BaseDataVariableType
+                DataType: String
+                ReferenceType: HasParameter
+                ModellingRule: Optional
+                Value: "({0} >= 4) && ({0} <=6)"
+              - Name: ns=9;Source0
+                Id: g=9fe54cc3b8bbc3c093bcaa2748485f0d
+                Type: BaseDataVariableType
+                DataType: BaseDataType
+                ReferenceType: HasSource
+                Children:
+                - Name: DynamicLink
+                  Id: g=595853592851dcb9399429ec25f0ebb8
+                  Type: DynamicLink
+                  DataType: NodePath
+                  Value: "../../../../../../../Cfg_Format"
+          - Name: TrueValue
+            Id: g=61b9101ab4c7f26476d85da8b6bffcc9
+            Type: BaseDataVariableType
+            DataType: Boolean
+            ReferenceType: HasParameter
+            ModellingRule: Optional
+          - Name: FalseValue
+            Id: g=0190b80fe4c0fbd747fe38dc4490482d
+            Type: BaseDataVariableType
+            DataType: Boolean
+            ReferenceType: HasParameter
+            ModellingRule: Optional
+            Value: true
+      - Name: RightMargin
+        Id: g=089b05aab2cd3b01954ca14401184c98
+        Type: BaseVariableType
+        DataType: Size
+        Children:
+        - Name: ConditionalConverter1
+          Id: g=8e988774e55886f78515e21e592085d4
+          Type: ConditionalConverter
+          Children:
+          - Name: Condition
+            Id: g=c50306c1f82c9a3a39fa47ba3dc98109
+            Type: BaseDataVariableType
+            DataType: Boolean
+            ReferenceType: HasSource
+            Children:
+            - Name: ExpressionEvaluator1
+              Id: g=b15de56454744117c8342432dddc3237
+              Type: ExpressionEvaluator
+              Children:
+              - Name: Expression
+                Id: g=077b3eebf4a939463298880db3466bc2
+                Type: BaseDataVariableType
+                DataType: String
+                ReferenceType: HasParameter
+                ModellingRule: Optional
+                Value: "({0} >= 4) && ({0} <=6)"
+              - Name: ns=9;Source0
+                Id: g=f5cd69b9301790951d67949914923682
+                Type: BaseDataVariableType
+                DataType: BaseDataType
+                ReferenceType: HasSource
+                Children:
+                - Name: DynamicLink
+                  Id: g=6bee03b05f0bfd67a64a3cbd1d68a3a7
+                  Type: DynamicLink
+                  DataType: NodePath
+                  Value: "../../../../../../../Cfg_Format"
+          - Name: TrueValue
+            Id: g=be643485c2524019bd5404afd1cc7fb1
+            Type: BaseDataVariableType
+            DataType: Int32
+            ReferenceType: HasParameter
+            ModellingRule: Optional
+          - Name: FalseValue
+            Id: g=0996085e9eb2d4f2270657637187af6c
+            Type: BaseDataVariableType
+            DataType: Int32
+            ReferenceType: HasParameter
+            ModellingRule: Optional
+            Value: 5
+      - Name: Style
+        Id: g=b900807d67287145519f9065470ace84
+        Type: BaseDataVariableType
+        DataType: String
+        Value: "Default"
+        Children:
+        - Name: DynamicLink
+          Id: g=d9bf5b88e79cee94684216c441d8346b
+          Type: DynamicLink
+          DataType: NodePath
+          Value: "../../../Cfg_Style"
+    - Name: hh_mm
+      Id: g=6b4d6872c90b38004bac6d9209f23fbb
+      Type: Label
+      Children:
+      - Name: Text
+        Id: g=1bb4d06cf4704a05700b1beadd8a5ddc
+        Type: BaseDataVariableType
+        DataType: LocalizedText
+        Children:
+        - Name: StringFormatter1
+          Id: g=cd8c09a890a94b17e5713f1ac5113166
+          Type: StringFormatter
+          Children:
+          - Name: Format
+            Id: g=e497cef48e93bec9dbfb8253615cc937
+            Type: BaseDataVariableType
+            DataType: LocalizedText
+            ReferenceType: HasParameter
+            ModellingRule: Optional
+            Value: {"LocaleId":"en-US","Text":"{0}:{1}"}
+          - Name: ns=9;Source0
+            Id: g=8f270d2f31088182eb3d4599f9155b20
+            Type: BaseDataVariableType
+            DataType: BaseDataType
+            ReferenceType: HasSource
+            Children:
+            - Name: DynamicLink
+              Id: g=9b227cba70bd851cf984f891ed571650
+              Type: DynamicLink
+              DataType: NodePath
+              Value: "../../../../../Inp_Time[3]"
+          - Name: ns=9;Source1
+            Id: g=acdec569afa13f934c7611bca98bcaea
+            Type: BaseDataVariableType
+            DataType: BaseDataType
+            ReferenceType: HasSource
+            Children:
+            - Name: DynamicLink
+              Id: g=d2da442865289dc8b806c69123a06814
+              Type: DynamicLink
+              DataType: NodePath
+              Value: "../../../../../Inp_Time[4]"
+      - Name: LeftMargin
+        Id: g=7f14895ac75cd0cb99e4404b3b6ea593
+        Type: BaseVariableType
+        DataType: Size
+        ModellingRule: Optional
+      - Name: Visible
+        Id: g=1f861e2173043f77d0f140637822030e
+        Type: BaseDataVariableType
+        DataType: Boolean
+        Value: true
+        Children:
+        - Name: ConditionalConverter1
+          Id: g=2ef86ce1b66c146a3c35ecf89b165f0c
+          Type: ConditionalConverter
+          Children:
+          - Name: Condition
+            Id: g=e728c2abe51146fedc2abed6e7d00f8c
+            Type: BaseDataVariableType
+            DataType: Boolean
+            ReferenceType: HasSource
+            Children:
+            - Name: ExpressionEvaluator1
+              Id: g=348e45c6b9fe191dbda026ec0783ea65
+              Type: ExpressionEvaluator
+              Children:
+              - Name: Expression
+                Id: g=338f307ddbf0c044b3cccd5096a28019
+                Type: BaseDataVariableType
+                DataType: String
+                ReferenceType: HasParameter
+                ModellingRule: Optional
+                Value: "({0} == 3)"
+              - Name: ns=9;Source0
+                Id: g=12be74517f897c0358d16c4a501bffae
+                Type: BaseDataVariableType
+                DataType: BaseDataType
+                ReferenceType: HasSource
+                Children:
+                - Name: DynamicLink
+                  Id: g=0d1d683382342ad3ddf08a624a77c068
+                  Type: DynamicLink
+                  DataType: NodePath
+                  Value: "../../../../../../../Cfg_Format"
+          - Name: TrueValue
+            Id: g=88f10c73a3732c9d9764132f7d97adae
+            Type: BaseDataVariableType
+            DataType: Boolean
+            ReferenceType: HasParameter
+            ModellingRule: Optional
+          - Name: FalseValue
+            Id: g=63a9a3bcfac521242a88598da2293f3b
+            Type: BaseDataVariableType
+            DataType: Boolean
+            ReferenceType: HasParameter
+            ModellingRule: Optional
+            Value: true
+      - Name: Style
+        Id: g=8a76789ee7a564179a137aaa8407804f
+        Type: BaseDataVariableType
+        DataType: String
+        Value: "Default"
+        Children:
+        - Name: DynamicLink
+          Id: g=bb561c748ccd99dee4bec5b9c443fcb7
+          Type: DynamicLink
+          DataType: NodePath
+          Value: "../../../Cfg_Style"
+    - Name: ss
+      Id: g=6fb9e5708ddd6a459b513ec82fb06faa
+      Type: Label
+      Children:
+      - Name: Text
+        Id: g=ce3166631406944851b2f7553d1a2199
+        Type: BaseDataVariableType
+        DataType: LocalizedText
+        Children:
+        - Name: StringFormatter1
+          Id: g=230ab0d82bd57cc1575074dbf59ba7c6
+          Type: StringFormatter
+          Children:
+          - Name: Format
+            Id: g=bbb30a4cd2c9fcf5161bac4f2753636f
+            Type: BaseDataVariableType
+            DataType: LocalizedText
+            ReferenceType: HasParameter
+            ModellingRule: Optional
+            Value: {"LocaleId":"en-US","Text":":{0}"}
+          - Name: ns=9;Source0
+            Id: g=dfa8a4c285f466eeae73b50fba51e3ac
+            Type: BaseDataVariableType
+            DataType: BaseDataType
+            ReferenceType: HasSource
+            Children:
+            - Name: DynamicLink
+              Id: g=ca01a84d5aff160dd8a030099809304e
+              Type: DynamicLink
+              DataType: NodePath
+              Value: "../../../../../Inp_Time[5]"
+      - Name: Visible
+        Id: g=803e1fcb763b37f6c7c5b5b77136841b
+        Type: BaseDataVariableType
+        DataType: Boolean
+        Value: true
+        Children:
+        - Name: ConditionalConverter1
+          Id: g=75e2572f41239122ea17c474d49120ee
+          Type: ConditionalConverter
+          Children:
+          - Name: Condition
+            Id: g=8677722e2a4820821a575f5529dabe1e
+            Type: BaseDataVariableType
+            DataType: Boolean
+            ReferenceType: HasSource
+            Children:
+            - Name: ExpressionEvaluator1
+              Id: g=d186e0b7b442d4a542db6153d7a97cb5
+              Type: ExpressionEvaluator
+              Children:
+              - Name: Expression
+                Id: g=0fd7f6bd08556cd5cfa1a010b7514766
+                Type: BaseDataVariableType
+                DataType: String
+                ReferenceType: HasParameter
+                ModellingRule: Optional
+                Value: "({0} >= 2) && ({0} <= 4) "
+              - Name: ns=9;Source0
+                Id: g=b4fd8e79846793b230b84574cf933455
+                Type: BaseDataVariableType
+                DataType: BaseDataType
+                ReferenceType: HasSource
+                Children:
+                - Name: DynamicLink
+                  Id: g=bbaac4a605e1217d7d5229e57f83a950
+                  Type: DynamicLink
+                  DataType: NodePath
+                  Value: "../../../../../../../Cfg_Format"
+          - Name: TrueValue
+            Id: g=2675c7e0ec5da6082b659e9617652d94
+            Type: BaseDataVariableType
+            DataType: Boolean
+            ReferenceType: HasParameter
+            ModellingRule: Optional
+          - Name: FalseValue
+            Id: g=a059cb575479acf7573de9741efc17d1
+            Type: BaseDataVariableType
+            DataType: Boolean
+            ReferenceType: HasParameter
+            ModellingRule: Optional
+            Value: true
+      - Name: Style
+        Id: g=c8039b4ab3cb160f5929279dd83c6946
+        Type: BaseDataVariableType
+        DataType: String
+        Value: "Default"
+        Children:
+        - Name: DynamicLink
+          Id: g=14aca28c30f289e4c29232d7d157c336
+          Type: DynamicLink
+          DataType: NodePath
+          Value: "../../../Cfg_Style"
+    - Name: ms
+      Id: g=0902630c6269573a9e093024c4874da8
+      Type: Label
+      Children:
+      - Name: Text
+        Id: g=147eb69ce5e57aa8afcaeb7777f2d821
+        Type: BaseDataVariableType
+        DataType: LocalizedText
+        Children:
+        - Name: StringFormatter1
+          Id: g=85e4ff4091d22c237a56e493ed93b69a
+          Type: StringFormatter
+          Children:
+          - Name: Format
+            Id: g=25733c23ff4f25ba068c068c4435f642
+            Type: BaseDataVariableType
+            DataType: LocalizedText
+            ReferenceType: HasParameter
+            ModellingRule: Optional
+            Value: {"LocaleId":"en-US","Text":":{0}"}
+          - Name: ns=9;Source0
+            Id: g=94a0e37ce53a5727787575363a9efce0
+            Type: BaseDataVariableType
+            DataType: BaseDataType
+            ReferenceType: HasSource
+            Children:
+            - Name: ExpressionEvaluator1
+              Id: g=4241190f0db6daea0b941707de344729
+              Type: ExpressionEvaluator
+              Children:
+              - Name: Expression
+                Id: g=ae0f80504b40e9d9c8330032fca88dbc
+                Type: BaseDataVariableType
+                DataType: String
+                ReferenceType: HasParameter
+                ModellingRule: Optional
+                Value: "trunc (({0}) / (1000))"
+              - Name: ns=9;Source0
+                Id: g=ff36d24bbab79b72fd00b9ac0e1ee0d4
+                Type: BaseDataVariableType
+                DataType: BaseDataType
+                ReferenceType: HasSource
+                Children:
+                - Name: DynamicLink
+                  Id: g=2ca4262af0d58bea8d43240b071fc41c
+                  Type: DynamicLink
+                  DataType: NodePath
+                  Value: "../../../../../../../Inp_Time[6]"
+      - Name: Visible
+        Id: g=65fc9092db80d3e62c7dc9880a0bece7
+        Type: BaseDataVariableType
+        DataType: Boolean
+        Value: true
+        Children:
+        - Name: ConditionalConverter1
+          Id: g=43687ec3e263563a8cfddf38ca51dbd2
+          Type: ConditionalConverter
+          Children:
+          - Name: Condition
+            Id: g=d54c96b2f0cf90e93f9fd29073a2f2e2
+            Type: BaseDataVariableType
+            DataType: Boolean
+            ReferenceType: HasSource
+            Children:
+            - Name: ExpressionEvaluator1
+              Id: g=89d47b0eba205ceeb1e6f4535a355bd1
+              Type: ExpressionEvaluator
+              Children:
+              - Name: Expression
+                Id: g=942f58e80ecb88d5fe22dd6c6d0a49ed
+                Type: BaseDataVariableType
+                DataType: String
+                ReferenceType: HasParameter
+                ModellingRule: Optional
+                Value: "({0} >= 1) && ({0} <= 5) "
+              - Name: ns=9;Source0
+                Id: g=4f7ae9ab393b6b15fba21add8fe757df
+                Type: BaseDataVariableType
+                DataType: BaseDataType
+                ReferenceType: HasSource
+                Children:
+                - Name: DynamicLink
+                  Id: g=4120bd2fd329b7f81cf41ea98c50003c
+                  Type: DynamicLink
+                  DataType: NodePath
+                  Value: "../../../../../../../Cfg_Format"
+          - Name: TrueValue
+            Id: g=9e17e10ba2723759129c626f034fe80f
+            Type: BaseDataVariableType
+            DataType: Boolean
+            ReferenceType: HasParameter
+            ModellingRule: Optional
+          - Name: FalseValue
+            Id: g=d3bfb7a6cf2e282e7cbc7ac5b95be650
+            Type: BaseDataVariableType
+            DataType: Boolean
+            ReferenceType: HasParameter
+            ModellingRule: Optional
+            Value: true
+      - Name: Style
+        Id: g=aa329c7077d5e80ca561f0e2355b8274
+        Type: BaseDataVariableType
+        DataType: String
+        Value: "Default"
+        Children:
+        - Name: DynamicLink
+          Id: g=7bfe0d85997ac46c031a2041d5373868
+          Type: DynamicLink
+          DataType: NodePath
+          Value: "../../../Cfg_Style"
+  - Name: Cfg_Label
+    Id: g=57c9cc09b6a6d4af2d0fedd9b6af797b
+    Type: BaseDataVariableType
+    DataType: LocalizedText
+    Description: {"NamespaceIndex":40,"TextId":"Text description of displayed value."}
+    Value: {"LocaleId":"en-US","Text":"Label"}
+  - Name: Inp_Time
+    Id: g=51717ce103512995828ece37448c478d
+    Type: BaseDataVariableType
+    DataType: Int32
+    Description: {"NamespaceIndex":40,"TextId":"DINT array representing time value to be displayed."}
+    ValueRank: OneDimension
+    ArrayDimensions: [7]
+  - Name: Cfg_Format
+    Id: g=d5d78926a3d8bfa10f5894a5cbaa812d
+    Type: BaseDataVariableType
+    DataType: Int32
+    Description: {"NamespaceIndex":40,"TextId":"Date/Time format: 0 = YYYY-MM-DD hh:mm:ss:ms, 1 = YYYY-MM-DD hh:mm:ss, 2 = YYYY-MM-DD hh:mm, 3 = YYYY-MM-DD, 4 = hh:mm, 5 = hh:mm:ss, 6 = hh:mm:ss:ms"}
+  - Name: Cfg_Style
+    Id: g=55fd7c9225d1f1b0dab80c76965fa5c2
+    Type: BaseDataVariableType
+    DataType: String
+    Description: {"NamespaceIndex":40,"TextId":"Font style. Use \"Default\", \"Data Label\", \"Live Data\", \"Live Data Primary\", or \"De-emphasized Text\""}
+    Value: "Default"
+  - Name: ns=25;LibraryReference
+    Id: g=fd6b7d8ca6619a886fd00d2897f77c95
+    Type: ObjectLibraryReference
+    DataType: ObjectLibraryReferenceDataType
+    ModellingRule: None
+    Value: 
+     {
+      "TypeId": {
+       "Id": 72,
+       "Namespace": 25
+      },
+      "Body": {
+       "libraryGuid": "fdcdf28fb1d75623841900955debf246",
+       "objectGuid": "088f23b73fd66bd4730b860294224272",
+       "objectVersion": 6,
+       "highestIgnoredVersion": 0
+      }
+     }
+  - Name: HorizontalAlignment
+    Id: g=eaa8d6afd3b4af7bcf388a4a124d2933
+    Type: BaseVariableType
+    DataType: HorizontalAlignment
+    ModellingRule: Optional
+    Value: 3
+  - Name: Height
+    Id: g=f230ccc08375185f71fa6f1588ece366
+    Type: BaseVariableType
+    DataType: Size
+    ModellingRule: Optional
+    Value: -1.0
+  - Name: Width
+    Id: g=08c5f232306ae5592d57af2bd0bc642c
+    Type: BaseVariableType
+    DataType: Size
+    ModellingRule: Optional
+    Value: 180.0
+  - Name: VerticalAlignment
+    Id: g=c2a5083fcc7efda6b11a048338519596
+    Type: BaseVariableType
+    DataType: VerticalAlignment
+    ModellingRule: Optional
+- Name: raSDK1_TD_LblDateTime_Stack
+  Id: g=9141fc2bcb7f14263d41a6f45e0deb2b
+  Supertype: ColumnLayout
+  Description: {"NamespaceIndex":40,"TextId":"Label, date displayed value, time displayed values; vertically stacked and centered."}
+  ReferenceType: HasComponent
+  Children:
+  - Name: Label
+    Id: g=ba2d8e6e2ef7686278744eca4e38fe10
+    Type: Label
+    Children:
+    - Name: Text
+      Id: g=4f2fc83756ca780ec01946480b06a28a
+      Type: BaseDataVariableType
+      DataType: LocalizedText
+      Children:
+      - Name: DynamicLink
+        Id: g=ced104d6dcf7d24645ca45ab833a28ba
+        Type: DynamicLink
+        DataType: NodePath
+        Value: "../../Cfg_Label"
+    - Name: VerticalAlignment
+      Id: g=da7a8fd40d066a761915d931cc46f7ae
+      Type: BaseVariableType
+      DataType: VerticalAlignment
+      ModellingRule: Optional
+    - Name: HorizontalAlignment
+      Id: g=5f9322050d9ed17e2707a6d94dc7ebff
+      Type: BaseVariableType
+      DataType: HorizontalAlignment
+      ModellingRule: Optional
+      Value: 3
+    - Name: TextHorizontalAlignment
+      Id: g=9397f81cd965f138f3e9bf50f24a0f06
+      Type: BaseVariableType
+      DataType: TextHorizontalAlignment
+      ModellingRule: Optional
+      Value: 1
+    - Name: Style
+      Id: g=0da8e0ecc54443158fa5f7623ded7697
+      Type: BaseDataVariableType
+      DataType: String
+      ModellingRule: Optional
+      Value: "Data Label"
+  - Name: Cfg_Label
+    Id: g=03c8a5460063f6e32cd9557649cb6d27
+    Type: BaseDataVariableType
+    DataType: LocalizedText
+    Description: {"NamespaceIndex":40,"TextId":"Text description of displayed value."}
+    Value: {"LocaleId":"en-US","Text":"Label"}
+  - Name: Inp_Time
+    Id: g=051ac4e5b7dc78ad70097c2d0da31193
+    Type: BaseDataVariableType
+    DataType: Int32
+    Description: {"NamespaceIndex":40,"TextId":"DINT array representing time value to be displayed."}
+    ValueRank: OneDimension
+    ArrayDimensions: [7]
+  - Name: YYYY_MM_DD
+    Id: g=04337b4d0d8c392f2e35403eedcfb11b
+    Type: Label
+    Children:
+    - Name: Text
+      Id: g=a024cceb3e9b067226904573332fca35
+      Type: BaseDataVariableType
+      DataType: LocalizedText
+      Children:
+      - Name: StringFormatter1
+        Id: g=a838e2f27670c63a56c44d5f4e900e9f
+        Type: StringFormatter
+        Children:
+        - Name: Format
+          Id: g=db9351ca51ecf852b1efa223fd796b38
+          Type: BaseDataVariableType
+          DataType: LocalizedText
+          ReferenceType: HasParameter
+          ModellingRule: Optional
+          Value: {"LocaleId":"en-US","Text":"{0:d}-{1}-{2}"}
+        - Name: ns=9;Source0
+          Id: g=0184228319f426ff9fa6b3d7957f693c
+          Type: BaseDataVariableType
+          DataType: BaseDataType
+          ReferenceType: HasSource
+          Children:
+          - Name: DynamicLink
+            Id: g=604c5ec9eca011d8d31b0b57ac31a3cc
+            Type: DynamicLink
+            DataType: NodePath
+            Value: "../../../../Inp_Time[0]"
+        - Name: ns=9;Source1
+          Id: g=b4a55f00b19517639d619c56f32fcd42
+          Type: BaseDataVariableType
+          DataType: BaseDataType
+          ReferenceType: HasSource
+          Children:
+          - Name: DynamicLink
+            Id: g=a834092a1fae4fd1c3a07215f328327c
+            Type: DynamicLink
+            DataType: NodePath
+            Value: "../../../../Inp_Time[1]"
+        - Name: ns=9;Source2
+          Id: g=a220da61daee0e2f5effd550d8b3cc9f
+          Type: BaseDataVariableType
+          DataType: BaseDataType
+          ReferenceType: HasSource
+          Children:
+          - Name: DynamicLink
+            Id: g=96c642d174cf47d039cad0306cb27c33
+            Type: DynamicLink
+            DataType: NodePath
+            Value: "../../../../Inp_Time[2]"
+    - Name: Visible
+      Id: g=79e3e1f0a9504d851099d1ceb365466b
+      Type: BaseDataVariableType
+      DataType: Boolean
+      Value: true
+      Children:
+      - Name: ConditionalConverter1
+        Id: g=c528c71e0114d544abba047875d245c8
+        Type: ConditionalConverter
+        Children:
+        - Name: Condition
+          Id: g=eb132e69adf20289f0a93332c26f51da
+          Type: BaseDataVariableType
+          DataType: Boolean
+          ReferenceType: HasSource
+          Children:
+          - Name: ExpressionEvaluator1
+            Id: g=12fe4eb726a83c1d66b7b86f99051799
+            Type: ExpressionEvaluator
+            Children:
+            - Name: Expression
+              Id: g=104fbacb51c6827d7301c15246a81533
+              Type: BaseDataVariableType
+              DataType: String
+              ReferenceType: HasParameter
+              ModellingRule: Optional
+              Value: "({0} >= 4) && ({0} <=6)"
+            - Name: ns=9;Source0
+              Id: g=afc28b9e1f56f2f6467ba66a7e8a62b8
+              Type: BaseDataVariableType
+              DataType: BaseDataType
+              ReferenceType: HasSource
+              Children:
+              - Name: DynamicLink
+                Id: g=616718f3623bb1706a1b5ee651a14fa1
+                Type: DynamicLink
+                DataType: NodePath
+                Value: "../../../../../../Cfg_Format"
+        - Name: TrueValue
+          Id: g=dc74b9a139ee3bae67d38b6bd53528c8
+          Type: BaseDataVariableType
+          DataType: Boolean
+          ReferenceType: HasParameter
+          ModellingRule: Optional
+        - Name: FalseValue
+          Id: g=cf7bf49cc02c651a8d0f529e93016057
+          Type: BaseDataVariableType
+          DataType: Boolean
+          ReferenceType: HasParameter
+          ModellingRule: Optional
+          Value: true
+    - Name: RightMargin
+      Id: g=3d2c78d386d03dbd8b3898e6c11bc4cc
+      Type: BaseVariableType
+      DataType: Size
+    - Name: VerticalAlignment
+      Id: g=635b7aab66b438ba8c2ce6ef4b34d001
+      Type: BaseVariableType
+      DataType: VerticalAlignment
+      ModellingRule: Optional
+    - Name: HorizontalAlignment
+      Id: g=91ff2aff2916d86f220e13b31dd85c6a
+      Type: BaseVariableType
+      DataType: HorizontalAlignment
+      ModellingRule: Optional
+      Value: 3
+    - Name: Style
+      Id: g=70620a86c1a4fb7fff877a9bcc0aa23e
+      Type: BaseDataVariableType
+      DataType: String
+      Value: "Default"
+      Children:
+      - Name: DynamicLink
+        Id: g=617e5080f7ed323a171595dcd8eed56c
+        Type: DynamicLink
+        DataType: NodePath
+        Value: "../../Cfg_Style"
+    - Name: TextHorizontalAlignment
+      Id: g=e4ed8e5d32a20e8255348e1995ac2271
+      Type: BaseVariableType
+      DataType: TextHorizontalAlignment
+      ModellingRule: Optional
+      Value: 1
+  - Name: Time
+    Id: g=96d2b4bf87ceb4b80c4d01b61046d7cc
+    Type: RowLayout
+    Children:
+    - Name: hh_mm
+      Id: g=c7ef4b28af8955907103b4f107d85d88
+      Type: Label
+      Children:
+      - Name: Text
+        Id: g=76013fdc5930a481c428d17c160f88cf
+        Type: BaseDataVariableType
+        DataType: LocalizedText
+        Children:
+        - Name: StringFormatter1
+          Id: g=190ca3c6a75d27c6d0c9132b1edf47f9
+          Type: StringFormatter
+          Children:
+          - Name: Format
+            Id: g=568c00520e5aca575ac807098169b36b
+            Type: BaseDataVariableType
+            DataType: LocalizedText
+            ReferenceType: HasParameter
+            ModellingRule: Optional
+            Value: {"LocaleId":"en-US","Text":"{0}:{1}"}
+          - Name: ns=9;Source0
+            Id: g=4973503b2a4aa33f4e2e5188c3e13fbb
+            Type: BaseDataVariableType
+            DataType: BaseDataType
+            ReferenceType: HasSource
+            Children:
+            - Name: DynamicLink
+              Id: g=430e98763397d5f83a2953264955cffd
+              Type: DynamicLink
+              DataType: NodePath
+              Value: "../../../../../Inp_Time[3]"
+          - Name: ns=9;Source1
+            Id: g=dc58f5129324e8d9e4b8146d690280e3
+            Type: BaseDataVariableType
+            DataType: BaseDataType
+            ReferenceType: HasSource
+            Children:
+            - Name: DynamicLink
+              Id: g=1060c1cdb6e5f05df75522d0c9ab97e8
+              Type: DynamicLink
+              DataType: NodePath
+              Value: "../../../../../Inp_Time[4]"
+      - Name: LeftMargin
+        Id: g=3dcc88c2d1039eb14ac9e524f49db09f
+        Type: BaseVariableType
+        DataType: Size
+        ModellingRule: Optional
+      - Name: Visible
+        Id: g=766805d82aac856fa0bd4eceddedec7c
+        Type: BaseDataVariableType
+        DataType: Boolean
+        Value: true
+        Children:
+        - Name: ConditionalConverter1
+          Id: g=cc32e0cdda54fefc6bef8ff79be214ac
+          Type: ConditionalConverter
+          Children:
+          - Name: Condition
+            Id: g=ee3689a23e9a232054871db6aad12280
+            Type: BaseDataVariableType
+            DataType: Boolean
+            ReferenceType: HasSource
+            Children:
+            - Name: ExpressionEvaluator1
+              Id: g=f5e9e4acb60b39d7943d8d9a5770d39d
+              Type: ExpressionEvaluator
+              Children:
+              - Name: Expression
+                Id: g=f8218bce14b52f70e452fd566fc51472
+                Type: BaseDataVariableType
+                DataType: String
+                ReferenceType: HasParameter
+                ModellingRule: Optional
+                Value: "({0} == 3)"
+              - Name: ns=9;Source0
+                Id: g=b8026ba4d5f1fe643230f282cf2540e8
+                Type: BaseDataVariableType
+                DataType: BaseDataType
+                ReferenceType: HasSource
+                Children:
+                - Name: DynamicLink
+                  Id: g=9482947b0ac8d57453df12300cb26a4e
+                  Type: DynamicLink
+                  DataType: NodePath
+                  Value: "../../../../../../../Cfg_Format"
+          - Name: TrueValue
+            Id: g=1d58938fa23ae4d5067f4a3c80cc6f2c
+            Type: BaseDataVariableType
+            DataType: Boolean
+            ReferenceType: HasParameter
+            ModellingRule: Optional
+          - Name: FalseValue
+            Id: g=4aee9699d5315e150af6c6338693e018
+            Type: BaseDataVariableType
+            DataType: Boolean
+            ReferenceType: HasParameter
+            ModellingRule: Optional
+            Value: true
+      - Name: Style
+        Id: g=a250e19a4f7b2194a274b1cade41287c
+        Type: BaseDataVariableType
+        DataType: String
+        Value: "Default"
+        Children:
+        - Name: DynamicLink
+          Id: g=23815efa3853089648eddb7acc0c40d3
+          Type: DynamicLink
+          DataType: NodePath
+          Value: "../../../Cfg_Style"
+    - Name: ss
+      Id: g=153c7bce7b3b20deee913e816074958b
+      Type: Label
+      Children:
+      - Name: Text
+        Id: g=6659db72d8871948a53a82fdf8e86f3b
+        Type: BaseDataVariableType
+        DataType: LocalizedText
+        Children:
+        - Name: StringFormatter1
+          Id: g=9ba43e93d793aab78e80d6f6002af58c
+          Type: StringFormatter
+          Children:
+          - Name: Format
+            Id: g=0f3092ef3fb008baba3ffd6fc58b7738
+            Type: BaseDataVariableType
+            DataType: LocalizedText
+            ReferenceType: HasParameter
+            ModellingRule: Optional
+            Value: {"LocaleId":"en-US","Text":":{0}"}
+          - Name: ns=9;Source0
+            Id: g=6817b4c50cd8033c9d8155361e3f0a76
+            Type: BaseDataVariableType
+            DataType: BaseDataType
+            ReferenceType: HasSource
+            Children:
+            - Name: DynamicLink
+              Id: g=f45a04450fdb554e7d68ae3b06e8eb81
+              Type: DynamicLink
+              DataType: NodePath
+              Value: "../../../../../Inp_Time[5]"
+      - Name: Visible
+        Id: g=e7f8205f1843bbc3888363db8cfe63f0
+        Type: BaseDataVariableType
+        DataType: Boolean
+        Value: true
+        Children:
+        - Name: ConditionalConverter1
+          Id: g=89956b9d3eb97ad38d67801feeb3a22f
+          Type: ConditionalConverter
+          Children:
+          - Name: Condition
+            Id: g=4c231d585c68f8a9c67d33ab1c78654c
+            Type: BaseDataVariableType
+            DataType: Boolean
+            ReferenceType: HasSource
+            Children:
+            - Name: ExpressionEvaluator1
+              Id: g=4174fd69250b19223efb20403d662daf
+              Type: ExpressionEvaluator
+              Children:
+              - Name: Expression
+                Id: g=12a632c5eeaef5ad5b0a4d9987cf1c1a
+                Type: BaseDataVariableType
+                DataType: String
+                ReferenceType: HasParameter
+                ModellingRule: Optional
+                Value: "({0} >= 2) && ({0} <= 4) "
+              - Name: ns=9;Source0
+                Id: g=276a4c5ec7c1d98aee185e4a417886de
+                Type: BaseDataVariableType
+                DataType: BaseDataType
+                ReferenceType: HasSource
+                Children:
+                - Name: DynamicLink
+                  Id: g=5b33294cd6925d4ed1ed1475339bbb58
+                  Type: DynamicLink
+                  DataType: NodePath
+                  Value: "../../../../../../../Cfg_Format"
+          - Name: TrueValue
+            Id: g=b6ee43f58efe9db574f54f0a017f7d41
+            Type: BaseDataVariableType
+            DataType: Boolean
+            ReferenceType: HasParameter
+            ModellingRule: Optional
+          - Name: FalseValue
+            Id: g=4f1d65397d55d61b6f84ace9440c19f6
+            Type: BaseDataVariableType
+            DataType: Boolean
+            ReferenceType: HasParameter
+            ModellingRule: Optional
+            Value: true
+      - Name: Style
+        Id: g=21f41f781059d41acff81738604241f4
+        Type: BaseDataVariableType
+        DataType: String
+        Value: "Default"
+        Children:
+        - Name: DynamicLink
+          Id: g=c1c1f5029e02785e9186b13ace4c45c4
+          Type: DynamicLink
+          DataType: NodePath
+          Value: "../../../Cfg_Style"
+    - Name: ms
+      Id: g=1e4cd77bdef3f167462e8481d918fcd0
+      Type: Label
+      Children:
+      - Name: Text
+        Id: g=aa2b5ca4fcf6b2c9276ff83150f17533
+        Type: BaseDataVariableType
+        DataType: LocalizedText
+        Children:
+        - Name: StringFormatter1
+          Id: g=72467d05e2907f8dc92c0ee7d5550599
+          Type: StringFormatter
+          Children:
+          - Name: Format
+            Id: g=ff1f432b212e6cd0e5ebfcbe366d4a1a
+            Type: BaseDataVariableType
+            DataType: LocalizedText
+            ReferenceType: HasParameter
+            ModellingRule: Optional
+            Value: {"LocaleId":"en-US","Text":":{0}"}
+          - Name: ns=9;Source0
+            Id: g=50394424685017673b688714dc330c23
+            Type: BaseDataVariableType
+            DataType: BaseDataType
+            ReferenceType: HasSource
+            Children:
+            - Name: ExpressionEvaluator1
+              Id: g=610ae19305cabbe2e27689b2ba0312f2
+              Type: ExpressionEvaluator
+              Children:
+              - Name: Expression
+                Id: g=fd600e33454c27b5fb88378fe4d70226
+                Type: BaseDataVariableType
+                DataType: String
+                ReferenceType: HasParameter
+                ModellingRule: Optional
+                Value: "trunc (({0}) / (1000))"
+              - Name: ns=9;Source0
+                Id: g=f29f84480a9258770e280dfb8abfb8df
+                Type: BaseDataVariableType
+                DataType: BaseDataType
+                ReferenceType: HasSource
+                Children:
+                - Name: DynamicLink
+                  Id: g=8f785034ce117d4f61648af299bedef7
+                  Type: DynamicLink
+                  DataType: NodePath
+                  Value: "../../../../../../../Inp_Time[6]"
+      - Name: Visible
+        Id: g=a6b8a92c55bbf3f3bcb6c3fc624fd65e
+        Type: BaseDataVariableType
+        DataType: Boolean
+        Value: true
+        Children:
+        - Name: ConditionalConverter1
+          Id: g=4f22dc5f820921425bfb7191244a55d9
+          Type: ConditionalConverter
+          Children:
+          - Name: Condition
+            Id: g=14ddd539f24244e6075b40ce1e9260a9
+            Type: BaseDataVariableType
+            DataType: Boolean
+            ReferenceType: HasSource
+            Children:
+            - Name: ExpressionEvaluator1
+              Id: g=68e50f4682d8eeebe9b519fc59a0ab8a
+              Type: ExpressionEvaluator
+              Children:
+              - Name: Expression
+                Id: g=bb9bc076b5b1497832765f5ae96e6aab
+                Type: BaseDataVariableType
+                DataType: String
+                ReferenceType: HasParameter
+                ModellingRule: Optional
+                Value: "({0} >= 1) && ({0} <= 5) "
+              - Name: ns=9;Source0
+                Id: g=ea10f23051297ff82d5590411c11c550
+                Type: BaseDataVariableType
+                DataType: BaseDataType
+                ReferenceType: HasSource
+                Children:
+                - Name: DynamicLink
+                  Id: g=524de5398bb55a440bd840443d93146a
+                  Type: DynamicLink
+                  DataType: NodePath
+                  Value: "../../../../../../../Cfg_Format"
+          - Name: TrueValue
+            Id: g=b67f6cd7cb13cf7d7c9b6e3155027af9
+            Type: BaseDataVariableType
+            DataType: Boolean
+            ReferenceType: HasParameter
+            ModellingRule: Optional
+          - Name: FalseValue
+            Id: g=bc25219c7ff261f93328fe9bad8f1748
+            Type: BaseDataVariableType
+            DataType: Boolean
+            ReferenceType: HasParameter
+            ModellingRule: Optional
+            Value: true
+      - Name: Style
+        Id: g=0f6de0ae461e6f38c9a6cc2adccf35ff
+        Type: BaseDataVariableType
+        DataType: String
+        Value: "Default"
+        Children:
+        - Name: DynamicLink
+          Id: g=d02ef41294bc81d3dcbc3ba5a0eeb05f
+          Type: DynamicLink
+          DataType: NodePath
+          Value: "../../../Cfg_Style"
+    - Name: VerticalAlignment
+      Id: g=8cbef1ce477e97bf594a141071ea60ed
+      Type: BaseVariableType
+      DataType: VerticalAlignment
+      ModellingRule: Optional
+    - Name: HorizontalAlignment
+      Id: g=0e7d8074c31c12e19bd38334fb9ffbd5
+      Type: BaseVariableType
+      DataType: HorizontalAlignment
+      ModellingRule: Optional
+      Value: 2
+  - Name: Cfg_Format
+    Id: g=5d14200bf5d23cfb48ca6455313dfa37
+    Type: BaseDataVariableType
+    DataType: Int32
+    Description: {"NamespaceIndex":40,"TextId":"Date/Time format: 0 = YYYY-MM-DD hh:mm:ss:ms, 1 = YYYY-MM-DD hh:mm:ss, 2 = YYYY-MM-DD hh:mm, 3 = YYYY-MM-DD, 4 = hh:mm, 5 = hh:mm:ss, 6 = hh:mm:ss:ms"}
+  - Name: Cfg_Style
+    Id: g=1c3bd5ec17925290a25643f355a05db6
+    Type: BaseDataVariableType
+    DataType: String
+    Description: {"NamespaceIndex":40,"TextId":"Font style. Use \"Default\", \"Data Label\", \"Live Data\", \"Live Data Primary\", or \"De-emphasized Text\""}
+    Value: "Default"
+  - Name: ns=25;LibraryReference
+    Id: g=9026a70f75be17c5547d603725fe4143
+    Type: ObjectLibraryReference
+    DataType: ObjectLibraryReferenceDataType
+    ModellingRule: None
+    Value: 
+     {
+      "TypeId": {
+       "Id": 72,
+       "Namespace": 25
+      },
+      "Body": {
+       "libraryGuid": "fdcdf28fb1d75623841900955debf246",
+       "objectGuid": "a9a80575bf7824c66342edc52ff82b5d",
+       "objectVersion": 6,
+       "highestIgnoredVersion": 0
+      }
+     }
+  - Name: HorizontalAlignment
+    Id: g=633c0e407d6c8dc8d77db4a2791a541d
+    Type: BaseVariableType
+    DataType: HorizontalAlignment
+    ModellingRule: Optional
+    Value: 3
+  - Name: Width
+    Id: g=245cb9eccece268f8fe58ca689d8c9f2
+    Type: BaseVariableType
+    DataType: Size
+    ModellingRule: Optional
+    Value: 140.0
+- Name: raSDK1_TD_DateTime
+  Id: g=8acd688dd6d1189d1b4646471a65897c
+  Supertype: ColumnLayout
+  Description: {"NamespaceIndex":40,"TextId":"Date and time displayed values."}
+  ReferenceType: HasComponent
+  Children:
+  - Name: Inp_Time
+    Id: g=c0c0b7b0eee4529b36db7fedeaf43cc5
+    Type: BaseDataVariableType
+    DataType: Int32
+    Description: {"NamespaceIndex":40,"TextId":"DINT array representing time value to be displayed."}
+    ValueRank: OneDimension
+    ArrayDimensions: [7]
+  - Name: DateTime
+    Id: g=877f8a94601c022361758908cb39e250
+    Type: RowLayout
+    Children:
+    - Name: YYYY_MM_DD
+      Id: g=d1650877f8d7c5af445a268b62e087e7
+      Type: Label
+      Children:
+      - Name: Text
+        Id: g=d2418e68617a356a138c61147774b6a8
+        Type: BaseDataVariableType
+        DataType: LocalizedText
+        Children:
+        - Name: StringFormatter1
+          Id: g=231f44b532a69858ba5b0365d223a804
+          Type: StringFormatter
+          Children:
+          - Name: Format
+            Id: g=cd5e308442455d2452cc5076a151adea
+            Type: BaseDataVariableType
+            DataType: LocalizedText
+            ReferenceType: HasParameter
+            ModellingRule: Optional
+            Value: {"LocaleId":"en-US","Text":"{0:d}-{1}-{2}"}
+          - Name: ns=9;Source0
+            Id: g=e588721c872d2e7840f70a311a969f39
+            Type: BaseDataVariableType
+            DataType: BaseDataType
+            ReferenceType: HasSource
+            Children:
+            - Name: DynamicLink
+              Id: g=4d485c04e3b6acc9db03ab8d0383bce0
+              Type: DynamicLink
+              DataType: NodePath
+              Value: "../../../../../Inp_Time[0]"
+          - Name: ns=9;Source1
+            Id: g=5b63ccecca7b7e326cb4dac2f7e2fc24
+            Type: BaseDataVariableType
+            DataType: BaseDataType
+            ReferenceType: HasSource
+            Children:
+            - Name: DynamicLink
+              Id: g=d0f228ed399fb7f2e468d6ebe323ecb8
+              Type: DynamicLink
+              DataType: NodePath
+              Value: "../../../../../Inp_Time[1]"
+          - Name: ns=9;Source2
+            Id: g=78f3a79ceb114d1c0d4ae45e4e3bf0ee
+            Type: BaseDataVariableType
+            DataType: BaseDataType
+            ReferenceType: HasSource
+            Children:
+            - Name: DynamicLink
+              Id: g=ea84003224f7fbd72a8d0061d4fb3fdb
+              Type: DynamicLink
+              DataType: NodePath
+              Value: "../../../../../Inp_Time[2]"
+      - Name: Visible
+        Id: g=e1ada3a8a7ddd921851b855033171747
+        Type: BaseDataVariableType
+        DataType: Boolean
+        Value: true
+        Children:
+        - Name: ConditionalConverter1
+          Id: g=60294a1ed62855cdb786f21fd47a690a
+          Type: ConditionalConverter
+          Children:
+          - Name: Condition
+            Id: g=231c1258d5aa8d726cb6c24b0303938f
+            Type: BaseDataVariableType
+            DataType: Boolean
+            ReferenceType: HasSource
+            Children:
+            - Name: ExpressionEvaluator1
+              Id: g=c5e78411554660f050bf272faeba642f
+              Type: ExpressionEvaluator
+              Children:
+              - Name: Expression
+                Id: g=dc34c56a113b46ed978011a6f975ba1a
+                Type: BaseDataVariableType
+                DataType: String
+                ReferenceType: HasParameter
+                ModellingRule: Optional
+                Value: "({0} >= 4) && ({0} <=6)"
+              - Name: ns=9;Source0
+                Id: g=db1eb0347c9862606bc056a203d676be
+                Type: BaseDataVariableType
+                DataType: BaseDataType
+                ReferenceType: HasSource
+                Children:
+                - Name: DynamicLink
+                  Id: g=065ecdca28ebb60b30b516b38974ca6b
+                  Type: DynamicLink
+                  DataType: NodePath
+                  Value: "../../../../../../../Cfg_Format"
+          - Name: TrueValue
+            Id: g=08e687f90d69787a6f9061929967c6b2
+            Type: BaseDataVariableType
+            DataType: Boolean
+            ReferenceType: HasParameter
+            ModellingRule: Optional
+          - Name: FalseValue
+            Id: g=afb6166201dfd8a186d6b3f3a7680c48
+            Type: BaseDataVariableType
+            DataType: Boolean
+            ReferenceType: HasParameter
+            ModellingRule: Optional
+            Value: true
+      - Name: RightMargin
+        Id: g=320cc0d8235b48994e7dd3a1b6749f79
+        Type: BaseVariableType
+        DataType: Size
+        Children:
+        - Name: ConditionalConverter1
+          Id: g=de400464ad979c0d3938fe0cc99564ea
+          Type: ConditionalConverter
+          Children:
+          - Name: Condition
+            Id: g=a78fb00b23b67aedb6e27151976d296f
+            Type: BaseDataVariableType
+            DataType: Boolean
+            ReferenceType: HasSource
+            Children:
+            - Name: ExpressionEvaluator1
+              Id: g=242fe789f81552109b6d36064b200d8f
+              Type: ExpressionEvaluator
+              Children:
+              - Name: Expression
+                Id: g=0a325339db3d4f0a5e3854c268bb1f4b
+                Type: BaseDataVariableType
+                DataType: String
+                ReferenceType: HasParameter
+                ModellingRule: Optional
+                Value: "({0} >= 4) && ({0} <=6)"
+              - Name: ns=9;Source0
+                Id: g=f33db3152e7c7b7ca510ad7845d1cd05
+                Type: BaseDataVariableType
+                DataType: BaseDataType
+                ReferenceType: HasSource
+                Children:
+                - Name: DynamicLink
+                  Id: g=f739e0f0d7b0d623b8ced61639dc7849
+                  Type: DynamicLink
+                  DataType: NodePath
+                  Value: "../../../../../../../Cfg_Format"
+          - Name: TrueValue
+            Id: g=1ea38f3b3c47339303f74fc4f578b204
+            Type: BaseDataVariableType
+            DataType: Int32
+            ReferenceType: HasParameter
+            ModellingRule: Optional
+          - Name: FalseValue
+            Id: g=55a01a500f7eafe88bc0e6392b86e7f6
+            Type: BaseDataVariableType
+            DataType: Int32
+            ReferenceType: HasParameter
+            ModellingRule: Optional
+            Value: 5
+      - Name: Style
+        Id: g=2bcf8abb4cf8509cc0ad35bcbd6a0270
+        Type: BaseDataVariableType
+        DataType: String
+        Value: "Default"
+        Children:
+        - Name: DynamicLink
+          Id: g=353249166067da782dc86183b332202c
+          Type: DynamicLink
+          DataType: NodePath
+          Value: "../../../Cfg_Style"
+    - Name: hh_mm
+      Id: g=1e47598f5e61715680846e4ed5b84d6f
+      Type: Label
+      Children:
+      - Name: Text
+        Id: g=69b93149c06f3e3c49a16326d3296338
+        Type: BaseDataVariableType
+        DataType: LocalizedText
+        Children:
+        - Name: StringFormatter1
+          Id: g=cc71bb2f54136b907550c07f14a315ad
+          Type: StringFormatter
+          Children:
+          - Name: Format
+            Id: g=49f714000a8031152e5b8a1dc7d2428e
+            Type: BaseDataVariableType
+            DataType: LocalizedText
+            ReferenceType: HasParameter
+            ModellingRule: Optional
+            Value: {"LocaleId":"en-US","Text":"{0}:{1}"}
+          - Name: ns=9;Source0
+            Id: g=081c2cff8cb59dd29865cfc15aacdac1
+            Type: BaseDataVariableType
+            DataType: BaseDataType
+            ReferenceType: HasSource
+            Children:
+            - Name: DynamicLink
+              Id: g=f7eb1335e33de1e606e9ecb0c4825be5
+              Type: DynamicLink
+              DataType: NodePath
+              Value: "../../../../../Inp_Time[3]"
+          - Name: ns=9;Source1
+            Id: g=3f439e9ad2ec06a01bf30215ba8e0f68
+            Type: BaseDataVariableType
+            DataType: BaseDataType
+            ReferenceType: HasSource
+            Children:
+            - Name: DynamicLink
+              Id: g=02798cdc261a181b5af1968cb8323ccd
+              Type: DynamicLink
+              DataType: NodePath
+              Value: "../../../../../Inp_Time[4]"
+      - Name: LeftMargin
+        Id: g=79b67de926ffa699ae4d6414f231e020
+        Type: BaseVariableType
+        DataType: Size
+        ModellingRule: Optional
+      - Name: Visible
+        Id: g=a0baee7bad3ab04a726b4cc15456f2ed
+        Type: BaseDataVariableType
+        DataType: Boolean
+        Value: true
+        Children:
+        - Name: ConditionalConverter1
+          Id: g=9ceb81a378105095e4ab555bf4008260
+          Type: ConditionalConverter
+          Children:
+          - Name: Condition
+            Id: g=c73b087a751be6a9358c49208b0976e5
+            Type: BaseDataVariableType
+            DataType: Boolean
+            ReferenceType: HasSource
+            Children:
+            - Name: ExpressionEvaluator1
+              Id: g=1cdfec8b809918e1b4c3c081c9f9dd56
+              Type: ExpressionEvaluator
+              Children:
+              - Name: Expression
+                Id: g=2b601320b468ce2d90d6929c3b62ac6b
+                Type: BaseDataVariableType
+                DataType: String
+                ReferenceType: HasParameter
+                ModellingRule: Optional
+                Value: "({0} == 3)"
+              - Name: ns=9;Source0
+                Id: g=9dc9ecd1fa743c73b0ee8b6d23e37433
+                Type: BaseDataVariableType
+                DataType: BaseDataType
+                ReferenceType: HasSource
+                Children:
+                - Name: DynamicLink
+                  Id: g=34cc932d3a44bfc341410d853006bda9
+                  Type: DynamicLink
+                  DataType: NodePath
+                  Value: "../../../../../../../Cfg_Format"
+          - Name: TrueValue
+            Id: g=93ce75cecaa0c451c742113a607b4b3b
+            Type: BaseDataVariableType
+            DataType: Boolean
+            ReferenceType: HasParameter
+            ModellingRule: Optional
+          - Name: FalseValue
+            Id: g=8ad1649c729003653bbc9b405990be0a
+            Type: BaseDataVariableType
+            DataType: Boolean
+            ReferenceType: HasParameter
+            ModellingRule: Optional
+            Value: true
+      - Name: Style
+        Id: g=f056b219f3f8924d384a409750e31bc3
+        Type: BaseDataVariableType
+        DataType: String
+        Value: "Default"
+        Children:
+        - Name: DynamicLink
+          Id: g=4041ce7687425c7672aa97daaf9cb090
+          Type: DynamicLink
+          DataType: NodePath
+          Value: "../../../Cfg_Style"
+    - Name: ss
+      Id: g=d07efd0822b35ba15df752d05e68ec88
+      Type: Label
+      Children:
+      - Name: Text
+        Id: g=7999066c830a7bf62723cdb6cd6c75cc
+        Type: BaseDataVariableType
+        DataType: LocalizedText
+        Children:
+        - Name: StringFormatter1
+          Id: g=0190d01b26fa1e2580a23f800f29a39e
+          Type: StringFormatter
+          Children:
+          - Name: Format
+            Id: g=32e36634ad90377c9ce54cc23bc288c4
+            Type: BaseDataVariableType
+            DataType: LocalizedText
+            ReferenceType: HasParameter
+            ModellingRule: Optional
+            Value: {"LocaleId":"en-US","Text":":{0}"}
+          - Name: ns=9;Source0
+            Id: g=6b8305c8ccc00a0e29854bd4e93f4f3a
+            Type: BaseDataVariableType
+            DataType: BaseDataType
+            ReferenceType: HasSource
+            Children:
+            - Name: DynamicLink
+              Id: g=08ab8eb0796a4dc2b8dbe0a62c8f8f18
+              Type: DynamicLink
+              DataType: NodePath
+              Value: "../../../../../Inp_Time[5]"
+      - Name: Visible
+        Id: g=6e2e773e476324fb0e9a08e615d2877f
+        Type: BaseDataVariableType
+        DataType: Boolean
+        Value: true
+        Children:
+        - Name: ConditionalConverter1
+          Id: g=08103e8ba13c04e9db23d721ff68c669
+          Type: ConditionalConverter
+          Children:
+          - Name: Condition
+            Id: g=debd136639c7d24afdadb6c2d1ab9f9d
+            Type: BaseDataVariableType
+            DataType: Boolean
+            ReferenceType: HasSource
+            Children:
+            - Name: ExpressionEvaluator1
+              Id: g=8727f034a63e31eea05afdc635b829d6
+              Type: ExpressionEvaluator
+              Children:
+              - Name: Expression
+                Id: g=e9f958df3baa7043e8ffcb18bb3d9c0d
+                Type: BaseDataVariableType
+                DataType: String
+                ReferenceType: HasParameter
+                ModellingRule: Optional
+                Value: "({0} >= 2) && ({0} <= 4) "
+              - Name: ns=9;Source0
+                Id: g=ce19d80cddc147dd431a838aec5f799a
+                Type: BaseDataVariableType
+                DataType: BaseDataType
+                ReferenceType: HasSource
+                Children:
+                - Name: DynamicLink
+                  Id: g=87d4fa6e977e8760f49d3e0f412ac898
+                  Type: DynamicLink
+                  DataType: NodePath
+                  Value: "../../../../../../../Cfg_Format"
+          - Name: TrueValue
+            Id: g=895ac8240157fe71ab51e89a31d10e51
+            Type: BaseDataVariableType
+            DataType: Boolean
+            ReferenceType: HasParameter
+            ModellingRule: Optional
+          - Name: FalseValue
+            Id: g=f311b6a0b2bc922aa2a57886f11058aa
+            Type: BaseDataVariableType
+            DataType: Boolean
+            ReferenceType: HasParameter
+            ModellingRule: Optional
+            Value: true
+      - Name: Style
+        Id: g=8d263bca850f63bb2323c42100f8dfa1
+        Type: BaseDataVariableType
+        DataType: String
+        Value: "Default"
+        Children:
+        - Name: DynamicLink
+          Id: g=7031e0374b1b56236dd261c51f0e1477
+          Type: DynamicLink
+          DataType: NodePath
+          Value: "../../../Cfg_Style"
+    - Name: ms
+      Id: g=20902de20cc3960b6b09d7d208c9a82d
+      Type: Label
+      Children:
+      - Name: Text
+        Id: g=facbc693216c613f93321deca4aedd8a
+        Type: BaseDataVariableType
+        DataType: LocalizedText
+        Children:
+        - Name: StringFormatter1
+          Id: g=8e638ae6d914d2dc4a5f2d9e73baf0fd
+          Type: StringFormatter
+          Children:
+          - Name: Format
+            Id: g=59dc57803ce5009a7af3d93aeebd7b48
+            Type: BaseDataVariableType
+            DataType: LocalizedText
+            ReferenceType: HasParameter
+            ModellingRule: Optional
+            Value: {"LocaleId":"en-US","Text":":{0}"}
+          - Name: ns=9;Source0
+            Id: g=38dfdaab5a583e90716ccbb598168ebc
+            Type: BaseDataVariableType
+            DataType: BaseDataType
+            ReferenceType: HasSource
+            Children:
+            - Name: ExpressionEvaluator1
+              Id: g=97c4c55adeb5d2e338468922a11ae58e
+              Type: ExpressionEvaluator
+              Children:
+              - Name: Expression
+                Id: g=d96105d8d8f16fab5b3b4d05c8978b67
+                Type: BaseDataVariableType
+                DataType: String
+                ReferenceType: HasParameter
+                ModellingRule: Optional
+                Value: "trunc (({0}) / (1000))"
+              - Name: ns=9;Source0
+                Id: g=84eb28a9e6d4b9836a120e19b9f42d16
+                Type: BaseDataVariableType
+                DataType: BaseDataType
+                ReferenceType: HasSource
+                Children:
+                - Name: DynamicLink
+                  Id: g=42835c7ce60f64b140e241c074f1ff09
+                  Type: DynamicLink
+                  DataType: NodePath
+                  Value: "../../../../../../../Inp_Time[6]"
+      - Name: Visible
+        Id: g=3811f4df2965f006ac268c82dccf9c25
+        Type: BaseDataVariableType
+        DataType: Boolean
+        Value: true
+        Children:
+        - Name: ConditionalConverter1
+          Id: g=cf867413956f180e5d5b43871778a7b5
+          Type: ConditionalConverter
+          Children:
+          - Name: Condition
+            Id: g=c7e8e481d06c588f090e424aca7e3e8c
+            Type: BaseDataVariableType
+            DataType: Boolean
+            ReferenceType: HasSource
+            Children:
+            - Name: ExpressionEvaluator1
+              Id: g=28627b8a142aeea4709f8ddc8f8737fa
+              Type: ExpressionEvaluator
+              Children:
+              - Name: Expression
+                Id: g=c1968307ae8bcbc515eaf50a051b8521
+                Type: BaseDataVariableType
+                DataType: String
+                ReferenceType: HasParameter
+                ModellingRule: Optional
+                Value: "({0} >= 1) && ({0} <= 5) "
+              - Name: ns=9;Source0
+                Id: g=2619fdc588e47091f5f30bb3f8f19962
+                Type: BaseDataVariableType
+                DataType: BaseDataType
+                ReferenceType: HasSource
+                Children:
+                - Name: DynamicLink
+                  Id: g=afcf0e48e6ec1e648accc49b6ee88e8f
+                  Type: DynamicLink
+                  DataType: NodePath
+                  Value: "../../../../../../../Cfg_Format"
+          - Name: TrueValue
+            Id: g=604d7eab247736bec2e3b5e0b0e0cdf7
+            Type: BaseDataVariableType
+            DataType: Boolean
+            ReferenceType: HasParameter
+            ModellingRule: Optional
+          - Name: FalseValue
+            Id: g=b9dd9e83550c819b74eea9b49996e3cd
+            Type: BaseDataVariableType
+            DataType: Boolean
+            ReferenceType: HasParameter
+            ModellingRule: Optional
+            Value: true
+      - Name: Style
+        Id: g=b8b07188c0d1b1cb8fd884c656d31077
+        Type: BaseDataVariableType
+        DataType: String
+        Value: "Default"
+        Children:
+        - Name: DynamicLink
+          Id: g=02f4be56564aace2675d628116a4d5c7
+          Type: DynamicLink
+          DataType: NodePath
+          Value: "../../../Cfg_Style"
+  - Name: Cfg_Format
+    Id: g=8a1fc2eab696a2ef508cc317d9d0897b
+    Type: BaseDataVariableType
+    DataType: Int32
+    Description: {"NamespaceIndex":40,"TextId":"Date/Time format: 0 = YYYY-MM-DD hh:mm:ss:ms, 1 = YYYY-MM-DD hh:mm:ss, 2 = YYYY-MM-DD hh:mm, 3 = YYYY-MM-DD, 4 = hh:mm, 5 = hh:mm:ss, 6 = hh:mm:ss:ms"}
+  - Name: Cfg_Style
+    Id: g=6ae9bd6d0041daaf7fb9341e692ff00e
+    Type: BaseDataVariableType
+    DataType: String
+    Description: {"NamespaceIndex":40,"TextId":"Font style. Use \"Default\", \"Data Label\", \"Live Data\", \"Live Data Primary\", or \"De-emphasized Text\""}
+    Value: "Default"
+  - Name: ns=25;LibraryReference
+    Id: g=4619ad4c9660b5c4105fd926f50e2779
+    Type: ObjectLibraryReference
+    DataType: ObjectLibraryReferenceDataType
+    ModellingRule: None
+    Value: 
+     {
+      "TypeId": {
+       "Id": 72,
+       "Namespace": 25
+      },
+      "Body": {
+       "libraryGuid": "fdcdf28fb1d75623841900955debf246",
+       "objectGuid": "9832e678822243aff4c2d5392af29956",
+       "objectVersion": 5,
+       "highestIgnoredVersion": 0
+      }
+     }
+- Name: raSDK1_TD_DateTime_Stack
+  Id: g=4eb03939450e1fe5f50682303e4943a5
+  Supertype: ColumnLayout
+  Description: {"NamespaceIndex":40,"TextId":"Date displayed value, time displayed values; vertically stacked and centered."}
+  ReferenceType: HasComponent
+  Children:
+  - Name: Inp_Time
+    Id: g=2999f4a81d791f9e066e1f5ab1d403bc
+    Type: BaseDataVariableType
+    DataType: Int32
+    Description: {"NamespaceIndex":40,"TextId":"DINT array representing time value to be displayed."}
+    ValueRank: OneDimension
+    ArrayDimensions: [7]
+  - Name: YYYY_MM_DD
+    Id: g=792b2a75e0abbc6516d4f1f209203bc6
+    Type: Label
+    Children:
+    - Name: Text
+      Id: g=2492e827e8db5f7b2f90872f8d6c18ae
+      Type: BaseDataVariableType
+      DataType: LocalizedText
+      Children:
+      - Name: StringFormatter1
+        Id: g=f5b397f3cbeb4ba0ab5ce2ab4bff2d73
+        Type: StringFormatter
+        Children:
+        - Name: Format
+          Id: g=f9f9fabe79b3bd9346960ab8f3dc883b
+          Type: BaseDataVariableType
+          DataType: LocalizedText
+          ReferenceType: HasParameter
+          ModellingRule: Optional
+          Value: {"LocaleId":"en-US","Text":"{0:d}-{1}-{2}"}
+        - Name: ns=9;Source0
+          Id: g=2a7fbc88569d858b64f0d1ea73a48ee6
+          Type: BaseDataVariableType
+          DataType: BaseDataType
+          ReferenceType: HasSource
+          Children:
+          - Name: DynamicLink
+            Id: g=aed6d3c2ab2cb236d0ed112e0a6b5490
+            Type: DynamicLink
+            DataType: NodePath
+            Value: "../../../../Inp_Time[0]"
+        - Name: ns=9;Source1
+          Id: g=ba54ef8a982938041e418f032fd5b6de
+          Type: BaseDataVariableType
+          DataType: BaseDataType
+          ReferenceType: HasSource
+          Children:
+          - Name: DynamicLink
+            Id: g=ae9467d4798ddd208fbed195876f63d7
+            Type: DynamicLink
+            DataType: NodePath
+            Value: "../../../../Inp_Time[1]"
+        - Name: ns=9;Source2
+          Id: g=a2d7b4e8b40308b0ce4872614ea0f4bc
+          Type: BaseDataVariableType
+          DataType: BaseDataType
+          ReferenceType: HasSource
+          Children:
+          - Name: DynamicLink
+            Id: g=2b0d8bfaf48c37b31c84126c1d327d2d
+            Type: DynamicLink
+            DataType: NodePath
+            Value: "../../../../Inp_Time[2]"
+    - Name: FontSize
+      Id: g=542a21c12f58ef5665fa393ccce69a1b
+      Type: BaseDataVariableType
+      DataType: Size
+      Value: -1.0
+      Children:
+      - Name: ConditionalConverter1
+        Id: g=ae90f896250da5b1d60a2a9c62a439df
+        Type: ConditionalConverter
+        Children:
+        - Name: Condition
+          Id: g=b45ca12f6439994c5ac9efa20abec346
+          Type: BaseDataVariableType
+          DataType: Boolean
+          ReferenceType: HasSource
+          Children:
+          - Name: DynamicLink
+            Id: g=d05f59bc26b7eb0b09423258f48aa2a3
+            Type: DynamicLink
+            DataType: NodePath
+            Value: "../../../../Cfg_DisplayAsPrimary"
+        - Name: TrueValue
+          Id: g=700d82548b57e8fbabf3a5ce1d19a74b
+          Type: BaseDataVariableType
+          DataType: BaseDataType
+          ReferenceType: HasParameter
+          Children:
+          - Name: ExpressionEvaluator1
+            Id: g=cd40f74bf3248597da7e4eceb421ddd6
+            Type: ExpressionEvaluator
+            Children:
+            - Name: Expression
+              Id: g=9ea9606f4f16b57ed18d13227ed63028
+              Type: BaseDataVariableType
+              DataType: String
+              ReferenceType: HasParameter
+              ModellingRule: Optional
+              Value: "round ({0} * 1.2)"
+            - Name: ns=9;Source0
+              Id: g=ece86dcade87e24e6130aa5c83f7e7ae
+              Type: BaseDataVariableType
+              DataType: BaseDataType
+              ReferenceType: HasSource
+              Children:
+              - Name: DynamicLink
+                Id: g=c06f8644861d7a16e84f5c9f464d2bc4
+                Type: DynamicLink
+                DataType: NodePath
+                Value: "../../../../../../Set_SessionFontSize"
+        - Name: FalseValue
+          Id: g=c888a2bac0544f3d2e256f6d35f1ae72
+          Type: BaseDataVariableType
+          DataType: BaseDataType
+          ReferenceType: HasParameter
+          Children:
+          - Name: DynamicLink
+            Id: g=bad0051e2dc4c92812cf8f3c3f5b0ddf
+            Type: DynamicLink
+            DataType: NodePath
+            Value: "../../../../Set_SessionFontSize"
+    - Name: FontWeight
+      Id: g=7abf0cedc639474e37ae5b6d4d5bc678
+      Type: BaseDataVariableType
+      DataType: FontWeightEnum
+      Value: 400
+      Children:
+      - Name: ConditionalConverter1
+        Id: g=1b59d7cd221605d5bab440390e1713c7
+        Type: ConditionalConverter
+        Children:
+        - Name: Condition
+          Id: g=e2c091a51363a8e1dfc515948f9f84d5
+          Type: BaseDataVariableType
+          DataType: Boolean
+          ReferenceType: HasSource
+          Children:
+          - Name: DynamicLink
+            Id: g=d4d3560fb58de4a9ae61e380e3172d27
+            Type: DynamicLink
+            DataType: NodePath
+            Value: "../../../../Cfg_DisplayAsPrimary"
+        - Name: TrueValue
+          Id: g=39f6117d59126cab68899e0b76f04feb
+          Type: BaseDataVariableType
+          DataType: FontWeightEnum
+          ReferenceType: HasParameter
+          ModellingRule: Optional
+          Value: 700
+        - Name: FalseValue
+          Id: g=2c0cd55f4abcb10793564e504eced3bf
+          Type: BaseDataVariableType
+          DataType: FontWeightEnum
+          ReferenceType: HasParameter
+          ModellingRule: Optional
+          Value: 400
+    - Name: Visible
+      Id: g=5be758dfefa66f27d19a3ae92e2fdec3
+      Type: BaseDataVariableType
+      DataType: Boolean
+      Value: true
+      Children:
+      - Name: ConditionalConverter1
+        Id: g=209fcb44c6a4cf3ac0ca913998d2055b
+        Type: ConditionalConverter
+        Children:
+        - Name: Condition
+          Id: g=e296b9d83498d5b324fc5a1e86016dce
+          Type: BaseDataVariableType
+          DataType: Boolean
+          ReferenceType: HasSource
+          Children:
+          - Name: ExpressionEvaluator1
+            Id: g=4981d300fc537d9da5b081c51a2efc8e
+            Type: ExpressionEvaluator
+            Children:
+            - Name: Expression
+              Id: g=e4dddb417f987edc7f3a22a224ce8e4a
+              Type: BaseDataVariableType
+              DataType: String
+              ReferenceType: HasParameter
+              ModellingRule: Optional
+              Value: "({0} >= 4) && ({0} <=6)"
+            - Name: ns=9;Source0
+              Id: g=10b1e0aa9991d4dcc0f0980db49b31ee
+              Type: BaseDataVariableType
+              DataType: BaseDataType
+              ReferenceType: HasSource
+              Children:
+              - Name: DynamicLink
+                Id: g=945ad38120a4534e1802883d375504e8
+                Type: DynamicLink
+                DataType: NodePath
+                Value: "../../../../../../Cfg_Format"
+        - Name: TrueValue
+          Id: g=56691983163c75d196804796ba535931
+          Type: BaseDataVariableType
+          DataType: Boolean
+          ReferenceType: HasParameter
+          ModellingRule: Optional
+        - Name: FalseValue
+          Id: g=ae47123d92e3fbedbc7713cdd8168248
+          Type: BaseDataVariableType
+          DataType: Boolean
+          ReferenceType: HasParameter
+          ModellingRule: Optional
+          Value: true
+    - Name: RightMargin
+      Id: g=ef40208fca3581f02a31f7d3be147059
+      Type: BaseVariableType
+      DataType: Size
+    - Name: VerticalAlignment
+      Id: g=a1eeecd22cbcdd5d9f6edaf932b8b8c9
+      Type: BaseVariableType
+      DataType: VerticalAlignment
+      ModellingRule: Optional
+    - Name: HorizontalAlignment
+      Id: g=5495beec7d18cb12453d6bdfe55853da
+      Type: BaseVariableType
+      DataType: HorizontalAlignment
+      ModellingRule: Optional
+      Value: 2
+  - Name: Time
+    Id: g=b3327c92bf5bacd3d1237780fad7c517
+    Type: RowLayout
+    Children:
+    - Name: hh_mm
+      Id: g=41ba7fca864cbad3f8e472f0440404f5
+      Type: Label
+      Children:
+      - Name: Text
+        Id: g=5087f48ff6ab6527fce48ecf42455ffe
+        Type: BaseDataVariableType
+        DataType: LocalizedText
+        Children:
+        - Name: StringFormatter1
+          Id: g=b7db71d767c78b13730c9e599389e4fd
+          Type: StringFormatter
+          Children:
+          - Name: Format
+            Id: g=4b42d428eb65b854d26610bb66d425c3
+            Type: BaseDataVariableType
+            DataType: LocalizedText
+            ReferenceType: HasParameter
+            ModellingRule: Optional
+            Value: {"LocaleId":"en-US","Text":"{0}:{1}"}
+          - Name: ns=9;Source0
+            Id: g=722704264ce2b9b08606c0b089d70aab
+            Type: BaseDataVariableType
+            DataType: BaseDataType
+            ReferenceType: HasSource
+            Children:
+            - Name: DynamicLink
+              Id: g=45ef55f0ad0dc59a4d2c00cd43a403b5
+              Type: DynamicLink
+              DataType: NodePath
+              Value: "../../../../../Inp_Time[3]"
+          - Name: ns=9;Source1
+            Id: g=82b7b5aa40d2e5462001a8dfb2c94500
+            Type: BaseDataVariableType
+            DataType: BaseDataType
+            ReferenceType: HasSource
+            Children:
+            - Name: DynamicLink
+              Id: g=dd3c8a5dbe8788bdd9137b9b89968c24
+              Type: DynamicLink
+              DataType: NodePath
+              Value: "../../../../../Inp_Time[4]"
+      - Name: LeftMargin
+        Id: g=fad940e1b0ae71cb49b1dc388cdfc3ad
+        Type: BaseVariableType
+        DataType: Size
+        ModellingRule: Optional
+      - Name: FontSize
+        Id: g=254a225c86f6f5dc59dbc5249b4d47b5
+        Type: BaseDataVariableType
+        DataType: Size
+        Value: -1.0
+        Children:
+        - Name: ConditionalConverter1
+          Id: g=14bda516e9a4d208a07616f53c54f84d
+          Type: ConditionalConverter
+          Children:
+          - Name: Condition
+            Id: g=c8e765771bda45fb9b6c4bb10b90f5c9
+            Type: BaseDataVariableType
+            DataType: Boolean
+            ReferenceType: HasSource
+            Children:
+            - Name: DynamicLink
+              Id: g=bad814f895cca6af7539e9284a59f2a4
+              Type: DynamicLink
+              DataType: NodePath
+              Value: "../../../../../Cfg_DisplayAsPrimary"
+          - Name: TrueValue
+            Id: g=0221a6b64a88096fe21e7359a9c78f26
+            Type: BaseDataVariableType
+            DataType: BaseDataType
+            ReferenceType: HasParameter
+            Children:
+            - Name: ExpressionEvaluator1
+              Id: g=e491ba8faddaf02ac87aeeab49ab18c0
+              Type: ExpressionEvaluator
+              Children:
+              - Name: Expression
+                Id: g=bc976f0db349671e6d9484db5d97a17d
+                Type: BaseDataVariableType
+                DataType: String
+                ReferenceType: HasParameter
+                ModellingRule: Optional
+                Value: "round ({0} * 1.2)"
+              - Name: ns=9;Source0
+                Id: g=1dbfe1987aa090a8bbf743c97f7934a4
+                Type: BaseDataVariableType
+                DataType: BaseDataType
+                ReferenceType: HasSource
+                Children:
+                - Name: DynamicLink
+                  Id: g=5d849d77d3db126287237827889ca34a
+                  Type: DynamicLink
+                  DataType: NodePath
+                  Value: "../../../../../../../Set_SessionFontSize"
+          - Name: FalseValue
+            Id: g=d3bf9f281ad8bc03bfb5a73dd9b1d211
+            Type: BaseDataVariableType
+            DataType: BaseDataType
+            ReferenceType: HasParameter
+            Children:
+            - Name: DynamicLink
+              Id: g=e1e5333cbb1790b36eed494bfe691fbc
+              Type: DynamicLink
+              DataType: NodePath
+              Value: "../../../../../Set_SessionFontSize"
+      - Name: FontWeight
+        Id: g=b223c01f099a0b98cdc243e75d2cc8f5
+        Type: BaseDataVariableType
+        DataType: FontWeightEnum
+        Value: 400
+        Children:
+        - Name: ConditionalConverter1
+          Id: g=6e656c325366819d1283e40504c9ef4e
+          Type: ConditionalConverter
+          Children:
+          - Name: Condition
+            Id: g=4debe49dd9166f77ac8b370db352ede3
+            Type: BaseDataVariableType
+            DataType: Boolean
+            ReferenceType: HasSource
+            Children:
+            - Name: DynamicLink
+              Id: g=31f0b58d94bb1f0612fba54763a6f0d3
+              Type: DynamicLink
+              DataType: NodePath
+              Value: "../../../../../Cfg_DisplayAsPrimary"
+          - Name: TrueValue
+            Id: g=361444222b7ebc6e021a13e1e37ddc92
+            Type: BaseDataVariableType
+            DataType: FontWeightEnum
+            ReferenceType: HasParameter
+            ModellingRule: Optional
+            Value: 700
+          - Name: FalseValue
+            Id: g=65b0b46ab0307a72eb840b4271712f45
+            Type: BaseDataVariableType
+            DataType: FontWeightEnum
+            ReferenceType: HasParameter
+            ModellingRule: Optional
+            Value: 400
+      - Name: Visible
+        Id: g=02b9e807c1c80326c738c03596cef6e7
+        Type: BaseDataVariableType
+        DataType: Boolean
+        Value: true
+        Children:
+        - Name: ConditionalConverter1
+          Id: g=061d034582e6273cf1e6056095294296
+          Type: ConditionalConverter
+          Children:
+          - Name: Condition
+            Id: g=d72db749e3124337306628e815f8390e
+            Type: BaseDataVariableType
+            DataType: Boolean
+            ReferenceType: HasSource
+            Children:
+            - Name: ExpressionEvaluator1
+              Id: g=7722e8dc4b59aab3c842f6fde2dc12f2
+              Type: ExpressionEvaluator
+              Children:
+              - Name: Expression
+                Id: g=61f8c6cdce852352ad666b896af0bd83
+                Type: BaseDataVariableType
+                DataType: String
+                ReferenceType: HasParameter
+                ModellingRule: Optional
+                Value: "({0} == 3)"
+              - Name: ns=9;Source0
+                Id: g=4a313f5549cf9f639b22ffb86bc5200d
+                Type: BaseDataVariableType
+                DataType: BaseDataType
+                ReferenceType: HasSource
+                Children:
+                - Name: DynamicLink
+                  Id: g=ab96c5910d557bf2018430cf80c89de6
+                  Type: DynamicLink
+                  DataType: NodePath
+                  Value: "../../../../../../../Cfg_Format"
+          - Name: TrueValue
+            Id: g=ea234a64ba2fe321172d2bf1dc077055
+            Type: BaseDataVariableType
+            DataType: Boolean
+            ReferenceType: HasParameter
+            ModellingRule: Optional
+          - Name: FalseValue
+            Id: g=47f1b112ded69c78245bc3821a8b7cd5
+            Type: BaseDataVariableType
+            DataType: Boolean
+            ReferenceType: HasParameter
+            ModellingRule: Optional
+            Value: true
+    - Name: ss
+      Id: g=290951476b4fa9bd7f4cf04b51fa5743
+      Type: Label
+      Children:
+      - Name: Text
+        Id: g=5c84e86adb5eb92e4a068c5ce8571f4a
+        Type: BaseDataVariableType
+        DataType: LocalizedText
+        Children:
+        - Name: StringFormatter1
+          Id: g=db69e7bfdd9408d723fc725f77fe1b01
+          Type: StringFormatter
+          Children:
+          - Name: Format
+            Id: g=31abf0b43043cb5813e4124647c07aec
+            Type: BaseDataVariableType
+            DataType: LocalizedText
+            ReferenceType: HasParameter
+            ModellingRule: Optional
+            Value: {"LocaleId":"en-US","Text":":{0}"}
+          - Name: ns=9;Source0
+            Id: g=8566ff81dd02c317dbc19bb2e78d9c69
+            Type: BaseDataVariableType
+            DataType: BaseDataType
+            ReferenceType: HasSource
+            Children:
+            - Name: DynamicLink
+              Id: g=8be0c799d6f7ba105d259df9cb4155a9
+              Type: DynamicLink
+              DataType: NodePath
+              Value: "../../../../../Inp_Time[5]"
+      - Name: FontSize
+        Id: g=7249926914e9712a39fbd40cba7c816f
+        Type: BaseDataVariableType
+        DataType: Size
+        Value: -1.0
+        Children:
+        - Name: ConditionalConverter1
+          Id: g=375399a7c69fcfed0039045f7d4ddb14
+          Type: ConditionalConverter
+          Children:
+          - Name: Condition
+            Id: g=cbd743a765b8196ab2f9efde13816d02
+            Type: BaseDataVariableType
+            DataType: Boolean
+            ReferenceType: HasSource
+            Children:
+            - Name: DynamicLink
+              Id: g=0767e7143aa8239a031f66750d4b95a5
+              Type: DynamicLink
+              DataType: NodePath
+              Value: "../../../../../Cfg_DisplayAsPrimary"
+          - Name: TrueValue
+            Id: g=da9c112add818748fa3d00c49613c3e7
+            Type: BaseDataVariableType
+            DataType: BaseDataType
+            ReferenceType: HasParameter
+            Children:
+            - Name: ExpressionEvaluator1
+              Id: g=b9a3c1877a58d9f9caad4b7f106b7fa8
+              Type: ExpressionEvaluator
+              Children:
+              - Name: Expression
+                Id: g=15b4b5e74bc581e21f6c63039d6ea969
+                Type: BaseDataVariableType
+                DataType: String
+                ReferenceType: HasParameter
+                ModellingRule: Optional
+                Value: "round ({0} * 1.2)"
+              - Name: ns=9;Source0
+                Id: g=0f33096b1cb36ea4add74da9ac8f3ac4
+                Type: BaseDataVariableType
+                DataType: BaseDataType
+                ReferenceType: HasSource
+                Children:
+                - Name: DynamicLink
+                  Id: g=b4ab608a185643ab6e1d9b34da6420fe
+                  Type: DynamicLink
+                  DataType: NodePath
+                  Value: "../../../../../../../Set_SessionFontSize"
+          - Name: FalseValue
+            Id: g=d93d683bbd651c21e4aed50f43243ca1
+            Type: BaseDataVariableType
+            DataType: BaseDataType
+            ReferenceType: HasParameter
+            Children:
+            - Name: DynamicLink
+              Id: g=e76e3be6a7b9ac2297d7d53f7eebfcfb
+              Type: DynamicLink
+              DataType: NodePath
+              Value: "../../../../../Set_SessionFontSize"
+      - Name: FontWeight
+        Id: g=775e8b14a4c0dc781182661b8eb2d8aa
+        Type: BaseDataVariableType
+        DataType: FontWeightEnum
+        Value: 400
+        Children:
+        - Name: ConditionalConverter1
+          Id: g=a87d77649dbce50a81c171d59623b682
+          Type: ConditionalConverter
+          Children:
+          - Name: Condition
+            Id: g=ecebdc41c93f7ab5f0c25aa80150c9a9
+            Type: BaseDataVariableType
+            DataType: Boolean
+            ReferenceType: HasSource
+            Children:
+            - Name: DynamicLink
+              Id: g=8b41d4fc7f0c60fd8c8888db1927ddce
+              Type: DynamicLink
+              DataType: NodePath
+              Value: "../../../../../Cfg_DisplayAsPrimary"
+          - Name: TrueValue
+            Id: g=0b339f234ef3d21108f3c6bbd22c8a80
+            Type: BaseDataVariableType
+            DataType: FontWeightEnum
+            ReferenceType: HasParameter
+            ModellingRule: Optional
+            Value: 700
+          - Name: FalseValue
+            Id: g=0d783365d073271876f7f3b419137f9f
+            Type: BaseDataVariableType
+            DataType: FontWeightEnum
+            ReferenceType: HasParameter
+            ModellingRule: Optional
+            Value: 400
+      - Name: Visible
+        Id: g=2324ef1fef534ae70a8c6d52c8ec0bb2
+        Type: BaseDataVariableType
+        DataType: Boolean
+        Value: true
+        Children:
+        - Name: ConditionalConverter1
+          Id: g=84d647efb4dac2e3dad5ff0ec6732d76
+          Type: ConditionalConverter
+          Children:
+          - Name: Condition
+            Id: g=6aa3d73e50faaf2b34d340e474064315
+            Type: BaseDataVariableType
+            DataType: Boolean
+            ReferenceType: HasSource
+            Children:
+            - Name: ExpressionEvaluator1
+              Id: g=9535f7d66afe34b2288a1d7ec5654dfc
+              Type: ExpressionEvaluator
+              Children:
+              - Name: Expression
+                Id: g=8d5e4e65d2ac9a2e01ace0dddff31184
+                Type: BaseDataVariableType
+                DataType: String
+                ReferenceType: HasParameter
+                ModellingRule: Optional
+                Value: "({0} >= 2) && ({0} <= 4) "
+              - Name: ns=9;Source0
+                Id: g=cb47f664782b834195633c7546bc2b63
+                Type: BaseDataVariableType
+                DataType: BaseDataType
+                ReferenceType: HasSource
+                Children:
+                - Name: DynamicLink
+                  Id: g=3dac11e19351743f26ceea9fb4a78b56
+                  Type: DynamicLink
+                  DataType: NodePath
+                  Value: "../../../../../../../Cfg_Format"
+          - Name: TrueValue
+            Id: g=28836e0b8ca9598109a61fbd2446dc67
+            Type: BaseDataVariableType
+            DataType: Boolean
+            ReferenceType: HasParameter
+            ModellingRule: Optional
+          - Name: FalseValue
+            Id: g=222b62ea57b468ec265fe866b8157113
+            Type: BaseDataVariableType
+            DataType: Boolean
+            ReferenceType: HasParameter
+            ModellingRule: Optional
+            Value: true
+    - Name: ms
+      Id: g=d87f9bb249ceb5b30c918e84efda9638
+      Type: Label
+      Children:
+      - Name: Text
+        Id: g=1ec60bfd115b2029d1caed886978c524
+        Type: BaseDataVariableType
+        DataType: LocalizedText
+        Children:
+        - Name: StringFormatter1
+          Id: g=9b145a075521656583309b915f1293b9
+          Type: StringFormatter
+          Children:
+          - Name: Format
+            Id: g=d3784f6f8a0c6044adae41953b3280e5
+            Type: BaseDataVariableType
+            DataType: LocalizedText
+            ReferenceType: HasParameter
+            ModellingRule: Optional
+            Value: {"LocaleId":"en-US","Text":":{0}"}
+          - Name: ns=9;Source0
+            Id: g=ec184bb5c4758b737eb0ad307a1a3a92
+            Type: BaseDataVariableType
+            DataType: BaseDataType
+            ReferenceType: HasSource
+            Children:
+            - Name: ExpressionEvaluator1
+              Id: g=bb7f7b41525fcc54291b10dc17510ba8
+              Type: ExpressionEvaluator
+              Children:
+              - Name: Expression
+                Id: g=cd8d02ea7f4ae661544b8bc2bc9a0c6c
+                Type: BaseDataVariableType
+                DataType: String
+                ReferenceType: HasParameter
+                ModellingRule: Optional
+                Value: "trunc (({0}) / (1000))"
+              - Name: ns=9;Source0
+                Id: g=5bc8b96d42077aeacb475eed869509a7
+                Type: BaseDataVariableType
+                DataType: BaseDataType
+                ReferenceType: HasSource
+                Children:
+                - Name: DynamicLink
+                  Id: g=4e0b12fd676e08395dfc3146b764ed13
+                  Type: DynamicLink
+                  DataType: NodePath
+                  Value: "../../../../../../../Inp_Time[6]"
+      - Name: FontSize
+        Id: g=3ac201da5537842da5906f9906df7d6f
+        Type: BaseDataVariableType
+        DataType: Size
+        Value: -1.0
+        Children:
+        - Name: ConditionalConverter1
+          Id: g=c752998f7abd1032eb5e39f118c80dec
+          Type: ConditionalConverter
+          Children:
+          - Name: Condition
+            Id: g=ef9a01c0fa806a4f354e16ba9a84b752
+            Type: BaseDataVariableType
+            DataType: Boolean
+            ReferenceType: HasSource
+            Children:
+            - Name: DynamicLink
+              Id: g=a1eba8c5769e5b63cfc429f286d57bc5
+              Type: DynamicLink
+              DataType: NodePath
+              Value: "../../../../../Cfg_DisplayAsPrimary"
+          - Name: TrueValue
+            Id: g=edc95beaee55c865695ee19cba095c37
+            Type: BaseDataVariableType
+            DataType: BaseDataType
+            ReferenceType: HasParameter
+            Children:
+            - Name: ExpressionEvaluator1
+              Id: g=3d155a90dc27c49e12a4a69f73f383b0
+              Type: ExpressionEvaluator
+              Children:
+              - Name: Expression
+                Id: g=3e47029b5374bf7cd12ee92cf9d46362
+                Type: BaseDataVariableType
+                DataType: String
+                ReferenceType: HasParameter
+                ModellingRule: Optional
+                Value: "round ({0} * 1.2)"
+              - Name: ns=9;Source0
+                Id: g=55f502d4ab2bcf54ca797c98ef494f23
+                Type: BaseDataVariableType
+                DataType: BaseDataType
+                ReferenceType: HasSource
+                Children:
+                - Name: DynamicLink
+                  Id: g=f39195c892bdf58f88c6508244c37598
+                  Type: DynamicLink
+                  DataType: NodePath
+                  Value: "../../../../../../../Set_SessionFontSize"
+          - Name: FalseValue
+            Id: g=7393edbb737f28f95872c07e2a419851
+            Type: BaseDataVariableType
+            DataType: BaseDataType
+            ReferenceType: HasParameter
+            Children:
+            - Name: DynamicLink
+              Id: g=cc407cc8f007549bd20260225b7a5ad4
+              Type: DynamicLink
+              DataType: NodePath
+              Value: "../../../../../Set_SessionFontSize"
+      - Name: FontWeight
+        Id: g=2e83113dc53cfc4330c62f86d361dbd3
+        Type: BaseDataVariableType
+        DataType: FontWeightEnum
+        Value: 400
+        Children:
+        - Name: ConditionalConverter1
+          Id: g=e360ff881eab51283bfc445cc5ae5a36
+          Type: ConditionalConverter
+          Children:
+          - Name: Condition
+            Id: g=215472f715e3bd552194f0e1506eb130
+            Type: BaseDataVariableType
+            DataType: Boolean
+            ReferenceType: HasSource
+            Children:
+            - Name: DynamicLink
+              Id: g=574278c591bb146bd6aec9cd01b008fb
+              Type: DynamicLink
+              DataType: NodePath
+              Value: "../../../../../Cfg_DisplayAsPrimary"
+          - Name: TrueValue
+            Id: g=4590d74f4120697a4534394f1c030c91
+            Type: BaseDataVariableType
+            DataType: FontWeightEnum
+            ReferenceType: HasParameter
+            ModellingRule: Optional
+            Value: 700
+          - Name: FalseValue
+            Id: g=44c6e343f57c32090b3bc77336918496
+            Type: BaseDataVariableType
+            DataType: FontWeightEnum
+            ReferenceType: HasParameter
+            ModellingRule: Optional
+            Value: 400
+      - Name: Visible
+        Id: g=bdda76a271ac8d246292ba529621087d
+        Type: BaseDataVariableType
+        DataType: Boolean
+        Value: true
+        Children:
+        - Name: ConditionalConverter1
+          Id: g=173ef6a3726020f03fedc9ec242273c8
+          Type: ConditionalConverter
+          Children:
+          - Name: Condition
+            Id: g=69f4af04ef19a50caecdc9923b362329
+            Type: BaseDataVariableType
+            DataType: Boolean
+            ReferenceType: HasSource
+            Children:
+            - Name: ExpressionEvaluator1
+              Id: g=442205cca2d1d8add55085e161e09480
+              Type: ExpressionEvaluator
+              Children:
+              - Name: Expression
+                Id: g=09dbf75972971531292507353cf5769d
+                Type: BaseDataVariableType
+                DataType: String
+                ReferenceType: HasParameter
+                ModellingRule: Optional
+                Value: "({0} >= 1) && ({0} <= 5) "
+              - Name: ns=9;Source0
+                Id: g=1e03e0c3cc3702069abdb0c8223c80a3
+                Type: BaseDataVariableType
+                DataType: BaseDataType
+                ReferenceType: HasSource
+                Children:
+                - Name: DynamicLink
+                  Id: g=efacfda915b978ca4501d867918ddd0b
+                  Type: DynamicLink
+                  DataType: NodePath
+                  Value: "../../../../../../../Cfg_Format"
+          - Name: TrueValue
+            Id: g=ea7db7f32b238861bb9f037d534c73fc
+            Type: BaseDataVariableType
+            DataType: Boolean
+            ReferenceType: HasParameter
+            ModellingRule: Optional
+          - Name: FalseValue
+            Id: g=fc1ca9dde59d5a8ed21ab188e5e7fca1
+            Type: BaseDataVariableType
+            DataType: Boolean
+            ReferenceType: HasParameter
+            ModellingRule: Optional
+            Value: true
+    - Name: VerticalAlignment
+      Id: g=36dfccaa42fbdff24e62aca0f6f88e95
+      Type: BaseVariableType
+      DataType: VerticalAlignment
+      ModellingRule: Optional
+    - Name: HorizontalAlignment
+      Id: g=2e772c3032fa34c85cb32611a58439c9
+      Type: BaseVariableType
+      DataType: HorizontalAlignment
+      ModellingRule: Optional
+      Value: 2
+  - Name: Cfg_Format
+    Id: g=9acd7beb1c412113b041e6edb1f71086
+    Type: BaseDataVariableType
+    DataType: Int32
+    Description: {"NamespaceIndex":40,"TextId":"Date/Time format: 0 = YYYY-MM-DD hh:mm:ss:ms, 1 = YYYY-MM-DD hh:mm:ss, 2 = YYYY-MM-DD hh:mm, 3 = YYYY-MM-DD, 4 = hh:mm, 5 = hh:mm:ss, 6 = hh:mm:ss:ms"}
+  - Name: Cfg_DisplayAsPrimary
+    Id: g=536e33aad69a409fd4286ac401517e2f
+    Type: BaseDataVariableType
+    DataType: Boolean
+    Description: {"NamespaceIndex":40,"TextId":"Display the value as 'primary' data:  False = Normal weight with value font size equal to Set_SessionFontSize, True = Bold weight with value font size 20% larger than Set_SessionFontSize."}
+  - Name: Set_SessionFontSize
+    Id: g=5acf0c33e67c0caa1fdc009f8d732d24
+    Type: BaseDataVariableType
+    DataType: Double
+    Description: {"NamespaceIndex":40,"TextId":"Nominal font size set for the session by the applied stylesheet."}
+    Value: 16.0
